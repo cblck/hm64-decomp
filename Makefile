@@ -60,6 +60,7 @@ build/src/lib/nusys-1/nuboot.c.o: NU_OPTFLAGS := -O0
 
 build/src/lib/os/libultra/io/contreaddata.c.o: LIBULTRA_OPTFLAGS := -O2
 build/src/lib/os/libultra/destroythread.c.o: LIBULTRA_OPTFLAGS := -O3
+build/src/lib/os/libultra/jammesg.c.o: LIBULTRA_OPTFLAGS := -O2
 
 all: check
 
