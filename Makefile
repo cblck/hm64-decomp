@@ -38,7 +38,7 @@ CPPFLAGS := -I. -I include -I src -I src/system -I include/libmus
 
 DEBUG_FLAGS := -g2
 OPTFLAGS := -O2
-LIBULTRA_OPTFLAGS := -O1
+LIBULTRA_OPTFLAGS := -O3
 LIBKMC_OPTFLAGS := -O1
 NU_OPTFLAGS := -O2
 
@@ -57,10 +57,6 @@ endif
 dir_guard = @mkdir -p $(@D)
 
 build/src/lib/nusys-1/nuboot.c.o: NU_OPTFLAGS := -O0
-
-build/src/lib/os/libultra/io/contreaddata.c.o: LIBULTRA_OPTFLAGS := -O2
-build/src/lib/os/libultra/destroythread.c.o: LIBULTRA_OPTFLAGS := -O3
-build/src/lib/os/libultra/jammesg.c.o: LIBULTRA_OPTFLAGS := -O2
 
 all: check
 
