@@ -13,14 +13,14 @@ extern u16 bitmapCounter;
 // extern const char D_8011ED4C[];
 // extern const char D_8011ED50[];
 
-extern Bitmap bitmaps[MAX_BITMAPS];
+extern HMBitmap bitmaps[MAX_BITMAPS];
 extern Gfx D_80215ED0[2][0x880];
 // unused
 extern u16 D_8021E6E6[2][0x80][0x20];
                
 // forward declarations
-Gfx* func_8002A66C(Gfx*, Bitmap*, u16);             
-void func_8002ACA4(Bitmap* sprite, Gfx *dl);
+Gfx* func_8002A66C(Gfx*, HMBitmap*, u16);             
+void func_8002ACA4(HMBitmap* sprite, Gfx *dl);
 
 
 //INCLUDE_ASM(const s32, "system/sprite", initializeBitmaps);
@@ -440,7 +440,7 @@ inline Gfx* func_8002A410(Gfx* dl, u16 arg1) {
 
 //INCLUDE_ASM(const s32, "system/sprite", func_8002A530);
 
-inline void func_8002A530(Vec3f* arg0, Bitmap* arg1) {
+inline void func_8002A530(Vec3f* arg0, HMBitmap* arg1) {
     
     s32 width;
     s32 height;
@@ -524,7 +524,7 @@ INCLUDE_RODATA(const s32, "system/sprite", D_8011ED34);
 
 // bitmap to vertices
 #ifdef PERMUTER
-Gfx* func_8002A66C(Gfx* dl, Bitmap* sprite, u16 arg2) {
+Gfx* func_8002A66C(Gfx* dl, HMBitmap* sprite, u16 arg2) {
 
     u16 vtxIndex;
     
@@ -652,7 +652,7 @@ INCLUDE_ASM(const s32, "system/sprite", func_8002A66C);
 //INCLUDE_ASM(const s32, "system/sprite", func_8002ACA4);
 
 // update world graphics from sprite
-void func_8002ACA4(Bitmap* sprite, Gfx *dl) {
+void func_8002ACA4(HMBitmap* sprite, Gfx *dl) {
 
     Vec3f vec;
 

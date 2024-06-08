@@ -8,7 +8,7 @@
 #include "mainproc.h"
 
 // forward declarations
-void func_80026F30(Bitmap* arg0, u16* arg1);
+void func_80026F30(HMBitmap* arg0, u16* arg1);
 Gfx *func_80028A64(Gfx*, Camera*, WorldMatrices*);
 volatile u8 func_80026BE0();      
 void func_80028EB8(f32, f32, f32);            
@@ -240,7 +240,7 @@ static inline u16 getHeight(u16* timg) {
 }
 */
 
-void setBitmapFormat(Bitmap *sprite, Texture *timg, u16 *palette) {
+void setBitmapFormat(HMBitmap *sprite, Texture *timg, u16 *palette) {
     
     func_80026F30(sprite, palette);
     
@@ -298,7 +298,7 @@ void setBitmapFormat(Bitmap *sprite, u16 *timg, u16 *palette) {
 
 //INCLUDE_ASM(const s32, "system/graphic", func_80026F30);
 
-void func_80026F30(Bitmap* sprite, u16* palette) {
+void func_80026F30(HMBitmap* sprite, u16* palette) {
 
     // FIXME: shouldn't be necessary
     u32 padding[5];
@@ -321,7 +321,7 @@ void func_80026F30(Bitmap* sprite, u16* palette) {
 
 //INCLUDE_ASM(const s32, "system/graphic", func_80026F88);
 
-Gfx* func_80026F88(Gfx* dl, Bitmap* sprite, u32 offset, u16 height) {
+Gfx* func_80026F88(Gfx* dl, HMBitmap* sprite, u32 offset, u16 height) {
     
     switch (sprite->pixelSize) {
         case G_IM_SIZ_4b:

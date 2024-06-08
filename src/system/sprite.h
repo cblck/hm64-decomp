@@ -65,7 +65,7 @@ typedef struct {
     u8 animationCounter2;
 	u16 flags1;
     u16 flags2;
-} Sprite;
+} GSprite;
 
 // info for DMA
 typedef struct {
@@ -143,7 +143,7 @@ typedef struct {
 	u16 unk_52;
 	u16 unk_54; // flags for microcodes, vertex type, pixel density
 	u16 flags; //56
-} Bitmap;
+} HMBitmap;
 
 typedef struct {
 	u16 header;
@@ -277,6 +277,6 @@ extern void func_8002AE58(void);
 
 extern CharacterSprite characterSprites[MAX_CHARACTER_SPRITES];
 extern RenderedSprite renderedSprites[MAX_RENDERED_SPRITES];
-extern Sprite globalSprites[MAX_ACTIVE_SPRITES];
+extern GSprite globalSprites[MAX_ACTIVE_SPRITES];
 
 #endif
