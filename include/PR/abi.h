@@ -1,6 +1,35 @@
 #ifndef _ABI_H_
 #define	_ABI_H_
 
+/**************************************************************************
+ *									  *
+ *		 Copyright (C) 1994, Silicon Graphics, Inc.		  *
+ *									  *
+ *  These coded instructions, statements, and computer programs  contain  *
+ *  unpublished  proprietary  information of Silicon Graphics, Inc., and  *
+ *  are protected by Federal copyright law.  They  may  not be disclosed  *
+ *  to  third  parties  or copied or duplicated in any form, in whole or  *
+ *  in part, without the prior written consent of Silicon Graphics, Inc.  *
+ *									  *
+ **************************************************************************/
+
+/**************************************************************************
+ *
+ *  $Revision: 1.32 $
+ *  $Date: 1997/02/11 08:16:37 $
+ *  $Source: /exdisk2/cvs/N64OS/Master/cvsmdev2/PR/include/abi.h,v $
+ *
+ **************************************************************************/
+
+/*
+ * Header file for the Audio Binary Interface.
+ * This is included in the Media Binary Interface file
+ * mbi.h. 
+ *
+ * This file follows the framework used for graphics.
+ * 
+ */
+
 /* Audio commands: */
 #define	A_SPNOOP		0
 #define	A_ADPCM			1
@@ -37,146 +66,146 @@
 #define A_MAIN			0x00
 #define A_MIX			0x10
 
- /*
-  * BEGIN C-specific section: (typedef's)
-  */
+/*
+ * BEGIN C-specific section: (typedef's)
+ */
 #if defined(_LANGUAGE_C) || defined(_LANGUAGE_C_PLUS_PLUS)
 
-  /*
-   * Data Structures.
-   */
+/*
+ * Data Structures.
+ */
 
 typedef struct {
-	unsigned int	cmd : 8;
-	unsigned int	flags : 8;
-	unsigned int	gain : 16;
+  	unsigned int	cmd:8;
+	unsigned int	flags:8;
+	unsigned int	gain:16;
 	unsigned int	addr;
 } Aadpcm;
 
 typedef struct {
-	unsigned int	cmd : 8;
-	unsigned int	flags : 8;
-	unsigned int	gain : 16;
+  	unsigned int	cmd:8;
+	unsigned int	flags:8;
+	unsigned int	gain:16;
 	unsigned int	addr;
 } Apolef;
 
 typedef struct {
-	unsigned int	cmd : 8;
-	unsigned int	flags : 8;
-	unsigned int	pad1 : 16;
+  	unsigned int	cmd:8;
+	unsigned int	flags:8;
+	unsigned int	pad1:16;
 	unsigned int	addr;
 } Aenvelope;
 
 typedef struct {
-	unsigned int	cmd : 8;
-	unsigned int	pad1 : 8;
-	unsigned int	dmem : 16;
-	unsigned int	pad2 : 16;
-	unsigned int	count : 16;
+  	unsigned int	cmd:8;
+	unsigned int	pad1:8;
+	unsigned int	dmem:16;
+	unsigned int	pad2:16;
+	unsigned int	count:16;
 } Aclearbuff;
 
 typedef struct {
-	unsigned int	cmd : 8;
-	unsigned int	pad1 : 8;
-	unsigned int	pad2 : 16;
-	unsigned int	inL : 16;
-	unsigned int    inR : 16;
+  	unsigned int	cmd:8;
+	unsigned int	pad1:8;
+	unsigned int	pad2:16;
+	unsigned int	inL:16;
+        unsigned int    inR:16;
 } Ainterleave;
 
 typedef struct {
-	unsigned int	cmd : 8;
-	unsigned int	pad1 : 24;
+  	unsigned int	cmd:8;
+	unsigned int	pad1:24;
 	unsigned int	addr;
 } Aloadbuff;
 
 typedef struct {
-	unsigned int	cmd : 8;
-	unsigned int	flags : 8;
-	unsigned int	pad1 : 16;
+  	unsigned int	cmd:8;
+	unsigned int	flags:8;
+	unsigned int	pad1:16;
 	unsigned int	addr;
 } Aenvmixer;
 
 typedef struct {
-	unsigned int	cmd : 8;
-	unsigned int	flags : 8;
-	unsigned int	gain : 16;
-	unsigned int	dmemi : 16;
-	unsigned int	dmemo : 16;
+  	unsigned int	cmd:8;
+	unsigned int	flags:8;
+	unsigned int	gain:16;
+	unsigned int	dmemi:16;
+	unsigned int	dmemo:16;
 } Amixer;
 
 typedef struct {
-	unsigned int	cmd : 8;
-	unsigned int	flags : 8;
-	unsigned int	dmem2 : 16;
+  	unsigned int	cmd:8;
+	unsigned int	flags:8;
+	unsigned int	dmem2:16;
 	unsigned int	addr;
 } Apan;
 
 typedef struct {
-	unsigned int	cmd : 8;
-	unsigned int	flags : 8;
-	unsigned int	pitch : 16;
+  	unsigned int	cmd:8;
+	unsigned int	flags:8;
+	unsigned int	pitch:16;
 	unsigned int	addr;
 } Aresample;
 
 typedef struct {
-	unsigned int	cmd : 8;
-	unsigned int	flags : 8;
-	unsigned int	pad1 : 16;
+  	unsigned int	cmd:8;
+	unsigned int	flags:8;
+	unsigned int	pad1:16;
 	unsigned int	addr;
 } Areverb;
 
 typedef struct {
-	unsigned int	cmd : 8;
-	unsigned int	pad1 : 24;
+  	unsigned int	cmd:8;
+	unsigned int	pad1:24;
 	unsigned int	addr;
 } Asavebuff;
 
 typedef struct {
-	unsigned int	cmd : 8;
-	unsigned int	pad1 : 24;
-	unsigned int    pad2 : 2;
-	unsigned int    number : 4;
-	unsigned int	base : 24;
+  	unsigned int	cmd:8;
+	unsigned int	pad1:24;
+	unsigned int    pad2:2;
+	unsigned int    number:4;
+	unsigned int	base:24;
 } Asegment;
 
 typedef struct {
-	unsigned int	cmd : 8;
-	unsigned int	flags : 8;
-	unsigned int	dmemin : 16;
-	unsigned int	dmemout : 16;
-	unsigned int	count : 16;
+  	unsigned int	cmd:8;
+	unsigned int	flags:8;
+	unsigned int	dmemin:16;
+	unsigned int	dmemout:16;
+	unsigned int	count:16;
 } Asetbuff;
 
 typedef struct {
-	unsigned int	cmd : 8;
-	unsigned int	flags : 8;
-	unsigned int	vol : 16;
-	unsigned int	voltgt : 16;
-	unsigned int	volrate : 16;
+  	unsigned int	cmd:8;
+	unsigned int	flags:8;
+	unsigned int	vol:16;
+	unsigned int	voltgt:16;
+	unsigned int	volrate:16;
 } Asetvol;
 
 typedef struct {
-	unsigned int        cmd : 8;
-	unsigned int        pad1 : 8;
-	unsigned int        dmemin : 16;
-	unsigned int        dmemout : 16;
-	unsigned int        count : 16;
+    unsigned int        cmd:8;
+    unsigned int        pad1:8;
+    unsigned int        dmemin:16;
+    unsigned int        dmemout:16;
+    unsigned int        count:16;
 } Admemmove;
 
 typedef struct {
-	unsigned int        cmd : 8;
-	unsigned int        pad1 : 8;
-	unsigned int        count : 16;
-	unsigned int        addr;
+    unsigned int        cmd:8;
+    unsigned int        pad1:8;
+    unsigned int        count:16;
+    unsigned int        addr;
 } Aloadadpcm;
 
 typedef struct {
-	unsigned int        cmd : 8;
-	unsigned int        pad1 : 8;
-	unsigned int        pad2 : 16;
-	unsigned int        addr;
+    unsigned int        cmd:8;
+    unsigned int        pad1:8;
+    unsigned int        pad2:16;
+    unsigned int        addr;
 } Asetloop;
-
+        
 /*
  * Generic Acmd Packet
  */
@@ -189,23 +218,23 @@ typedef struct {
 typedef union {
 	Awords		words;
 	Aadpcm		adpcm;
-	Apolef          polef;
+        Apolef          polef;
 	Aclearbuff	clearbuff;
 	Aenvelope	envelope;
-	Ainterleave     interleave;
+        Ainterleave     interleave;
 	Aloadbuff	loadbuff;
-	Aenvmixer       envmixer;
+        Aenvmixer       envmixer;
 	Aresample	resample;
 	Areverb		reverb;
 	Asavebuff	savebuff;
 	Asegment	segment;
 	Asetbuff	setbuff;
 	Asetvol		setvol;
-	Admemmove       dmemmove;
-	Aloadadpcm	loadadpcm;
-	Amixer		mixer;
-	Asetloop        setloop;
-	long long int	force_union_align;	/* dummy, force alignment */
+        Admemmove       dmemmove;
+        Aloadadpcm	loadadpcm;
+        Amixer		mixer;
+        Asetloop        setloop;
+        long long int	force_union_align;	/* dummy, force alignment */
 } Acmd;
 
 /*
@@ -231,9 +260,9 @@ typedef short RESAMPLE_STATE[16];
 #define UNITY_PITCH 0x8000
 #define MAX_RATIO 1.99996	/* within .03 cents of +1 octave */
 
- /*
-  * Enveloper/Mixer state
-  */
+/*
+ * Enveloper/Mixer state
+ */
 typedef short ENVMIX_STATE[40];
 
 /*
@@ -356,7 +385,7 @@ typedef short ENVMIX_STATE[40];
         _a->words.w0 = _SHIFTL(A_SETLOOP, 24, 8);                       \
         _a->words.w1 = (unsigned int)(a);                               \
 }
-
+    
 #define	aDMEMMove(pkt, i, o, c)						\
 {									\
 	Acmd *_a = (Acmd *)pkt;						\
@@ -376,3 +405,6 @@ typedef short ENVMIX_STATE[40];
 #endif /* _LANGUAGE_C */
 
 #endif /* !_ABI_H_ */
+
+
+
