@@ -10,22 +10,33 @@
  *									  *
  **************************************************************************/
 
-#include "guint.h"
+#include "PR/mbi.h"
+#include "PR/gu.h"
 
-void guTranslateF(float mf[4][4], float x, float y, float z)
+typedef union
 {
-    guMtxIdentF(mf);
+	struct
+	{
+		unsigned int hi;
+		unsigned int lo;
+	} word;
 
-    mf[3][0] = x;
-    mf[3][1] = y;
-    mf[3][2] = z;
-}
+	double	d;
+} du;
 
-void guTranslate(Mtx *m, float x, float y, float z)
+typedef union
 {
-    Matrix	mf;
+	unsigned int	i;
+	float		f;
+} fu;
 
-    guTranslateF(mf, x, y, z);
+#ifndef __GL_GL_H__
 
-    guMtxF2L(mf, m);
-}
+typedef	float	Matrix[4][4];
+
+#endif
+
+#define ROUND(d)	(int)(((d) >= 0.0) ? ((d) + 0.5) : ((d) - 0.5))
+#define	ABS(d)		((d) > 0) ? (d) : -(d)
+
+extern float	__libm_qnan_f;
