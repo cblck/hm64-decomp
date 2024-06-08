@@ -1,3 +1,31 @@
+/*====================================================================
+ * libaudio.h
+ *
+ * Copyright 1993, Silicon Graphics, Inc.
+ * All Rights Reserved.
+ *
+ * This is UNPUBLISHED PROPRIETARY SOURCE CODE of Silicon Graphics,
+ * Inc.; the contents of this file may not be disclosed to third
+ * parties, copied or duplicated in any form, in whole or in part,
+ * without the prior written permission of Silicon Graphics, Inc.
+ *
+ * RESTRICTED RIGHTS LEGEND:
+ * Use, duplication or disclosure by the Government is subject to
+ * restrictions as set forth in subdivision (c)(1)(ii) of the Rights
+ * in Technical Data and Computer Software clause at DFARS
+ * 252.227-7013, and/or in similar or successor clauses in the FAR,
+ * DOD or NASA FAR Supplement. Unpublished - rights reserved under the
+ * Copyright Laws of the United States.
+ *====================================================================*/
+
+/**************************************************************************
+ *
+ *  $Revision: 1.173 $
+ *  $Date: 1997/12/01 12:42:21 $
+ *  $Source: /exdisk2/cvs/N64OS/Master/cvsmdev2/PR/include/libaudio.h,v $
+ *
+ **************************************************************************/
+
 #ifndef __LIB_AUDIO__
 #define __LIB_AUDIO__
 
@@ -5,8 +33,8 @@
 extern "C" {
 #endif
 
-#include "PR/ultratypes.h"
-#include "PR/mbi.h"
+#include <PR/ultratypes.h>
+#include <PR/mbi.h>
     
 /***********************************************************************
  * misc defines
@@ -29,7 +57,9 @@ extern "C" {
 #	endif /* AUD_PROFILE */
 #endif /* EMULATOR */
 
+#ifndef NULL
 #define NULL 0
+#endif
 
 #define AL_FX_BUFFER_SIZE       8192
 #define AL_FRAME_INIT           -1
@@ -912,3 +942,6 @@ void alParseAbiCL(Acmd *cmdList, u32 nbytes);
 #endif
 
 #endif /* !__LIB_AUDIO__ */
+
+
+

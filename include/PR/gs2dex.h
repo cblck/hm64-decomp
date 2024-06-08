@@ -1,3 +1,14 @@
+/*---------------------------------------------------------------------
+	Copyright (C) 1997, Nintendo.
+	
+	File		gs2dex.h
+	Coded    by	Yoshitaka Yasumoto.	Jul 31, 1997.
+	Modified by	
+	Comments	Header file for S2DEX ucode.
+	
+	$Id: gs2dex.h,v 1.21 1998/05/28 00:14:49 has Exp $
+  ---------------------------------------------------------------------*/
+
 #ifndef	_GS2DEX_H_
 #define	_GS2DEX_H_
 
@@ -5,7 +16,7 @@
 extern "C" {
 #endif
 
-#include "PR/ultratypes.h"
+#include <PR/ultratypes.h>
 
 /*===========================================================================*
  *	Macro

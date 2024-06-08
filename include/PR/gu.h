@@ -1,9 +1,30 @@
 #ifndef _GU_H_
 #define _GU_H_
 
+/**************************************************************************
+ *									  *
+ *		 Copyright (C) 1994, Silicon Graphics, Inc.		  *
+ *									  *
+ *  These coded instructions, statements, and computer programs  contain  *
+ *  unpublished  proprietary  information of Silicon Graphics, Inc., and  *
+ *  are protected by Federal copyright law.  They  may  not be disclosed  *
+ *  to  third  parties  or copied or duplicated in any form, in whole or  *
+ *  in part, without the prior written consent of Silicon Graphics, Inc.  *
+ *									  *
+ **************************************************************************/
+
+/**************************************************************************
+ *
+ *  $Revision: 1.48 $
+ *  $Date: 1999/07/13 08:00:20 $
+ *  $Source: /exdisk2/cvs/N64OS/Master/cvsmdev2/PR/include/gu.h,v $
+ *
+ **************************************************************************/
+
 #include <PR/mbi.h>
 #include <PR/ultratypes.h>
 #include <PR/sptask.h>
+#include <PR/os_version.h>
 
 #ifndef MAX
 #define MAX(a,b) (((a)>(b))?(a):(b))
@@ -22,14 +43,17 @@
 #define  FILTER_WRAP 0
 #define  FILTER_CLAMP 1
 
-#define RAND(x) (guRandom()%x)
+#define RAND(x) (guRandom()%x)	/* random number between 0 to x */
 
-
+/*
+ * Data Structures
+ */
 typedef struct {
 	unsigned char   *base;
 	int             fmt, siz;
 	int             xsize, ysize;
 	int             lsize;
+	/* current tile info */
 	int             addr;
 	int             w, h;
 	int             s, t;
@@ -38,8 +62,13 @@ typedef struct {
 typedef struct {
 	float	col[3];
 	float	pos[3];
-	float	a1, a2;
+	float	a1, a2;		/* actual color = col/(a1*dist + a2) */
 } PositionalLight;
+
+
+/*
+ * Function Prototypes
+ */
 
 extern int guLoadTextureBlockMipMap(Gfx **glist, unsigned char *tbuf, Image *im, 
 		unsigned char startTile, unsigned char pal, unsigned char cms, 
@@ -58,6 +87,13 @@ extern void 	guDPLoadTextureTile (Gfx *glistp, void *timg,
 			int shifts, int shiftt);
 
 
+/* 
+ * matrix operations:
+ *
+ * The 'F' version is floating point, in case the application wants
+ * to do matrix manipulations and convert to fixed-point at the last
+ * minute.
+ */
 extern void guMtxIdent(Mtx *m);
 extern void guMtxIdentF(float mf[4][4]);
 extern void guOrtho(Mtx *m, float l, float r, float b, float t, 
@@ -134,8 +170,10 @@ extern void guMtxXFMF(float mf[4][4], float x, float y, float z,
 extern void guMtxXFML(Mtx *m, float x, float y, float z, 
 		      float *ox, float *oy, float *oz);
 
+/* vector utility: */
 extern void guNormalize(float *x, float *y, float *z);
 
+/* light utilities: */
 void guPosLight(PositionalLight *pl, Light *l,
                 float xOb, float yOb, float zOb);
 void guPosLightHilite(PositionalLight *pl1, PositionalLight *pl2,
@@ -147,20 +185,39 @@ void guPosLightHilite(PositionalLight *pl1, PositionalLight *pl2,
                 int twidth, int theight);
 extern int guRandom(void);
 
+/*
+ *  Math functions
+ */
 extern float sinf(float angle);
 extern float cosf(float angle);
 extern signed short sins (unsigned short angle);
 extern signed short coss (unsigned short angle);
 extern float sqrtf(float value);
+#if defined(__sgi) && BUILD_VERSION >= VERSION_K
+#pragma intrinsic(sqrtf);
+#endif
 
+/*
+ *  Dump routines for low-level display lists
+ */
+/* flag values for guParseRdpDL() */
 #define GU_PARSERDP_VERBOSE		1
 #define GU_PARSERDP_PRAREA		2
 #define GU_PARSERDP_PRHISTO		4
-#define GU_PARSERDP_DUMPONLY           32 
+#define GU_PARSERDP_DUMPONLY           32  /* doesn't need to be same as */
+                                           /* GU_PARSEGBI_DUMPOLNY, but this */
+                                           /* allows app to use interchangeably */
 
 extern void guParseRdpDL(u64 *rdp_dl, u64 nbytes, u8 flags);
 extern void guParseString(char *StringPointer, u64 nbytes);
 
+/* 
+ * NO LONGER SUPPORTED, 
+ * use guParseRdpDL with GU_PARSERDP_DUMPONLY flags
+ */
+/* extern void guDumpRawRdpDL(u64 *rdp_dl, u64 nbytes); */
+
+/* flag values for guBlinkRdpDL() */
 #define GU_BLINKRDP_HILITE		1
 #define GU_BLINKRDP_EXTRACT		2
 
@@ -171,13 +228,17 @@ guBlinkRdpDL(u64 *rdp_dl_in, u64 nbytes_in,
              u8  red, u8 green, u8 blue,
              u8 flags);
  
+/* flag values for guParseGbiDL() */
 #define GU_PARSEGBI_ROWMAJOR	        1
 #define GU_PARSEGBI_NONEST		2
 #define GU_PARSEGBI_FLTMTX		4
 #define GU_PARSEGBI_SHOWDMA		8
 #define GU_PARSEGBI_ALLMTX		16
 #define GU_PARSEGBI_DUMPONLY		32
-
+/*
+#define GU_PARSEGBI_HANGAFTER		64
+#define GU_PARSEGBI_NOTEXTURES		128
+*/
 extern void guParseGbiDL(u64 *gbi_dl, u32 nbytes, u8 flags);
 extern void guDumpGbiDL(OSTask *tp,u8 flags);
 
@@ -206,4 +267,4 @@ void guSprite2DInit(uSprite *SpritePointer,
 		    int SourceImageOffsetS,
 		    int SourceImageOffsetT);
 
-#endif
+#endif /* !_GU_H_ */
