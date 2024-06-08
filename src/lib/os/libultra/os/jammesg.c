@@ -1,6 +1,6 @@
 #include "PR/osint.h"
 
-//INCLUDE_ASM(const s32, "lib/os/libultra/jammesg", osJamMesg);
+//INCLUDE_ASM(const s32, "lib/os/libultra/os/jammesg", osJamMesg);
 
 s32 osJamMesg(OSMesgQueue* mq, OSMesg msg, s32 flag) {
 	register u32 saveMask = __osDisableInt();

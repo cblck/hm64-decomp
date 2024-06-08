@@ -2,7 +2,7 @@
 
 extern struct __osThreadTail __osThreadTail;
 
-//INCLUDE_ASM(const s32, "lib/os/libultra/createmesgqueue", osCreateMesgQueue);
+//INCLUDE_ASM(const s32, "lib/os/libultra/os/createmesgqueue", osCreateMesgQueue);
 
 void osCreateMesgQueue(OSMesgQueue* mq, OSMesg* msg, s32 msgCount) {
 	mq->mtqueue = (OSThread*)&__osThreadTail;
