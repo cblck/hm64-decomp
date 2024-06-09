@@ -1,4 +1,23 @@
-#include "common.h"
+#include "PR/os_internal.h"
+#include "PRinternal/osint.h"
 
+void osStopThread(OSThread* t) {
+	register u32 saveMask = __osDisableInt();
+	register u16 state;
 
-INCLUDE_ASM(const s32, "lib/os/libultra/os/stopthread", osStopThread);
+	state = (t == NULL) ? OS_STATE_RUNNING : t->state;
+
+	switch (state) {
+	case OS_STATE_RUNNING:
+		__osRunningThread->state = OS_STATE_STOPPED;
+		__osEnqueueAndYield(NULL);
+		break;
+	case OS_STATE_RUNNABLE:
+	case OS_STATE_WAITING:
+		t->state = OS_STATE_STOPPED;
+		__osDequeueThread(t->queue, t);
+		break;
+	}
+
+	__osRestoreInt(saveMask);
+}
