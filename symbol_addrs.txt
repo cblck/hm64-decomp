@@ -430,6 +430,7 @@ vi_data_0004 = 0x8011E284;
 vi_data_0032 = 0x8011E2B2;
 vi_data_0034 = 0x8011E2B4;
 vi_data_0038 = 0x8011E2B8;
+__osViCurr = 0x8011E2E0;
 __osViNext = 0x8011E2E4;
 __osSiAccessQueueEnabled = 0x8011E2F0;
 osViModeNtscLan1 = 0x8011E300;
