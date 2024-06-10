@@ -325,7 +325,7 @@ segments:
       - [ 0xEA0E0, c, lib/os/libultra/libc/ldtob]
       - [ 0xEAB60, c, lib/os/libultra/io/sprawread]
       - [ 0xEABB0, c, lib/os/libultra/io/sprawwrite]
-      - [ 0xEAC00, c, lib/os/libultra/io/getactivequeue]
+      - [ 0xEAC00, c, lib/os/libultra/os/getactivequeue]
       - [ 0xEAC10, c, lib/os/libultra/rmon/rmonrcp]
       - [ 0xEACB0, c, lib/os/libultra/rmon/rmonbreak]
       - [ 0xEB650, hasm, ldiv]
