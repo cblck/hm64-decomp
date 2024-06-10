@@ -311,7 +311,7 @@ segments:
       - [ 0xE7990, hasm, lib/os/libultra/io/ossetcompare]
       - [ 0xE79A0, c, lib/os/libultra/os/resetglobalintmask]
       - [ 0xE79F0, c, lib/os/libultra/os/setglobalintmask]
-      - [ 0xE7A30, c, lib/os/libultra/io/yieldthread]
+      - [ 0xE7A30, c, lib/os/libultra/os/yieldthread]
       - [ 0xE7A80, c, lib/os/libultra/io/si]
       - [ 0xE7AA0, c, lib/os/libultra/io/pfsisplug]
       - [ 0xE7D80, c, lib/os/libultra/rmon/rmoncmd]
