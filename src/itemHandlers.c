@@ -48,7 +48,7 @@ extern u32 D_80237414;
 extern ToolUse toolUse;
 
 // bss
-extern ToolStatus D_80204DF8[10];
+extern ItemContext itemInfo[10];
 
 // forward declarations
 void handleBlueFeatherUse();         
@@ -61,6 +61,7 @@ void func_800D3694();
 void func_800D36BC();                                  
 void func_800D36E4();                                  
 void func_800D3714();                                                                   
+void func_800D373C(void);  
 void func_800D3958();                                  
 void func_800D3B74();                                  
 void func_800D3D90();                                  
@@ -74,7 +75,7 @@ void func_800D4C28();
 void func_800D4CA8();                                  
 void func_800D4CB0();                                  
 void func_800D4CB8();                                  
-void func_800D4CC0();                                  
+void func_800D4CC0();                                
 void func_800D4CD0();                                  
 void func_800D4D1C();                                  
 void func_800D4D68();                                  
@@ -355,7 +356,7 @@ void func_800D373C(void) {
 
     Vec3f vec;
 
-    temp1 = (renderedSprites[PLAYER].direction + func_8003C1A4(MAIN_MAP_INDEX)) % 8;
+    temp1 = (animatedSprites[PLAYER].direction + func_8003C1A4(MAIN_MAP_INDEX)) % 8;
     
     if (temp1 < 5) {
         temp2 = D_80117180[toolUse.unk_2];
@@ -397,7 +398,7 @@ void func_800D3958(void) {
 
     Vec3f vec;
 
-    temp1 = (renderedSprites[PLAYER].direction + func_8003C1A4(MAIN_MAP_INDEX)) % 8;
+    temp1 = (animatedSprites[PLAYER].direction + func_8003C1A4(MAIN_MAP_INDEX)) % 8;
     
     if (temp1 < 5) {
         temp2 = D_80117180[toolUse.unk_2];
@@ -440,7 +441,7 @@ void func_800D3B74(void) {
 
     Vec3f vec;
 
-    temp1 = (renderedSprites[PLAYER].direction + func_8003C1A4(MAIN_MAP_INDEX)) % 8;
+    temp1 = (animatedSprites[PLAYER].direction + func_8003C1A4(MAIN_MAP_INDEX)) % 8;
     
     if (temp1 < 5) {
         temp2 = D_80117180[toolUse.unk_2];
@@ -483,7 +484,7 @@ void func_800D3D90(void) {
 
     Vec3f vec;
 
-    temp1 = (renderedSprites[PLAYER].direction + func_8003C1A4(MAIN_MAP_INDEX)) % 8;
+    temp1 = (animatedSprites[PLAYER].direction + func_8003C1A4(MAIN_MAP_INDEX)) % 8;
     
     if (temp1 < 5) {
         temp2 = D_80117180[toolUse.unk_2];
@@ -526,7 +527,7 @@ void func_800D3FAC(void) {
 
     Vec3f vec;
 
-    temp1 = (renderedSprites[PLAYER].direction + func_8003C1A4(MAIN_MAP_INDEX)) % 8;
+    temp1 = (animatedSprites[PLAYER].direction + func_8003C1A4(MAIN_MAP_INDEX)) % 8;
     
     if (temp1 < 5) {
         temp2 = D_80117180[toolUse.unk_2];
@@ -569,7 +570,7 @@ void func_800D41C8(void) {
 
     Vec3f vec;
 
-    temp1 = (renderedSprites[PLAYER].direction + func_8003C1A4(MAIN_MAP_INDEX)) % 8;
+    temp1 = (animatedSprites[PLAYER].direction + func_8003C1A4(MAIN_MAP_INDEX)) % 8;
     
     if (temp1 < 5) {
         temp2 = D_80117180[toolUse.unk_2];
@@ -612,7 +613,7 @@ void func_800D43E4(void) {
 
     Vec3f vec;
 
-    temp1 = (renderedSprites[PLAYER].direction + func_8003C1A4(MAIN_MAP_INDEX)) % 8;
+    temp1 = (animatedSprites[PLAYER].direction + func_8003C1A4(MAIN_MAP_INDEX)) % 8;
     
     if (temp1 < 5) {
         temp2 = D_80117180[toolUse.unk_2];
@@ -633,7 +634,7 @@ void func_800D43E4(void) {
         func_800DAC70(gBaseMapIndex, tempFlags, (u8)vec.x - D_801FD624, (u8)vec.z - D_801C3F35);
     }
 
-    if (!toolUse.unk_2) {
+    if (toolUse.unk_2 == 0) {
         setAudio(0x1D);
     }
 
@@ -655,7 +656,7 @@ void func_800D45F4(void) {
 
     Vec3f vec;
 
-    temp1 = (renderedSprites[PLAYER].direction + func_8003C1A4(MAIN_MAP_INDEX)) % 8;
+    temp1 = (animatedSprites[PLAYER].direction + func_8003C1A4(MAIN_MAP_INDEX)) % 8;
     
     if (temp1 < 5) {
         temp2 = D_80117180[toolUse.unk_2];
@@ -699,7 +700,7 @@ void func_800D4814(void) {
 
     Vec3f vec;
 
-    temp1 = (renderedSprites[PLAYER].direction + func_8003C1A4(MAIN_MAP_INDEX)) % 8;
+    temp1 = (animatedSprites[PLAYER].direction + func_8003C1A4(MAIN_MAP_INDEX)) % 8;
     
     if (temp1 < 5) {
         temp2 = D_80117180[toolUse.unk_2];
@@ -743,7 +744,7 @@ void func_800D4A34(void) {
 
     Vec3f vec;
 
-    temp1 = (renderedSprites[PLAYER].direction + func_8003C1A4(MAIN_MAP_INDEX)) % 8;
+    temp1 = (animatedSprites[PLAYER].direction + func_8003C1A4(MAIN_MAP_INDEX)) % 8;
     
     if (temp1 < 5) {
         temp2 = D_80117180[toolUse.unk_2];
@@ -841,7 +842,7 @@ void func_800D4D68(void) {
 
     Vec3f vec;
 
-    temp1 = (renderedSprites[PLAYER].direction + func_8003C1A4(MAIN_MAP_INDEX)) % 8;
+    temp1 = (animatedSprites[PLAYER].direction + func_8003C1A4(MAIN_MAP_INDEX)) % 8;
     
     if (temp1 < 5) {
         temp2 = D_80117180[toolUse.unk_2];
@@ -908,16 +909,16 @@ void handleBlueFeatherUse(void) {
      
     toggleDailyEventBit(SUCCESSFUL_PROPOSAL);
     
-    if (D_801C3E18 == 0xFF) goto func_end;
+    if (npcTalkingTo == 0xFF) goto func_end;
 
-    func_80085D48(D_801C3E18, 0);
+    func_80085D48(npcTalkingTo, 0);
     
-    npcInfoArray[D_801C3E18].movingFlag = npcInfoArray[D_801C3E18].unk_1E;
+    npcInfoArray[npcTalkingTo].movingFlag = npcInfoArray[npcTalkingTo].unk_1E;
     
     setSpecialDialogueBit(0x135);
     
-    switch (D_801C3E18) {
-        case 0:
+    switch (npcTalkingTo) {
+        case MARIA:
             if (npcAffection[MARIA] >= 220) {
                 gWife = MARIA;   
                 setDailyEventBit(SUCCESSFUL_PROPOSAL);
@@ -925,7 +926,7 @@ void handleBlueFeatherUse(void) {
                 setDefaultBabyName(MARIA);
             }
             break;
-        case 1:
+        case POPURI:
             if (npcAffection[POPURI] >= 220) {
                 gWife = POPURI;
                 setDailyEventBit(SUCCESSFUL_PROPOSAL);
@@ -933,7 +934,7 @@ void handleBlueFeatherUse(void) {
                 setDefaultBabyName(POPURI);
             }
             break;
-        case 2:
+        case ELLI:
             if (npcAffection[ELLI] >= 220) {
                 gWife = ELLI;
                 setDailyEventBit(SUCCESSFUL_PROPOSAL);
@@ -941,7 +942,7 @@ void handleBlueFeatherUse(void) {
                 setDefaultBabyName(ELLI);
             }
             break;
-        case 3:
+        case ANN:
             if (npcAffection[ANN] >= 220) {
                 gWife = ANN;
                 setDailyEventBit(SUCCESSFUL_PROPOSAL);
@@ -949,7 +950,7 @@ void handleBlueFeatherUse(void) {
                 setDefaultBabyName(ANN);
             }
             break;
-        case 4:
+        case KAREN:
             if (npcAffection[KAREN] >= 220) {
                 gWife = KAREN;
                 setDailyEventBit(SUCCESSFUL_PROPOSAL);
@@ -962,8 +963,10 @@ void handleBlueFeatherUse(void) {
         }
 
     if (checkDailyEventBit(SUCCESSFUL_PROPOSAL)) {
+
         // use up blue feather if successful proposal
         gPlayer.currentTool = 0;
+
     }
     
 func_end:
@@ -988,25 +991,33 @@ void func_800D5130(void) {
 
 //INCLUDE_ASM(const s32, "itemHandlers", func_800D51B0);
 
+// inline, used by initializeGameVariables
 void func_800D51B0(void) {
+
     u8 i;
 
-    for (i = 0; i < 0xA; i++) {
-        D_80204DF8[i].unk_0.x = 0;
-        D_80204DF8[i].unk_0.y = 0;
-        D_80204DF8[i].unk_0.z = 0;
-        D_80204DF8[i].unk_C = 0;
-        D_80204DF8[i].unk_10 = 0;
-        D_80204DF8[i].unk_14 = 0;
-        D_80204DF8[i].unk_18.x = 0;
-        D_80204DF8[i].unk_18.y = 0;
-        D_80204DF8[i].unk_18.z = 0;
-        D_80204DF8[i].unk_24 = 0;
-        D_80204DF8[i].unk_26 = 0;
-        D_80204DF8[i].unk_28 = 0;
-        D_80204DF8[i].unk_2A = 0;
-        D_80204DF8[i].flags = 0;
+    for (i = 0; i < 10; i++) {
+
+        itemInfo[i].unk_0.x = 0;
+        itemInfo[i].unk_0.y = 0;
+        itemInfo[i].unk_0.z = 0;
+
+        itemInfo[i].unk_C.x = 0;
+        itemInfo[i].unk_C.y = 0;
+        itemInfo[i].unk_C.z = 0;
+
+        itemInfo[i].unk_18.x = 0;
+        itemInfo[i].unk_18.y = 0;
+        itemInfo[i].unk_18.z = 0;
+
+        itemInfo[i].unk_24 = 0;
+        itemInfo[i].unk_26 = 0;
+        itemInfo[i].unk_28 = 0;
+        itemInfo[i].unk_2A = 0;
+        itemInfo[i].flags = 0;
+
     }
+
 }
 
 
@@ -1017,8 +1028,8 @@ void func_800D5290(void) {
     u8 i;
     
     for (i = 0; i < 10; i++) {
-        if (D_80204DF8[i].flags & 1) {
-            func_800D56E8(i, D_80204DF8[i].unk_28);
+        if (itemInfo[i].flags & 1) {
+            func_800D56E8(i, itemInfo[i].unk_28);
         }    
     }
 }
@@ -1028,10 +1039,10 @@ void func_800D5290(void) {
 // tool acquisition handler
 u8 func_800D5308(u8 index, u8 arg1, u32 arg2, s32 arg3, s32 arg4) {
 
-    D_80204DF8[index].unk_2A = arg1;
-    D_80204DF8[index].unk_28 = arg2;
-    D_80204DF8[index].unk_26 = 0;
-    D_80204DF8[index].flags = arg3 | (arg4 | 1);
+    itemInfo[index].unk_2A = arg1;
+    itemInfo[index].unk_28 = arg2;
+    itemInfo[index].unk_26 = 0;
+    itemInfo[index].flags = arg3 | (arg4 | 1);
     
     gItemBeingHeld = func_800D67E4(arg2);
     
@@ -1046,7 +1057,7 @@ u8 func_800D5390(u8 index, u8 arg1, u32 arg2, u16 arg3, u8 arg4) {
     int tempBit = 1;
     
     while (index < 10 && !found) {
-        if (!(D_80204DF8[index].flags & 1)) {
+        if (!(itemInfo[index].flags & 1)) {
           found = 1;
         }
         else {
@@ -1055,10 +1066,10 @@ u8 func_800D5390(u8 index, u8 arg1, u32 arg2, u16 arg3, u8 arg4) {
     }
     
     if (found) {
-        D_80204DF8[index].unk_2A = arg1;
-        D_80204DF8[index].unk_28 = arg2;
-        D_80204DF8[index].flags = arg3 | (arg4 | tempBit);
-        D_80204DF8[index].unk_26 = 0;
+        itemInfo[index].unk_2A = arg1;
+        itemInfo[index].unk_28 = arg2;
+        itemInfo[index].flags = arg3 | (arg4 | tempBit);
+        itemInfo[index].unk_26 = 0;
         gItemBeingHeld = func_800D67E4(arg2);
     }
       
@@ -1076,7 +1087,7 @@ u8 func_800D5488(u8 index, u8 arg1, u32 arg2, u16 arg3, u8 arg4) {
     u8 found = 0;
     
     while (index < 10 && !found) {
-        if (!(D_80204DF8[index].flags & 1)) {
+        if (!(itemInfo[index].flags & 1)) {
           found = 1;
         }
         else {
@@ -1085,10 +1096,10 @@ u8 func_800D5488(u8 index, u8 arg1, u32 arg2, u16 arg3, u8 arg4) {
     }
 
     if (found) {
-        D_80204DF8[index].unk_2A = arg1;
-        D_80204DF8[index].unk_28 = arg2;
-        D_80204DF8[index].flags = arg3 | (arg4 | 1);
-        D_80204DF8[index].unk_26 = 0;
+        itemInfo[index].unk_2A = arg1;
+        itemInfo[index].unk_28 = arg2;
+        itemInfo[index].flags = arg3 | (arg4 | 1);
+        itemInfo[index].unk_26 = 0;
     }
     else {
         index = 0xff;
@@ -1101,25 +1112,25 @@ u8 func_800D5488(u8 index, u8 arg1, u32 arg2, u16 arg3, u8 arg4) {
 
 void func_800D5548(u8 index) {
 
-    if (D_80204DF8[index].flags & 1) {        
+    if (itemInfo[index].flags & 1) {        
         func_8002FA2C(index + 0x27);
-        D_80204DF8[index].unk_2A = 0;
-        D_80204DF8[index].flags = 0;
+        itemInfo[index].unk_2A = 0;
+        itemInfo[index].flags = 0;
     }
 }
 
 //INCLUDE_ASM(const s32, "itemHandlers", func_800D55B8);
 
 u16 func_800D55B8(u8 index) {
-    return D_80204DF8[index].unk_28;
+    return itemInfo[index].unk_28;
 }
 
 //INCLUDE_ASM(const s32, "itemHandlers", func_800D55E4);
 
 void func_800D55E4(u8 index, u8 arg1) {
 
-    if (D_80204DF8[index].flags & 1) {
-        D_80204DF8[index].unk_2A = arg1;
+    if (itemInfo[index].flags & 1) {
+        itemInfo[index].unk_2A = arg1;
     }
 }
 
@@ -1127,10 +1138,10 @@ void func_800D55E4(u8 index, u8 arg1) {
 
 void func_800D5628(u8 index, f32 arg1, f32 arg2, f32 arg3) {
 
-    D_80204DF8[index].unk_0.x = arg1;
-    D_80204DF8[index].unk_0.y = arg2;
-    D_80204DF8[index].unk_0.z = arg3;
-    D_80204DF8[index].flags |= 2;
+    itemInfo[index].unk_0.x = arg1;
+    itemInfo[index].unk_0.y = arg2;
+    itemInfo[index].unk_0.z = arg3;
+    itemInfo[index].flags |= 2;
 
 }
 
@@ -1138,10 +1149,10 @@ void func_800D5628(u8 index, f32 arg1, f32 arg2, f32 arg3) {
 
 void func_800D5688(u8 index, f32 arg1, f32 arg2, f32 arg3) {
 
-    D_80204DF8[index].unk_18.x = arg1;
-    D_80204DF8[index].unk_18.y = arg2;
-    D_80204DF8[index].unk_18.z = arg3;
-    D_80204DF8[index].flags |= 8;
+    itemInfo[index].unk_18.x = arg1;
+    itemInfo[index].unk_18.y = arg2;
+    itemInfo[index].unk_18.z = arg3;
+    itemInfo[index].flags |= 8;
      
 }
 
@@ -1308,11 +1319,11 @@ void func_800D6B28(void) {
 
 static inline void setVec3f(u8 index, float x, float y, float z) {
 
-    D_80204DF8[index].unk_0.x = x;
-    D_80204DF8[index].unk_0.y = y;
-    D_80204DF8[index].unk_0.z = z;
-    
-    D_80204DF8[index].flags |= 2;
+    itemInfo[index].unk_0.x = x;
+    itemInfo[index].unk_0.y = y;
+    itemInfo[index].unk_0.z = z;
+
+    itemInfo[index].flags |= 2;
 
 }
 
@@ -1322,10 +1333,10 @@ void func_800D6B58(u8 arg0, u8 index) {
     u8 temp2;
     u8 flags;
     
-    D_80204DF8[index].unk_18.x = 0;
-    D_80204DF8[index].unk_18.y = 0;
-    D_80204DF8[index].unk_18.z = 0;
-    D_80204DF8[index].flags |= 8;
+    itemInfo[index].unk_18.x = 0;
+    itemInfo[index].unk_18.y = 0;
+    itemInfo[index].unk_18.z = 0;
+    itemInfo[index].flags |= 8;
 
     func_8002FE10(index + 0x27, 0.0f, 0.0f, 0.0f, 0.0f);
     func_8002ECD4(index + 0x27, 0xFFFF, 0xFF);
@@ -1356,10 +1367,10 @@ void func_800D6B58(u8 arg0, u8 index) {
         }
         
         if (!(gCutsceneFlags & 1)) {
-            if (!checkLifeEventBit(0x5E) && !checkDailyEventBit(0x21) && (D_80204DF8[index].unk_28 - 0x25) < 2U && 8 < gHour && gHour < 17) {
+            if (!checkLifeEventBit(0x5E) && !checkDailyEventBit(0x21) && (itemInfo[index].unk_28 - 0x25) < 2U && 8 < gHour && gHour < 17) {
                 setDailyEventBit(0x47);
             }
-            if (!checkLifeEventBit(0x5F) && !checkDailyEventBit(0x21) && D_80204DF8[index].unk_28 ==  0x27 && 8 < gHour && gHour < 17) {
+            if (!checkLifeEventBit(0x5F) && !checkDailyEventBit(0x21) && itemInfo[index].unk_28 ==  0x27 && 8 < gHour && gHour < 17) {
                 setDailyEventBit(0x48);
             }
         }
@@ -1375,7 +1386,7 @@ void func_800D6B58(u8 arg0, u8 index) {
         }
         
         if (!(gCutsceneFlags & 1)) {
-            if (!checkDailyEventBit(0x46) && itemFlags[D_80204DF8[index].unk_28] & 0x8000 && 8 < gHour && gHour < 17 ) {
+            if (!checkDailyEventBit(0x46) && itemFlags[itemInfo[index].unk_28] & 0x8000 && 8 < gHour && gHour < 17 ) {
                 setDailyEventBit(0x45);    
             }
         }

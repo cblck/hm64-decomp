@@ -65,17 +65,18 @@ void controllerInit(void) {
     contPattern = nuContInit();
 }
 
-#ifdef PERMUTER
+//INCLUDE_ASM(const s32, "system/controller", func_8004CF68);
+
+// this requires button on NUContData struct to be volatile
 void func_8004CF68(void) {
     
-    u8 i;
-    u8 j;
+    u8 i, j;
     
     nuContDataGetExAll(contData);
     
-    for (i = 0; i < 4; i++) {
+    for (i = 0; i < NU_CONT_MAXCONTROLLERS; i++) {
         
-        if (!D_80181B90[i].errno) {
+        if (!contStatus[i].errno) {
             
             if ((frameCount % D_802226E2) == 0) {
                 
@@ -122,9 +123,9 @@ void func_8004CF68(void) {
 
             } else {
 
-                gControllers[i].button = contData[i].button & 0xFFFF;
+                gControllers[i].button = contData[i].button;
+
                 gControllers[i].buttonPressed = (gControllers[i].button ^ gControllers[i].buttonHeld) & gControllers[i].button;
-                
                 gControllers[i].buttonReleased = (gControllers[i].button ^ gControllers[i].buttonHeld) & gControllers[i].buttonHeld;
                 
                 gControllers[i].buttonHeld = gControllers[i].button;
@@ -136,9 +137,7 @@ void func_8004CF68(void) {
         }
     }
 }
-#else
-INCLUDE_ASM(const s32, "system/controller", func_8004CF68);
-#endif
+
 
 //INCLUDE_ASM(const s32, "system/controller", func_8004D35C);
 
@@ -189,44 +188,44 @@ u8 func_8004D458(u8 contIndex) {
 }
 
 #ifdef PERMUTER
-void func_8004D47C(u8 arg0) {
+void func_8004D47C(u8 controllerIndex) {
 
     volatile Sticks sticks;
     u8 temp4;
 
-    sticks.s_stick_x = D_8013D440[arg0].sticks.s_stick_x;
-    sticks.s_stick_y = D_8013D440[arg0].sticks.s_stick_y;
+    sticks.s_stick_x = controllers[controllerIndex].sticks.s_stick_x;
+    sticks.s_stick_y = controllers[controllerIndex].sticks.s_stick_y;
 
     sticks.u_stick_x = getAbsoluteValue((s32)sticks.s_stick_x) / 10;
     sticks.u_stick_y = getAbsoluteValue((s32)sticks.s_stick_y) / 10;
     
-    D_8013D440[arg0].sticks.u_stick_x = 0;
+    controllers[controllerIndex].sticks.u_stick_x = 0;
 
     if (sticks.u_stick_x < 3 && sticks.u_stick_y < 3) {
-        D_8013D440[arg0].sticks.u_stick_x = 0xFF;
+        controllers[controllerIndex].sticks.u_stick_x = 0xFF;
     } else {
         
         if (sticks.u_stick_x > sticks.u_stick_y) {
                     
-            D_8013D440[arg0].sticks.u_stick_y = sticks.u_stick_x - sticks.u_stick_y;
+            controllers[controllerIndex].sticks.u_stick_y = sticks.u_stick_x - sticks.u_stick_y;
             
-            if ((sticks.u_stick_x >> 1) < D_8013D440[arg0].sticks.u_stick_y) {
+            if ((sticks.u_stick_x >> 1) < controllers[controllerIndex].sticks.u_stick_y) {
                 if ((sticks.s_stick_x << 0x18) < 0) {
-                    D_8013D440[arg0].sticks.u_stick_x = 2;
+                    controllers[controllerIndex].sticks.u_stick_x = 2;
                 } else {
-                    D_8013D440[arg0].sticks.u_stick_x = 6;
+                    controllers[controllerIndex].sticks.u_stick_x = 6;
                 }
             } else if ((sticks.s_stick_y << 0x18) < 0) {
                 if ((sticks.s_stick_x << 0x18) < 0) {
-                    D_8013D440[arg0].sticks.u_stick_x = 1;
+                    controllers[controllerIndex].sticks.u_stick_x = 1;
                 } else {
-                    D_8013D440[arg0].sticks.u_stick_x = 7;
+                    controllers[controllerIndex].sticks.u_stick_x = 7;
                 }
             } else {
                 if ((sticks.s_stick_x << 0x18) < 0) {
-                    D_8013D440[arg0].sticks.u_stick_x = 3;
+                    controllers[controllerIndex].sticks.u_stick_x = 3;
                 } else {
-                    D_8013D440[arg0].sticks.u_stick_x = 5;
+                    controllers[controllerIndex].sticks.u_stick_x = 5;
                 }
     
             }
@@ -235,23 +234,23 @@ void func_8004D47C(u8 arg0) {
             
         } else {
 
-            D_8013D440[arg0].sticks.u_stick_y = sticks.u_stick_y - sticks.u_stick_x;
+            controllers[controllerIndex].sticks.u_stick_y = sticks.u_stick_y - sticks.u_stick_x;
             
-            if ((sticks.u_stick_y >> 1) < D_8013D440[arg0].sticks.u_stick_y) {
+            if ((sticks.u_stick_y >> 1) < controllers[controllerIndex].sticks.u_stick_y) {
                 if ((sticks.s_stick_y << 0x18) < 0) {
-                    D_8013D440[arg0].sticks.u_stick_x = 0;
+                    controllers[controllerIndex].sticks.u_stick_x = 0;
                     goto label;
                 } else if ((sticks.s_stick_x << 0x18) < 0) {
                     if ((sticks.s_stick_y << 0x18) < 0) {
-                        D_8013D440[arg0].sticks.u_stick_x = 1;
+                        controllers[controllerIndex].sticks.u_stick_x = 1;
                     } else {
-                        D_8013D440[arg0].sticks.u_stick_x = 3;
+                        controllers[controllerIndex].sticks.u_stick_x = 3;
                     }
                 } else {
                     if ((sticks.s_stick_y << 0x18) < 0) { 
-                        D_8013D440[arg0].sticks.u_stick_x = 7;
+                        controllers[controllerIndex].sticks.u_stick_x = 7;
                     } else {
-                        D_8013D440[arg0].sticks.u_stick_x = 5;
+                        controllers[controllerIndex].sticks.u_stick_x = 5;
                     }
                 }
             }
@@ -259,14 +258,14 @@ void func_8004D47C(u8 arg0) {
         }
 
 label:
-        D_8013D440[arg0].sticks.u_stick_y = sticks.u_stick_y;
+        controllers[controllerIndex].sticks.u_stick_y = sticks.u_stick_y;
     }
     
-    if (D_8013D440[arg0].sticks.u_stick_y >= 7) {
-        D_8013D440[arg0].sticks.u_stick_y = 6;
+    if (controllers[controllerIndex].sticks.u_stick_y >= 7) {
+        controllers[controllerIndex].sticks.u_stick_y = 6;
     }
     
-    D_8013D440[arg0].button |= 1U << D_8013D440[arg0].sticks.u_stick_x; 
+    controllers[controllerIndex].button |= 1U << controllers[controllerIndex].sticks.u_stick_x; 
    
 }
 #else
