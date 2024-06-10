@@ -1,6 +1,6 @@
 #include "common.h"
 
-#include "PRincontroller.h"
+#include "PRinternal/controller.h"
 
 extern OSPifRam D_80170400;
 extern u8 __osMaxControllers;
