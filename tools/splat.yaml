@@ -65,7 +65,7 @@ segments:
       - [ 0x4570, c, system/worldGraphics]
       - [ 0x4F30, c, system/sprite]
       - [ 0x63E0, c, system/globalSprites] 
-      - [ 0x9070, c, system/renderedSprites]
+      - [ 0x9070, c, system/animatedSprites]
       - [ 0xEBD0, c, system/map]
       - [ 0x16C70, c, system/mapContext]
       - [ 0x181C0, c, system/audio]
@@ -471,11 +471,29 @@ segments:
       - [ 0xFF560, .rodata, lib/os/libultra/rmon/rmonbreak]
       - { start: 0xFF5C0, type: bss, vram: 0x801241C0 }
 
+  - name: sramBuffer
+    type: code
+    start: 0xFF5C0
+    bss_size: 0x1000
+    vram: 0x8030D000
+    subsegments:
+      - [ 0xFF5C0, c, overlays/sramBuffer]
+      - { start:  0xFF5C0, type: .bss, vram: 0x8030D000, name: overlays/sramBuffer }
+
+  - name: gamePakBuffer
+    type: code
+    start: 0xFF5C0
+    bss_size: 0x100
+    vram: 0x8030E000
+    subsegments:
+      - [ 0xFF5C0, c, overlays/gamePakBuffer]
+      - { start:  0xFF5C0, type: .bss, vram: 0x8030E000, name: overlays/gamePakBuffer }
+
   - name: cutsceneMaps
     type: bin
     dir: cutscenes
     start: 0xFF5C0
-    follows_vram: main
+    follows_vram: gamePakBuffer
     files:
       - [0xFF5C0, bin, "cutscenes/cutsceneMap1"]
       - [0x100180, bin, "cutscenes/cutsceneMap2"]
