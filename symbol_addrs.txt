@@ -1238,8 +1238,6 @@ gFarmName = 0x8021E6D2;
 powerNutBits = 0x80215EB8;
 gElliGrievingCounter = 0x80215EC0;
 
-gEntranceIndex = 0x802231C0;
-
 pendingGfxNum = 0x802226E8;
 nusched = 0x80222B40;
 
