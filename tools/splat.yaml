@@ -182,7 +182,7 @@ segments:
       - [ 0xD98B0, c, lib/os/libultra/gu/mtxutil]
       - [ 0xD9B30, c, lib/os/libultra/gu/ortho]
       - [ 0xD9DB0, c, lib/os/libultra/gu/perspective]
-      - [ 0xDA130, c, lib/os/libultra/gu/rotate]
+      - [ 0xDA130, c, lib/os/libultra/gu/rotaterpy]
       - [ 0xDA450, c, lib/os/libultra/gu/scale]
       - [ 0xDA530, c, lib/os/libultra/gu/sins]
       - [ 0xDA6D0, c, lib/os/libultra/gu/translate]
@@ -381,7 +381,7 @@ segments:
       - [ 0xF8080, data, lib/nusys-1/nucontrmbmgr]
       - [ 0xF8090, data, lib/nusys-1/nucontpakjiston64]
       # library rodata
-      - [ 0xF80D0, .rodata, lib/os/libultra/gu/rotate]
+      - [ 0xF80D0, .rodata, lib/os/libultra/gu/rotaterpy]
       - [ 0xF80E0, rodata]  # lib/os/libultra/thread
       - [ 0xF8100, .rodata, lib/os/libultra/audio/sl]
       - [ 0xF8110, .rodata, lib/os/libultra/io/aisetnextbuf]
