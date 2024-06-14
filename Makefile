@@ -89,7 +89,8 @@ rebuild: clean-artifacts check
 
 rerun: clean split check
 
-extract: 
+extract:
+	@rm -rf assets/sprites
 	@cd tools && python3 ./extract.py
 
 build:
