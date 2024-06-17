@@ -69,14 +69,13 @@ extern f32 sinf(f32);
 
 //INCLUDE_RODATA(const s32, "system/graphic", D_8011EC40);
 
-INCLUDE_RODATA(const s32, "system/graphic", D_8011EC60);
+//INCLUDE_RODATA(const s32, "system/graphic", D_8011EC60);
 
-//static const char D_8011EC60 = "EX";
+static const char D_8011EC60[] = "EX";
 
-INCLUDE_RODATA(const s32, "system/graphic", D_8011EC64);
+//INCLUDE_RODATA(const s32, "system/graphic", D_8011EC64);
 
-//static const char *D_8011EC64 = "s:/system/graphic.c";
-
+static const char D_8011EC64[] = "s:/system/graphic.c";
 
 //INCLUDE_ASM(const s32, "system/graphic", graphicsInit);
 
@@ -344,9 +343,125 @@ Gfx* func_80026F88(Gfx* dl, HMBitmap* sprite, u32 offset, u16 height) {
     
 }
 
-// param1 = Vtx, 8021E6E0
-// vtx adjustments/shading
-INCLUDE_ASM(const s32, "system/graphic", func_800276AC);
+//INCLUDE_ASM(const s32, "system/graphic", func_800276AC);
+
+void func_800276AC(Vtx vtxs[], u16 width, u16 height, u16 textureSize, u16 arg4, u16 arg5, u16 arg6, u16 arg7, s16 arg8, u16 arg9, u8 r, u8 g, u8 b, u8 a) {
+    
+    u8 coordinate1;
+    u8 coordinate2;
+    u8 coordinate3;
+    
+    u16 temp;
+    u16 temp2;
+    u16 temp3;
+    u16 temp4;
+
+    switch ((arg9 >> 7) & 3) {
+        case 2:
+            coordinate1 = 0;
+            coordinate3 = 1;
+            coordinate2 = 2;
+            break;
+
+        case 3:
+            coordinate1 = 0;
+            coordinate3 = 2;
+            coordinate2 = 1;
+            break;
+
+        case 0:
+
+        case 1:
+
+        default:
+            break;
+    }
+
+    temp = height >> 1;
+    temp3 = width >> 1;
+    
+    if (arg5) {
+        vtxs[0].v.tc[0] = width << 6;
+        vtxs[3].v.tc[0] = width << 6;
+        
+        vtxs[1].v.tc[0] = 0;
+        vtxs[2].v.tc[0] = 0;
+        
+        vtxs[0].v.ob[coordinate1] = -temp3 - arg7;
+        vtxs[3].v.ob[coordinate1] = -temp3 - arg7;
+        
+        vtxs[2].v.ob[coordinate1] = vtxs[1].v.ob[coordinate1] = vtxs[0].v.ob[coordinate1] + width;
+        
+    } else {
+        
+        vtxs[1].v.tc[0] = width << 6;
+        vtxs[2].v.tc[0] = width << 6;
+        
+        vtxs[0].v.tc[0] = 0;
+        vtxs[3].v.tc[0] = 0;
+        
+        vtxs[0].v.ob[coordinate1] = arg7 - temp3;
+        vtxs[3].v.ob[coordinate1] = arg7 - temp3;
+        
+        vtxs[2].v.ob[coordinate1] = vtxs[1].v.ob[coordinate1] = vtxs[0].v.ob[coordinate1] + width;  
+        
+    }
+    
+    vtxs[2].v.tc[1] = textureSize << 6;
+    vtxs[3].v.tc[1] = textureSize << 6;
+    
+    vtxs[0].v.tc[1] = 0;
+    vtxs[1].v.tc[1] = 0;
+    
+    switch ((arg9 >> 5) & 3) {
+        case 2:
+            vtxs[0].v.ob[coordinate3] = (temp - arg4) - arg8;
+            vtxs[1].v.ob[coordinate3] = (temp - arg4) - arg8;
+            vtxs[3].v.ob[coordinate3] = vtxs[2].v.ob[coordinate3] = temp2 = vtxs[0].v.ob[coordinate3] - textureSize;
+            break;
+
+        case 1:
+            vtxs[0].v.ob[coordinate3] = arg4 - arg8;
+            vtxs[1].v.ob[coordinate3] = arg4 - arg8;
+            vtxs[3].v.ob[coordinate3] = vtxs[2].v.ob[coordinate3] = temp4 = vtxs[0].v.ob[coordinate3] - textureSize;
+            break;
+
+        case 3:
+            vtxs[0].v.ob[coordinate3] = (height - arg4) - arg8;
+            vtxs[1].v.ob[coordinate3] = (height - arg4) - arg8;
+            vtxs[3].v.ob[coordinate3] = vtxs[2].v.ob[coordinate3] = temp2 = vtxs[0].v.ob[coordinate3] - textureSize;
+            break;
+
+        default:
+            break;
+    }
+
+    vtxs[0].v.ob[coordinate2] = 0;
+    vtxs[1].v.ob[coordinate2] = 0;
+    vtxs[2].v.ob[coordinate2] = 0;
+    vtxs[3].v.ob[coordinate2] = 0;
+
+    vtxs[0].v.cn[0] = r;
+    vtxs[0].v.cn[1] = g;
+    vtxs[0].v.cn[2] = b;
+    vtxs[0].v.cn[3] = a;
+    
+    vtxs[1].v.cn[0] = r;
+    vtxs[1].v.cn[1] = g;
+    vtxs[1].v.cn[2] = b;
+    vtxs[1].v.cn[3] = a;
+
+    vtxs[2].v.cn[0] = r;
+    vtxs[2].v.cn[1] = g;
+    vtxs[2].v.cn[2] = b;
+    vtxs[2].v.cn[3] = a;
+    
+    vtxs[3].v.cn[0] = r;
+    vtxs[3].v.cn[1] = g;
+    vtxs[3].v.cn[2] = b;
+    vtxs[3].v.cn[3] = a;
+    
+}
 
 //INCLUDE_ASM(const s32, "system/graphic", sinfRadians);
 
@@ -455,7 +570,7 @@ void func_80027B74(Vec3f arg0, Vec3f* arg1, f32 arg2, f32 arg3, f32 arg4, f32 ar
 
 //INCLUDE_ASM(const s32, "system/graphic", func_80027BFC);
 
-inline Coordinates* func_80027BFC(Coordinates* arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6, f32 arg7, f32 arg8, f32 arg9) {
+Coordinates* func_80027BFC(Coordinates* arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6, f32 arg7, f32 arg8, f32 arg9) {
     
     Coordinates vec;
     f32 temp_f12;
@@ -495,10 +610,61 @@ inline Coordinates* func_80027BFC(Coordinates* arg0, f32 arg1, f32 arg2, f32 arg
         vec.y = temp_f22;
         vec.z = temp_f20;
         vec.w = -(((temp_f22_2 * arg1) + (temp_f22 * arg2)) + (temp_f20 * arg3));
+
     }
     
     *arg0 = vec;
     return arg0;
+
+}
+
+// need different return type to match func_80027E10
+static inline Coordinates func_80027BFC_static_inline(Coordinates* arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6, f32 arg7, f32 arg8, f32 arg9) {
+
+    Coordinates vec;
+
+    f32 temp_f12;
+    f32 temp_f14;
+    f32 temp_f20;
+    f32 temp_f20_2;
+    f32 temp_f22;
+    f32 temp_f22_2;
+    f32 temp_f24;
+    f32 temp_f24_2;
+    f32 var_f0;
+
+    temp_f14 = (arg2 * (arg6 - arg9)) + (arg5 * (arg9 - arg3));
+    temp_f24 = temp_f14 + (arg8 * (arg3 - arg6));
+    temp_f22_2 = temp_f24;
+
+    temp_f22 = ((arg3 * (arg4 - arg7)) + (arg6 * (arg7 - arg1))) + (arg9 * (arg1 - arg4));
+    temp_f20 = ((arg1 * (arg5 - arg8)) + (arg4 * (arg8 - arg2))) + (arg7 * (arg2 - arg5));
+    temp_f12 = ((temp_f24 * temp_f24) + (temp_f22 * temp_f22)) + (temp_f20 * temp_f20);
+
+    var_f0 = sqrtf(temp_f12);
+
+    if (var_f0 == 0) {
+
+        vec.x = 0.0f;
+        vec.y = 0.0f;
+        vec.z = 0.0f;
+        vec.w = 0.0f;
+
+    } else {
+
+        temp_f22_2 /= var_f0;
+        temp_f22 /= var_f0;
+        temp_f20 /= var_f0;
+
+        vec.x = temp_f22_2;
+        vec.y = temp_f22;
+        vec.z = temp_f20;
+        vec.w = -(((temp_f22_2 * arg1) + (temp_f22 * arg2)) + (temp_f20 * arg3));
+
+    }
+
+    return vec;
+    
 }
 
 //INCLUDE_ASM(const s32, "system/graphic", func_80027DC0);
@@ -517,44 +683,60 @@ f32 func_80027DC0(f32 arg0, f32 arg1, Coordinates vec) {
     return result;
 }
 
-#ifdef PERMUTER
-u8 func_80027E10(Coordinates arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6, f32 arg7, f32 arg8, f32 arg9) {
+//INCLUDE_ASM(const s32, "system/graphic", func_80027E10);
 
+u8 func_80027E10(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6, f32 arg7, f32 arg8, f32 arg9, f32 argA, f32 argB) {
+
+    Coordinates coordinates;
+    
     u8 count = 0;
-
-    func_80027BFC(&arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
-
-    if (arg0.x >= 0.0f) {
-        count = 1;
-    }
-
-    func_80027BFC(&arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
-
-    if (arg0.x >= 0.0f) {
+    
+    coordinates = func_80027BFC_static_inline(&coordinates, arg3, arg4, arg5, arg6, arg7, arg8, arg0, arg1, arg2);
+    
+    if (coordinates.y >= 0.0f) {
         count++;
     }
+    
+    coordinates = func_80027BFC_static_inline(&coordinates, arg6, arg7, arg8, arg9, argA, argB, arg0, arg1, arg2);
 
-    func_80027BFC(&arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9);
-
-    if (arg0.x >= 0.0f) {
+    if (coordinates.y >= 0.0f) {
         count++;
     }
-
-    return count / 3;
+    
+    coordinates = func_80027BFC_static_inline(&coordinates, arg9, argA, argB, arg3, arg4, arg5, arg0, arg1, arg2);
+    
+    if (coordinates.y >= 0.0f) {
+        count++;
+    }
+    
+    count = count / 3;
+    
+    return count;
     
 }
-#else
-INCLUDE_ASM(const s32, "system/graphic", func_80027E10);
-#endif
+
+//INCLUDE_ASM(const s32, "system/graphic", func_800284E8);
 
 // dot product?
-#ifdef PERMUTER
-f32 func_800284E8(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6) {
-    return (arg3 * arg0) + (arg4 * arg1) + (arg5 * arg2) + arg6;
+f32 func_800284E8(f32 arg0, f32 arg1, f32 arg2, Coordinates coordinates) {
+    
+    f32 x = coordinates.x * arg0;
+    f32 y = coordinates.y * arg1;
+    f32 z = coordinates.z * arg2;
+    f32 w = coordinates.w * 1;
+  
+    return x + y + z + w;
+    
 }
-#else
-INCLUDE_ASM(const s32, "system/graphic", func_800284E8);
-#endif
+
+// alternate
+/*
+f32 func_800284E8(f32 arg0, f32 arg1, f32 arg2, Coordinates coordinates) {
+    f32 temp = coordinates.x * arg0;
+  
+    return (temp) + (coordinates.y * arg1) + (coordinates.z * arg2) + coordinates.w;    
+}
+*/
 
 //INCLUDE_RODATA(const s32, "system/graphic", directionsToYValues);
 
