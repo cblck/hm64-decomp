@@ -301,7 +301,7 @@ segments:
       - [ 0xE6420, c, lib/os/libultra/io/contramwrite]
       - [ 0xE6640, c, lib/os/libultra/io/crc]
       - [ 0xE6730, c, lib/os/libultra/io/devmgr]
-      - [ 0xE6AF0, c, lib/os/libultra/io/epirawstartdma]
+      - [ 0xE6AF0, c, lib/os/libultra/io/epirawdma]
       - [ 0xE6CE0, c, lib/os/libultra/io/epirawread]
       - [ 0xE6E50, c, lib/os/libultra/io/epirawwrite]
       - [ 0xE6FC0, c, lib/os/libultra/io/pfschecker]
