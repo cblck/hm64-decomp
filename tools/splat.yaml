@@ -406,7 +406,7 @@ segments:
       - [ 0xF9700, rodata] # lib/os/libultra/io/vitbl?
       - [ 0xF9800, rodata] # lib/os/libultra/printf
       - [ 0xF9850, .rodata, lib/os/libultra/io/contpfs]
-      - [ 0xF9860, rodata] # contramread // __osPfsLastChannel  
+      - [ 0xF9860, .rodata, lib/os/libultra/io/contramread]  
       - [ 0xF9870, .rodata, lib/os/libultra/rmon/rmoncmd] 
       - [ 0xF9950, .rodata, lib/os/libultra/rmon/rmonmain]
       - [ 0xF9960, .rodata, lib/os/libultra/libc/xlitob]
