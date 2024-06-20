@@ -8,3 +8,5 @@ INCLUDE_ASM(const s32, "lib/os/libultra/os/timerintr", __osTimerInterrupt);
 INCLUDE_ASM(const s32, "lib/os/libultra/os/timerintr", __osSetTimerIntr);
 
 INCLUDE_ASM(const s32, "lib/os/libultra/os/timerintr", __osInsertTimer);
+
+INCLUDE_RODATA(const s32, "lib/os/libultra/os/timerintr", __osTimerList);
