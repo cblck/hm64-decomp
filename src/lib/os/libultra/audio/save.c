@@ -16,9 +16,9 @@
  * DOD or NASA FAR Supplement. Unpublished - rights reserved under the
  * Copyright Laws of the United States.
  *====================================================================*/
-#include <libaudio.h>
+#include <PR/libaudio.h>
 #include "synthInternals.h"
-#include <os.h>
+#include <PR/os.h>
 #include <assert.h>
  // TODO: this comes from a header
 #ident "$Revision: 1.17 $"
