@@ -58,6 +58,8 @@ dir_guard = @mkdir -p $(@D)
 
 build/src/lib/nusys-1/nuboot.c.o: NU_OPTFLAGS := -O0
 
+build/src/lib/os/libultra/io/aisetnextbuf.c.o: LIBULTRA_OPTFLAGS := -O3 -DBUILD_VERSION=6 -funsigned-char
+
 all: check
 
 clean:
