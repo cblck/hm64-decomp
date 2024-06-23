@@ -467,8 +467,21 @@ segments:
       - [ 0xFF4D8, .rodata, lib/os/libultra/rmon/rmonmem]
       - [ 0xFF4F0, .rodata, lib/os/libultra/libc/xldtob]
       - [ 0xFF560, .rodata, lib/os/libultra/rmon/rmonbreak]
-      - { start: 0xFF5C0, type: bss, vram: 0x801241C0 }
-
+      - { type:  bss, vram: 0x801241C0, name: part01 } # idleThread ... D_801338F0
+      - { type:  bss, vram: 0x80135AA0, name: lib/os/libultra/io/sptask }
+      - { type:  bss, vram: 0x80135AE0, name: lib/os/libultra/io/motor }
+      - { type:  bss, vram: 0x80135BE0, name: lib/os/libultra/io/pimgr }
+      - { type:  bss, vram: 0x801373A0, name: lib/os/libultra/io/vimgr }
+      - { type:  bss, vram: 0x801385C0, name: lib/os/libultra/debug/kdebugserver }
+      - { type:  bss, vram: 0x801385D0, name: lib/os/libultra/host/readhost }
+      - { type:  bss, vram: 0x801385F0, name: lib/os/libultra/io/siacs }
+      - { type: .bss, vram: 0x80138610, name: lib/os/libultra/rmon/rmonsio }
+      - { type:  bss, vram: 0x80138630, name: lib/os/libultra/rmon/rmonmisc }
+      - { type:  bss, vram: 0x8013C840, name: lib/os/libultra/rmon/rmonreg }
+      - { type:  bss, vram: 0x8013C860, name: lib/os/libultra/rmon/rmonmain }
+      - { type:  bss, vram: 0x8013CCE0, name: lib/os/libultra/rmon/rmonbrk }
+      - { type:  bss, vram: 0x8013CDF0, name: part02 } # sRandNext ... D_80237A20
+      
   - name: sramBuffer
     type: code
     start: 0xFF5C0
