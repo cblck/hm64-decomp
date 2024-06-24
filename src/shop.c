@@ -142,14 +142,14 @@ void func_800DCAB8(void) {
         case 0:           
             
             func_8003F54C(0, 24.0f, -64.0f, 352.0f);
-            func_8003F690(0, 0, 0, 0);
+            setDialogueBoxSpriteIndices(0, 0, 0, 0);
             func_8003F360(0, -4, 0);
             
             if (D_80119580[shopContext.storeItemIndex] == 0) {
-                func_8003DDF8(0, D_80118E80[shopContext.storeItemIndex], shopContext.unk_0, 0);
+                initializeDialogueBox(MAIN_DIALOGUE_BOX_INDEX, D_80118E80[shopContext.storeItemIndex], shopContext.unk_0, 0);
                 shopContext.unk_3 = 3;
             } else {
-                func_8003DDF8(0, D_80118E80[shopContext.storeItemIndex], shopContext.unk_0, 0x8000);
+                initializeDialogueBox(MAIN_DIALOGUE_BOX_INDEX, D_80118E80[shopContext.storeItemIndex], shopContext.unk_0, 0x8000);
                 shopContext.unk_3++;
             }
             
@@ -170,8 +170,8 @@ void func_800DCAB8(void) {
                 func_8003F360(0, -4, 2);
                 func_8003FBD8(0x12, shopContext.quantity * prices[shopContext.storeItemIndex], 0);
                 func_8003F54C(0, 24.0f, -64.0f, 352.0f);
-                func_8003F690(0, 0, 0, 0);
-                func_8003DDF8(0, D_80118E80[shopContext.storeItemIndex], D_80118BE0[shopContext.storeItemIndex], 0x80000);
+                setDialogueBoxSpriteIndices(0, 0, 0, 0);
+                initializeDialogueBox(MAIN_DIALOGUE_BOX_INDEX, D_80118E80[shopContext.storeItemIndex], D_80118BE0[shopContext.storeItemIndex], 0x80000);
                 
                 shopContext.unk_3++;         
             }
@@ -314,38 +314,38 @@ void func_800DCAB8(void) {
 
             func_80045F5C(1, gGold, 8, 3);
             func_8003F54C(0, 24.0f, -64.0f, 352.0f);
-            func_8003F690(0, 0, 0, 0);
+            setDialogueBoxSpriteIndices(0, 0, 0, 0);
             func_8003F360(0, -4, 0);
 
             switch (temp) {                        
                 
                 case 0:                                     
-                    func_8003DDF8(0, D_80118E80[shopContext.storeItemIndex], D_80118D30[shopContext.storeItemIndex], 0);
+                    initializeDialogueBox(MAIN_DIALOGUE_BOX_INDEX, D_80118E80[shopContext.storeItemIndex], D_80118D30[shopContext.storeItemIndex], 0);
                     shopContext.unk_3 = 7;
                     return;
                 
                 case 1:
                     // FIXME: this is a hack to force match
                     temp2 = &shopContext.storeItemIndex;
-                    func_8003DDF8(0, D_80118E80[temp2[0]], D_80118CC0[shopContext.storeItemIndex], 0);
+                    initializeDialogueBox(MAIN_DIALOGUE_BOX_INDEX, D_80118E80[temp2[0]], D_80118CC0[shopContext.storeItemIndex], 0);
                     break;
                 
                 case 2:                
                     temp2 = &shopContext.storeItemIndex;
                     if (D_80118E10[temp2[0]]) {
-                        func_8003DDF8(0, D_80118E80[temp2[0]], D_80118E10[shopContext.storeItemIndex], 0);
+                        initializeDialogueBox(MAIN_DIALOGUE_BOX_INDEX, D_80118E80[temp2[0]], D_80118E10[shopContext.storeItemIndex], 0);
                     } 
                     
                     break;
                 
                 case 3:
-                    func_8003DDF8(0, D_80118E80[shopContext.storeItemIndex], D_80118DA0[shopContext.storeItemIndex], 0);
+                    initializeDialogueBox(MAIN_DIALOGUE_BOX_INDEX, D_80118E80[shopContext.storeItemIndex], D_80118DA0[shopContext.storeItemIndex], 0);
                     shopContext.unk_3 = 5;
                     return;
                 
                 case 4:
                     temp2 = &shopContext.storeItemIndex;
-                    func_8003DDF8(0, D_80118E80[temp2[0]], D_801FB9CC, 0);
+                    initializeDialogueBox(MAIN_DIALOGUE_BOX_INDEX, D_80118E80[temp2[0]], D_801FB9CC, 0);
                     break;
                 
                 default:
@@ -363,9 +363,9 @@ void func_800DCAB8(void) {
        case 4:        
 
             func_8003F54C(0, 24.0f, -64.0f, 352.0f);
-            func_8003F690(0, 0, 0, 0);
+            setDialogueBoxSpriteIndices(0, 0, 0, 0);
             func_8003F360(0, -4, 0);
-            func_8003DDF8(0, D_80118E80[shopContext.storeItemIndex], D_80118C50[shopContext.storeItemIndex], 0);
+            initializeDialogueBox(MAIN_DIALOGUE_BOX_INDEX, D_80118E80[shopContext.storeItemIndex], D_80118C50[shopContext.storeItemIndex], 0);
             shopContext.unk_3 = 5;
 
             break;

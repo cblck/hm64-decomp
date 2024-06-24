@@ -218,6 +218,7 @@ void func_800E1998(void) {
 void func_800E1A94(void) {
 
     if (loadGameScreenContext.showControllerPakScreen == 0) {
+
         if (loadGameScreenContext.fontLoadingFlags[0] & 1) { 
             func_8003DD14(0);
             func_8003DBE8(0, (void*)0x8030B000);
@@ -226,11 +227,12 @@ void func_800E1A94(void) {
             func_8003F630(0, 0, 2);
             func_8003F464(0, 0xE, 0xE, (void*)0x802FF000, (void*)0x8030A000);
             func_8003F360(0, ~(1 | 2), 2);
-            func_8003F690(0, 0xFF, 0, 0);
+            setDialogueBoxSpriteIndices(0, 0xFF, 0, 0);
             func_8003FAF8(0, 0x8000);
             func_8003FB4C(0, 1);
-            func_8003DDF8(0, 0, 1, 0x80000);
+            initializeDialogueBox(MAIN_DIALOGUE_BOX_INDEX, 0, 1, 0x80000);
         }
+
         if (loadGameScreenContext.fontLoadingFlags[1] & 1) {
             func_8003DD14(1);
             func_8003DBE8(1, (void*)0x8030B400);
@@ -239,11 +241,12 @@ void func_800E1A94(void) {
             func_8003F630(1, 0, 2);
             func_8003F464(1, 0xE, 0xE, (void*)0x802FF000, (void*)0x8030A000);
             func_8003F360(1, -4, 2);
-            func_8003F690(1, 0xFF, 0, 0);
+            setDialogueBoxSpriteIndices(1, 0xFF, 0, 0);
             func_8003FAF8(1, 0x8000);
             func_8003FB4C(1, 1);
-            func_8003DDF8(1, 0, 2, 0x80000);
+            initializeDialogueBox(1, 0, 2, 0x80000);
         }
+
         if (loadGameScreenContext.fontLoadingFlags[2] & 1) {
             func_8003DD14(2);
             func_8003DBE8(2, (void*)0x8030B800);
@@ -252,11 +255,12 @@ void func_800E1A94(void) {
             func_8003F630(2, 0, 2);
             func_8003F464(2, 0xE, 0xE, (void*)0x802FF000, (void*)0x8030A000);
             func_8003F360(2, -4, 2);
-            func_8003F690(2, 0xFF, 0, 0);
+            setDialogueBoxSpriteIndices(2, 0xFF, 0, 0);
             func_8003FAF8(2, 0x8000);
             func_8003FB4C(2, 1);
-            func_8003DDF8(2, 0, 3, 0x80000);
+            initializeDialogueBox(2, 0, 3, 0x80000);
         }
+
         if (loadGameScreenContext.fontLoadingFlags[3] & 1) {
             func_8003DD14(3);
             func_8003DBE8(3, (void*)0x8030BC00);
@@ -265,12 +269,14 @@ void func_800E1A94(void) {
             func_8003F630(3, 0, 2);
             func_8003F464(3, 0xE, 0xE, (void*)0x802FF000, (void*)0x8030A000);
             func_8003F360(3, -4, 2);
-            func_8003F690(3, 0xFF, 0, 0);
+            setDialogueBoxSpriteIndices(3, 0xFF, 0, 0);
             func_8003FAF8(3, 0x8000);
             func_8003FB4C(3, 1);
-            func_8003DDF8(3, 0, 4, 0x80000);
+            initializeDialogueBox(3, 0, 4, 0x80000);
         }
+
     } else {
+
         if (loadGameScreenContext.fontLoadingFlags[0] & 1) {
             func_8003DD14(0);
             func_8003DBE8(0, (void*)0x8030B000);
@@ -279,11 +285,12 @@ void func_800E1A94(void) {
             func_8003F630(0, 0, 2);
             func_8003F464(0, 0xE, 0xE, (void*)0x802FF000, (void*)0x8030A000);
             func_8003F360(0, ~(1 | 2), 2);
-            func_8003F690(0, 0xFF, 0, 0);
+            setDialogueBoxSpriteIndices(0, 0xFF, 0, 0);
             func_8003FAF8(0, 0x8000);
             func_8003FB4C(0, 1);
-            func_8003DDF8(0, 0, 1, 0x80000);
+            initializeDialogueBox(MAIN_DIALOGUE_BOX_INDEX, 0, 1, 0x80000);
         }
+        
         if (loadGameScreenContext.fontLoadingFlags[1] & 1) {
             func_8003DD14(1);
             func_8003DBE8(1, (void*)0x8030B400);
@@ -292,10 +299,10 @@ void func_800E1A94(void) {
             func_8003F630(1, 0, 2);
             func_8003F464(1, 0xE, 0xE, (void*)0x802FF000, (void*)0x8030A000);
             func_8003F360(1, -4, 2);
-            func_8003F690(1, 0xFF, 0, 0);
+            setDialogueBoxSpriteIndices(1, 0xFF, 0, 0);
             func_8003FAF8(1, 0x8000);
             func_8003FB4C(1, 1);
-            func_8003DDF8(1, 0, 2, 0x80000);
+            initializeDialogueBox(1, 0, 2, 0x80000);
         }
     }
 }
