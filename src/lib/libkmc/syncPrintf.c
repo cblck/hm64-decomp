@@ -9,10 +9,10 @@ INCLUDE_ASM(const s32, "lib/libkmc/syncPrintf", rmonPrintf);
 // proutSyncPrintF or proutSprintF
 INCLUDE_ASM(const s32, "lib/libkmc/syncPrintf", func_80100F84);
 
-INCLUDE_RODATA(const s32, "lib/libkmc/syncPrintf", syncprintf_data_0000);
+INCLUDE_RODATA(const s32, "lib/libkmc/syncPrintf", stat);
 
-INCLUDE_RODATA(const s32, "lib/libkmc/syncPrintf", syncprintf_data_0004);
+INCLUDE_RODATA(const s32, "lib/libkmc/syncPrintf", wport);
 
-INCLUDE_RODATA(const s32, "lib/libkmc/syncPrintf", syncprintf_data_0008);
+INCLUDE_RODATA(const s32, "lib/libkmc/syncPrintf", piok);
 
-INCLUDE_RODATA(const s32, "lib/libkmc/syncPrintf", syncprintf_data_000C);
+INCLUDE_RODATA(const s32, "lib/libkmc/syncPrintf", column);
