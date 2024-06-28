@@ -33,9 +33,9 @@ void func_80042F60(void) {
 
     u16 i;
  
-    for (i = 0; i < 1; i++) {
+    for (i = 0; i < MAX_DIALOGUES; i++) {
         dialogues[i].struct5.dialogueIndex = 0;
-        dialogues[i].struct5.dialogueAddressIndex = 0;
+        dialogues[i].struct5.dialogueMapAddressesIndex = 0;
         dialogues[i].struct5.dialogueBoxIndex1 = 0;
         dialogues[i].struct5.scrollSfxIndex = 0xFF;
         dialogues[i].struct5.closeSfxIndex = 0xFF;
@@ -46,7 +46,7 @@ void func_80042F60(void) {
 
 //INCLUDE_ASM(const s32, "system/dialogue", func_80042FEC);
 
-bool func_80042FEC(u16 index, u16 arg1, u16 arg2) {
+bool func_80042FEC(u16 index, u16 dialogueBoxIndex1, u16 dialogueBoxIndex2) {
 
     bool result = FALSE;
  
@@ -55,8 +55,8 @@ bool func_80042FEC(u16 index, u16 arg1, u16 arg2) {
         dialogues[index].struct5.scrollSfxIndex = 0xFF;
         dialogues[index].struct5.closeSfxIndex = 0xFF;
         dialogues[index].struct5.unk_8 = 0xFF;
-        dialogues[index].struct5.dialogueBoxIndex1 = arg1;
-        dialogues[index].struct5.dialogueBoxIndex2 = arg2;
+        dialogues[index].struct5.dialogueBoxIndex1 = dialogueBoxIndex1;
+        dialogues[index].struct5.dialogueBoxIndex2 = dialogueBoxIndex2;
 
         dialogues[index].struct5.flags = 1;
         
@@ -68,21 +68,21 @@ bool func_80042FEC(u16 index, u16 arg1, u16 arg2) {
     
 }
 
-//INCLUDE_ASM(const s32, "system/dialogue", func_80043050);
+//INCLUDE_ASM(const s32, "system/dialogue", setdialogueMapAddressInfo);
 
-bool func_80043050(u16 index, u16 arg1, u16 arg2, void* arg3, void* arg4, void* arg5, void* arg6, void* arg7) {
+bool setDialogueMapAddressInfo(u16 index, u16 arg1, u16 arg2, u32 romStart, u32 romEnd, void* vaddr, u32 romIndex, void* vaddrIndex) {
 
     bool result = FALSE;
     
     if (index < TOTAL_CONVERSATION_BANKS) {
 
-        dialogueAddresses[index].unk_14 = arg1;
-        dialogueAddresses[index].unk_16 = arg2;
-        dialogueAddresses[index].romStart = arg3;
-        dialogueAddresses[index].romEnd = arg4;
-        dialogueAddresses[index].vaddr = arg5;
-        dialogueAddresses[index].romIndex = arg6;
-        dialogueAddresses[index].vaddrIndex = arg7;
+        dialogueMapAddresses[index].unk_14 = arg1;
+        dialogueMapAddresses[index].unk_16 = arg2;
+        dialogueMapAddresses[index].romStart = romStart;
+        dialogueMapAddresses[index].romEnd = romEnd;
+        dialogueMapAddresses[index].vaddr = vaddr;
+        dialogueMapAddresses[index].romIndex = romIndex;
+        dialogueMapAddresses[index].vaddrIndex = vaddrIndex;
         
         result = TRUE;
 
@@ -153,24 +153,24 @@ bool func_8004318C(u16 index, u16 spriteIndex, u32 romTextureStart, u32 romTextu
 
     if (index == 0 && (dialogues[index].struct5.flags & ACTIVE)) {
   
-        dialogues[index].struct2.romTextureStart = romTextureStart;
-        dialogues[index].struct2.romTextureEnd = romTextureEnd;
-        dialogues[index].struct2.romIndexStart = romIndexStart;
-        dialogues[index].struct2.romIndexEnd = romIndexEnd;
+        dialogues[index].dialogueButtonIcon1.romTextureStart = romTextureStart;
+        dialogues[index].dialogueButtonIcon1.romTextureEnd = romTextureEnd;
+        dialogues[index].dialogueButtonIcon1.romIndexStart = romIndexStart;
+        dialogues[index].dialogueButtonIcon1.romIndexEnd = romIndexEnd;
   
-        dialogues[index].struct2.vaddrTextureStart = vaddrTextureStart;
-        dialogues[index].struct2.vaddrTextureEnd = vaddrTextureEnd;
-        dialogues[index].struct2.vaddrIndexStart = vaddrIndexStart;
-        dialogues[index].struct2.vaddrIndexEnd = vaddrIndexEnd;
-        dialogues[index].struct2.unk_20 = argA;
+        dialogues[index].dialogueButtonIcon1.vaddrTextureStart = vaddrTextureStart;
+        dialogues[index].dialogueButtonIcon1.vaddrTextureEnd = vaddrTextureEnd;
+        dialogues[index].dialogueButtonIcon1.vaddrIndexStart = vaddrIndexStart;
+        dialogues[index].dialogueButtonIcon1.vaddrIndexEnd = vaddrIndexEnd;
+        dialogues[index].dialogueButtonIcon1.unk_20 = argA;
  
-        dialogues[index].struct2.spriteIndex = spriteIndex;
-        dialogues[index].struct2.spriteOffset = spriteOffset;
-        dialogues[index].struct2.flag = flag;
+        dialogues[index].dialogueButtonIcon1.spriteIndex = spriteIndex;
+        dialogues[index].dialogueButtonIcon1.spriteOffset = spriteOffset;
+        dialogues[index].dialogueButtonIcon1.flag = flag;
 
-        dialogues[index].struct2.coordinates.x = x;
-        dialogues[index].struct2.coordinates.y = y;
-        dialogues[index].struct2.coordinates.z = z;
+        dialogues[index].dialogueButtonIcon1.coordinates.x = x;
+        dialogues[index].dialogueButtonIcon1.coordinates.y = y;
+        dialogues[index].dialogueButtonIcon1.coordinates.z = z;
         
         result = TRUE;
         
@@ -190,24 +190,24 @@ bool func_80043260(u16 index, u16 spriteIndex, u32 romTextureStart, u32 romTextu
 
     if (index == 0 && (dialogues[index].struct5.flags & ACTIVE)) {
   
-        dialogues[index].struct3.romTextureStart = romTextureStart;
-        dialogues[index].struct3.romTextureEnd = romTextureEnd;
-        dialogues[index].struct3.romIndexStart = romIndexStart;
-        dialogues[index].struct3.romIndexEnd = romIndexEnd;
+        dialogues[index].dialogueButtonIcon2.romTextureStart = romTextureStart;
+        dialogues[index].dialogueButtonIcon2.romTextureEnd = romTextureEnd;
+        dialogues[index].dialogueButtonIcon2.romIndexStart = romIndexStart;
+        dialogues[index].dialogueButtonIcon2.romIndexEnd = romIndexEnd;
   
-        dialogues[index].struct3.vaddrTextureStart = vaddrTextureStart;
-        dialogues[index].struct3.vaddrTextureEnd = vaddrTextureEnd;
-        dialogues[index].struct3.vaddrIndexStart = vaddrIndexStart;
-        dialogues[index].struct3.vaddrIndexEnd = vaddrIndexEnd;
-        dialogues[index].struct3.unk_20 = argA;
+        dialogues[index].dialogueButtonIcon2.vaddrTextureStart = vaddrTextureStart;
+        dialogues[index].dialogueButtonIcon2.vaddrTextureEnd = vaddrTextureEnd;
+        dialogues[index].dialogueButtonIcon2.vaddrIndexStart = vaddrIndexStart;
+        dialogues[index].dialogueButtonIcon2.vaddrIndexEnd = vaddrIndexEnd;
+        dialogues[index].dialogueButtonIcon2.unk_20 = argA;
  
-        dialogues[index].struct3.spriteIndex = spriteIndex;
-        dialogues[index].struct3.spriteOffset = spriteOffset;
-        dialogues[index].struct3.flag = flag;
+        dialogues[index].dialogueButtonIcon2.spriteIndex = spriteIndex;
+        dialogues[index].dialogueButtonIcon2.spriteOffset = spriteOffset;
+        dialogues[index].dialogueButtonIcon2.flag = flag;
 
-        dialogues[index].struct3.coordinates.x = x;
-        dialogues[index].struct3.coordinates.y = y;
-        dialogues[index].struct3.coordinates.z = z;
+        dialogues[index].dialogueButtonIcon2.coordinates.x = x;
+        dialogues[index].dialogueButtonIcon2.coordinates.y = y;
+        dialogues[index].dialogueButtonIcon2.coordinates.z = z;
         
         result = TRUE;
         
@@ -227,24 +227,24 @@ bool func_80043334(u16 index, u16 spriteIndex, u32 romTextureStart, u32 romTextu
 
     if (index == 0 && (dialogues[index].struct5.flags & ACTIVE)) {
         
-        dialogues[index].struct4.romTextureStart = romTextureStart;
-        dialogues[index].struct4.romTextureEnd = romTextureEnd;
-        dialogues[index].struct4.romIndexStart = romIndexStart;
-        dialogues[index].struct4.romIndexEnd = romIndexEnd;
+        dialogues[index].dialogueButtonIcon3.romTextureStart = romTextureStart;
+        dialogues[index].dialogueButtonIcon3.romTextureEnd = romTextureEnd;
+        dialogues[index].dialogueButtonIcon3.romIndexStart = romIndexStart;
+        dialogues[index].dialogueButtonIcon3.romIndexEnd = romIndexEnd;
   
-        dialogues[index].struct4.vaddrTextureStart = vaddrTextureStart;
-        dialogues[index].struct4.vaddrTextureEnd = vaddrTextureEnd;
-        dialogues[index].struct4.vaddrIndexStart = vaddrIndexStart;
-        dialogues[index].struct4.vaddrIndexEnd = vaddrIndexEnd;
-        dialogues[index].struct4.unk_20 = argA;
+        dialogues[index].dialogueButtonIcon3.vaddrTextureStart = vaddrTextureStart;
+        dialogues[index].dialogueButtonIcon3.vaddrTextureEnd = vaddrTextureEnd;
+        dialogues[index].dialogueButtonIcon3.vaddrIndexStart = vaddrIndexStart;
+        dialogues[index].dialogueButtonIcon3.vaddrIndexEnd = vaddrIndexEnd;
+        dialogues[index].dialogueButtonIcon3.unk_20 = argA;
  
-        dialogues[index].struct4.spriteIndex = spriteIndex;
-        dialogues[index].struct4.spriteOffset = spriteOffset;
-        dialogues[index].struct4.flag = flag;
+        dialogues[index].dialogueButtonIcon3.spriteIndex = spriteIndex;
+        dialogues[index].dialogueButtonIcon3.spriteOffset = spriteOffset;
+        dialogues[index].dialogueButtonIcon3.flag = flag;
 
-        dialogues[index].struct4.coordinates.x = x;
-        dialogues[index].struct4.coordinates.y = y;
-        dialogues[index].struct4.coordinates.z = z;
+        dialogues[index].dialogueButtonIcon3.coordinates.x = x;
+        dialogues[index].dialogueButtonIcon3.coordinates.y = y;
+        dialogues[index].dialogueButtonIcon3.coordinates.z = z;
         
         result = TRUE;
         
@@ -281,96 +281,97 @@ inline int func_80043408(int initial, int value, int max) {
 
 //INCLUDE_ASM(const s32, "system/dialogue", func_80043430);
 
-bool func_80043430(u16 index, u16 dialogueAddressIndex, u16 dialogueIndex, u16 arg3) {
+bool func_80043430(u16 index, u16 dialogueMapAddressesIndex, u16 dialogueIndex, u16 flag) {
 
     bool result = FALSE;
-    u32 temp;
+
+    u32 romAddr;
 
     if (index == 0 && dialogues[index].struct5.flags & ACTIVE) {
 
-        func_8002B138(dialogues[index].struct2.spriteIndex, 
-            dialogues[index].struct2.romTextureStart, 
-            dialogues[index].struct2.romTextureEnd, 
-            dialogues[index].struct2.romIndexStart, 
-            dialogues[index].struct2.romIndexEnd, 
+        dmaSprite(dialogues[index].dialogueButtonIcon1.spriteIndex, 
+            dialogues[index].dialogueButtonIcon1.romTextureStart, 
+            dialogues[index].dialogueButtonIcon1.romTextureEnd, 
+            dialogues[index].dialogueButtonIcon1.romIndexStart, 
+            dialogues[index].dialogueButtonIcon1.romIndexEnd, 
             NULL, 
             NULL, 
-            dialogues[index].struct2.vaddrTextureStart,
+            dialogues[index].dialogueButtonIcon1.vaddrTextureStart,
             NULL,
-            dialogues[index].struct2.vaddrTextureEnd,
-            dialogues[index].struct2.vaddrIndexStart,
-            dialogues[index].struct2.vaddrIndexEnd,
-            dialogues[index].struct2.unk_20,
+            dialogues[index].dialogueButtonIcon1.vaddrTextureEnd,
+            dialogues[index].dialogueButtonIcon1.vaddrIndexStart,
+            dialogues[index].dialogueButtonIcon1.vaddrIndexEnd,
+            dialogues[index].dialogueButtonIcon1.unk_20,
             0,
             0);
  
-        setSpriteShrinkFactor(dialogues[index].struct2.spriteIndex, 0.0f, 0.0f, 0.0f);
-        setSpriteScale(dialogues[index].struct2.spriteIndex, 1.0f, 1.0f, 1.0f);
-        func_8002BE14(dialogues[index].struct2.spriteIndex, 0.0f, 0.0f, 0.0f);
-        func_8002CB24(dialogues[index].struct2.spriteIndex, 1);
-        func_8002C914(dialogues[index].struct2.spriteIndex, 0xFF, 0xFF, 0xFF, 0xFF);
-        func_8002C680(dialogues[index].struct2.spriteIndex, 2, 2);
-        func_8002C7EC(dialogues[index].struct2.spriteIndex, 3);
+        setSpriteShrinkFactor(dialogues[index].dialogueButtonIcon1.spriteIndex, 0.0f, 0.0f, 0.0f);
+        setSpriteScale(dialogues[index].dialogueButtonIcon1.spriteIndex, 1.0f, 1.0f, 1.0f);
+        func_8002BE14(dialogues[index].dialogueButtonIcon1.spriteIndex, 0.0f, 0.0f, 0.0f);
+        func_8002CB24(dialogues[index].dialogueButtonIcon1.spriteIndex, 1);
+        func_8002C914(dialogues[index].dialogueButtonIcon1.spriteIndex, 0xFF, 0xFF, 0xFF, 0xFF);
+        func_8002C680(dialogues[index].dialogueButtonIcon1.spriteIndex, 2, 2);
+        func_8002C7EC(dialogues[index].dialogueButtonIcon1.spriteIndex, 3);
 
-        func_8002B138(dialogues[index].struct3.spriteIndex, 
-            dialogues[index].struct3.romTextureStart, 
-            dialogues[index].struct3.romTextureEnd, 
-            dialogues[index].struct3.romIndexStart, 
-            dialogues[index].struct3.romIndexEnd, 
+        dmaSprite(dialogues[index].dialogueButtonIcon2.spriteIndex, 
+            dialogues[index].dialogueButtonIcon2.romTextureStart, 
+            dialogues[index].dialogueButtonIcon2.romTextureEnd, 
+            dialogues[index].dialogueButtonIcon2.romIndexStart, 
+            dialogues[index].dialogueButtonIcon2.romIndexEnd, 
             NULL, 
             NULL, 
-            dialogues[index].struct3.vaddrTextureStart,
+            dialogues[index].dialogueButtonIcon2.vaddrTextureStart,
             NULL,
-            dialogues[index].struct3.vaddrTextureEnd,
-            dialogues[index].struct3.vaddrIndexStart,
-            dialogues[index].struct3.vaddrIndexEnd,
-            dialogues[index].struct3.unk_20,
+            dialogues[index].dialogueButtonIcon2.vaddrTextureEnd,
+            dialogues[index].dialogueButtonIcon2.vaddrIndexStart,
+            dialogues[index].dialogueButtonIcon2.vaddrIndexEnd,
+            dialogues[index].dialogueButtonIcon2.unk_20,
             0,
             0);
 
-        setSpriteShrinkFactor(dialogues[index].struct3.spriteIndex, 0.0f, 0.0f, 0.0f);
-        setSpriteScale(dialogues[index].struct3.spriteIndex, 1.0f, 1.0f, 1.0f);
-        func_8002BE14(dialogues[index].struct3.spriteIndex, 0.0f, 0.0f, 0.0f);
-        func_8002CB24(dialogues[index].struct3.spriteIndex, 1);
-        func_8002C914(dialogues[index].struct3.spriteIndex, 0xFF, 0xFF, 0xFF, 0xFF);
-        func_8002C680(dialogues[index].struct3.spriteIndex, 2, 2);
-        func_8002C7EC(dialogues[index].struct3.spriteIndex, 3);
+        setSpriteShrinkFactor(dialogues[index].dialogueButtonIcon2.spriteIndex, 0.0f, 0.0f, 0.0f);
+        setSpriteScale(dialogues[index].dialogueButtonIcon2.spriteIndex, 1.0f, 1.0f, 1.0f);
+        func_8002BE14(dialogues[index].dialogueButtonIcon2.spriteIndex, 0.0f, 0.0f, 0.0f);
+        func_8002CB24(dialogues[index].dialogueButtonIcon2.spriteIndex, 1);
+        func_8002C914(dialogues[index].dialogueButtonIcon2.spriteIndex, 0xFF, 0xFF, 0xFF, 0xFF);
+        func_8002C680(dialogues[index].dialogueButtonIcon2.spriteIndex, 2, 2);
+        func_8002C7EC(dialogues[index].dialogueButtonIcon2.spriteIndex, 3);
 
-        func_8002B138(dialogues[index].struct4.spriteIndex, 
-            dialogues[index].struct4.romTextureStart, 
-            dialogues[index].struct4.romTextureEnd, 
-            dialogues[index].struct4.romIndexStart, 
-            dialogues[index].struct4.romIndexEnd, 
+        dmaSprite(dialogues[index].dialogueButtonIcon3.spriteIndex, 
+            dialogues[index].dialogueButtonIcon3.romTextureStart, 
+            dialogues[index].dialogueButtonIcon3.romTextureEnd, 
+            dialogues[index].dialogueButtonIcon3.romIndexStart, 
+            dialogues[index].dialogueButtonIcon3.romIndexEnd, 
             NULL, 
             NULL, 
-            dialogues[index].struct4.vaddrTextureStart,
+            dialogues[index].dialogueButtonIcon3.vaddrTextureStart,
             NULL,
-            dialogues[index].struct4.vaddrTextureEnd,
-            dialogues[index].struct4.vaddrIndexStart,
-            dialogues[index].struct4.vaddrIndexEnd,
-            dialogues[index].struct4.unk_20,
+            dialogues[index].dialogueButtonIcon3.vaddrTextureEnd,
+            dialogues[index].dialogueButtonIcon3.vaddrIndexStart,
+            dialogues[index].dialogueButtonIcon3.vaddrIndexEnd,
+            dialogues[index].dialogueButtonIcon3.unk_20,
             0,
             0);
 
-        setSpriteShrinkFactor(dialogues[index].struct4.spriteIndex, 0.0f, 0.0f, 0.0f);
-        setSpriteScale(dialogues[index].struct4.spriteIndex, 1.0f, 1.0f, 1.0f);
-        func_8002BE14(dialogues[index].struct4.spriteIndex, 0.0f, 0.0f, 0.0f);
-        func_8002CB24(dialogues[index].struct4.spriteIndex, 1);
-        func_8002C914(dialogues[index].struct4.spriteIndex, 0xFF, 0xFF, 0xFF, 0xFF);
-        func_8002C680(dialogues[index].struct4.spriteIndex, 2, 2);
-        func_8002C7EC(dialogues[index].struct4.spriteIndex, 3);
+        setSpriteShrinkFactor(dialogues[index].dialogueButtonIcon3.spriteIndex, 0.0f, 0.0f, 0.0f);
+        setSpriteScale(dialogues[index].dialogueButtonIcon3.spriteIndex, 1.0f, 1.0f, 1.0f);
+        func_8002BE14(dialogues[index].dialogueButtonIcon3.spriteIndex, 0.0f, 0.0f, 0.0f);
+        func_8002CB24(dialogues[index].dialogueButtonIcon3.spriteIndex, 1);
+        func_8002C914(dialogues[index].dialogueButtonIcon3.spriteIndex, 0xFF, 0xFF, 0xFF, 0xFF);
+        func_8002C680(dialogues[index].dialogueButtonIcon3.spriteIndex, 2, 2);
+        func_8002C7EC(dialogues[index].dialogueButtonIcon3.spriteIndex, 3);
         
         dialogues[index].struct1.unk_12 = 0xFF;
-        dialogues[index].struct5.dialogueAddressIndex = dialogueAddressIndex;
+        dialogues[index].struct5.dialogueMapAddressesIndex = dialogueMapAddressesIndex;
         dialogues[index].struct5.dialogueIndex = dialogueIndex;
 
-        nuPiReadRom(dialogueAddresses[dialogueAddressIndex].romStart, dialogueAddresses[dialogueAddressIndex].vaddr, dialogueAddresses[dialogueAddressIndex].romEnd - dialogueAddresses[dialogueAddressIndex].romStart);
+        nuPiReadRom(dialogueMapAddresses[dialogueMapAddressesIndex].romStart, dialogueMapAddresses[dialogueMapAddressesIndex].vaddr, dialogueMapAddresses[dialogueMapAddressesIndex].romEnd - dialogueMapAddresses[dialogueMapAddressesIndex].romStart);
 
-        temp = func_80043C98(0, dialogues[index].struct5.dialogueIndex);
+        romAddr = func_80043C98(0, dialogues[index].struct5.dialogueIndex);
 
-        nuPiReadRom(temp, dialogueAddresses[dialogues[index].struct5.dialogueAddressIndex].vaddrIndex, func_80043C98(0, dialogues[index].struct5.dialogueIndex + 1) - temp);
+        nuPiReadRom(romAddr, dialogueMapAddresses[dialogues[index].struct5.dialogueMapAddressesIndex].vaddrIndex, func_80043C98(0, dialogues[index].struct5.dialogueIndex + 1) - romAddr);
 
-        dialogues[index].dialoguePointer = dialogueAddresses[dialogues[index].struct5.dialogueAddressIndex].vaddrIndex;
+        dialogues[index].dialoguePointer = dialogueMapAddresses[dialogues[index].struct5.dialogueMapAddressesIndex].vaddrIndex;
         
         dialogues[index].struct5.unk_16 = 0;
         dialogues[index].struct5.unk_17 = 0;
@@ -395,13 +396,13 @@ bool func_80043430(u16 index, u16 dialogueAddressIndex, u16 dialogueIndex, u16 a
         dialogues[index].struct5.flags &= ~4;
         dialogues[index].struct5.flags |= INITIALIZED;
 
-        if (arg3 == 0x40) {
+        if (flag == 0x40) {
             dialogues[index].struct5.flags |= (INITIALIZED | 0x40);
         }  else {
             dialogues[index].struct5.flags &= ~(0x40);
         }
 
-        if (arg3 == 0x80) {
+        if (flag == 0x80) {
             dialogues[index].struct5.flags |= 0x80;
         } else {
             dialogues[index].struct5.flags &= ~0x80;
@@ -465,9 +466,9 @@ void func_80043B84(u16 index) {
     
     func_8003F130(dialogues[index].struct5.dialogueBoxIndex2);
     
-    func_8002BAD8(dialogues[index].struct2.spriteIndex);
-    func_8002BAD8(dialogues[index].struct3.spriteIndex);
-    func_8002BAD8(dialogues[index].struct4.spriteIndex);
+    func_8002BAD8(dialogues[index].dialogueButtonIcon1.spriteIndex);
+    func_8002BAD8(dialogues[index].dialogueButtonIcon2.spriteIndex);
+    func_8002BAD8(dialogues[index].dialogueButtonIcon3.spriteIndex);
     
     dialogues[index].struct5.flags &= ~0x20;
     
@@ -483,9 +484,9 @@ u8 func_80043C6C(u16 index) {
 
 u32 func_80043C98(u16 index, u16 textIndex) {
 
-    u32 ptr = dialogueAddresses[dialogues[index].struct5.dialogueAddressIndex].romIndex;
+    u32 ptr = dialogueMapAddresses[dialogues[index].struct5.dialogueMapAddressesIndex].romIndex;
     
-    return ptr + dialogueAddresses[dialogues[index].struct5.dialogueAddressIndex].vaddr[textIndex];
+    return ptr + dialogueMapAddresses[dialogues[index].struct5.dialogueMapAddressesIndex].vaddr[textIndex];
     
 }
 
@@ -575,6 +576,7 @@ static inline u32 swap(u16 index) {
     
 }
 
+// parse dialogue map data and set struct
 #ifdef PERMUTER
 void func_80043EC8(u16 index) {
 
@@ -623,6 +625,7 @@ void func_80043EC8(u16 index) {
         case 6:
             dialogues[index].struct1.unk_C = swap(index);
             break;
+
         case 7:
  
             dialogues[index].struct1.unk_14 = swap(index);
@@ -661,8 +664,8 @@ void func_80044684(u16 index) {
 
     f32 temp1, temp2;
 
-    temp1 = -(dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].unk_92 * dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].fontContext.unk_60) - (dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].unk_92 * dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].unk_9B) - dialogues[index].struct2.coordinates.x;
-    temp2 = (dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].unk_93 * dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].fontContext.unk_61) + (dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].unk_93 * dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].unk_9C) - dialogues[index].struct2.coordinates.y;    
+    temp1 = -(dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].unk_92 * dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].fontContext.unk_60) - (dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].unk_92 * dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].unk_9B) - dialogues[index].dialogueButtonIcon1.coordinates.x;
+    temp2 = (dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].unk_93 * dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].fontContext.unk_61) + (dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].unk_93 * dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].unk_9C) - dialogues[index].dialogueButtonIcon1.coordinates.y;    
 
     setSpriteScale(dialogueWindows[dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].dialogueWindowIndex].spriteIndex, dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].unk_A0 * 0.5f, dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].unk_93 * 0.6f, 1.0f);
     
@@ -670,8 +673,8 @@ void func_80044684(u16 index) {
     func_8002C914(dialogueWindows[dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].dialogueWindowIndex].spriteIndex, 255, 255, 255, 192);
     func_8002CB24(dialogueWindows[dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].dialogueWindowIndex].spriteIndex, 1);
 
-    func_8002B80C(dialogues[index].struct2.spriteIndex, dialogues[index].struct2.spriteOffset, dialogues[index].struct2.flag);
-    setSpriteShrinkFactor(dialogues[index].struct2.spriteIndex, dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].shrink.x + temp1, dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].shrink.y + temp2, dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].shrink.z);
+    func_8002B80C(dialogues[index].dialogueButtonIcon1.spriteIndex, dialogues[index].dialogueButtonIcon1.spriteOffset, dialogues[index].dialogueButtonIcon1.flag);
+    setSpriteShrinkFactor(dialogues[index].dialogueButtonIcon1.spriteIndex, dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].shrink.x + temp1, dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].shrink.y + temp2, dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].shrink.z);
 
 }
 #else
@@ -682,8 +685,8 @@ INCLUDE_ASM(const s32, "system/dialogue", func_80044684);
 
 void func_800449C4(u16 index) {
 
-    f32 tempX = dialogues[index].struct3.coordinates.x;
-    f32 tempY = dialogues[index].struct3.coordinates.y;
+    f32 tempX = dialogues[index].dialogueButtonIcon2.coordinates.x;
+    f32 tempY = dialogues[index].dialogueButtonIcon2.coordinates.y;
 
     setSpriteScale(dialogueWindows[dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].dialogueWindowIndex].spriteIndex, dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].unk_A0 * 0.5f, dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].unk_93 * 0.6f, 1.0f);
     
@@ -692,8 +695,8 @@ void func_800449C4(u16 index) {
     func_8002CB24(dialogueWindows[dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].dialogueWindowIndex].spriteIndex, 1);
 
     // animation
-    func_8002B80C(dialogues[index].struct3.spriteIndex, dialogues[index].struct3.spriteOffset, dialogues[index].struct3.flag);
-    setSpriteShrinkFactor(dialogues[index].struct3.spriteIndex, dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].shrink.x + tempX, dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].shrink.y + tempY, dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].shrink.z);
+    func_8002B80C(dialogues[index].dialogueButtonIcon2.spriteIndex, dialogues[index].dialogueButtonIcon2.spriteOffset, dialogues[index].dialogueButtonIcon2.flag);
+    setSpriteShrinkFactor(dialogues[index].dialogueButtonIcon2.spriteIndex, dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].shrink.x + tempX, dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].shrink.y + tempY, dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].shrink.z);
 
 }
 
@@ -701,16 +704,16 @@ void func_800449C4(u16 index) {
 
 void func_80044BF4(u16 index) {
  
-    f32 tempX = dialogues[index].struct4.coordinates.x;
-    f32 tempY = dialogues[index].struct4.coordinates.y;
+    f32 tempX = dialogues[index].dialogueButtonIcon3.coordinates.x;
+    f32 tempY = dialogues[index].dialogueButtonIcon3.coordinates.y;
 
     // flags
     func_8002C7EC(dialogueWindows[dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].dialogueWindowIndex].spriteIndex, 3);
     func_8002CB24(dialogueWindows[dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].dialogueWindowIndex].spriteIndex, 1);
 
     // animation
-    func_8002B80C(dialogues[index].struct4.spriteIndex, dialogues[index].struct4.spriteOffset, dialogues[index].struct4.flag);
-    setSpriteShrinkFactor(dialogues[index].struct4.spriteIndex, dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].shrink.x + tempX, dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].shrink.y + tempY, dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].shrink.z);
+    func_8002B80C(dialogues[index].dialogueButtonIcon3.spriteIndex, dialogues[index].dialogueButtonIcon3.spriteOffset, dialogues[index].dialogueButtonIcon3.flag);
+    setSpriteShrinkFactor(dialogues[index].dialogueButtonIcon3.spriteIndex, dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].shrink.x + tempX, dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].shrink.y + tempY, dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].shrink.z);
 
 }
 
@@ -730,7 +733,7 @@ void func_80044D78(u16 index) {
 
                 if (dialogues[index].struct5.unk_18 != dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].unk_93 - 1) {
                     dialogues[index].struct5.unk_18++;
-                    adjustSpriteShrinkFactor(dialogues[index].struct2.spriteIndex, 0.0f, -dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].fontContext.unk_61 - dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].unk_9C, 0.0f);
+                    adjustSpriteShrinkFactor(dialogues[index].dialogueButtonIcon1.spriteIndex, 0.0f, -dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].fontContext.unk_61 - dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].unk_9C, 0.0f);
                 } else {
                     func_8003FE9C(dialogues[index].struct5.dialogueBoxIndex2);
                     dialogues[index].struct5.unk_19++;
@@ -756,7 +759,7 @@ void func_80044D78(u16 index) {
                     
                     if (dialogues[index].struct5.unk_18) {
                         dialogues[index].struct5.unk_18--;
-                        adjustSpriteShrinkFactor(dialogues[index].struct2.spriteIndex, 0.0f, dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].fontContext.unk_61 + dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].unk_9C, 0.0f);
+                        adjustSpriteShrinkFactor(dialogues[index].dialogueButtonIcon1.spriteIndex, 0.0f, dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].fontContext.unk_61 + dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].unk_9C, 0.0f);
                     } else {
                         func_8003FFF4(dialogues[index].struct5.dialogueBoxIndex2);
                         dialogues[index].struct5.unk_19--;
@@ -779,13 +782,13 @@ void func_80044D78(u16 index) {
             if (dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].unk_93 < (dialogues[index].struct5.unk_16 - dialogues[index].struct5.unk_19)) {
                 func_80044BF4(index);
             } else {
-                func_8002BAD8(dialogues[index].struct4.spriteIndex);
+                func_8002BAD8(dialogues[index].dialogueButtonIcon3.spriteIndex);
             }
 
             if (dialogues[index].struct5.unk_19) {
                 func_800449C4(index);
             } else {
-                func_8002BAD8(dialogues[index].struct3.spriteIndex);
+                func_8002BAD8(dialogues[index].dialogueButtonIcon2.spriteIndex);
             }
 
         }
@@ -818,10 +821,11 @@ void func_80045260(u16 index) {
     u16 temp;
     u16 temp2;
     u16 temp3;
-    
     int temp4;
     int temp5;
+
     u16 tempIndex;
+    u16 dialogueIndex;
     
     int adjusted;
     int max;
@@ -830,6 +834,7 @@ void func_80045260(u16 index) {
     while (!set) {
         
         if (dialogues[index].struct1.unk_12 == 0xFF) {
+            // set struct data from dialogue map
             func_80043EC8(index);
         }
         
@@ -837,12 +842,13 @@ void func_80045260(u16 index) {
         
             case 0:
                 if (dialogues[index].struct5.flags & 0x80) {
-                    initializeDialogueBox(dialogues[index].struct5.dialogueBoxIndex1, dialogueAddresses[dialogues[index].struct5.dialogueAddressIndex].unk_14, dialogues[index].struct1.unk_0, 0);
+                    initializeDialogueBox(dialogues[index].struct5.dialogueBoxIndex1, dialogueMapAddresses[dialogues[index].struct5.dialogueMapAddressesIndex].unk_14, dialogues[index].struct1.unk_0, 0);
                 } else {
-                    initializeDialogueBox(dialogues[index].struct5.dialogueBoxIndex1, dialogueAddresses[dialogues[index].struct5.dialogueAddressIndex].unk_14, dialogues[index].struct1.unk_0, 0x8000);
+                    initializeDialogueBox(dialogues[index].struct5.dialogueBoxIndex1, dialogueMapAddresses[dialogues[index].struct5.dialogueMapAddressesIndex].unk_14, dialogues[index].struct1.unk_0, 0x8000);
                 }
                 
                 set = TRUE;
+
                 dialogues[index].struct1.unk_12 = 0xFF;
                 dialogues[index].struct5.flags |= 0x10;
                 
@@ -854,14 +860,14 @@ void func_80045260(u16 index) {
                 
                 if ((temp >= dialogues[index].struct1.unk_4) && (dialogues[index].struct1.unk_6 >= temp)) {
                 
-                    temp2 = dialogues[index].struct1.unk_0;
+                    dialogueIndex = dialogues[index].struct1.unk_0;
                     
-                    if (temp2 != 0xFFFF) {
+                    if (dialogueIndex != 0xFFFF) {
 
                         if (dialogues[index].struct5.flags & 0x80) {
-                            initializeDialogueBox(dialogues[index].struct5.dialogueBoxIndex1, dialogueAddresses[dialogues[index].struct5.dialogueAddressIndex].unk_14, temp2, 0);
+                            initializeDialogueBox(dialogues[index].struct5.dialogueBoxIndex1, dialogueMapAddresses[dialogues[index].struct5.dialogueMapAddressesIndex].unk_14, dialogueIndex, 0);
                         } else {
-                            initializeDialogueBox(dialogues[index].struct5.dialogueBoxIndex1, dialogueAddresses[dialogues[index].struct5.dialogueAddressIndex].unk_14, temp2, 0x8000);
+                            initializeDialogueBox(dialogues[index].struct5.dialogueBoxIndex1, dialogueMapAddresses[dialogues[index].struct5.dialogueMapAddressesIndex].unk_14, dialogueIndex, 0x8000);
                         }
                         
                         set = TRUE;
@@ -871,10 +877,10 @@ void func_80045260(u16 index) {
                         
                     } else {
                         
-                        temp2 = dialogues[index].struct1.unk_2;
+                        dialogueIndex = dialogues[index].struct1.unk_2;
                         
-                        if (temp2 != 0xFFFF) {
-                            func_80043430( index, dialogues[index].struct5.dialogueAddressIndex, temp2, dialogues[index].struct5.flags & (0x40 | 0x80));
+                        if (dialogueIndex != 0xFFFF) {
+                            func_80043430(index, dialogues[index].struct5.dialogueMapAddressesIndex, dialogueIndex, dialogues[index].struct5.flags & (0x40 | 0x80));
                         } else {
                             dialogues[index].struct1.unk_12 = 0xFF;
                         }
@@ -886,6 +892,7 @@ void func_80045260(u16 index) {
                 
                 break;
 
+            // update dialogue variable value
             case 2:
 
                 /*
@@ -953,14 +960,14 @@ void func_80045260(u16 index) {
                 
                 if (checkSpecialDialogueBitFromPointer(dialogues[index].struct1.specialDialogueBit)) {
                     
-                    temp2 = dialogues[index].struct1.unk_0;
+                    dialogueIndex = dialogues[index].struct1.unk_0;
                 
-                    if (temp2 != 0xFFFF) {
+                    if (dialogueIndex != 0xFFFF) {
                         
                         if (dialogues[index].struct5.flags & 0x80) {
-                            initializeDialogueBox(dialogues[index].struct5.dialogueBoxIndex1, dialogueAddresses[dialogues[index].struct5.dialogueAddressIndex].unk_14, temp2, 0);
+                            initializeDialogueBox(dialogues[index].struct5.dialogueBoxIndex1, dialogueMapAddresses[dialogues[index].struct5.dialogueMapAddressesIndex].unk_14, dialogueIndex, 0);
                         } else {
-                            initializeDialogueBox(dialogues[index].struct5.dialogueBoxIndex1, dialogueAddresses[dialogues[index].struct5.dialogueAddressIndex].unk_14, temp2, 0x8000);
+                            initializeDialogueBox(dialogues[index].struct5.dialogueBoxIndex1, dialogueMapAddresses[dialogues[index].struct5.dialogueMapAddressesIndex].unk_14, dialogueIndex, 0x8000);
                         }
                         
                         set = TRUE;
@@ -969,12 +976,14 @@ void func_80045260(u16 index) {
                     
                     } else {
                         
-                        temp2 = dialogues[index].struct1.unk_2;
-                        if (temp2 != 0xFFFF) {
-                            func_80043430(index, dialogues[index].struct5.dialogueAddressIndex, temp2, dialogues[index].struct5.flags & (0x40 | 0x80));
+                        dialogueIndex = dialogues[index].struct1.unk_2;
+
+                        if (dialogueIndex != 0xFFFF) {
+                            func_80043430(index, dialogues[index].struct5.dialogueMapAddressesIndex, dialogueIndex, dialogues[index].struct5.flags & (0x40 | 0x80));
                         } else {
                             dialogues[index].struct1.unk_12 = 0xFF;
                         }
+
                     }
                     
                 } else {
@@ -999,13 +1008,13 @@ void func_80045260(u16 index) {
                 
                 if ((temp3 >= dialogues[index].struct1.unk_14) && (dialogues[index].struct1.unk_15 >= temp3)) {
                 
-                    temp2 = dialogues[index].struct1.unk_0;
+                    dialogueIndex = dialogues[index].struct1.unk_0;
                     
-                    if (temp2 != 0xFFFF) {
+                    if (dialogueIndex != 0xFFFF) {
                         if (dialogues[index].struct5.flags & 0x80) {
-                            initializeDialogueBox(dialogues[index].struct5.dialogueBoxIndex1, dialogueAddresses[dialogues[index].struct5.dialogueAddressIndex].unk_14, temp2, 0);
+                            initializeDialogueBox(dialogues[index].struct5.dialogueBoxIndex1, dialogueMapAddresses[dialogues[index].struct5.dialogueMapAddressesIndex].unk_14, dialogueIndex, 0);
                         } else {
-                            initializeDialogueBox(dialogues[index].struct5.dialogueBoxIndex1, dialogueAddresses[dialogues[index].struct5.dialogueAddressIndex].unk_14, temp2, 0x8000);
+                            initializeDialogueBox(dialogues[index].struct5.dialogueBoxIndex1, dialogueMapAddresses[dialogues[index].struct5.dialogueMapAddressesIndex].unk_14, dialogueIndex, 0x8000);
                         }
                         
                         set = TRUE;
@@ -1014,10 +1023,10 @@ void func_80045260(u16 index) {
                         
                     } else {
                         
-                        temp2 = dialogues[index].struct1.unk_2;
+                        dialogueIndex = dialogues[index].struct1.unk_2;
                         
-                        if (temp2 != 0xFFFF) {
-                            func_80043430(index, dialogues[index].struct5.dialogueAddressIndex, temp2, dialogues[index].struct5.flags & (0x40 | 0x80));
+                        if (dialogueIndex != 0xFFFF) {
+                            func_80043430(index, dialogues[index].struct5.dialogueMapAddressesIndex, dialogueIndex, dialogues[index].struct5.flags & (0x40 | 0x80));
                         } else {
                             dialogues[index].struct1.unk_12 = 0xFF;
                         }
@@ -1030,7 +1039,7 @@ void func_80045260(u16 index) {
                 break;
 
             case 8:
-                func_80043430(index, dialogues[index].struct5.dialogueAddressIndex, dialogues[index].struct1.unk_2, dialogues[index].struct5.flags & (0x40 | 0x80));
+                func_80043430(index, dialogues[index].struct5.dialogueMapAddressesIndex, dialogues[index].struct1.unk_2, dialogues[index].struct5.flags & (0x40 | 0x80));
                 break;
 
             case 10:
@@ -1042,7 +1051,7 @@ void func_80045260(u16 index) {
                 dialogues[index].struct5.unk_14 = dialogues[index].struct1.unk_10;
                 dialogues[index].struct5.flags |= 0x20;
                 
-                initializeDialogueBox(dialogues[index].struct5.dialogueBoxIndex2, dialogueAddresses[dialogues[index].struct5.dialogueAddressIndex].unk_16, dialogues[index].struct5.unk_14, 0);
+                initializeDialogueBox(dialogues[index].struct5.dialogueBoxIndex2, dialogueMapAddresses[dialogues[index].struct5.dialogueMapAddressesIndex].unk_16, dialogues[index].struct5.unk_14, 0);
                 
                 temp2 = dialogueBoxes[dialogues[index].struct5.dialogueBoxIndex2].unk_A1;
                 
@@ -1073,7 +1082,7 @@ void func_80045260(u16 index) {
                 temp = dialogues[index].struct5.unk_17;
                 
                 if (dialogues[index].struct1.unk_18 == temp) {
-                    func_80043430(index, dialogues[index].struct5.dialogueAddressIndex, dialogues[index].struct1.unk_2, dialogues[index].struct5.flags & (0x40 | 0x80));
+                    func_80043430(index, dialogues[index].struct5.dialogueMapAddressesIndex, dialogues[index].struct1.unk_2, dialogues[index].struct5.flags & (0x40 | 0x80));
                     dialogues[index].struct5.unk_17 = temp;
                 } else {
                     dialogues[index].struct1.unk_12 = 0xFF;

@@ -11,7 +11,11 @@
 #define MAX_CHARACTER_SPRITES 102
 #define MAX_BITMAPS 176
 
+/* spriteAddresses flags */
 #define NEED_DMA 1
+
+/* flags */
+#define ACTIVE 1
 
 #define SHADOW_ALPHA 96
 
@@ -225,11 +229,11 @@ extern bool setSpriteAnimation(u16 index, u16);
 
 /* globalSprites.c */
 extern void initializeGlobalSprites(void); 
-extern bool func_8002B138(u16 index, u32 romTextureStart, u32 romTextureEnd, u32 romAssetIndexStart, u32 romAssetIndexEnd, u32 romSpritesheetIndexStart, u32 romSpritesheetIndexEnd, u8* texture1Vaddr, u8* texture2Vaddr, u16* paletteVaddr, u16* animationVaddr, u8* spriteToPaletteVaddr, u32* spritesheetIndexVaddr, u8 assetType, u8 argE);
+extern bool dmaSprite(u16 index, u32 romTextureStart, u32 romTextureEnd, u32 romAssetIndexStart, u32 romAssetIndexEnd, u32 romSpritesheetIndexStart, u32 romSpritesheetIndexEnd, u8* texture1Vaddr, u8* texture2Vaddr, u16* paletteVaddr, u16* animationVaddr, u8* spriteToPaletteVaddr, u32* spritesheetIndexVaddr, u8 assetType, u8 argE);
 extern bool func_8002B36C(u16 index, u32* unknownAssetIndexPtr, u32* spritesheetIndexPtr, u32* paletteIndexPtr, u8* spriteToPaletteMappingPtr);
 extern bool func_8002B50C(u16 index, u32* unknownAssetIndexPtr, u32* spritesheetIndexPtr, u32* paletteIndexPtr, u8* spriteToPaletteMappingPtr, u32 romTexturePtr, u8* texturePtr, u8* texture2Ptr);
 extern bool deactivateSprite(u16 index);
-extern void func_8002B710(void);
+extern void deactivateGlobalSprites(void);
 extern bool func_8002B80C(u16 index, u16 offset, u8);
 extern bool func_8002BAD8(u16);   
 extern bool func_8002BB30(u16);
@@ -238,15 +242,15 @@ extern bool setSpriteShrinkFactor(u16 index, f32 x, f32 y, f32 z);
 extern bool setSpriteScale(u16, f32, f32, f32);                                                                                                        
 extern bool adjustSpriteShrinkFactor(u16, f32, f32, f32);    
 extern bool func_8002BE14(u16, f32, f32, f32);                        
-extern bool func_8002C1C0(u16 index, u8 r, u8 g, u8 b, u8 a, s16 arg5);
-extern bool func_8002C52C(u16, u8, s16);
+extern bool updateSpriteRGBA(u16 index, u8 r, u8 g, u8 b, u8 a, s16 arg5);
+extern bool updateSpriteAlpha(u16, u8, s16);
 extern bool func_8002C680(u16 index, u16, u16);
 extern bool func_8002C6F8(u16, u16);
 extern bool func_8002C768(u16, u16);
 extern bool func_8002C7EC(u16, u16);                              
 extern bool setSpriteDefaultRGBA(u16 index, u8 r, u8 g, u8 b, u8 a);
 extern bool func_8002C914(u16, u8, u8, u8, u8);
-extern bool func_8002CAA8(u16, u8);  
+extern bool setSpriteAlpha(u16, u8);  
 extern bool func_8002CB24(u16, u8);     
 extern bool func_8002CB88(u16, u16);     
 extern bool func_8002CBF8(u16);   

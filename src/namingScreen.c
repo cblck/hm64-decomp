@@ -121,9 +121,9 @@ void func_800ED974(void) {
 
             deactivateNamingScreenSprites();
             
-            func_8002B138(0x80, &_namingScreenTexture1SegmentRomStart, &_namingScreenTexture1SegmentRomEnd, &_namingScreenIndex1SegmentRomStart, &_namingScreenIndex1SegmentRomEnd, NULL, NULL, (void* )0x80263E00, NULL, (void* )0x80266E00, (void* )0x80267100, (void* )0x80267200, NULL, NULL, 0);
-            func_8002B138(0x84, &_namingScreenTexture1SegmentRomStart, &_namingScreenTexture1SegmentRomEnd, &_namingScreenIndex1SegmentRomStart, &_namingScreenIndex1SegmentRomEnd, NULL, NULL, (void* )0x80263E00, NULL, (void* )0x80266E00, (void* )0x80267100, (void* )0x80267200, NULL, NULL, 0);
-            func_8002B138(LANDSCAPE_BACKGROUND, &_landscapeBackgroundTextureSegmentRomStart, &_landscapeBackgroundTextureSegmentRomEnd, &_landscapeBackgroundIndexSegmentRomStart, &_landscapeBackgroundIndexSegmentRomEnd, NULL, NULL, (void* )0x8026AB00, NULL, (void* )0x8026DB00, (void* )0x8026DC00, (void* )0x8026DD00, NULL, NULL, 0);
+            dmaSprite(0x80, &_namingScreenTexture1SegmentRomStart, &_namingScreenTexture1SegmentRomEnd, &_namingScreenIndex1SegmentRomStart, &_namingScreenIndex1SegmentRomEnd, NULL, NULL, (void* )0x80263E00, NULL, (void* )0x80266E00, (void* )0x80267100, (void* )0x80267200, NULL, NULL, 0);
+            dmaSprite(0x84, &_namingScreenTexture1SegmentRomStart, &_namingScreenTexture1SegmentRomEnd, &_namingScreenIndex1SegmentRomStart, &_namingScreenIndex1SegmentRomEnd, NULL, NULL, (void* )0x80263E00, NULL, (void* )0x80266E00, (void* )0x80267100, (void* )0x80267200, NULL, NULL, 0);
+            dmaSprite(LANDSCAPE_BACKGROUND, &_landscapeBackgroundTextureSegmentRomStart, &_landscapeBackgroundTextureSegmentRomEnd, &_landscapeBackgroundIndexSegmentRomStart, &_landscapeBackgroundIndexSegmentRomEnd, NULL, NULL, (void* )0x8026AB00, NULL, (void* )0x8026DB00, (void* )0x8026DC00, (void* )0x8026DD00, NULL, NULL, 0);
             
             // set flag 0x80
             func_8002CB24(LANDSCAPE_BACKGROUND, 1);
@@ -139,10 +139,9 @@ void func_800ED974(void) {
             func_8002C914(0x84, 0, 0, 0, 0);
             func_8002C914(LANDSCAPE_BACKGROUND, 0, 0, 0, 0);
             
-            // rgba
-            func_8002C1C0(0x80, 0xFF, 0xFF, 0xFF, 0xFF, 8);
-            func_8002C1C0(0x84, 0xFF, 0xFF, 0xFF, 0xFF, 8);
-            func_8002C1C0(LANDSCAPE_BACKGROUND, 0xFF, 0xFF, 0xFF, 0xFF, 8);
+            updateSpriteRGBA(0x80, 0xFF, 0xFF, 0xFF, 0xFF, 8);
+            updateSpriteRGBA(0x84, 0xFF, 0xFF, 0xFF, 0xFF, 8);
+            updateSpriteRGBA(LANDSCAPE_BACKGROUND, 0xFF, 0xFF, 0xFF, 0xFF, 8);
 
             namingScreenContext.unk_4 = 10;
             namingScreenContext.flags &= ~(0x20 | 0x40);
@@ -308,9 +307,9 @@ void func_800ED974(void) {
                                 
                                 func_8003EA1C(3, 0, 0, 0, 0, 8);
                                 func_8003EA1C(4, 0, 0, 0, 0, 8);
-                                func_8002C1C0(0x80, 0, 0, 0, 0, 8);
-                                func_8002C1C0(0x84, 0, 0, 0, 0, 8);
-                                func_8002C1C0(LANDSCAPE_BACKGROUND, 0, 0, 0, 0, 8);
+                                updateSpriteRGBA(0x80, 0, 0, 0, 0, 8);
+                                updateSpriteRGBA(0x84, 0, 0, 0, 0, 8);
+                                updateSpriteRGBA(LANDSCAPE_BACKGROUND, 0, 0, 0, 0, 8);
                                 
                                 gPlayerBirthdaySeason = namingScreenContext.unk_7 + 1;
 
@@ -322,9 +321,9 @@ void func_800ED974(void) {
                             
                             func_8003EA1C(3, 0, 0, 0, 0, 8);
                             func_8003EA1C(4, 0, 0, 0, 0, 8);
-                            func_8002C1C0(0x80, 0, 0, 0, 0, 8);
-                            func_8002C1C0(0x84, 0, 0, 0, 0, 8);
-                            func_8002C1C0(LANDSCAPE_BACKGROUND, 0, 0, 0, 0, 8);
+                            updateSpriteRGBA(0x80, 0, 0, 0, 0, 8);
+                            updateSpriteRGBA(0x84, 0, 0, 0, 0, 8);
+                            updateSpriteRGBA(LANDSCAPE_BACKGROUND, 0, 0, 0, 0, 8);
                             
                             return;
     
@@ -336,24 +335,24 @@ void func_800ED974(void) {
 
                                 func_8003EA1C(3, 0, 0, 0, 0, 8);
                                 
-                                func_8002C1C0(0x80, 0, 0, 0, 0, 8);
-                                func_8002C1C0(0x81, 0, 0, 0, 0, 8);
-                                func_8002C1C0(0x82, 0, 0, 0, 0, 8);
-                                func_8002C1C0(0x8F, 0, 0, 0, 0, 8);
-                                func_8002C1C0(LANDSCAPE_BACKGROUND, 0, 0, 0, 0, 8);
-                                func_8002C1C0(0x83, 0, 0, 0, 0, 8);
-                                func_8002C1C0(0x84, 0, 0, 0, 0, 8);
-                                func_8002C1C0(0x85, 0, 0, 0, 0, 8);
-                                func_8002C1C0(0x86, 0, 0, 0, 0, 8);
-                                func_8002C1C0(0x87, 0, 0, 0, 0, 8);
-                                func_8002C1C0(0x88, 0, 0, 0, 0, 8);
-                                func_8002C1C0(0x89, 0, 0, 0, 0, 8);
-                                func_8002C1C0(0x8A, 0, 0, 0, 0, 8);
-                                func_8002C1C0(0x8B, 0, 0, 0, 0, 8);
-                                func_8002C1C0(0x8C, 0, 0, 0, 0, 8);
-                                func_8002C1C0(0x8D, 0, 0, 0, 0, 8);
-                                func_8002C1C0(0x8E, 0, 0, 0, 0, 8);
-                                func_8002C1C0(0x91, 0, 0, 0, 0, 8);
+                                updateSpriteRGBA(0x80, 0, 0, 0, 0, 8);
+                                updateSpriteRGBA(0x81, 0, 0, 0, 0, 8);
+                                updateSpriteRGBA(0x82, 0, 0, 0, 0, 8);
+                                updateSpriteRGBA(0x8F, 0, 0, 0, 0, 8);
+                                updateSpriteRGBA(LANDSCAPE_BACKGROUND, 0, 0, 0, 0, 8);
+                                updateSpriteRGBA(0x83, 0, 0, 0, 0, 8);
+                                updateSpriteRGBA(0x84, 0, 0, 0, 0, 8);
+                                updateSpriteRGBA(0x85, 0, 0, 0, 0, 8);
+                                updateSpriteRGBA(0x86, 0, 0, 0, 0, 8);
+                                updateSpriteRGBA(0x87, 0, 0, 0, 0, 8);
+                                updateSpriteRGBA(0x88, 0, 0, 0, 0, 8);
+                                updateSpriteRGBA(0x89, 0, 0, 0, 0, 8);
+                                updateSpriteRGBA(0x8A, 0, 0, 0, 0, 8);
+                                updateSpriteRGBA(0x8B, 0, 0, 0, 0, 8);
+                                updateSpriteRGBA(0x8C, 0, 0, 0, 0, 8);
+                                updateSpriteRGBA(0x8D, 0, 0, 0, 0, 8);
+                                updateSpriteRGBA(0x8E, 0, 0, 0, 0, 8);
+                                updateSpriteRGBA(0x91, 0, 0, 0, 0, 8);
     
                                 if (namingScreenContext.unk_6 != 1) {
                                     
@@ -387,23 +386,23 @@ void loadNameSelectionSprites(void) {
 
     s32 i = 0;
 
-    func_8002B138(0x80, &D_D47F00, &D_D49B80, &D_D49B80_2, &D_D49BA0, NULL, NULL, (void* )0x8023B400, NULL, (void* )0x8023CC00, (void* )0x8023CE00, (void* )0x8023D200, NULL, NULL, 0);
-    func_8002B138(0x81, &D_D1DE00, &D_D2D600, &D_D2D600_2, &D_D2D620, NULL, NULL, (void* )0x80253B00, NULL, (void* )0x80263B00, (void* )0x80263C00, (void* )0x80263D00, NULL, NULL, 0);
-    func_8002B138(0x82, &D_D1DE00, &D_D2D600, &D_D2D600_2, &D_D2D620, NULL, NULL, (void* )0x80253B00, NULL, (void* )0x80263B00, (void* )0x80263C00, (void* )0x80263D00, NULL, NULL, 0);
-    func_8002B138(0x83, &D_D1DE00, &D_D2D600, &D_D2D600_2, &D_D2D620, NULL, NULL, (void* )0x80253B00, NULL, (void* )0x80263B00, (void* )0x80263C00, (void* )0x80263D00, NULL, NULL, 0);
-    func_8002B138(0x84, &D_D1DE00, &D_D2D600, &D_D2D600_2, &D_D2D620, NULL, NULL, (void* )0x80253B00, NULL, (void* )0x80263B00, (void* )0x80263C00, (void* )0x80263D00, NULL, NULL, 0);
-    func_8002B138(0x85, &D_D1DE00, &D_D2D600, &D_D2D600_2, &D_D2D620, NULL, NULL, (void* )0x80253B00, NULL, (void* )0x80263B00, (void* )0x80263C00, (void* )0x80263D00, NULL, NULL, 0);
-    func_8002B138(0x86, &D_D1DE00, &D_D2D600, &D_D2D600_2, &D_D2D620, NULL, NULL, (void* )0x80253B00, NULL, (void* )0x80263B00, (void* )0x80263C00, (void* )0x80263D00, NULL, NULL, 0);
-    func_8002B138(0x87, &D_D1DE00, &D_D2D600, &D_D2D600_2, &D_D2D620, NULL, NULL, (void* )0x80253B00, NULL, (void* )0x80263B00, (void* )0x80263C00, (void* )0x80263D00, NULL, NULL, 0);
-    func_8002B138(0x88, &D_D1DE00, &D_D2D600, &D_D2D600_2, &D_D2D620, NULL, NULL, (void* )0x80253B00, NULL, (void* )0x80263B00, (void* )0x80263C00, (void* )0x80263D00, NULL, NULL, 0);
-    func_8002B138(0x8A, &D_D1DE00, &D_D2D600, &D_D2D600_2, &D_D2D620, NULL, NULL, (void* )0x80253B00, NULL, (void* )0x80263B00, (void* )0x80263C00, (void* )0x80263D00, NULL, NULL, 0);
-    func_8002B138(0x8B, &D_D1DE00, &D_D2D600, &D_D2D600_2, &D_D2D620, NULL, NULL, (void* )0x80253B00, NULL, (void* )0x80263B00, (void* )0x80263C00, (void* )0x80263D00, NULL, NULL, 0);
-    func_8002B138(0x8C, &D_D1DE00, &D_D2D600, &D_D2D600_2, &D_D2D620, NULL, NULL, (void* )0x80253B00, NULL, (void* )0x80263B00, (void* )0x80263C00, (void* )0x80263D00, NULL, NULL, 0);
-    func_8002B138(0x8D, &D_D1DE00, &D_D2D600, &D_D2D600_2, &D_D2D620, NULL, NULL, (void* )0x80253B00, NULL, (void* )0x80263B00, (void* )0x80263C00, (void* )0x80263D00, NULL, NULL, 0);
-    func_8002B138(0x8E, &D_D1DE00, &D_D2D600, &D_D2D600_2, &D_D2D620, NULL, NULL, (void* )0x80253B00, NULL, (void* )0x80263B00, (void* )0x80263C00, (void* )0x80263D00, NULL, NULL, 0);
-    func_8002B138(0x8F, &D_D1DE00, &D_D2D600, &D_D2D600_2, &D_D2D620, NULL, NULL, (void* )0x80253B00, NULL, (void* )0x80263B00, (void* )0x80263C00, (void* )0x80263D00, NULL, NULL, 0);
-    func_8002B138(LANDSCAPE_BACKGROUND, &D_CC9390, &D_CCB980, &D_CCB980_2, &D_CCB9A0, NULL, NULL, (void* )0x8026AB00, NULL, (void* )0x8026DB00, (void* )0x8026DC00, (void* )0x8026DD00, NULL, NULL, 0);
-    func_8002B138(0x91, &D_D47F00, &D_D49B80, &D_D49B80_2, &D_D49BA0, NULL, NULL, (void* )0x8023B400, NULL, (void* )0x8023CC00, (void* )0x8023CE00, (void* )0x8023D200, NULL, NULL, 0);
+    dmaSprite(0x80, &D_D47F00, &D_D49B80, &D_D49B80_2, &D_D49BA0, NULL, NULL, (void* )0x8023B400, NULL, (void* )0x8023CC00, (void* )0x8023CE00, (void* )0x8023D200, NULL, NULL, 0);
+    dmaSprite(0x81, &D_D1DE00, &D_D2D600, &D_D2D600_2, &D_D2D620, NULL, NULL, (void* )0x80253B00, NULL, (void* )0x80263B00, (void* )0x80263C00, (void* )0x80263D00, NULL, NULL, 0);
+    dmaSprite(0x82, &D_D1DE00, &D_D2D600, &D_D2D600_2, &D_D2D620, NULL, NULL, (void* )0x80253B00, NULL, (void* )0x80263B00, (void* )0x80263C00, (void* )0x80263D00, NULL, NULL, 0);
+    dmaSprite(0x83, &D_D1DE00, &D_D2D600, &D_D2D600_2, &D_D2D620, NULL, NULL, (void* )0x80253B00, NULL, (void* )0x80263B00, (void* )0x80263C00, (void* )0x80263D00, NULL, NULL, 0);
+    dmaSprite(0x84, &D_D1DE00, &D_D2D600, &D_D2D600_2, &D_D2D620, NULL, NULL, (void* )0x80253B00, NULL, (void* )0x80263B00, (void* )0x80263C00, (void* )0x80263D00, NULL, NULL, 0);
+    dmaSprite(0x85, &D_D1DE00, &D_D2D600, &D_D2D600_2, &D_D2D620, NULL, NULL, (void* )0x80253B00, NULL, (void* )0x80263B00, (void* )0x80263C00, (void* )0x80263D00, NULL, NULL, 0);
+    dmaSprite(0x86, &D_D1DE00, &D_D2D600, &D_D2D600_2, &D_D2D620, NULL, NULL, (void* )0x80253B00, NULL, (void* )0x80263B00, (void* )0x80263C00, (void* )0x80263D00, NULL, NULL, 0);
+    dmaSprite(0x87, &D_D1DE00, &D_D2D600, &D_D2D600_2, &D_D2D620, NULL, NULL, (void* )0x80253B00, NULL, (void* )0x80263B00, (void* )0x80263C00, (void* )0x80263D00, NULL, NULL, 0);
+    dmaSprite(0x88, &D_D1DE00, &D_D2D600, &D_D2D600_2, &D_D2D620, NULL, NULL, (void* )0x80253B00, NULL, (void* )0x80263B00, (void* )0x80263C00, (void* )0x80263D00, NULL, NULL, 0);
+    dmaSprite(0x8A, &D_D1DE00, &D_D2D600, &D_D2D600_2, &D_D2D620, NULL, NULL, (void* )0x80253B00, NULL, (void* )0x80263B00, (void* )0x80263C00, (void* )0x80263D00, NULL, NULL, 0);
+    dmaSprite(0x8B, &D_D1DE00, &D_D2D600, &D_D2D600_2, &D_D2D620, NULL, NULL, (void* )0x80253B00, NULL, (void* )0x80263B00, (void* )0x80263C00, (void* )0x80263D00, NULL, NULL, 0);
+    dmaSprite(0x8C, &D_D1DE00, &D_D2D600, &D_D2D600_2, &D_D2D620, NULL, NULL, (void* )0x80253B00, NULL, (void* )0x80263B00, (void* )0x80263C00, (void* )0x80263D00, NULL, NULL, 0);
+    dmaSprite(0x8D, &D_D1DE00, &D_D2D600, &D_D2D600_2, &D_D2D620, NULL, NULL, (void* )0x80253B00, NULL, (void* )0x80263B00, (void* )0x80263C00, (void* )0x80263D00, NULL, NULL, 0);
+    dmaSprite(0x8E, &D_D1DE00, &D_D2D600, &D_D2D600_2, &D_D2D620, NULL, NULL, (void* )0x80253B00, NULL, (void* )0x80263B00, (void* )0x80263C00, (void* )0x80263D00, NULL, NULL, 0);
+    dmaSprite(0x8F, &D_D1DE00, &D_D2D600, &D_D2D600_2, &D_D2D620, NULL, NULL, (void* )0x80253B00, NULL, (void* )0x80263B00, (void* )0x80263C00, (void* )0x80263D00, NULL, NULL, 0);
+    dmaSprite(LANDSCAPE_BACKGROUND, &D_CC9390, &D_CCB980, &D_CCB980_2, &D_CCB9A0, NULL, NULL, (void* )0x8026AB00, NULL, (void* )0x8026DB00, (void* )0x8026DC00, (void* )0x8026DD00, NULL, NULL, 0);
+    dmaSprite(0x91, &D_D47F00, &D_D49B80, &D_D49B80_2, &D_D49BA0, NULL, NULL, (void* )0x8023B400, NULL, (void* )0x8023CC00, (void* )0x8023CE00, (void* )0x8023D200, NULL, NULL, 0);
     
     func_8002CB24(0x8F, 1);
     func_8002CB24(LANDSCAPE_BACKGROUND, 1);
@@ -465,24 +464,24 @@ void loadNameSelectionSprites(void) {
     func_8002C914(0x8E, 0, 0, 0, 0);
     func_8002C914(0x91, 0, 0, 0, 0);
     
-    func_8002C1C0(0x80, 0xFF, 0xFF, 0xFF, 0xFF, 8);
-    func_8002C1C0(0x81, 0xFF, 0xFF, 0xFF, 0xFF, 8);
-    func_8002C1C0(0x82, 0xFF, 0xFF, 0xFF, 0xFF, 8);
-    func_8002C1C0(0x8F, 0xFF, 0xFF, 0xFF, 0xFF, 8);
-    func_8002C1C0(LANDSCAPE_BACKGROUND, 0xFF, 0xFF, 0xFF, 0xFF, 8);
-    func_8002C1C0(0x83, 0xFF, 0xFF, 0xFF, 0xFF, 8);
-    func_8002C1C0(0x84, 0xFF, 0xFF, 0xFF, 0xFF, 8);
-    func_8002C1C0(0x85, 0xFF, 0xFF, 0xFF, 0xFF, 8);
-    func_8002C1C0(0x86, 0xFF, 0xFF, 0xFF, 0xFF, 8);
-    func_8002C1C0(0x87, 0xFF, 0xFF, 0xFF, 0xFF, 8);
-    func_8002C1C0(0x88, 0xFF, 0xFF, 0xFF, 0xFF, 8);
-    func_8002C1C0(0x89, 0xFF, 0xFF, 0xFF, 0xFF, 8);
-    func_8002C1C0(0x8A, 0xFF, 0xFF, 0xFF, 0xFF, 8);
-    func_8002C1C0(0x8B, 0xFF, 0xFF, 0xFF, 0xFF, 8);
-    func_8002C1C0(0x8C, 0xFF, 0xFF, 0xFF, 0xFF, 8);
-    func_8002C1C0(0x8D, 0xFF, 0xFF, 0xFF, 0xFF, 8);
-    func_8002C1C0(0x8E, 0xFF, 0xFF, 0xFF, 0xFF, 8);
-    func_8002C1C0(0x91, 0xFF, 0xFF, 0xFF, 0xFF, 8);
+    updateSpriteRGBA(0x80, 0xFF, 0xFF, 0xFF, 0xFF, 8);
+    updateSpriteRGBA(0x81, 0xFF, 0xFF, 0xFF, 0xFF, 8);
+    updateSpriteRGBA(0x82, 0xFF, 0xFF, 0xFF, 0xFF, 8);
+    updateSpriteRGBA(0x8F, 0xFF, 0xFF, 0xFF, 0xFF, 8);
+    updateSpriteRGBA(LANDSCAPE_BACKGROUND, 0xFF, 0xFF, 0xFF, 0xFF, 8);
+    updateSpriteRGBA(0x83, 0xFF, 0xFF, 0xFF, 0xFF, 8);
+    updateSpriteRGBA(0x84, 0xFF, 0xFF, 0xFF, 0xFF, 8);
+    updateSpriteRGBA(0x85, 0xFF, 0xFF, 0xFF, 0xFF, 8);
+    updateSpriteRGBA(0x86, 0xFF, 0xFF, 0xFF, 0xFF, 8);
+    updateSpriteRGBA(0x87, 0xFF, 0xFF, 0xFF, 0xFF, 8);
+    updateSpriteRGBA(0x88, 0xFF, 0xFF, 0xFF, 0xFF, 8);
+    updateSpriteRGBA(0x89, 0xFF, 0xFF, 0xFF, 0xFF, 8);
+    updateSpriteRGBA(0x8A, 0xFF, 0xFF, 0xFF, 0xFF, 8);
+    updateSpriteRGBA(0x8B, 0xFF, 0xFF, 0xFF, 0xFF, 8);
+    updateSpriteRGBA(0x8C, 0xFF, 0xFF, 0xFF, 0xFF, 8);
+    updateSpriteRGBA(0x8D, 0xFF, 0xFF, 0xFF, 0xFF, 8);
+    updateSpriteRGBA(0x8E, 0xFF, 0xFF, 0xFF, 0xFF, 8);
+    updateSpriteRGBA(0x91, 0xFF, 0xFF, 0xFF, 0xFF, 8);
 
     namingScreenContext.unk_19 = 0;
     namingScreenContext.unk_18 = 0;
@@ -930,16 +929,16 @@ INCLUDE_ASM(const s32, "namingScreen", loadSeasonSelectionSprites);
 /*
 void loadSeasonSelectionSprites(void) {
 
-    func_8002B138(0x80, &D_D47F00, &D_D49B80, &D_D49B80_2, &D_D49BA0, 0, 0, 0x8023B400, 0, 0x8023CC00, 0x8023CE00, 0x8023D200, 0, 0, 0);
-    func_8002B138(0x83, &D_CDE2E0, &D_CED610, &D_CED610_2, &D_CED630, 0, 0, 0x80267300, 0, 0x8026A300, 0x8026A700, 0x8026AA00, 0, 0, 0);
-    func_8002B138(0x84, &D_CDE2E0, &D_CED610, &D_CED610_2, &D_CED630, 0, 0, 0x80267300, 0, 0x8026A300, 0x8026A700, 0x8026AA00, 0, 0, 0);
-    func_8002B138(0x85, &D_CDE2E0, &D_CED610, &D_CED610_2, &D_CED630, 0, 0, 0x80267300, 0, 0x8026A300, 0x8026A700, 0x8026AA00, 0, 0, 0);
-    func_8002B138(0x86, &D_CDE2E0, &D_CED610, &D_CED610_2, &D_CED630, 0, 0, 0x80267300, 0, 0x8026A300, 0x8026A700, 0x8026AA00, 0, 0, 0);
-    func_8002B138(0x89, &D_CDAEB0, &D_CDE2C0, &D_CDE2C0_2, &D_CDE2E0_2, 0, 0, 0x80263E00, 0, 0x80266E00, 0x80267100, 0x80267200, 0, 0, 0);
-    func_8002B138(0x8A, &D_CDAEB0, &D_CDE2C0, &D_CDE2C0_2, &D_CDE2E0_2, 0, 0, 0x80263E00, 0, 0x80266E00, 0x80267100, 0x80267200, 0, 0, 0);
-    func_8002B138(0x8B, &D_CDAEB0, &D_CDE2C0, &D_CDE2C0_2, &D_CDE2E0_2, 0, 0, 0x80263E00, 0, 0x80266E00, 0x80267100, 0x80267200, 0, 0, 0);
-    func_8002B138(0x8C, &D_CDAEB0, &D_CDE2C0, &D_CDE2C0_2, &D_CDE2E0_2, 0, 0, 0x80263E00, 0, 0x80266E00, 0x80267100, 0x80267200, 0, 0, 0);
-    func_8002B138(LANDSCAPE_BACKGROUND, &D_CC9390, &D_CCB980, &D_CCB980_2, &D_CCB9A0, 0, 0, 0x8026AB00, 0, 0x8026DB00, 0x8026DC00, 0x8026DD00, 0, 0, 0);
+    dmaSprite(0x80, &D_D47F00, &D_D49B80, &D_D49B80_2, &D_D49BA0, 0, 0, 0x8023B400, 0, 0x8023CC00, 0x8023CE00, 0x8023D200, 0, 0, 0);
+    dmaSprite(0x83, &D_CDE2E0, &D_CED610, &D_CED610_2, &D_CED630, 0, 0, 0x80267300, 0, 0x8026A300, 0x8026A700, 0x8026AA00, 0, 0, 0);
+    dmaSprite(0x84, &D_CDE2E0, &D_CED610, &D_CED610_2, &D_CED630, 0, 0, 0x80267300, 0, 0x8026A300, 0x8026A700, 0x8026AA00, 0, 0, 0);
+    dmaSprite(0x85, &D_CDE2E0, &D_CED610, &D_CED610_2, &D_CED630, 0, 0, 0x80267300, 0, 0x8026A300, 0x8026A700, 0x8026AA00, 0, 0, 0);
+    dmaSprite(0x86, &D_CDE2E0, &D_CED610, &D_CED610_2, &D_CED630, 0, 0, 0x80267300, 0, 0x8026A300, 0x8026A700, 0x8026AA00, 0, 0, 0);
+    dmaSprite(0x89, &D_CDAEB0, &D_CDE2C0, &D_CDE2C0_2, &D_CDE2E0_2, 0, 0, 0x80263E00, 0, 0x80266E00, 0x80267100, 0x80267200, 0, 0, 0);
+    dmaSprite(0x8A, &D_CDAEB0, &D_CDE2C0, &D_CDE2C0_2, &D_CDE2E0_2, 0, 0, 0x80263E00, 0, 0x80266E00, 0x80267100, 0x80267200, 0, 0, 0);
+    dmaSprite(0x8B, &D_CDAEB0, &D_CDE2C0, &D_CDE2C0_2, &D_CDE2E0_2, 0, 0, 0x80263E00, 0, 0x80266E00, 0x80267100, 0x80267200, 0, 0, 0);
+    dmaSprite(0x8C, &D_CDAEB0, &D_CDE2C0, &D_CDE2C0_2, &D_CDE2E0_2, 0, 0, 0x80263E00, 0, 0x80266E00, 0x80267100, 0x80267200, 0, 0, 0);
+    dmaSprite(LANDSCAPE_BACKGROUND, &D_CC9390, &D_CCB980, &D_CCB980_2, &D_CCB9A0, 0, 0, 0x8026AB00, 0, 0x8026DB00, 0x8026DC00, 0x8026DD00, 0, 0, 0);
     
     setSpriteShrinkFactor(0x80, 0, 0, -1.0f);
     
@@ -982,16 +981,16 @@ void loadSeasonSelectionSprites(void) {
     func_8002C914(0x8C, 0, 0, 0, 0);
     func_8002C914(LANDSCAPE_BACKGROUND, 0, 0, 0, 0);
 
-    func_8002C1C0(0x80, 0xFF, 0xFF, 0xFF, 0xFF, 8);
-    func_8002C1C0(0x83, 0xFF, 0xFF, 0xFF, 0xFF, 8);
-    func_8002C1C0(0x84, 0xFF, 0xFF, 0xFF, 0xFF, 8);
-    func_8002C1C0(0x85, 0xFF, 0xFF, 0xFF, 0xFF, 8);
-    func_8002C1C0(0x86, 0xFF, 0xFF, 0xFF, 0xFF, 8);
-    func_8002C1C0(0x89, 0xFF, 0xFF, 0xFF, 0xFF, 8);
-    func_8002C1C0(0x8A, 0xFF, 0xFF, 0xFF, 0xFF, 8);
-    func_8002C1C0(0x8B, 0xFF, 0xFF, 0xFF, 0xFF, 8);
-    func_8002C1C0(0x8C, 0xFF, 0xFF, 0xFF, 0xFF, 8);
-    func_8002C1C0(LANDSCAPE_BACKGROUND, 0xFF, 0xFF, 0xFF, 0xFF, 8);
+    updateSpriteRGBA(0x80, 0xFF, 0xFF, 0xFF, 0xFF, 8);
+    updateSpriteRGBA(0x83, 0xFF, 0xFF, 0xFF, 0xFF, 8);
+    updateSpriteRGBA(0x84, 0xFF, 0xFF, 0xFF, 0xFF, 8);
+    updateSpriteRGBA(0x85, 0xFF, 0xFF, 0xFF, 0xFF, 8);
+    updateSpriteRGBA(0x86, 0xFF, 0xFF, 0xFF, 0xFF, 8);
+    updateSpriteRGBA(0x89, 0xFF, 0xFF, 0xFF, 0xFF, 8);
+    updateSpriteRGBA(0x8A, 0xFF, 0xFF, 0xFF, 0xFF, 8);
+    updateSpriteRGBA(0x8B, 0xFF, 0xFF, 0xFF, 0xFF, 8);
+    updateSpriteRGBA(0x8C, 0xFF, 0xFF, 0xFF, 0xFF, 8);
+    updateSpriteRGBA(LANDSCAPE_BACKGROUND, 0xFF, 0xFF, 0xFF, 0xFF, 8);
     
     namingScreenContext.unk_7 = 0;
     namingScreenContext.unk_4 = 9;
@@ -1057,16 +1056,16 @@ void func_800F0F84(void) {
             setSfx(1);
             setSfxVolume(CLOSE, SFX_VOLUME);
 
-            func_8002C1C0(0x80, 0, 0, 0, 0, 8);
-            func_8002C1C0(0x83, 0, 0, 0, 0, 8);
-            func_8002C1C0(0x84, 0, 0, 0, 0, 8);
-            func_8002C1C0(0x85, 0, 0, 0, 0, 8);
-            func_8002C1C0(0x86, 0, 0, 0, 0, 8);
-            func_8002C1C0(0x89, 0, 0, 0, 0, 8);
-            func_8002C1C0(0x8A, 0, 0, 0, 0, 8);
-            func_8002C1C0(0x8B, 0, 0, 0, 0, 8);
-            func_8002C1C0(0x8C, 0, 0, 0, 0, 8);
-            func_8002C1C0(LANDSCAPE_BACKGROUND, 0, 0, 0, 0, 8);
+            updateSpriteRGBA(0x80, 0, 0, 0, 0, 8);
+            updateSpriteRGBA(0x83, 0, 0, 0, 0, 8);
+            updateSpriteRGBA(0x84, 0, 0, 0, 0, 8);
+            updateSpriteRGBA(0x85, 0, 0, 0, 0, 8);
+            updateSpriteRGBA(0x86, 0, 0, 0, 0, 8);
+            updateSpriteRGBA(0x89, 0, 0, 0, 0, 8);
+            updateSpriteRGBA(0x8A, 0, 0, 0, 0, 8);
+            updateSpriteRGBA(0x8B, 0, 0, 0, 0, 8);
+            updateSpriteRGBA(0x8C, 0, 0, 0, 0, 8);
+            updateSpriteRGBA(LANDSCAPE_BACKGROUND, 0, 0, 0, 0, 8);
 
             namingScreenContext.flags |= 0x200;
 
