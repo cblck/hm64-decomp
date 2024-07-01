@@ -3,6 +3,50 @@
 
 #include "common.h"
 
+#define TOOL_SLOTS 5
+#define BELONGINGS 6
+#define KEY_ITEMS 7
+
+typedef struct {
+    u8 cellIndex;
+    u8 previousCellIndex;
+    u8 pageNumber;
+    u8 unk_3;
+    u8 unk_4;
+    u8 unk_5;
+    u8 subscreen;
+    u8 unk_7;
+    u8 unk_8;
+    u8 unk_9;
+    u8 unk_A;
+    u8 unk_B;
+} OverlayScreenTable;
+
+// 0x801C3DA0
+typedef struct {
+    u16 unk_0;
+    u16 unk_2;
+    u16 unk_4;
+    u16 unk_6;
+    u16 unk_8;
+    u16 unk_A;
+    u8 dialogueVariableStrings[6][6]; // dialogue variable 0x2A-0x2F, 0x801C3DAC
+    u8 string7[6];
+    u8 string8[6];
+    u8 string9[6];
+    u8 string10[6];
+    u8 string11[6];
+    u8 string12[6];
+    u8 string13[6];
+    u8 string14[6];
+    u8 string15[6];
+    u8 dialogueVariableIndices[6]; // 0x801C3E06
+    u8 unk_6A; // 0x801C3E0C, index into string10
+    u8 unk_6B; // set from random number
+    u8 unk_6C; // set from random number
+    u8 unk_6D[3];
+} OverlayScreenStrings;
+
 extern void func_800B2CE0(void);
 extern void func_800B3694(void);
 extern void func_800B3A60(void);     
@@ -15,6 +59,8 @@ extern void func_800B5BD4(void);
 extern void func_800CB0C4(void);
 extern void func_800CB8F0(void);
 extern void func_800CC17C(void); 
+extern bool func_800CE714(bool);
+extern bool func_800CE828(bool);  
 
 extern u8 D_801890E8[31];
 // calendar
@@ -37,22 +83,7 @@ extern u32 _holdableItemsAssetsIndexSegmentRomEnd;
 extern u32 _holdableItemsSpritesheetIndexSegmentRomStart;
 extern u32 _holdableItemsSpritesheetIndexSegmentRomEnd;
 
-typedef struct {
-    u8 cellIndex;
-    u8 previousCellIndex;
-    u8 pageNumber;
-    u8 unk_3;
-    u8 unk_4;
-    u8 unk_5;
-    u8 unk_6;
-    u8 unk_7;
-    u8 unk_8;
-    u8 unk_9;
-    u8 unk_A;
-    u8 unk_B;
-} OverlayScreenTable;
-
-// pause screen rucksack
 extern OverlayScreenTable overlayScreenTable;
+extern OverlayScreenStrings overlayScreenStrings;
 
 #endif
