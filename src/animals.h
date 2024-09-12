@@ -53,7 +53,7 @@ typedef struct {
 	u8 condition; // 0x20
 	u8 age; // 0x21
 	u8 conditionCounter; // 0x22
-	u8 unk_23[6]; 
+	u8 unk_23[6];
 	u8 birthdaySeason; // 0x29
 	u8 birthdayDayOfMonth; // 0x2A
 	u8 goldenMilk; // 0x2B
@@ -72,7 +72,7 @@ typedef struct {
 	u8 unk_19; // 19
 	u8 unk_1A; // 1A
 	u8 unk_1B; // 1B
-    u8 unk_1C; // 1C 
+	u8 unk_1C; // 1C
 	u16 flags; // 1E
 } Dog;
 
@@ -80,7 +80,7 @@ typedef struct {
 typedef struct {
 	u8 affection; // 00
 	u8 name[6]; // 01
-	Vec3f coordinates; // 08 
+	Vec3f coordinates; // 08
 	u16 spriteIndex; // 14
 	u8 location; // 16
 	u8 unk_17; // 17
@@ -96,86 +96,86 @@ typedef struct {
 } Horse;
 
 typedef struct {
-    u8 unk_0;
-    u8 unk_1;
-    u8 unk_2;
-    u8 unk_3;
-    u8 unk_4;
-    u8 unk_5; 
+	u8 unk_0;
+	u8 unk_1;
+	u8 unk_2;
+	u8 unk_3;
+	u8 unk_4;
+	u8 unk_5;
 } AnimalLocations;
 
 // 0x8016FB08
 typedef struct {
-    Vec3f unk_0; // 08
-    u16 spriteIndex; // 14
-    u8 mapIndex; // 16
-    u8 unk_F; // 17
-    u8 unk_10; // 18
-    u8 unk_11; // 19
-    u8 unk_12; // 1A
-    u8 unk_13; // 1B
-    u8 unk_14; // 1C
-    u8 unk_15; // 1D
-    u8 unk_16; // 1E
-    u8 unk_17; // 1F
-    u16 flags; // 20
+	Vec3f unk_0; // 08
+	u16 spriteIndex; // 14
+	u8 mapIndex; // 16
+	u8 unk_F; // 17
+	u8 unk_10; // 18
+	u8 unk_11; // 19
+	u8 unk_12; // 1A
+	u8 unk_13; // 1B
+	u8 unk_14; // 1C
+	u8 unk_15; // 1D
+	u8 unk_16; // 1E
+	u8 unk_17; // 1F
+	u16 flags; // 20
 } ChickenEgg;
 
-extern bool func_80086764();    
-extern void func_800876D0();     
+extern bool func_80086764();
+extern void func_800876D0();
 extern void func_800879C8();
-extern void func_80087CD4();    
-extern void func_80087D5C();   
-extern void func_80087DEC();                   
+extern void func_80087CD4();
+extern void func_80087D5C();
+extern void func_80087DEC();
 extern u8 func_80087F28(u8, u8);
-extern void func_8008841C();    
-extern void func_800886D0();  
-extern void func_80088C1C(u8, u8);      
+extern void func_8008841C();
+extern void func_800886D0();
+extern void func_80088C1C(u8, u8);
 extern u8 func_8008A4A8(u8, u8, f32, f32, f32);
-extern void func_8008B1B8();          
-extern void func_8008B2E8(u8);                                   
-extern void func_8008B9AC();                                  
-extern void func_8008BAF0(u8, u8); 
-extern void func_80088D54();  
-extern void func_80099DE8();  
-extern void func_80099EEC(); 
+extern void func_8008B1B8();
+extern void func_8008B2E8(u8);
+extern void func_8008B9AC();
+extern void func_8008BAF0(u8, u8);
+extern void func_80088D54();
+extern void func_80099DE8();
+extern void func_80099EEC();
 extern void func_80099FF0();
-extern void func_8009A398(void);   
+extern void func_8009A398(void);
 extern bool func_8009A074();
 extern bool func_8009A400();
-extern u8 func_8009A810();    
+extern u8 func_8009A810();
 extern bool func_8009A100();
-extern void func_8009A17C();       
+extern void func_8009A17C();
 extern void func_8009A2D0();
-extern void func_8009A53C();  
-extern void func_8009A97C(); 
-extern void func_8009AAC8();     
-extern void func_8009B11C();   
+extern void func_8009A53C();
+extern void func_8009A97C();
+extern void func_8009AAC8();
+extern void func_8009B11C();
 extern void func_8009B1BC(void);
-extern void func_8009B25C();     
-extern u8 func_8009B2BC(u8);  
+extern void func_8009B25C();
+extern u8 func_8009B2BC(u8);
 extern u8 func_8009B320();
 extern u8 func_8009B374();
-extern u8 func_8009B3DC();  
-extern u8 func_8009B464();                                
-extern u8 func_8009B4EC();  
-extern u8 func_8009B564(); 
-extern u8 func_8009B5E0();     
-extern u8 func_8009B658();                                
-extern u8 func_8009B7BC();    
+extern u8 func_8009B3DC();
+extern u8 func_8009B464();
+extern u8 func_8009B4EC();
+extern u8 func_8009B564();
+extern u8 func_8009B5E0();
+extern u8 func_8009B658();
+extern u8 func_8009B7BC();
 extern u8 func_8009B828(u8);
 extern void func_8009BA74(u8);
-extern void func_8009BC64();      
+extern void func_8009BC64();
 
 extern void initializeDog(void);
-extern void initializeHorse(void); 
+extern void initializeHorse(void);
 
-extern void adjustDogAffection(s8 value);                            
-extern void adjustHorseAffection(s8 value);    
+extern void adjustDogAffection(s8 value);
+extern void adjustHorseAffection(s8 value);
 
-extern void setAnimalLocations(u8);  
-extern void setDogLocation(u8);        
-extern void setHorseLocation(u8);     
+extern void setAnimalLocations(u8);
+extern void setDogLocation(u8);
+extern void setHorseLocation(u8);
 
 extern ChickenEgg gChickenEggs[MAX_CHICKEN_EGGS];
 extern Chicken gChickens[MAX_CHICKENS];

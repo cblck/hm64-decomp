@@ -1,4 +1,4 @@
-#ifndef _WEATHER_H_  
+#ifndef _WEATHER_H_
 #define _WEATHER_H_
 
 #include "common.h"
@@ -11,10 +11,10 @@
 
 #define RAIN_TEXTURE_VADDR 0x802A5AC0
 
-extern void func_800DC360(void);    
+extern void func_800DC360(void);
 
-extern void setForecast(void);    
-extern Vec4f setWeatherLighting(u8 weather);  
+extern void setForecast(void);
+extern Vec4f setWeatherLighting(u8 weather);
 
 extern u8 gForecast;
 extern u8 gWeather;
