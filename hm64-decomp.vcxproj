@@ -1,0 +1,1350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|x86">
+      <Configuration>Release</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0035eb0c-0245-43e8-b864-c221ef53a5e0}</ProjectGuid>
+    <Keyword>Linux</Keyword>
+    <RootNamespace>hm64_decomp</RootNamespace>
+    <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
+    <ApplicationType>Linux</ApplicationType>
+    <ApplicationTypeRevision>1.0</ApplicationTypeRevision>
+    <TargetLinuxPlatform>Generic</TargetLinuxPlatform>
+    <LinuxProjectType>{D51BCBC9-82E9-4017-911E-C93873C4EA2B}</LinuxProjectType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>WSL2_1_0</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'" />
+  <ItemGroup>
+    <ClCompile Include="src\animals.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\evaluation.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\game.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\gameAudio.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\gameStart.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\gameStatus.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\initialize.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\initialize2.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\itemHandlers.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\level.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\levelInteractions.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\lib\libc\bcopy.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\libc\bzero.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\libkmc\rand.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\lib\libkmc\syncPrintf.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\lib\libmus\libsrc\player.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\libmus\libsrc\player_api.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\libmus\libsrc\player_commands.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nuaumgr.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nuauprenmifuncset.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nuauprenmiproc.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nuauseqplayerseqset.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nuaustlbankset.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nuaustlinit.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nuaustlplayerinit.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nuaustlseqplayerplay.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nuaustlsndplayerplay.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nuboot.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Disabled</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontdatagetex.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontdatagetexall.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontdatalock.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontdataread.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontdatareadstart.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontdatareadwait.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontinit.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontmgr.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontpakcodeset.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontpakfiledelete.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontpakfiledeletejis.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontpakfilenum.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontpakfileopenjis.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontpakfilereadwrite.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontpakfilestate.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontpakgetfree.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontpakjiston64.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontpakmgr.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontpakopen.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontqueryread.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontrmbmgr.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nugfxdisplayoff.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nugfxdisplayon.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nugfxfuncset.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nugfxprenmifuncset.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nugfxretracewait.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nugfxsetcfb.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nugfxswapcfb.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nugfxswapcfbfuncset.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nugfxtaskallendwait.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nugfxtaskmgr.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nugfxthread.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nupakmenu.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nupakmenuloadfont.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nupiinit.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nupireadrom.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nusched.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nusicallbackadd.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nusicallbackremove.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nusimgr.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\assert.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\audio\auxbus.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\audio\copy.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\audio\drvrnew.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\audio\env.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\audio\filter.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\audio\heapalloc.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\audio\heapinit.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\audio\load.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\audio\mainbus.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\audio\resample.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\audio\reverb.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\audio\save.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\audio\sl.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\audio\synallocfx.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\audio\syndelete.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\audio\synthesizer.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\bcmp.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\createmesgqueue.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\createthread.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\destroythread.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\getthreadpri.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\gettime.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\gu\lookat.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\gu\mtxutil.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\gu\ortho.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\gu\perspective.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\gu\rotate.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\gu\scale.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\gu\sins.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\gu\translate.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\initialize.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\initrdb.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\ai.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\aigetlen.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\aigetstat.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\aisetfreq.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\aisetnextbuf.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\cartrominit.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\contpfs.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\contquery.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\contramread.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\contramwrite.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\contreaddata.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\controller.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\crc.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\devmgr.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\epidma.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\epilinkhandle.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\epirawread.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\epirawstartdma.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\epirawwrite.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\getactivequeue.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\motor.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\pfsallocatefile.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\pfschecker.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\pfsdeletefile.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\pfsfilestate.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\pfsfreeblocks.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\pfsgetstatus.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\pfsinitpak.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\pfsisplug.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\pfsnumfiles.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\pfsreadwritefile.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\pfsrepairid.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\pfssearchfile.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\pfsselectbank.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\piacs.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\pigetcmdq.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\pimgr.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\pirawdma.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\resetglobalintmask.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\setglobalintmask.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\si.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\siacs.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\sirawdma.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\sirawread.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\sirawwrite.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\sp.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\spgetstat.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\sprawdma.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\sprawread.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\sprawwrite.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\spsetpc.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\spsetstat.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\sptask.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\sptaskyield.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\sptaskyielded.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\vi.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\viblack.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\vigetcurrcontext.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\vigetcurrframebuf.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\vigetnextframebuf.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\vimgr.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\visetevent.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\visetmode.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\visetspecial.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\visetyscale.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\viswapbuf.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\viswapcontext.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\yieldthread.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\jammesg.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\kdebugserver.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libc\ldtob.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libc\litob.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libc\string.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_adpcm.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_alMainBusPull.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_alSavePul.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_auxbus.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_drvrnew.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_env.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_resample.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_reverb.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_sl.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_synaddplayer.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_synallocfx.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_synallocvoice.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_syndelete.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_synsetfxmix.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_synsetpan.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_synsetpitch.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_synsetvol.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_synstartvoice.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_synstopvoice.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_synthesizer.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\rdbsend.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\readhost.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\recvmesg.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\rmon\rmonbreak.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\rmon\rmoncmd.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\rmon\rmonmain.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\rmon\rmonmem.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\rmon\rmonmisc.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\rmon\rmonrcp.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\rmon\rmonreg.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\rmon\rmonsio.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\rmon\rmontask.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\sendmesg.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\seteventmesg.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\seteventmsg.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\setthreadpri.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\settimer.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\startthread.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\stopthread.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\timerintr.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\virtualtophysical.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\load.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\loadGameScreen.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\mainLoop.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\mainproc.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\mapObjects.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\namingScreen.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\npc.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\overlayScreens.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\overlays\gamePakBuffer.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\overlays\sramBuffer.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\player.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\setCutscenes.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\shop.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\system\animatedSprites.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\system\audio.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\system\controller.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\system\cutscene.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\system\dialogue.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\system\flags.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\system\globalSprites.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\system\graphic.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\system\map.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\system\mapContext.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\system\mathUtils.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\system\memory.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\system\message.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\system\pauseScreen.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\system\sprite.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\system\spriteAddresses.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\system\staticGfx.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\system\volume.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\system\worldGraphics.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\title.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\tv.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\updateGame.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\weather.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="tools\vs-wrapper.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\common.h" />
+    <ClInclude Include="include\gcc\stdlib.h" />
+    <ClInclude Include="include\include_asm.h" />
+    <ClInclude Include="include\libkmc\kmclib.h" />
+    <ClInclude Include="include\libmus\libmus.h" />
+    <ClInclude Include="include\libmus\libmus_data.h" />
+    <ClInclude Include="include\nusys.h" />
+    <ClInclude Include="include\PR\abi.h" />
+    <ClInclude Include="include\PR\gbi.h" />
+    <ClInclude Include="include\PR\gs2dex.h" />
+    <ClInclude Include="include\PR\gu.h" />
+    <ClInclude Include="include\PR\libaudio.h" />
+    <ClInclude Include="include\PR\mbi.h" />
+    <ClInclude Include="include\PR\os.h" />
+    <ClInclude Include="include\PR\osint.h" />
+    <ClInclude Include="include\PR\os_internal.h" />
+    <ClInclude Include="include\PR\os_pi.h" />
+    <ClInclude Include="include\PR\R4300.h" />
+    <ClInclude Include="include\PR\rcp.h" />
+    <ClInclude Include="include\PR\sptask.h" />
+    <ClInclude Include="include\PR\ucode.h" />
+    <ClInclude Include="include\PR\ultratypes.h" />
+    <ClInclude Include="include\structs.h" />
+    <ClInclude Include="include\ultra64.h" />
+    <ClInclude Include="src\animals.h" />
+    <ClInclude Include="src\evaluation.h" />
+    <ClInclude Include="src\game.h" />
+    <ClInclude Include="src\gameAudio.h" />
+    <ClInclude Include="src\gameStart.h" />
+    <ClInclude Include="src\gameStatus.h" />
+    <ClInclude Include="src\initialize.h" />
+    <ClInclude Include="src\initialize2.h" />
+    <ClInclude Include="src\itemHandlers.h" />
+    <ClInclude Include="src\level.h" />
+    <ClInclude Include="src\levelInteractions.h" />
+    <ClInclude Include="src\lib\libmus\libsrc\player.h" />
+    <ClInclude Include="src\lib\nusys-1\nualstl\nualstl.h" />
+    <ClInclude Include="src\lib\os\libultra\io\controller.h" />
+    <ClInclude Include="src\load.h" />
+    <ClInclude Include="src\loadGameScreen.h" />
+    <ClInclude Include="src\mainLoop.h" />
+    <ClInclude Include="src\mainproc.h" />
+    <ClInclude Include="src\mapObjects.h" />
+    <ClInclude Include="src\namingScreen.h" />
+    <ClInclude Include="src\npc.h" />
+    <ClInclude Include="src\overlayScreens.h" />
+    <ClInclude Include="src\player.h" />
+    <ClInclude Include="src\setCutscenes.h" />
+    <ClInclude Include="src\shop.h" />
+    <ClInclude Include="src\spriteIndices.h" />
+    <ClInclude Include="src\system\audio.h" />
+    <ClInclude Include="src\system\controller.h" />
+    <ClInclude Include="src\system\cutscene.h" />
+    <ClInclude Include="src\system\dialogue.h" />
+    <ClInclude Include="src\system\flags.h" />
+    <ClInclude Include="src\system\graphic.h" />
+    <ClInclude Include="src\system\map.h" />
+    <ClInclude Include="src\system\mapContext.h" />
+    <ClInclude Include="src\system\mathUtils.h" />
+    <ClInclude Include="src\system\memory.h" />
+    <ClInclude Include="src\system\message.h" />
+    <ClInclude Include="src\system\pauseScreen.h" />
+    <ClInclude Include="src\system\sprite.h" />
+    <ClInclude Include="src\system\volume.h" />
+    <ClInclude Include="src\system\worldGraphics.h" />
+    <ClInclude Include="src\title.h" />
+    <ClInclude Include="src\tv.h" />
+    <ClInclude Include="src\updateGame.h" />
+    <ClInclude Include="src\weather.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitmodules" />
+    <None Include="include\macro.inc" />
+    <None Include="Makefile" />
+    <None Include="permuter_settings.toml" />
+    <None Include="src\lib\os\libultra\gu\libm_vals.s" />
+    <None Include="tools\extract.py" />
+    <None Include="tools\progress.py" />
+    <None Include="tools\splat.yaml" />
+    <None Include="tools\splat\create_config.py" />
+    <None Include="tools\splat\mypy.ini" />
+    <None Include="tools\splat\pyproject.toml" />
+    <None Include="tools\splat\split.py" />
+    <None Include="tools\splat\src\splat\disassembler\disassembler.py" />
+    <None Include="tools\splat\src\splat\disassembler\disassembler_instance.py" />
+    <None Include="tools\splat\src\splat\disassembler\disassembler_section.py" />
+    <None Include="tools\splat\src\splat\disassembler\null_disassembler.py" />
+    <None Include="tools\splat\src\splat\disassembler\spimdisasm_disassembler.py" />
+    <None Include="tools\splat\src\splat\disassembler\__init__.py" />
+    <None Include="tools\splat\src\splat\platforms\n64.py" />
+    <None Include="tools\splat\src\splat\platforms\ps2.py" />
+    <None Include="tools\splat\src\splat\platforms\psp.py" />
+    <None Include="tools\splat\src\splat\platforms\psx.py" />
+    <None Include="tools\splat\src\splat\platforms\__init__.py" />
+    <None Include="tools\splat\src\splat\scripts\capy.py" />
+    <None Include="tools\splat\src\splat\scripts\create_config.py" />
+    <None Include="tools\splat\src\splat\scripts\split.py" />
+    <None Include="tools\splat\src\splat\scripts\__init__.py" />
+    <None Include="tools\splat\src\splat\segtypes\common\asm.py" />
+    <None Include="tools\splat\src\splat\segtypes\common\bin.py" />
+    <None Include="tools\splat\src\splat\segtypes\common\bss.py" />
+    <None Include="tools\splat\src\splat\segtypes\common\c.py" />
+    <None Include="tools\splat\src\splat\segtypes\common\code.py" />
+    <None Include="tools\splat\src\splat\segtypes\common\codesubsegment.py" />
+    <None Include="tools\splat\src\splat\segtypes\common\cpp.py" />
+    <None Include="tools\splat\src\splat\segtypes\common\data.py" />
+    <None Include="tools\splat\src\splat\segtypes\common\databin.py" />
+    <None Include="tools\splat\src\splat\segtypes\common\group.py" />
+    <None Include="tools\splat\src\splat\segtypes\common\hasm.py" />
+    <None Include="tools\splat\src\splat\segtypes\common\header.py" />
+    <None Include="tools\splat\src\splat\segtypes\common\lib.py" />
+    <None Include="tools\splat\src\splat\segtypes\common\pad.py" />
+    <None Include="tools\splat\src\splat\segtypes\common\rdata.py" />
+    <None Include="tools\splat\src\splat\segtypes\common\rodata.py" />
+    <None Include="tools\splat\src\splat\segtypes\common\rodatabin.py" />
+    <None Include="tools\splat\src\splat\segtypes\common\sbss.py" />
+    <None Include="tools\splat\src\splat\segtypes\common\sdata.py" />
+    <None Include="tools\splat\src\splat\segtypes\common\segment.py" />
+    <None Include="tools\splat\src\splat\segtypes\common\textbin.py" />
+    <None Include="tools\splat\src\splat\segtypes\common\__init__.py" />
+    <None Include="tools\splat\src\splat\segtypes\linker_entry.py" />
+    <None Include="tools\splat\src\splat\segtypes\n64\asm.py" />
+    <None Include="tools\splat\src\splat\segtypes\n64\ci.py" />
+    <None Include="tools\splat\src\splat\segtypes\n64\ci4.py" />
+    <None Include="tools\splat\src\splat\segtypes\n64\ci8.py" />
+    <None Include="tools\splat\src\splat\segtypes\n64\decompressor.py" />
+    <None Include="tools\splat\src\splat\segtypes\n64\gfx.py" />
+    <None Include="tools\splat\src\splat\segtypes\n64\hasm.py" />
+    <None Include="tools\splat\src\splat\segtypes\n64\header.py" />
+    <None Include="tools\splat\src\splat\segtypes\n64\i1.py" />
+    <None Include="tools\splat\src\splat\segtypes\n64\i4.py" />
+    <None Include="tools\splat\src\splat\segtypes\n64\i8.py" />
+    <None Include="tools\splat\src\splat\segtypes\n64\ia16.py" />
+    <None Include="tools\splat\src\splat\segtypes\n64\ia4.py" />
+    <None Include="tools\splat\src\splat\segtypes\n64\ia8.py" />
+    <None Include="tools\splat\src\splat\segtypes\n64\img.py" />
+    <None Include="tools\splat\src\splat\segtypes\n64\ipl3.py" />
+    <None Include="tools\splat\src\splat\segtypes\n64\linker_offset.py" />
+    <None Include="tools\splat\src\splat\segtypes\n64\mio0.py" />
+    <None Include="tools\splat\src\splat\segtypes\n64\palette.py" />
+    <None Include="tools\splat\src\splat\segtypes\n64\rgba16.py" />
+    <None Include="tools\splat\src\splat\segtypes\n64\rgba32.py" />
+    <None Include="tools\splat\src\splat\segtypes\n64\rsp.py" />
+    <None Include="tools\splat\src\splat\segtypes\n64\segment.py" />
+    <None Include="tools\splat\src\splat\segtypes\n64\vtx.py" />
+    <None Include="tools\splat\src\splat\segtypes\n64\yay0.py" />
+    <None Include="tools\splat\src\splat\segtypes\n64\__init__.py" />
+    <None Include="tools\splat\src\splat\segtypes\ps2\asm.py" />
+    <None Include="tools\splat\src\splat\segtypes\ps2\ctor.py" />
+    <None Include="tools\splat\src\splat\segtypes\ps2\lit4.py" />
+    <None Include="tools\splat\src\splat\segtypes\ps2\lit8.py" />
+    <None Include="tools\splat\src\splat\segtypes\ps2\vtables.py" />
+    <None Include="tools\splat\src\splat\segtypes\ps2\__init__.py" />
+    <None Include="tools\splat\src\splat\segtypes\psp\segment.py" />
+    <None Include="tools\splat\src\splat\segtypes\psp\__init__.py" />
+    <None Include="tools\splat\src\splat\segtypes\psx\asm.py" />
+    <None Include="tools\splat\src\splat\segtypes\psx\header.py" />
+    <None Include="tools\splat\src\splat\segtypes\psx\segment.py" />
+    <None Include="tools\splat\src\splat\segtypes\psx\__init__.py" />
+    <None Include="tools\splat\src\splat\segtypes\segment.py" />
+    <None Include="tools\splat\src\splat\segtypes\__init__.py" />
+    <None Include="tools\splat\src\splat\util\cache_handler.py" />
+    <None Include="tools\splat\src\splat\util\color.py" />
+    <None Include="tools\splat\src\splat\util\compiler.py" />
+    <None Include="tools\splat\src\splat\util\log.py" />
+    <None Include="tools\splat\src\splat\util\n64\find_code_length.py" />
+    <None Include="tools\splat\src\splat\util\n64\rominfo.py" />
+    <None Include="tools\splat\src\splat\util\n64\__init__.py" />
+    <None Include="tools\splat\src\splat\util\options.py" />
+    <None Include="tools\splat\src\splat\util\palettes.py" />
+    <None Include="tools\splat\src\splat\util\progress_bar.py" />
+    <None Include="tools\splat\src\splat\util\psx\psxexeinfo.py" />
+    <None Include="tools\splat\src\splat\util\psx\__init__.py" />
+    <None Include="tools\splat\src\splat\util\relocs.py" />
+    <None Include="tools\splat\src\splat\util\statistics.py" />
+    <None Include="tools\splat\src\splat\util\symbols.py" />
+    <None Include="tools\splat\src\splat\util\vram_classes.py" />
+    <None Include="tools\splat\src\splat\util\__init__.py" />
+    <None Include="tools\splat\test.py" />
+    <None Include="tools\sprite_addresses.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="symbol_addrs.txt" />
+    <Text Include="tools\requirements.txt" />
+    <Text Include="tools\splat\requirements.txt" />
+    <Text Include="undefined_funcs.txt" />
+    <Text Include="undefined_syms.txt" />
+  </ItemGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+    <PreBuildEvent />
+    <PreLinkEvent />
+    <PostBuildEvent />
+    <RemotePreBuildEvent>
+      <Message>
+      </Message>
+      <Command>bash tools/remote_setup.sh</Command>
+    </RemotePreBuildEvent>
+    <RemotePreLinkEvent>
+      <Message>
+      </Message>
+      <Command>
+      </Command>
+    </RemotePreLinkEvent>
+    <RemotePostBuildEvent>
+      <Message>
+      </Message>
+      <Command>bash tools/remote_build.sh</Command>
+    </RemotePostBuildEvent>
+    <CustomBuildStep />
+    <ClCompile>
+      <PreprocessorDefinitions>_LANGUAGE_C;_MIPS_SZLONG=32;_MIPS_SZINT=32;_FINALROM;SUPPORT_NAUDIO;NU_SYSTEM;F3DEX_GBI_2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <CLanguageStandard>c99</CLanguageStandard>
+      <CppLanguageStandard>gnu++98</CppLanguageStandard>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>.;include;src;src/system;include/libmus;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>

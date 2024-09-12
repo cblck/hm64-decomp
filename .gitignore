@@ -12,10 +12,13 @@
 *.png
 *.ci
 *.pal
+*.user
+.vs/
 assets/
 asm/
 bin/
 build/
+obj/
 tools/gcc-2.7.2
 .vscode
 undefined_syms_auto.txt
