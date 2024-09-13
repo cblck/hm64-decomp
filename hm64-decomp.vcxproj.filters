@@ -876,6 +876,9 @@
     <Filter Include="tools\splat\src\splat\util\psx">
       <UniqueIdentifier>{8c5048fc-f666-44fe-9bc4-6fb05b2f4743}</UniqueIdentifier>
     </Filter>
+    <Filter Include="include\PRinternal">
+      <UniqueIdentifier>{833d0ecd-f595-4f8a-9d5d-19502c58a3f6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\common.h">
@@ -914,13 +917,7 @@
     <ClInclude Include="include\PR\os.h">
       <Filter>include\PR</Filter>
     </ClInclude>
-    <ClInclude Include="include\PR\os_internal.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
     <ClInclude Include="include\PR\os_pi.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\osint.h">
       <Filter>include\PR</Filter>
     </ClInclude>
     <ClInclude Include="include\PR\R4300.h">
@@ -1079,11 +1076,176 @@
     <ClInclude Include="src\lib\libmus\libsrc\player.h">
       <Filter>src\lib\libmus\libsrc</Filter>
     </ClInclude>
-    <ClInclude Include="src\lib\os\libultra\io\controller.h">
-      <Filter>src\lib\os\libultra\io</Filter>
-    </ClInclude>
     <ClInclude Include="src\lib\nusys-1\nualstl\nualstl.h">
       <Filter>src\lib\nusys-1\nualstl</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_version.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_cont.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_convert.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_debug.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_eeprom.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_error.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_exception.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_flash.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_gbpak.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_gio.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_host.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_libc.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_message.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_motor.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_pfs.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_rdp.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_reg.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_rsp.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_si.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_system.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_thread.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_time.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_tlb.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_vi.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_voice.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_ai.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_cache.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_internal_flash.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_internal_gio.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_internal_host.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_internal_reg.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_internal_rsp.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_internal_si.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_internal_thread.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_internal_tlb.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_internal.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_internal_debug.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_internal_error.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_internal_exception.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\rmon.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\sp.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\ultraerror.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\ultralog.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\ramrom.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\region.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\gt.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\rdb.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\sched.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PRinternal\osint.h">
+      <Filter>include\PRinternal</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PRinternal\controller.h">
+      <Filter>include\PRinternal</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PRinternal\controller_gbpak.h">
+      <Filter>include\PRinternal</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PRinternal\controller_voice.h">
+      <Filter>include\PRinternal</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PRinternal\piint.h">
+      <Filter>include\PRinternal</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PRinternal\rmonint.h">
+      <Filter>include\PRinternal</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PRinternal\siint.h">
+      <Filter>include\PRinternal</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PRinternal\viint.h">
+      <Filter>include\PRinternal</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

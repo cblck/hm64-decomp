@@ -1,6 +1,35 @@
 #ifndef _ABI_H_
 #define	_ABI_H_
 
+/**************************************************************************
+ *									  *
+ *		 Copyright (C) 1994, Silicon Graphics, Inc.		  *
+ *									  *
+ *  These coded instructions, statements, and computer programs  contain  *
+ *  unpublished  proprietary  information of Silicon Graphics, Inc., and  *
+ *  are protected by Federal copyright law.  They  may  not be disclosed  *
+ *  to  third  parties  or copied or duplicated in any form, in whole or  *
+ *  in part, without the prior written consent of Silicon Graphics, Inc.  *
+ *									  *
+ **************************************************************************/
+
+/**************************************************************************
+ *
+ *  $Revision: 1.32 $
+ *  $Date: 1997/02/11 08:16:37 $
+ *  $Source: /exdisk2/cvs/N64OS/Master/cvsmdev2/PR/include/abi.h,v $
+ *
+ **************************************************************************/
+
+/*
+ * Header file for the Audio Binary Interface.
+ * This is included in the Media Binary Interface file
+ * mbi.h. 
+ *
+ * This file follows the framework used for graphics.
+ * 
+ */
+
 /* Audio commands: */
 #define	A_SPNOOP		0
 #define	A_ADPCM			1
@@ -376,3 +405,6 @@ typedef short ENVMIX_STATE[40];
 #endif /* _LANGUAGE_C */
 
 #endif /* !_ABI_H_ */
+
+
+

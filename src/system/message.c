@@ -1415,14 +1415,14 @@ Gfx* func_80042014(Gfx* dl, DialogueBox* dialogueBox, s32 arg2) {
                 
                 sprite.timg = D_801706C0[gDisplayContextIndex][dialogueBox->unk_80 + temp2].timg;
                 
-                func_80026F30((Bitmap*)&sprite, dialogueBox->fontContext.fontPalettePtr);
+                func_80026F30((HMBitmap*)&sprite, dialogueBox->fontContext.fontPalettePtr);
 
                 sprite.width = dialogueBox->fontContext.unk_60;
                 sprite.height = dialogueBox->fontContext.unk_61;
                 sprite.fmt = 2;
                 sprite.pixelSize = 0;
 
-                dl = func_80026F88(dl, (Bitmap*)&sprite, 0, sprite.height);
+                dl = func_80026F88(dl, (HMBitmap*)&sprite, 0, sprite.height);
 
                 gSPVertex(&tempDl[1], &D_801C6230[gDisplayContextIndex][dialogueBox->unk_80+temp2][0], 4, 0);
 

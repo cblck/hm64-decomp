@@ -10,13 +10,13 @@
 // bss
 extern u16 bitmapCounter;
 
-extern Bitmap bitmaps[MAX_BITMAPS];
+extern HMBitmap bitmaps[MAX_BITMAPS];
 extern Gfx D_80215ED0[2][0x880];
 extern Vtx bitmapVertices[2][0x80][4];
                
 // forward declarations
-Gfx* func_8002A66C(Gfx*, Bitmap*, u16);             
-void func_8002ACA4(Bitmap* sprite, Gfx *dl);
+Gfx* func_8002A66C(Gfx*, HMBitmap*, u16);             
+void func_8002ACA4(HMBitmap* sprite, Gfx *dl);
 
 
 //INCLUDE_ASM(const s32, "system/sprite", initializeBitmaps);
@@ -442,7 +442,7 @@ inline Gfx* func_8002A410(Gfx* dl, u16 flag) {
 
 //INCLUDE_ASM(const s32, "system/sprite", func_8002A530);
 
-inline void func_8002A530(Vec3f* arg0, Bitmap* arg1) {
+inline void func_8002A530(Vec3f* arg0, HMBitmap* arg1) {
     
     s32 width;
     s32 height;
@@ -515,7 +515,7 @@ typedef struct {
 
 // 99.95%
 #ifdef PERMUTER
-Gfx* func_8002A66C(Gfx* dl, Bitmap* sprite, u16 arg2) {
+Gfx* func_8002A66C(Gfx* dl, HMBitmap* sprite, u16 arg2) {
 
     u16 vtxIndex;
     u32 textureDimensions;
@@ -642,7 +642,7 @@ INCLUDE_ASM(const s32, "system/sprite", func_8002A66C);
 //INCLUDE_ASM(const s32, "system/sprite", func_8002ACA4);
 
 // update world graphics from sprite
-static void func_8002ACA4(Bitmap* sprite, Gfx *dl) {
+static void func_8002ACA4(HMBitmap* sprite, Gfx *dl) {
 
     Vec3f vec;
 

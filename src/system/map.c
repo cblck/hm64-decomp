@@ -1369,7 +1369,7 @@ Gfx* func_8003797C(Gfx* dl, MainMap* map, u8 arg2) {
 
     Tile bitmap;
 
-    setBitmapFormat((Bitmap*)&bitmap, func_80028888(arg2, map->unk_10), func_800288A0(arg2, map->unk_14));
+    setBitmapFormat((HMBitmap*)&bitmap, func_80028888(arg2, map->unk_10), func_800288A0(arg2, map->unk_14));
 
     gDPLoadTextureTile_4b(dl++, bitmap.timg, bitmap.fmt, bitmap.width, bitmap.height, 0, 0, bitmap.width - 1, bitmap.height - 1, 0, G_TX_NOMIRROR | G_TX_WRAP, G_TX_NOMIRROR | G_TX_WRAP, G_TX_NOMASK, G_TX_NOMASK, G_TX_NOLOD, G_TX_NOLOD);
     gDPLoadTLUT_pal16(dl++, 0, bitmap.pal);
@@ -2133,7 +2133,7 @@ inline void func_8003AC14(Gfx* dl, MapBitmap* arg1) {
     // gsDPSetCombineMode(G_CC_MODULATEIA, G_CC_MODULATEIA)
     *dl++ = D_8011ED78;
 
-    func_80026F88(dl++, (Bitmap*)arg1, 0, arg1->height);
+    func_80026F88(dl++, (HMBitmap*)arg1, 0, arg1->height);
     
 }
  

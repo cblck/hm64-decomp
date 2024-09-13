@@ -10,7 +10,7 @@ u8* func_8002CD34(u16 arg0, void* arg1);
 u16* func_8002CD4C(u16, u16*);   
 
 // bss
-extern Sprite globalSprites[MAX_ACTIVE_SPRITES];
+extern HMSprite globalSprites[MAX_ACTIVE_SPRITES];
 
 //INCLUDE_ASM(const s32, "system/globalSprites", initializeGlobalSprites);
 

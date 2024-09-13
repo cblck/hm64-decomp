@@ -1,5 +1,5 @@
 #include "PR/os.h"
-#include "PR/osint.h"
+#include "PRinternal/osint.h"
 
 #define NULL 0
 

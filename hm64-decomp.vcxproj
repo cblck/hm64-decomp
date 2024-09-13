@@ -1134,20 +1134,74 @@
     <ClInclude Include="include\libmus\libmus.h" />
     <ClInclude Include="include\libmus\libmus_data.h" />
     <ClInclude Include="include\nusys.h" />
+    <ClInclude Include="include\PRinternal\controller.h" />
+    <ClInclude Include="include\PRinternal\controller_gbpak.h" />
+    <ClInclude Include="include\PRinternal\controller_voice.h" />
+    <ClInclude Include="include\PRinternal\osint.h" />
+    <ClInclude Include="include\PRinternal\piint.h" />
+    <ClInclude Include="include\PRinternal\rmonint.h" />
+    <ClInclude Include="include\PRinternal\siint.h" />
+    <ClInclude Include="include\PRinternal\viint.h" />
     <ClInclude Include="include\PR\abi.h" />
     <ClInclude Include="include\PR\gbi.h" />
     <ClInclude Include="include\PR\gs2dex.h" />
+    <ClInclude Include="include\PR\gt.h" />
     <ClInclude Include="include\PR\gu.h" />
     <ClInclude Include="include\PR\libaudio.h" />
     <ClInclude Include="include\PR\mbi.h" />
     <ClInclude Include="include\PR\os.h" />
-    <ClInclude Include="include\PR\osint.h" />
+    <ClInclude Include="include\PR\os_ai.h" />
+    <ClInclude Include="include\PR\os_cache.h" />
+    <ClInclude Include="include\PR\os_cont.h" />
+    <ClInclude Include="include\PR\os_convert.h" />
+    <ClInclude Include="include\PR\os_debug.h" />
+    <ClInclude Include="include\PR\os_eeprom.h" />
+    <ClInclude Include="include\PR\os_error.h" />
+    <ClInclude Include="include\PR\os_exception.h" />
+    <ClInclude Include="include\PR\os_flash.h" />
+    <ClInclude Include="include\PR\os_gbpak.h" />
+    <ClInclude Include="include\PR\os_gio.h" />
+    <ClInclude Include="include\PR\os_host.h" />
     <ClInclude Include="include\PR\os_internal.h" />
+    <ClInclude Include="include\PR\os_internal_debug.h" />
+    <ClInclude Include="include\PR\os_internal_error.h" />
+    <ClInclude Include="include\PR\os_internal_exception.h" />
+    <ClInclude Include="include\PR\os_internal_flash.h" />
+    <ClInclude Include="include\PR\os_internal_gio.h" />
+    <ClInclude Include="include\PR\os_internal_host.h" />
+    <ClInclude Include="include\PR\os_internal_reg.h" />
+    <ClInclude Include="include\PR\os_internal_rsp.h" />
+    <ClInclude Include="include\PR\os_internal_si.h" />
+    <ClInclude Include="include\PR\os_internal_thread.h" />
+    <ClInclude Include="include\PR\os_internal_tlb.h" />
+    <ClInclude Include="include\PR\os_libc.h" />
+    <ClInclude Include="include\PR\os_message.h" />
+    <ClInclude Include="include\PR\os_motor.h" />
+    <ClInclude Include="include\PR\os_pfs.h" />
     <ClInclude Include="include\PR\os_pi.h" />
+    <ClInclude Include="include\PR\os_rdp.h" />
+    <ClInclude Include="include\PR\os_reg.h" />
+    <ClInclude Include="include\PR\os_rsp.h" />
+    <ClInclude Include="include\PR\os_si.h" />
+    <ClInclude Include="include\PR\os_system.h" />
+    <ClInclude Include="include\PR\os_thread.h" />
+    <ClInclude Include="include\PR\os_time.h" />
+    <ClInclude Include="include\PR\os_tlb.h" />
+    <ClInclude Include="include\PR\os_version.h" />
+    <ClInclude Include="include\PR\os_vi.h" />
+    <ClInclude Include="include\PR\os_voice.h" />
     <ClInclude Include="include\PR\R4300.h" />
+    <ClInclude Include="include\PR\ramrom.h" />
     <ClInclude Include="include\PR\rcp.h" />
+    <ClInclude Include="include\PR\rdb.h" />
+    <ClInclude Include="include\PR\region.h" />
+    <ClInclude Include="include\PR\rmon.h" />
+    <ClInclude Include="include\PR\sched.h" />
+    <ClInclude Include="include\PR\sp.h" />
     <ClInclude Include="include\PR\sptask.h" />
     <ClInclude Include="include\PR\ucode.h" />
+    <ClInclude Include="include\PR\ultraerror.h" />
+    <ClInclude Include="include\PR\ultralog.h" />
     <ClInclude Include="include\PR\ultratypes.h" />
     <ClInclude Include="include\structs.h" />
     <ClInclude Include="include\ultra64.h" />
@@ -1164,7 +1218,6 @@
     <ClInclude Include="src\levelInteractions.h" />
     <ClInclude Include="src\lib\libmus\libsrc\player.h" />
     <ClInclude Include="src\lib\nusys-1\nualstl\nualstl.h" />
-    <ClInclude Include="src\lib\os\libultra\io\controller.h" />
     <ClInclude Include="src\load.h" />
     <ClInclude Include="src\loadGameScreen.h" />
     <ClInclude Include="src\mainLoop.h" />
@@ -1337,7 +1390,7 @@
     </RemotePostBuildEvent>
     <CustomBuildStep />
     <ClCompile>
-      <PreprocessorDefinitions>_LANGUAGE_C;_MIPS_SZLONG=32;_MIPS_SZINT=32;_FINALROM;SUPPORT_NAUDIO;NU_SYSTEM;F3DEX_GBI_2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_LANGUAGE_C;_MIPS_SZLONG=32;_MIPS_SZINT=32;_FINALROM;SUPPORT_NAUDIO;NU_SYSTEM;F3DEX_GBI_2;BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <CLanguageStandard>c99</CLanguageStandard>
       <CppLanguageStandard>gnu++98</CppLanguageStandard>
       <Optimization>MaxSpeed</Optimization>
