@@ -163,75 +163,6 @@
     <ClCompile Include="src\lib\libmus\libsrc\player_commands.c">
       <Filter>src\lib\libmus\libsrc</Filter>
     </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\assert.c">
-      <Filter>src\lib\os\libultra</Filter>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\bcmp.c">
-      <Filter>src\lib\os\libultra</Filter>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\createmesgqueue.c">
-      <Filter>src\lib\os\libultra</Filter>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\createthread.c">
-      <Filter>src\lib\os\libultra</Filter>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\destroythread.c">
-      <Filter>src\lib\os\libultra</Filter>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\getthreadpri.c">
-      <Filter>src\lib\os\libultra</Filter>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\gettime.c">
-      <Filter>src\lib\os\libultra</Filter>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\initialize.c">
-      <Filter>src\lib\os\libultra</Filter>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\initrdb.c">
-      <Filter>src\lib\os\libultra</Filter>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\jammesg.c">
-      <Filter>src\lib\os\libultra</Filter>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\kdebugserver.c">
-      <Filter>src\lib\os\libultra</Filter>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\rdbsend.c">
-      <Filter>src\lib\os\libultra</Filter>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\readhost.c">
-      <Filter>src\lib\os\libultra</Filter>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\recvmesg.c">
-      <Filter>src\lib\os\libultra</Filter>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\sendmesg.c">
-      <Filter>src\lib\os\libultra</Filter>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\seteventmesg.c">
-      <Filter>src\lib\os\libultra</Filter>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\seteventmsg.c">
-      <Filter>src\lib\os\libultra</Filter>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\setthreadpri.c">
-      <Filter>src\lib\os\libultra</Filter>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\settimer.c">
-      <Filter>src\lib\os\libultra</Filter>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\startthread.c">
-      <Filter>src\lib\os\libultra</Filter>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\stopthread.c">
-      <Filter>src\lib\os\libultra</Filter>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\timerintr.c">
-      <Filter>src\lib\os\libultra</Filter>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\virtualtophysical.c">
-      <Filter>src\lib\os\libultra</Filter>
-    </ClCompile>
     <ClCompile Include="src\lib\os\libultra\audio\auxbus.c">
       <Filter>src\lib\os\libultra\audio</Filter>
     </ClCompile>
@@ -757,6 +688,75 @@
     <ClCompile Include="tools\vs-wrapper.c">
       <Filter>tools</Filter>
     </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\debug\assert.c">
+      <Filter>src\lib\os\libultra\debug</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\debug\kdebugserver.c">
+      <Filter>src\lib\os\libultra\debug</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libc\bcmp.c">
+      <Filter>src\lib\os\libultra\libc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\host\readhost.c">
+      <Filter>src\lib\os\libultra\host</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\createmesgqueue.c">
+      <Filter>src\lib\os\libultra\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\createthread.c">
+      <Filter>src\lib\os\libultra\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\destroythread.c">
+      <Filter>src\lib\os\libultra\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\getthreadpri.c">
+      <Filter>src\lib\os\libultra\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\gettime.c">
+      <Filter>src\lib\os\libultra\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\initialize.c">
+      <Filter>src\lib\os\libultra\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\initrdb.c">
+      <Filter>src\lib\os\libultra\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\jammesg.c">
+      <Filter>src\lib\os\libultra\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\rdbsend.c">
+      <Filter>src\lib\os\libultra\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\recvmesg.c">
+      <Filter>src\lib\os\libultra\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\sendmesg.c">
+      <Filter>src\lib\os\libultra\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\seteventmesg.c">
+      <Filter>src\lib\os\libultra\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\seteventmsg.c">
+      <Filter>src\lib\os\libultra\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\setthreadpri.c">
+      <Filter>src\lib\os\libultra\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\settimer.c">
+      <Filter>src\lib\os\libultra\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\startthread.c">
+      <Filter>src\lib\os\libultra\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\stopthread.c">
+      <Filter>src\lib\os\libultra\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\timerintr.c">
+      <Filter>src\lib\os\libultra\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\virtualtophysical.c">
+      <Filter>src\lib\os\libultra\os</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="include">
@@ -878,6 +878,15 @@
     </Filter>
     <Filter Include="include\PRinternal">
       <UniqueIdentifier>{833d0ecd-f595-4f8a-9d5d-19502c58a3f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lib\os\libultra\debug">
+      <UniqueIdentifier>{7be06574-d799-4974-a0e0-3521e18490c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lib\os\libultra\os">
+      <UniqueIdentifier>{b81f1722-7b72-4db7-9f34-4eca69ad5e03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lib\os\libultra\host">
+      <UniqueIdentifier>{c30e1b7f-4261-452d-838f-8d928f1a6488}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

@@ -248,11 +248,6 @@
     <ClCompile Include="src\lib\nusys-1\nusimgr.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\assert.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
-      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
-    </ClCompile>
     <ClCompile Include="src\lib\os\libultra\audio\auxbus.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
@@ -333,34 +328,15 @@
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
     </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\bcmp.c">
+    <ClCompile Include="src\lib\os\libultra\debug\assert.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\createmesgqueue.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
-      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
     </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\createthread.c">
+    <ClCompile Include="src\lib\os\libultra\debug\kdebugserver.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
-      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\destroythread.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
-      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\getthreadpri.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
-      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\gettime.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
-      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\gu\lookat.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
@@ -402,15 +378,10 @@
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
     </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\initialize.c">
+    <ClCompile Include="src\lib\os\libultra\host\readhost.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\initrdb.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
-      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\ai.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
@@ -750,15 +721,10 @@
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
     </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\jammesg.c">
+    <ClCompile Include="src\lib\os\libultra\libc\bcmp.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\kdebugserver.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
-      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\libc\ldtob.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
@@ -875,20 +841,99 @@
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
     </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\rdbsend.c">
+    <ClCompile Include="src\lib\os\libultra\os\createmesgqueue.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\readhost.c">
+    <ClCompile Include="src\lib\os\libultra\os\createthread.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\recvmesg.c">
+    <ClCompile Include="src\lib\os\libultra\os\destroythread.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\getthreadpri.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\gettime.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\initialize.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\initrdb.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\jammesg.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\rdbsend.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\recvmesg.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\sendmesg.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\seteventmesg.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\seteventmsg.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\setthreadpri.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\settimer.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\startthread.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\stopthread.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\timerintr.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\virtualtophysical.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\rmon\rmonbreak.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
@@ -931,51 +976,6 @@
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\rmon\rmontask.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
-      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\sendmesg.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
-      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\seteventmesg.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
-      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\seteventmsg.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
-      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\setthreadpri.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
-      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\settimer.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
-      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\startthread.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
-      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\stopthread.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
-      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\timerintr.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
-      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\virtualtophysical.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>

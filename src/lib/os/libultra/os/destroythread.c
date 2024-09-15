@@ -3,7 +3,7 @@
 
 #define NULL 0
 
-//INCLUDE_ASM(const s32, "lib/os/libultra/destroythread", osDestroyThread);
+//INCLUDE_ASM(const s32, "lib/os/libultra/os/destroythread", osDestroyThread);
 
 void osDestroyThread(OSThread* thread) {
     
