@@ -1,3 +1,14 @@
+/*======================================================================*/
+/*		NuSYS 									*/
+/*		nusys.h									*/
+/*												*/
+/*		Copyright (C) 1997, NINTENDO Co,Ltd.				*/
+/*												*/
+/*----------------------------------------------------------------------*/
+/* Ver 1.0	97/10/9		Created by Kensaku Ohki(SLANP)		*/
+/*----------------------------------------------------------------------*/
+/* $Id: nusys.h,v 1.11 1997/12/15 11:23:55 ohki Exp $				*/
+/*======================================================================*/
 #ifndef _NUSYS_H_
 #define _NUSYS_H_
 
@@ -7,19 +18,19 @@
 #define F3DEX_GBI
 #endif  /* F3DEX_GBI */
 
-#include "ultra64.h"
-#include "PR/gs2dex.h"
+#include <ultra64.h>
+#include <PR/gs2dex.h>
 #endif
 
 #ifdef _LANGUAGE_C_PLUS_PLUS
 extern "C" {
 #endif
 
-/*----------------------------------------------------------------------*/    
-/*----------------------------------------------------------------------*/
-/*	DEFINE										*/
-/*----------------------------------------------------------------------*/
-/*----------------------------------------------------------------------*/
+	/*----------------------------------------------------------------------*/
+	/*----------------------------------------------------------------------*/
+	/*	DEFINE										*/
+	/*----------------------------------------------------------------------*/
+	/*----------------------------------------------------------------------*/
 #define NU_VERSION		"1.0"
 
 /*--------------------------------------*/
@@ -36,14 +47,14 @@ extern "C" {
 #define NU_ROMN_THERAD_ID	2	/* no use */
 #define NU_MAIN_THREAD_ID	3
 
-									
+
 /*--------------------------------------*/
 /* NuSYS Thread Priority		    */
 /*--------------------------------------*/
 #define NU_IDLE_THREAD_PRI	OS_PRIORITY_IDLE	/* Idle thread	*/
 #define NU_RMON_THREAD_PRI	OS_PRIORITY_RMON	/* no use	*/
 #define NU_MAIN_THREAD_PRI	10			/* main thread	*/
-    
+
 /*--------------------------------------*/
 /* NUSYS STACK SIZE			    */
 /*--------------------------------------*/
@@ -67,7 +78,7 @@ extern "C" {
 #define NU_SC_RETRACE_MSG	0x0001		/* The retrace message */
 #define NU_SC_PRENMI_MSG	0x0002		/* The NMI message */
 #define NU_SC_SWAPBUFFER_MSG	0x0004		/* Switching frame buffers  */
-						/* The message */ 
+						/* The message */
 #define NU_SC_GTASKEND_MSG	0x0008		/* The task end message */
 #define NU_SC_MAX_MESGS		8			/* The message buffer size */
 
@@ -90,22 +101,15 @@ extern "C" {
 /*----------------------------------------------------------------------*/
 /* GRAFIC MANEGER DEFINE								*/
 /*----------------------------------------------------------------------*/
-#define	NU_GFX_UCODE_F3DEX2	0		/* F3DEX microcode  */
-#define	NU_GFX_UCODE_F3DEX2_NON	1		/* F3DEX.NoN microcode  */
-#define	NU_GFX_UCODE_F3DEX2_REJ	2		/* F3DEX.NoN microcode  */
-#define	NU_GFX_UCODE_F3DLX2_REJ	3		/* F3DEX.ReJ microcode  */
-#define	NU_GFX_UCODE_L3DEX2	4		/* L3DEX microcode  */
-#define	NU_GFX_UCODE_S2DEX2	5		/* S2DEX microcode  */
-
-#define	NU_GFX_UCODE_F3DEX	0		/*  For compatibility		*/
-#define	NU_GFX_UCODE_F3DEX_NON	1		/*  For compatibility		*/
-#define	NU_GFX_UCODE_F3DLX	0		/*  For compatibility		*/
-#define	NU_GFX_UCODE_F3DLX_NON	1		/*  For compatibility		*/
-#define	NU_GFX_UCODE_F3DLX_REJ	4		/*  For compatibility		*/
-#define	NU_GFX_UCODE_F3DLP_REJ	3		/*  For compatibility		*/
-#define	NU_GFX_UCODE_L3DEX	4		/*  For compatibility		*/
-#define	NU_GFX_UCODE_S2DEX	5		/*  For compatibility		*/
-#define	NU_GFX_UCODE_S2DEX_D	5		/*  For compatibility		*/
+#define	NU_GFX_UCODE_F3DEX	0		/* F3DEX micro code */
+#define	NU_GFX_UCODE_F3DEX_NON	1		/* F3DEX.NoN micro code */
+#define	NU_GFX_UCODE_F3DLX	2		/* F3DLX micro code */
+#define	NU_GFX_UCODE_F3DLX_NON	3		/* F3DLX.NoN micro code */
+#define	NU_GFX_UCODE_F3DLX_REJ	4		/* F3DEX.ReJ micro code */
+#define	NU_GFX_UCODE_F3DLP_REJ	5		/* F3DLP.Rej micro code */
+#define	NU_GFX_UCODE_L3DEX	6		/* L3DEX micro code */
+#define	NU_GFX_UCODE_S2DEX	7		/* S2DEX micro code */
+#define	NU_GFX_UCODE_S2DEX_D	8		/* S2DEX micro code */
 /*--------------------------------------*/
 /* The number of graphic task structure */
 /* should be message buffer size of     */
@@ -134,9 +138,9 @@ extern "C" {
 /*--------------------------------------*/
 /* In default, the Z-buffer is located  */
 /*  on the lowest in memory 		    */
-/*--------------------------------------*/    
+/*--------------------------------------*/
 #define NU_GFX_ZBUFFER_ADDR		0x80000400
-    
+
 #define	NU_GFX_DISPLAY_ON		1	/* display is ON */
 #define	NU_GFX_DISPLAY_OFF	0	/* display is OFF */
 
@@ -175,7 +179,7 @@ extern "C" {
 #define NU_CONT_PAK_READ		PFS_READ
 #define NU_CONT_PAK_WRITE		PFS_WRITE
 
-/*  U   p b N     */
+/* êUìÆÉpÉbÉNêßå‰ */
 #define NU_CONT_RMB_STATE_STOP		0x00
 #define NU_CONT_RMB_STATE_STOPPING		0x01
 #define NU_CONT_RMB_STATE_STOPPED		0x02
@@ -254,8 +258,8 @@ extern "C" {
 #define NU_DEB_CON_ATTR_BLINK			0x1	/* Blinking */
 #define NU_DEB_CON_SCROLL_ON			1
 #define NU_DEB_CON_SCROLL_OFF			0
-    
-    
+
+
 #if defined(_LANGUAGE_C) || defined(_LANGUAGE_C_PLUS_PLUS)
 /*----------------------------------------------------------------------*/
 /*----------------------------------------------------------------------*/
@@ -265,483 +269,483 @@ extern "C" {
 /*--------------------------------------*/
 /* Scheduler sturcter			    */
 /*--------------------------------------*/
-typedef short	NUScMsg;		/* The type of the scheduler message */
+	typedef short	NUScMsg;		/* The type of the scheduler message */
 
-typedef struct	st_SCClient {	/* The client list structure */
-    struct st_SCClient*	next;		/* The pointer for next client */
-    OSMesgQueue*		msgQ;		/* The message sent to the client */
-    NUScMsg			msgType;	/* The type of the message */
-					/* NU_SC_RETRACE_MSG or	*/
-    					/* NU_SC_PRENMI_MSG */
-} NUScClient;
+	typedef struct	st_SCClient {	/* The client list structure */
+		struct st_SCClient* next;		/* The pointer for next client */
+		OSMesgQueue* msgQ;		/* The message sent to the client */
+		NUScMsg			msgType;	/* The type of the message */
+		/* NU_SC_RETRACE_MSG or	*/
+			/* NU_SC_PRENMI_MSG */
+	} NUScClient;
 
-typedef struct st_SCTask {		/* The task structure */
-    struct st_SCTask	*next;
-    u32		state;
-    u32		flags;
-    void		*framebuffer;		/* For the graphics task */
-    OSTask		list;
-    OSMesgQueue	*msgQ;
-    OSMesg		msg;
-} NUScTask;
+	typedef struct st_SCTask {		/* The task structure */
+		struct st_SCTask* next;
+		u32		state;
+		u32		flags;
+		void* framebuffer;		/* For the graphics task */
+		OSTask		list;
+		OSMesgQueue* msgQ;
+		OSMesg		msg;
+	} NUScTask;
 
-typedef struct st_Sched { /* Define the scheduller structure */
+	typedef struct st_Sched { /* Define the scheduller structure */
 
-    /* The message */
-    NUScMsg	retraceMsg;
-    NUScMsg	prenmiMsg;
+		/* The message */
+		NUScMsg	retraceMsg;
+		NUScMsg	prenmiMsg;
 
-    /* Define the task request queue */
-    OSMesgQueue	audioRequestMQ;
-    OSMesg		audioRequestBuf[NU_SC_MAX_MESGS];
-    OSMesgQueue graphicsRequestMQ;
-    OSMesg		graphicsRequestBuf[NU_SC_MAX_MESGS];
+		/* Define the task request queue */
+		OSMesgQueue	audioRequestMQ;
+		OSMesg		audioRequestBuf[NU_SC_MAX_MESGS];
+		OSMesgQueue graphicsRequestMQ;
+		OSMesg		graphicsRequestBuf[NU_SC_MAX_MESGS];
 
-    /* Define the message queue */
-    OSMesgQueue	retraceMQ;
-    OSMesg		retraceMsgBuf[NU_SC_MAX_MESGS];
-    OSMesgQueue	rspMQ;
-    OSMesg     	 rspMsgBuf[NU_SC_MAX_MESGS];
-    OSMesgQueue 	rdpMQ;
-    OSMesg		rdpMsgBuf[NU_SC_MAX_MESGS];
+		/* Define the message queue */
+		OSMesgQueue	retraceMQ;
+		OSMesg		retraceMsgBuf[NU_SC_MAX_MESGS];
+		OSMesgQueue	rspMQ;
+		OSMesg     	 rspMsgBuf[NU_SC_MAX_MESGS];
+		OSMesgQueue 	rdpMQ;
+		OSMesg		rdpMsgBuf[NU_SC_MAX_MESGS];
 
-    /* Used for waiting for next retrace signal */
-    OSMesgQueue	waitMQ;
-    OSMesg		waitMsgBuf[NU_SC_MAX_MESGS];
+		/* Used for waiting for next retrace signal */
+		OSMesgQueue	waitMQ;
+		OSMesg		waitMsgBuf[NU_SC_MAX_MESGS];
 
-    /* Define the thread */
-    OSThread	schedulerThread;		/* The main thread */
-    OSThread	audioThread;		/* Audio */
-    OSThread	graphicsThread;		/* Graphics */
+		/* Define the thread */
+		OSThread	schedulerThread;		/* The main thread */
+		OSThread	audioThread;		/* Audio */
+		OSThread	graphicsThread;		/* Graphics */
 
-    /* The client list */
-    NUScClient	*clientList;
+		/* The client list */
+		NUScClient* clientList;
 
-    /* The graphics task which is being executed */
-    NUScTask	*curGraphicsTask;
-    NUScTask 	*curAudioTask;
-    NUScTask	*graphicsTaskSuspended;
+		/* The graphics task which is being executed */
+		NUScTask* curGraphicsTask;
+		NUScTask* curAudioTask;
+		NUScTask* graphicsTaskSuspended;
 
-    u32		retraceCount;
-
-
-} NUSched;
+		u32		retraceCount;
 
 
-/*--------------------------------------*/
-/* ucode sturcter				    */
-/*--------------------------------------*/
-typedef struct  st_Ucode {
-    u64*	ucode;	
-    u64*	ucode_data;
-} NUUcode;
-
-/*--------------------------------------*/
-/* CALL BACK Function	typedef	    */
-/*--------------------------------------*/
-typedef void (*NUIdleFunc)(void);		/* pointer of the idle call-back function */
-typedef void (*NUScPreNMIFunc)(void);	/* pointer of the PRENMI call-back function */
-typedef void (*NUGfxFunc)(u32);		/* pointer of the GFX retrace call-back function */
-typedef void (*NUGfxPreNMIFunc)(void);	/* pointer of the GFX PRENMI call-back function */
-
-typedef void (*NUGfxSwapCfbFunc)(void*);	/* pointer of the SWAPBUF call-back function */
-typedef void (*NUGfxTaskEndFunc)(void*);	/* pointer of the TASKEND call-back function */
-typedef void (*NUContReadFunc)(u32);	/* pointer of the call-back function which */
-					/* ends reading the controller */
-typedef void (*NUContPakFunc)(void*);	/* Call-back the controller-pack control-function */
-typedef void (*NUContRmbFunc)(void*);	/* Call-back the oscillating-pack control-function */
-typedef s32 (*NUCallBackFunc)(void*);	/* Call-back function */
-
-/*--------------------------------------*/
-/* controller typedef			    */
-/*--------------------------------------*/
-typedef struct st_ContRead {
-    NUScMsg	mesg;			/* The message type */
-    OSMesgQueue* rtnMesgQ;
-    OSContPad*	pad;
-} NUContReadMesg;
-
-typedef struct st_ContData {
-    u16	button;		/* A,B,C,Z,L,R,START,PAD ,button 	*/
-    s8	stick_x;		/* real-use range  -61 <= stick X <= 61 */
-    s8	stick_y;		/* real-use range  -63 <= stick Y <= 63 */
-    u8	errno;		/* error*/
-    u16	trigger;		/* Trigger data of the button */
-} NUContData;
-
-typedef struct st_ContQuery {
-    NUScMsg	mesg;
-    OSMesgQueue* rtnMesgQ;
-} NUContQueryMesg;
-
-typedef struct st_ContPakFile {
-    OSPfs		*pfs;
-    s32		file_no;
-    s32		error;
-    u32		type;
-} NUContPakFile;
+	} NUSched;
 
 
-typedef struct st_ConPaktMesg {	/* basic class of controller-pack access */
-    NUScMsg			mesg;		
-    OSMesgQueue*		rtnMesgQ;
-    NUContPakFile*	file;
-} NUContPakMesg;
+	/*--------------------------------------*/
+	/* ucode sturcter				    */
+	/*--------------------------------------*/
+	typedef struct  st_Ucode {
+		u64* ucode;
+		u64* ucode_data;
+	} NUUcode;
 
-typedef struct st_ContPakOpenMesg {
-    NUScMsg			mesg;
-    OSMesgQueue*		rtnMesgQ;    
-    NUContPakFile*	file;
-    s32			error;
-} NUContPakOpenMesg;
+	/*--------------------------------------*/
+	/* CALL BACK Function	typedef	    */
+	/*--------------------------------------*/
+	typedef void (*NUIdleFunc)(void);		/* pointer of the idle call-back function */
+	typedef void (*NUScPreNMIFunc)(void);	/* pointer of the PRENMI call-back function */
+	typedef void (*NUGfxFunc)(u32);		/* pointer of the GFX retrace call-back function */
+	typedef void (*NUGfxPreNMIFunc)(void);	/* pointer of the GFX PRENMI call-back function */
 
-typedef struct st_ContPakFreeMesg {
-    NUScMsg			mesg;
-    OSMesgQueue*		rtnMesgQ;    
-    NUContPakFile*	file;
-    s32			size;
-} NUContPakFreeMesg;
+	typedef void (*NUGfxSwapCfbFunc)(void*);	/* pointer of the SWAPBUF call-back function */
+	typedef void (*NUGfxTaskEndFunc)(void*);	/* pointer of the TASKEND call-back function */
+	typedef void (*NUContReadFunc)(u32);	/* pointer of the call-back function which */
+	/* ends reading the controller */
+	typedef void (*NUContPakFunc)(void*);	/* Call-back the controller-pack control-function */
+	typedef void (*NUContRmbFunc)(void*);	/* Call-back the oscillating-pack control-function */
+	typedef s32(*NUCallBackFunc)(void*);	/* Call-back function */
 
-typedef struct st_ContPakFileOpenMesg {
-    NUScMsg			mesg;
-    OSMesgQueue*		rtnMesgQ;    
-    NUContPakFile*	file;
-    u8*			noteName;
-    u8*			extName;
-    s32			size;
-    s32			mode;
-} NUContPakFileOpenMesg;
+	/*--------------------------------------*/
+	/* controller typedef			    */
+	/*--------------------------------------*/
+	typedef struct st_ContRead {
+		NUScMsg	mesg;			/* The message type */
+		OSMesgQueue* rtnMesgQ;
+		OSContPad* pad;
+	} NUContReadMesg;
 
-typedef struct st_ContPakFileRWMesg {
-    NUScMsg			mesg;
-    OSMesgQueue*		rtnMesgQ;    
-    NUContPakFile*	file;
-    s32			offset;
-    s32			size;
-    u8			mode;
-    u8*			buf;
-} NUContPakFileRWMesg;
+	typedef struct st_ContData {
+		u16	button;		/* A,B,C,Z,L,R,START,PAD ,button 	*/
+		s8	stick_x;		/* real-use range  -61 <= stick X <= 61 */
+		s8	stick_y;		/* real-use range  -63 <= stick Y <= 63 */
+		u8	errno;		/* error*/
+		u16	trigger;		/* Trigger data of the button */
+	} NUContData;
 
-typedef struct st_ContPakFileStateMesg {
-    NUScMsg			mesg;
-    OSMesgQueue*		rtnMesgQ;    
-    NUContPakFile*	file;
-    OSPfsState*		state;
-} NUContPakFileStateMesg;
+	typedef struct st_ContQuery {
+		NUScMsg	mesg;
+		OSMesgQueue* rtnMesgQ;
+	} NUContQueryMesg;
 
-typedef struct st_ContPakFileNumMesg {
-    NUScMsg			mesg;
-    OSMesgQueue*		rtnMesgQ;    
-    NUContPakFile*	file;
-    s32*			max_files;
-    s32*			used_files;
-} NUContPakFileNumMesg;
+	typedef struct st_ContPakFile {
+		OSPfs* pfs;
+		s32		file_no;
+		s32		error;
+		u32		type;
+	} NUContPakFile;
 
-typedef struct st_ContPakIsPlugMesg {
-    NUScMsg			mesg;
-    OSMesgQueue*		rtnMesgQ;
-    s32			error;
-    u8			bitPattern;
-} NUContPakIsPlugMesg;
 
-typedef struct st_ContRmbCtl {
-    u16			freq;		/* oscillating frequency */
-    u16			frame;
-    u16			counter;
-    u8			state;
-    u8			mode;
-    u8			autorun;
-    u8			type;
-} NUContRmbCtl;
+	typedef struct st_ConPaktMesg {	/* basic class of controller-pack access */
+		NUScMsg			mesg;
+		OSMesgQueue* rtnMesgQ;
+		NUContPakFile* file;
+	} NUContPakMesg;
 
-typedef struct st_ContRmbMesg {
-    NUScMsg			mesg;
-    OSMesgQueue*		rtnMesgQ;
-    u8			contNo;
-    s32			error;
-    void*			data;
-} NUContRmbMesg;
+	typedef struct st_ContPakOpenMesg {
+		NUScMsg			mesg;
+		OSMesgQueue* rtnMesgQ;
+		NUContPakFile* file;
+		s32			error;
+	} NUContPakOpenMesg;
 
-typedef struct st_CallBackList {
-    struct st_CallBackList* 	next;
-    NUCallBackFunc		func;
-} NUCallBackList;
+	typedef struct st_ContPakFreeMesg {
+		NUScMsg			mesg;
+		OSMesgQueue* rtnMesgQ;
+		NUContPakFile* file;
+		s32			size;
+	} NUContPakFreeMesg;
 
-typedef struct st_EepromMesg {
-    NUScMsg			mesg;
-    OSMesgQueue*		rtnMesgQ;
-    void*			dataPtr;
-    s32			error;
-    u8			address;
-    u16			dataLen;
-} NUEepromMesg;
+	typedef struct st_ContPakFileOpenMesg {
+		NUScMsg			mesg;
+		OSMesgQueue* rtnMesgQ;
+		NUContPakFile* file;
+		u8* noteName;
+		u8* extName;
+		s32			size;
+		s32			mode;
+	} NUContPakFileOpenMesg;
 
-/*--------------------------------------*/
-/* Debug					    */
-/*--------------------------------------*/
-typedef struct st_GfxTaskTime {
-    s64		rspStart;		/* start time of the RSP task */
-    s64		rspEnd;		/* end time of the RSP task */
-    s64		rdpEnd;		/* end time of RDP */
-    u32		dpCnt[4];		/* RDP internal counter */
-} NUDebTaskTime;
+	typedef struct st_ContPakFileRWMesg {
+		NUScMsg			mesg;
+		OSMesgQueue* rtnMesgQ;
+		NUContPakFile* file;
+		s32			offset;
+		s32			size;
+		u8			mode;
+		u8* buf;
+	} NUContPakFileRWMesg;
 
-typedef struct st_DebTaskPerf {
-    s64		retraceTime;	/* retrace event time */
-    u8		gfxTaskCnt;		/* number of graphics tasks */
-    u8		auTaskCnt;		/* number of audio tasks */
-    u8		gfxTaskStart;
-    NUDebTaskTime	gfxTaskTime[NU_DEB_PERF_GFXTASK_CNT];
-    NUDebTaskTime	auTaskTime[NU_DEB_PERF_AUTASK_CNT];
-} NUDebTaskPerf;
+	typedef struct st_ContPakFileStateMesg {
+		NUScMsg			mesg;
+		OSMesgQueue* rtnMesgQ;
+		NUContPakFile* file;
+		OSPfsState* state;
+	} NUContPakFileStateMesg;
 
-/* console window structure */
-typedef struct st_DebConWindow {
-    u8	windowFlag;	/* ON/OFF flag of the console window */
-    u16	scroll;	/* scroll value */
-    u8	scrollFlag;	/* Scroll ON/OFF */
-    u8	textColor;	/* Character color */
-    u8	attribute;	/* attribute */
-    u16	posX;		/* digit position of writing characters */
-    u16	posY;		/* line position of writing characters */
-    u16	index;	/* position of writing the character buffer */
-    u16	winX;		/* X-coordinate on the display of the console window */
-    u16	winY;		/* Y-coordinate on the display of the console window */
-    u16	winW;		/* number of digits of the console display */
-    u16	winH;		/* number of digits of the console display */
-    u16	text[NU_DEB_CON_TEXT_SIZE];	/* The character buffer */    
-} NUDebConWindow;
+	typedef struct st_ContPakFileNumMesg {
+		NUScMsg			mesg;
+		OSMesgQueue* rtnMesgQ;
+		NUContPakFile* file;
+		s32* max_files;
+		s32* used_files;
+	} NUContPakFileNumMesg;
 
-/*----------------------------------------------------------------------*/
-/*----------------------------------------------------------------------*/
-/* extern variables 									*/
-/*----------------------------------------------------------------------*/
-/*----------------------------------------------------------------------*/    
+	typedef struct st_ContPakIsPlugMesg {
+		NUScMsg			mesg;
+		OSMesgQueue* rtnMesgQ;
+		s32			error;
+		u8			bitPattern;
+	} NUContPakIsPlugMesg;
 
-extern u8		nuRDPOutputBuf[NU_GFX_RDP_OUTPUTBUFF_SIZE];
-extern u8		nuDramStack[SP_DRAM_STACK_SIZE8];
-extern u8		nuYieldBuf[OS_YIELD_DATA_SIZE];
-extern NUSched		nusched;		/* scheduller structure */
-extern OSMesgQueue 	nuGfxMesgQ;		/* graphic thread queue */
-extern u32		nuScRetraceCounter;     /* retrace counter */
-/*--------------------------------------*/
-/*  graphics variables 			    */
-/*--------------------------------------*/
-extern NUUcode*		nuGfxUcode;		/* pointer of the GFX micro code structure */
-extern u16**		nuGfxCfb;		/* pointer of the pointer array of frame buffer */
-extern u16*			nuGfxCfb_ptr;	/* pointer of the frame buffer */
-extern u32			nuGfxCfbNum;	/* number of frame buffers */
-extern u16*			nuGfxZBuffer;	/* pointer of the Z-buffer */
-extern volatile u32	nuGfxTaskSpool;	/* number of tasks in the queue */
-extern u32			nuGfxDisplay;	/* ON/OFF flag of the screen */
-extern u32			nuGfxCfbCounter;	/* switching frame buffers */
+	typedef struct st_ContRmbCtl {
+		u16			freq;		/* oscillating frequency */
+		u16			frame;
+		u16			counter;
+		u8			state;
+		u8			mode;
+		u8			autorun;
+		u8			type;
+	} NUContRmbCtl;
 
-/*--------------------------------------*/
-/*  controller manager variables 	*/
-/*--------------------------------------*/
-extern OSContStatus	nuContStatus[NU_CONT_MAXCONTROLLERS];
-extern OSContPad		nuContData[NU_CONT_MAXCONTROLLERS];
-extern u32			nuContNum;			/* number of connected controllers */
-extern u32			nuContDataLockKey; 	/* Lock the controller data */
-extern OSMesgQueue	nuContWaitMesgQ;		/* Wait for the controller read */
-extern OSPfs		nuContPfs[4];
-extern NUCallBackList	nuContCallBack;
-extern u16			nuContPakCompanyCode;	/* company code */
-extern u32			nuContPakGameCode;	/* game code */
-extern NUCallBackList	nuContPakCallBack;
+	typedef struct st_ContRmbMesg {
+		NUScMsg			mesg;
+		OSMesgQueue* rtnMesgQ;
+		u8			contNo;
+		s32			error;
+		void* data;
+	} NUContRmbMesg;
 
-/*--------------------------------------*/
-/*  RUMBUL manager variables 		    */
-/*--------------------------------------*/
-extern NUContRmbCtl	nuContRmbCtl[4];
-extern u32			nuContRmbSearchTime;
-extern NUCallBackList	nuContRmbCallBack;
-/*--------------------------------------*/
-/*  EEPROM manager variables 		    */
-/*--------------------------------------*/
-extern NUCallBackList	nuEepromCallBack;
+	typedef struct st_CallBackList {
+		struct st_CallBackList* next;
+		NUCallBackFunc		func;
+	} NUCallBackList;
 
-/*--------------------------------------*/
-/*  si variables 				    */
-/*--------------------------------------*/
-extern OSMesgQueue	nuSiMesgQ;		/* SI event message queue */
-extern OSMesgQueue	nuSiMgrMesgQ;	/* SI manager queue */
-extern NUCallBackList	nuSiCallBackList;	/* Call-back function list */
+	typedef struct st_EepromMesg {
+		NUScMsg			mesg;
+		OSMesgQueue* rtnMesgQ;
+		void* dataPtr;
+		s32			error;
+		u8			address;
+		u16			dataLen;
+	} NUEepromMesg;
 
-/*--------------------------------------*/
-/* CALL BACK Function pointer 	    */
-/*--------------------------------------*/
-extern NUIdleFunc		nuIdleFunc;		/* callback func pointer */
-extern NUScPreNMIFunc	nuScPreNMIFunc;	/* PRE NMI callback pointer */
-extern NUGfxSwapCfbFunc	nuGfxSwapCfbFunc; /* swapbuf callback pointer */
-extern NUGfxFunc		nuGfxFunc;		/* callback pointer */
-extern NUGfxPreNMIFunc	nuGfxPreNMIFunc;	/* callback pointer */
-extern NUGfxTaskEndFunc	nuGfxTaskEndFunc; /* task end callback ptr */
-extern NUContReadFunc	nuContReadFunc;	/* call-back function at the end of */
-							/* controller read */
+	/*--------------------------------------*/
+	/* Debug					    */
+	/*--------------------------------------*/
+	typedef struct st_GfxTaskTime {
+		s64		rspStart;		/* start time of the RSP task */
+		s64		rspEnd;		/* end time of the RSP task */
+		s64		rdpEnd;		/* end time of RDP */
+		u32		dpCnt[4];		/* RDP internal counter */
+	} NUDebTaskTime;
+
+	typedef struct st_DebTaskPerf {
+		s64		retraceTime;	/* retrace event time */
+		u8		gfxTaskCnt;		/* number of graphics tasks */
+		u8		auTaskCnt;		/* number of audio tasks */
+		u8		gfxTaskStart;
+		NUDebTaskTime	gfxTaskTime[NU_DEB_PERF_GFXTASK_CNT];
+		NUDebTaskTime	auTaskTime[NU_DEB_PERF_AUTASK_CNT];
+	} NUDebTaskPerf;
+
+	/* console window structure */
+	typedef struct st_DebConWindow {
+		u8	windowFlag;	/* ON/OFF flag of the console window */
+		u16	scroll;	/* scroll value */
+		u8	scrollFlag;	/* Scroll ON/OFF */
+		u8	textColor;	/* Character color */
+		u8	attribute;	/* attribute */
+		u16	posX;		/* digit position of writing characters */
+		u16	posY;		/* line position of writing characters */
+		u16	index;	/* position of writing the character buffer */
+		u16	winX;		/* X-coordinate on the display of the console window */
+		u16	winY;		/* Y-coordinate on the display of the console window */
+		u16	winW;		/* number of digits of the console display */
+		u16	winH;		/* number of digits of the console display */
+		u16	text[NU_DEB_CON_TEXT_SIZE];	/* The character buffer */
+	} NUDebConWindow;
+
+	/*----------------------------------------------------------------------*/
+	/*----------------------------------------------------------------------*/
+	/* extern variables 									*/
+	/*----------------------------------------------------------------------*/
+	/*----------------------------------------------------------------------*/
+
+	extern u8		nuRDPOutputBuf[NU_GFX_RDP_OUTPUTBUFF_SIZE];
+	extern u8		nuDramStack[SP_DRAM_STACK_SIZE8];
+	extern u8		nuYieldBuf[OS_YIELD_DATA_SIZE];
+	extern NUSched		nusched;		/* scheduller structure */
+	extern OSMesgQueue 	nuGfxMesgQ;		/* graphic thread queue */
+	extern u32		nuScRetraceCounter;     /* retrace counter */
+	/*--------------------------------------*/
+	/*  graphics variables 			    */
+	/*--------------------------------------*/
+	extern NUUcode* nuGfxUcode;		/* pointer of the GFX micro code structure */
+	extern u16** nuGfxCfb;		/* pointer of the pointer array of frame buffer */
+	extern u16* nuGfxCfb_ptr;	/* pointer of the frame buffer */
+	extern u32			nuGfxCfbNum;	/* number of frame buffers */
+	extern u16* nuGfxZBuffer;	/* pointer of the Z-buffer */
+	extern volatile u32	nuGfxTaskSpool;	/* number of tasks in the queue */
+	extern u32			nuGfxDisplay;	/* ON/OFF flag of the screen */
+	extern u32			nuGfxCfbCounter;	/* switching frame buffers */
+
+	/*--------------------------------------*/
+	/*  controller manager variables 	*/
+	/*--------------------------------------*/
+	extern OSContStatus	nuContStatus[NU_CONT_MAXCONTROLLERS];
+	extern OSContPad		nuContData[NU_CONT_MAXCONTROLLERS];
+	extern u32			nuContNum;			/* number of connected controllers */
+	extern u32			nuContDataLockKey; 	/* Lock the controller data */
+	extern OSMesgQueue	nuContWaitMesgQ;		/* Wait for the controller read */
+	extern OSPfs		nuContPfs[4];
+	extern NUCallBackList	nuContCallBack;
+	extern u16			nuContPakCompanyCode;	/* company code */
+	extern u32			nuContPakGameCode;	/* game code */
+	extern NUCallBackList	nuContPakCallBack;
+
+	/*--------------------------------------*/
+	/*  RUMBUL manager variables 		    */
+	/*--------------------------------------*/
+	extern NUContRmbCtl	nuContRmbCtl[4];
+	extern u32			nuContRmbSearchTime;
+	extern NUCallBackList	nuContRmbCallBack;
+	/*--------------------------------------*/
+	/*  EEPROM manager variables 		    */
+	/*--------------------------------------*/
+	extern NUCallBackList	nuEepromCallBack;
+
+	/*--------------------------------------*/
+	/*  si variables 				    */
+	/*--------------------------------------*/
+	extern OSMesgQueue	nuSiMesgQ;		/* SI event message queue */
+	extern OSMesgQueue	nuSiMgrMesgQ;	/* SI manager queue */
+	extern NUCallBackList	nuSiCallBackList;	/* Call-back function list */
+
+	/*--------------------------------------*/
+	/* CALL BACK Function pointer 	    */
+	/*--------------------------------------*/
+	extern NUIdleFunc		nuIdleFunc;		/* callback func pointer */
+	extern NUScPreNMIFunc	nuScPreNMIFunc;	/* PRE NMI callback pointer */
+	extern NUGfxSwapCfbFunc	nuGfxSwapCfbFunc; /* swapbuf callback pointer */
+	extern NUGfxFunc		nuGfxFunc;		/* callback pointer */
+	extern NUGfxPreNMIFunc	nuGfxPreNMIFunc;	/* callback pointer */
+	extern NUGfxTaskEndFunc	nuGfxTaskEndFunc; /* task end callback ptr */
+	extern NUContReadFunc	nuContReadFunc;	/* call-back function at the end of */
+	/* controller read */
 /*--------------------------------------*/
 /* Debug 		 			    */
 /*--------------------------------------*/
-extern NUDebTaskPerf*	nuDebTaskPerfPtr;
-extern NUDebConWindow	nuDebConWin[];
+	extern NUDebTaskPerf* nuDebTaskPerfPtr;
+	extern NUDebConWindow	nuDebConWin[];
 
-/*----------------------------------------------------------------------*/    
-/*----------------------------------------------------------------------*/
-/* Global Function 									*/
-/*----------------------------------------------------------------------*/
-/*----------------------------------------------------------------------*/
-/*--------------------------------------*/
-/* Boot function				    */
-/*--------------------------------------*/
-extern void nuIdleFuncSet(void (*func)(void));
-extern void nuPreNMIFuncSet(NUScPreNMIFunc func);
-/*--------------------------------------*/
-/* Scheduler function			    */
-/*--------------------------------------*/
-extern void nuScCreateScheduler(u8 videoMode, u8 numFields);
-extern void nuScAddClient(NUScClient *c, OSMesgQueue *mq, NUScMsg msgType);
-extern void nuScRemoveClient(NUScClient *client);
-extern void nuPreNMIFuncSet(NUScPreNMIFunc func);
-extern OSMesgQueue* nuScGetGfxMQ(void);
-extern OSMesgQueue* nuScGetAudioMQ(void);
+	/*----------------------------------------------------------------------*/
+	/*----------------------------------------------------------------------*/
+	/* Global Function 									*/
+	/*----------------------------------------------------------------------*/
+	/*----------------------------------------------------------------------*/
+	/*--------------------------------------*/
+	/* Boot function				    */
+	/*--------------------------------------*/
+	extern void nuIdleFuncSet(void (*func)(void));
+	extern void nuPreNMIFuncSet(NUScPreNMIFunc func);
+	/*--------------------------------------*/
+	/* Scheduler function			    */
+	/*--------------------------------------*/
+	extern void nuScCreateScheduler(u8 videoMode, u8 numFields);
+	extern void nuScAddClient(NUScClient* c, OSMesgQueue* mq, NUScMsg msgType);
+	extern void nuScRemoveClient(NUScClient* client);
+	extern void nuPreNMIFuncSet(NUScPreNMIFunc func);
+	extern OSMesgQueue* nuScGetGfxMQ(void);
+	extern OSMesgQueue* nuScGetAudioMQ(void);
 
 
-/*--------------------------------------*/
-/* graphic(GFX) manager function	    */
-/*--------------------------------------*/
-extern void nuGfxInit(void);
-extern void nuGfxThreadStart(void);
-extern void nuGfxTaskMgrInit(void);
-extern void nuGfxTaskStart(Gfx *gfxList_ptr, u32 gfxListSize, u32 ucode, u32 flag);
-extern void nuGfxFuncSet(NUGfxFunc func);
-extern void nuGfxPreNMIFuncSet(NUGfxPreNMIFunc func);
-extern void nuGfxSwapCfbFuncSet(NUGfxSwapCfbFunc func);
-extern void nuGfxSetCfb(u16** framebuf, u32 framebufnum);
-extern void nuGfxSwapCfb(void* framebuffer);
+	/*--------------------------------------*/
+	/* graphic(GFX) manager function	    */
+	/*--------------------------------------*/
+	extern void nuGfxInit(void);
+	extern void nuGfxThreadStart(void);
+	extern void nuGfxTaskMgrInit(void);
+	extern void nuGfxTaskStart(Gfx* gfxList_ptr, u32 gfxListSize, u32 ucode, u32 flag);
+	extern void nuGfxFuncSet(NUGfxFunc func);
+	extern void nuGfxPreNMIFuncSet(NUGfxPreNMIFunc func);
+	extern void nuGfxSwapCfbFuncSet(NUGfxSwapCfbFunc func);
+	extern void nuGfxSetCfb(u16** framebuf, u32 framebufnum);
+	extern void nuGfxSwapCfb(void* framebuffer);
 
-extern void nuGfxTaskEndFuncSet(NUGfxTaskEndFunc func);
-extern void nuGfxTaskAllEndWait(void);
-extern void nuGfxRetraceWait(u32 retrace_num);
-extern void nuGfxDisplayOff(void);
-extern void nuGfxDisplayOn(void);
-/*--------------------------------------*/
-/* controller manager function	    */
-/*--------------------------------------*/
-extern u8   nuContInit(void);
-extern s32  nuContMgr(void* mesg);
-extern u8   nuContMgrInit(void);
-extern void nuContMgrRemove(void);
-extern void nuContDataLock(void);
-extern void nuContDataUnLock(void);
-extern void nuContDataRead(OSContPad* pad);
-extern void nuContDataReadWait(void);
-extern void nuContDataReadStart(void);
-extern void nuContDataGet(OSContPad* contdata, u32 padno);
-extern void nuContDataGetAll(OSContPad* contdata);
-extern void nuContDataGetEx(NUContData *contdata, u32 padno);
-extern void nuContDataGetExAll(NUContData *contdata);
-extern void nuContReadFuncSet(NUContReadFunc func);
-extern void nuContQueryRead(void);
-extern void nuContDataClose(void);
-extern void nuContDataOpen(void);
-    
-/*--------------------------------------*/
-/* controller pak function		    */
-/*--------------------------------------*/
-extern s32  nuContPakMgr(void* mesg_type);
-extern void nuContPakMgrInit(void);
-extern void nuContPakMgrRemove(void);
-extern void nuContPakJisToN64(u8* src, u8* dest, u32 len);
-extern void nuContPakN64ToJis(u8* src, u8* dest, u32 len);
-extern void nuContPakOpen(NUContPakFile *file, u32 contNo);
-extern s32  nuContPakGetFree(NUContPakFile *file);
-extern void nuContPakCodeSet(u8* companyCode, u8* gameCode);
-extern void nuContPakRepairId(NUContPakFile *file);
-extern void nuContPakFileOpen(NUContPakFile *file,
-			      u8* noteName,u8* extName, u32 mode, s32 size);
-extern void nuContPakFileOpenJis(NUContPakFile *file,
-				 u8* noteName,u8* extName, u32 mode, s32 size);
-extern void nuContPakFileReadWrite(NUContPakFile *file,
-			    s32 offset, s32 size,u8* buf, u32 mode);
-extern void nuContPakFileDelete(NUContPakFile *file, u8* noteName, u8* extName);
-extern void nuContPakFileDeleteJis(NUContPakFile *file, u8* noteName, u8* extName);
-extern void nuContPakFileState(NUContPakFile *file, OSPfsState* state);
-extern void nuContPakFileNum(NUContPakFile *file,
-			     s32 *max_files, s32 *used_files);
+	extern void nuGfxTaskEndFuncSet(NUGfxTaskEndFunc func);
+	extern void nuGfxTaskAllEndWait(void);
+	extern void nuGfxRetraceWait(u32 retrace_num);
+	extern void nuGfxDisplayOff(void);
+	extern void nuGfxDisplayOn(void);
+	/*--------------------------------------*/
+	/* controller manager function	    */
+	/*--------------------------------------*/
+	extern u8   nuContInit(void);
+	extern s32  nuContMgr(void* mesg);
+	extern u8   nuContMgrInit(void);
+	extern void nuContMgrRemove(void);
+	extern void nuContDataLock(void);
+	extern void nuContDataUnLock(void);
+	extern void nuContDataRead(OSContPad* pad);
+	extern void nuContDataReadWait(void);
+	extern void nuContDataReadStart(void);
+	extern void nuContDataGet(OSContPad* contdata, u32 padno);
+	extern void nuContDataGetAll(OSContPad* contdata);
+	extern void nuContDataGetEx(NUContData* contdata, u32 padno);
+	extern void nuContDataGetExAll(NUContData* contdata);
+	extern void nuContReadFuncSet(NUContReadFunc func);
+	extern void nuContQueryRead(void);
+	extern void nuContDataClose(void);
+	extern void nuContDataOpen(void);
 
-/*--------------------------------------*/
-/* rumbler pak function			    */
-/*--------------------------------------*/
-extern void nuContRmbMgrInit(void);
-extern s32  nuContRmbMgr(void* mesg);
-extern void nuContRmbMgrRemove(void);
-extern void nuContRmbStart(u32 contNo, u16 freq, u16 frame);
-extern s32  nuContRmbCheck(u32 contNo);
-extern void nuContRmbModeSet(u32 contNo, u8 mode);
-extern void nuContRmbForceStop(void);
-extern void nuContRmbForceStopEnd(void);
-extern void nuContRmbSearchTimeSet(u32 frame);
+	/*--------------------------------------*/
+	/* controller pak function		    */
+	/*--------------------------------------*/
+	extern s32  nuContPakMgr(void* mesg_type);
+	extern void nuContPakMgrInit(void);
+	extern void nuContPakMgrRemove(void);
+	extern void nuContPakJisToN64(u8* src, u8* dest, u32 len);
+	extern void nuContPakN64ToJis(u8* src, u8* dest, u32 len);
+	extern void nuContPakOpen(NUContPakFile* file, u32 contNo);
+	extern s32  nuContPakGetFree(NUContPakFile* file);
+	extern void nuContPakCodeSet(u8* companyCode, u8* gameCode);
+	extern void nuContPakRepairId(NUContPakFile* file);
+	extern void nuContPakFileOpen(NUContPakFile* file,
+		u8* noteName, u8* extName, u32 mode, s32 size);
+	extern void nuContPakFileOpenJis(NUContPakFile* file,
+		u8* noteName, u8* extName, u32 mode, s32 size);
+	extern void nuContPakFileReadWrite(NUContPakFile* file,
+		s32 offset, s32 size, u8* buf, u32 mode);
+	extern void nuContPakFileDelete(NUContPakFile* file, u8* noteName, u8* extName);
+	extern void nuContPakFileDeleteJis(NUContPakFile* file, u8* noteName, u8* extName);
+	extern void nuContPakFileState(NUContPakFile* file, OSPfsState* state);
+	extern void nuContPakFileNum(NUContPakFile* file,
+		s32* max_files, s32* used_files);
 
-/*--------------------------------------*/
-/* eeprom function			    */
-/*--------------------------------------*/
-extern void nuEepromMgrInit(void);
-extern s32  nuEepromMgr(void* mesg);
-extern s32  nuEepromCheck(void);
-extern void nuEepromMgrRemove(void);
-extern s32 nuEepromRead(u8 address, u8* buffer,u16 len);
-extern s32 nuEepromWrite(u8 address, u8* buffer,u16 len);
+	/*--------------------------------------*/
+	/* rumbler pak function			    */
+	/*--------------------------------------*/
+	extern void nuContRmbMgrInit(void);
+	extern s32  nuContRmbMgr(void* mesg);
+	extern void nuContRmbMgrRemove(void);
+	extern void nuContRmbStart(u32 contNo, u16 freq, u16 frame);
+	extern s32  nuContRmbCheck(u32 contNo);
+	extern void nuContRmbModeSet(u32 contNo, u8 mode);
+	extern void nuContRmbForceStop(void);
+	extern void nuContRmbForceStopEnd(void);
+	extern void nuContRmbSearchTimeSet(u32 frame);
 
-/*--------------------------------------*/
-/* pi function				    */
-/*--------------------------------------*/
-extern void nuPiInit(void);
-extern void nuPiReadRom(u32 rom_addr, void* buf_ptr, u32 size);
+	/*--------------------------------------*/
+	/* eeprom function			    */
+	/*--------------------------------------*/
+	extern void nuEepromMgrInit(void);
+	extern s32  nuEepromMgr(void* mesg);
+	extern s32  nuEepromCheck(void);
+	extern void nuEepromMgrRemove(void);
+	extern s32 nuEepromRead(u8 address, u8* buffer, u16 len);
+	extern s32 nuEepromWrite(u8 address, u8* buffer, u16 len);
 
-/*--------------------------------------*/
-/* si function				    */
-/*--------------------------------------*/
-extern u8 nuSiMgrInit(void);
-extern void nuSiCallBackAdd(NUCallBackList* list, NUCallBackFunc func);
-extern void nuSiCallBackRemove(NUCallBackList* list);
+	/*--------------------------------------*/
+	/* pi function				    */
+	/*--------------------------------------*/
+	extern void nuPiInit(void);
+	extern void nuPiReadRom(u32 rom_addr, void* buf_ptr, u32 size);
 
-/*--------------------------------------*/
-/* dubug function				    */
-/*--------------------------------------*/
+	/*--------------------------------------*/
+	/* si function				    */
+	/*--------------------------------------*/
+	extern u8 nuSiMgrInit(void);
+	extern void nuSiCallBackAdd(NUCallBackList* list, NUCallBackFunc func);
+	extern void nuSiCallBackRemove(NUCallBackList* list);
+
+	/*--------------------------------------*/
+	/* dubug function				    */
+	/*--------------------------------------*/
 #ifdef NDEBUG
 #define nuDebTaskPerfBar0(EX0 ,EX1 ,EX2)       ((void)0)
 #define nuDebTaskPerfBar1(EX0 ,EX1 ,EX2)       ((void)0)
 #else
-extern void nuDebTaskPerfBar0(u32 frameNum, u32 y, u32 flag);
-extern void nuDebTaskPerfBar1(u32 frameNum, u32 y, u32 flag);
+	extern void nuDebTaskPerfBar0(u32 frameNum, u32 y, u32 flag);
+	extern void nuDebTaskPerfBar1(u32 frameNum, u32 y, u32 flag);
 #endif /* NDEBUG */
 
-extern void nuDebConDisp(u32 flag);
-extern void nuDebConCPuts(u32 wndNo, const char *s);
-extern void nuDebConInc(NUDebConWindow* conWin);
-extern void nuDebConRtn(NUDebConWindow* conWin);
-extern void nuDebConEsc(NUDebConWindow* conWin, char esc);
-extern void nuDebConWindowSet(u32 wndNo, u32 winX , u32 winY, u32 width, u32 height);
-extern void nuDebConWindowSize(u32 wndNo,  u32 width, u32 height);
-extern void nuDebConWindowPos(u32 wndNo, u32 winX , u32 winY);
-extern void nuDebConTextColor(u32 wndNo, u32 color);
-extern void nuDebConTextAttr(u32 wndNo, u32 attr);
-extern void nuDebConTextPos(u32 wndNo, u32 posX, u32 posY);
-extern void nuDebConScroll(u32 wndNo, u32 flag);
-extern void nuDebConWindowShow(u32 wndNo, u32 flag);
-extern void nuDebConClear(u32 wndNo);
-extern void nuDebConPutc(u32 wndNo, u32  c);
-extern void nuDebTaskPerfLoad(void);
-/*----------------------------------------------------------------------*/
-/*----------------------------------------------------------------------*/
-/* MACRO	 										*/
-/*----------------------------------------------------------------------*/
-/*----------------------------------------------------------------------*/
+	extern void nuDebConDisp(u32 flag);
+	extern void nuDebConCPuts(u32 wndNo, const char* s);
+	extern void nuDebConInc(NUDebConWindow* conWin);
+	extern void nuDebConRtn(NUDebConWindow* conWin);
+	extern void nuDebConEsc(NUDebConWindow* conWin, char esc);
+	extern void nuDebConWindowSet(u32 wndNo, u32 winX, u32 winY, u32 width, u32 height);
+	extern void nuDebConWindowSize(u32 wndNo, u32 width, u32 height);
+	extern void nuDebConWindowPos(u32 wndNo, u32 winX, u32 winY);
+	extern void nuDebConTextColor(u32 wndNo, u32 color);
+	extern void nuDebConTextAttr(u32 wndNo, u32 attr);
+	extern void nuDebConTextPos(u32 wndNo, u32 posX, u32 posY);
+	extern void nuDebConScroll(u32 wndNo, u32 flag);
+	extern void nuDebConWindowShow(u32 wndNo, u32 flag);
+	extern void nuDebConClear(u32 wndNo);
+	extern void nuDebConPutc(u32 wndNo, u32  c);
+	extern void nuDebTaskPerfLoad(void);
+	/*----------------------------------------------------------------------*/
+	/*----------------------------------------------------------------------*/
+	/* MACRO	 										*/
+	/*----------------------------------------------------------------------*/
+	/*----------------------------------------------------------------------*/
 
-/*----------------------------------------------------------------------*/
-/*	Register the graphics micro code 						*/
-/*	IN:	The pointer of the NUUcode array of the graphics micro code */
-/*----------------------------------------------------------------------*/
+	/*----------------------------------------------------------------------*/
+	/*	Register the graphics micro code 						*/
+	/*	IN:	The pointer of the NUUcode array of the graphics micro code */
+	/*----------------------------------------------------------------------*/
 #define nuGfxSetUcode(ucode)						\
 {									\
     nuGfxUcode = ucode;							\

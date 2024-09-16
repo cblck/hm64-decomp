@@ -137,7 +137,7 @@ volatile u8 startGfxTask(void) {
         __assert(&D_8011EC60, &D_8011EC64, 288);
     }
     
-    nuGfxTaskStart(initGfxList[gDisplayContextIndex], (s32)(dl - initGfxList[gDisplayContextIndex]) * sizeof(Gfx), NU_GFX_UCODE_F3DEX2, NU_SC_NOSWAPBUFFER);
+    nuGfxTaskStart(initGfxList[gDisplayContextIndex], (s32)(dl - initGfxList[gDisplayContextIndex]) * sizeof(Gfx), NU_GFX_UCODE_F3DEX, NU_SC_NOSWAPBUFFER);
     
     gfxTaskNo += 1;
     
@@ -159,7 +159,7 @@ volatile u8 doViewportGfxTask(void) {
         __assert(&D_8011EC60, &D_8011EC64, 319);
     }
 
-    nuGfxTaskStart(D_80205000[gDisplayContextIndex], (s32)(dl - D_80205000[gDisplayContextIndex]) * sizeof(Gfx), NU_GFX_UCODE_F3DEX2, NU_SC_SWAPBUFFER);
+    nuGfxTaskStart(D_80205000[gDisplayContextIndex], (s32)(dl - D_80205000[gDisplayContextIndex]) * sizeof(Gfx), NU_GFX_UCODE_F3DEX, NU_SC_SWAPBUFFER);
     
     gfxTaskNo += 1;
 
@@ -186,7 +186,7 @@ volatile u8 func_80026CEC(s32 arg0, s32 arg1) {
         __assert(&D_8011EC60, &D_8011EC64, 0x166);
     }
 
-    nuGfxTaskStart(D_801836A0[gDisplayContextIndex], (s32)(dl - D_801836A0[gDisplayContextIndex]) * sizeof(Gfx), NU_GFX_UCODE_F3DEX2, NU_SC_NOSWAPBUFFER);
+    nuGfxTaskStart(D_801836A0[gDisplayContextIndex], (s32)(dl - D_801836A0[gDisplayContextIndex]) * sizeof(Gfx), NU_GFX_UCODE_F3DEX, NU_SC_NOSWAPBUFFER);
     
     gfxTaskNo += 1;
     
@@ -1115,7 +1115,7 @@ void nuGfxInit(void) {
     gDPFullSync(gfxList_ptr++);
     gSPEndDisplayList(gfxList_ptr++);
     
-    nuGfxTaskStart(gfxList, (s32)(gfxList_ptr - gfxList) * sizeof(Gfx), NU_GFX_UCODE_F3DEX2, NU_SC_NOSWAPBUFFER);
+    nuGfxTaskStart(gfxList, (s32)(gfxList_ptr - gfxList) * sizeof(Gfx), NU_GFX_UCODE_F3DEX, NU_SC_NOSWAPBUFFER);
 
     nuGfxTaskAllEndWait();
     
