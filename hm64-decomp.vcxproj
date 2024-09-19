@@ -1133,6 +1133,7 @@
     <ClInclude Include="include\libkmc\kmclib.h" />
     <ClInclude Include="include\libmus\libmus.h" />
     <ClInclude Include="include\libmus\libmus_data.h" />
+    <ClInclude Include="include\nualstl.h" />
     <ClInclude Include="include\nusys.h" />
     <ClInclude Include="include\PRinternal\controller.h" />
     <ClInclude Include="include\PRinternal\controller_gbpak.h" />
@@ -1217,7 +1218,6 @@
     <ClInclude Include="src\level.h" />
     <ClInclude Include="src\levelInteractions.h" />
     <ClInclude Include="src\lib\libmus\libsrc\player.h" />
-    <ClInclude Include="src\lib\nusys-1\nualstl\nualstl.h" />
     <ClInclude Include="src\load.h" />
     <ClInclude Include="src\loadGameScreen.h" />
     <ClInclude Include="src\mainLoop.h" />
