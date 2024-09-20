@@ -424,15 +424,11 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\io\epirawstartdma.c">
+    <ClCompile Include="src\lib\os\libultra\io\epirawdma.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\epirawwrite.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
-      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\io\getactivequeue.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
@@ -505,14 +501,6 @@
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\pirawdma.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
-      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\io\resetglobalintmask.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
-      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\io\setglobalintmask.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
@@ -624,19 +612,15 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\io\yieldthread.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
-      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
-    </ClCompile>
     <ClCompile Include="src\lib\os\libultra\libc\bcmp.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\libc\ldtob.c">
+    <ClCompile Include="src\lib\os\libultra\libc\xldtob.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\libc\litob.c">
+    <ClCompile Include="src\lib\os\libultra\libc\xlitob.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
@@ -736,6 +720,10 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\getactivequeue.c">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="src\lib\os\libultra\os\getthreadpri.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
@@ -764,6 +752,10 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\resetglobalintmask.c">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="src\lib\os\libultra\os\sendmesg.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
@@ -775,6 +767,10 @@
     <ClCompile Include="src\lib\os\libultra\os\seteventmsg.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\setglobalintmask.c">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\os\setthreadpri.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
@@ -799,6 +795,10 @@
     <ClCompile Include="src\lib\os\libultra\os\virtualtophysical.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\yieldthread.c">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\rmon\rmonbreak.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>

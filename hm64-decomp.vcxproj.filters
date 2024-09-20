@@ -286,14 +286,14 @@
     <ClCompile Include="src\lib\os\libultra\io\epirawread.c">
       <Filter>src\lib\os\libultra\io</Filter>
     </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\io\epirawstartdma.c">
+    <ClCompile Include="src\lib\os\libultra\io\epirawdma.c">
       <Filter>src\lib\os\libultra\io</Filter>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\epirawwrite.c">
       <Filter>src\lib\os\libultra\io</Filter>
     </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\io\getactivequeue.c">
-      <Filter>src\lib\os\libultra\io</Filter>
+    <ClCompile Include="src\lib\os\libultra\os\getactivequeue.c">
+      <Filter>src\lib\os\libultra\os</Filter>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\motor.c">
       <Filter>src\lib\os\libultra\io</Filter>
@@ -349,11 +349,11 @@
     <ClCompile Include="src\lib\os\libultra\io\pirawdma.c">
       <Filter>src\lib\os\libultra\io</Filter>
     </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\io\resetglobalintmask.c">
-      <Filter>src\lib\os\libultra\io</Filter>
+    <ClCompile Include="src\lib\os\libultra\os\resetglobalintmask.c">
+      <Filter>src\lib\os\libultra\os</Filter>
     </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\io\setglobalintmask.c">
-      <Filter>src\lib\os\libultra\io</Filter>
+    <ClCompile Include="src\lib\os\libultra\os\setglobalintmask.c">
+      <Filter>src\lib\os\libultra\os</Filter>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\si.c">
       <Filter>src\lib\os\libultra\io</Filter>
@@ -436,13 +436,13 @@
     <ClCompile Include="src\lib\os\libultra\io\viswapcontext.c">
       <Filter>src\lib\os\libultra\io</Filter>
     </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\io\yieldthread.c">
-      <Filter>src\lib\os\libultra\io</Filter>
+    <ClCompile Include="src\lib\os\libultra\os\yieldthread.c">
+      <Filter>src\lib\os\libultra\os</Filter>
     </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\libc\ldtob.c">
+    <ClCompile Include="src\lib\os\libultra\libc\xldtob.c">
       <Filter>src\lib\os\libultra\libc</Filter>
     </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\libc\litob.c">
+    <ClCompile Include="src\lib\os\libultra\libc\xlitob.c">
       <Filter>src\lib\os\libultra\libc</Filter>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\libc\string.c">
