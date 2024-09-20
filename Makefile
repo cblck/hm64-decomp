@@ -38,7 +38,7 @@ CPPFLAGS := -I. -I include -I src -I src/system -I include/libmus
 
 DEBUG_FLAGS := -g2
 OPTFLAGS := -O2
-LIBULTRA_OPTFLAGS := -O3
+LIBULTRA_OPTFLAGS := -O3 -g0
 LIBKMC_OPTFLAGS := -O1
 NU_OPTFLAGS := -O2
 
