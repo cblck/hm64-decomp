@@ -1,4 +1,10 @@
-#include "common.h"
+#include "PR/os_internal.h"
+#include "PRinternal/osint.h"
 
+OSPri osGetThreadPri(OSThread* thread) {
+	if (thread == NULL) {
+		thread = __osRunningThread;
+	}
 
-INCLUDE_ASM(const s32, "lib/os/libultra/os/getthreadpri", osGetThreadPri);
+	return thread->priority;
+}
