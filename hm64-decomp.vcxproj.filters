@@ -694,9 +694,6 @@
     <ClCompile Include="src\lib\os\libultra\debug\kdebugserver.c">
       <Filter>src\lib\os\libultra\debug</Filter>
     </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\libc\bcmp.c">
-      <Filter>src\lib\os\libultra\libc</Filter>
-    </ClCompile>
     <ClCompile Include="src\lib\os\libultra\host\readhost.c">
       <Filter>src\lib\os\libultra\host</Filter>
     </ClCompile>

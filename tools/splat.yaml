@@ -293,7 +293,7 @@ segments:
       - [ 0xE4990, c, lib/os/libultra/io/pigetcmdq]
       - [ 0xE49B0, c, lib/os/libultra/io/piacs]
       - [ 0xE4AA0, c, lib/os/libultra/rmon/rmonsio]
-      - [ 0xE4C50, c, lib/os/libultra/libc/bcmp]
+      - [ 0xE4C50, hasm, lib/os/libultra/libc/bcmp]
       # FIXME: should be c, but rodata issue
       - [ 0xE4D60, asm, lib/os/libultra/printf]
       - [ 0xE5790, c, lib/os/libultra/io/contpfs]
