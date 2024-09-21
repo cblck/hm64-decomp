@@ -1,3 +1,9 @@
-#include "common.h"
+#include "PR/os_internal.h"
 
-INCLUDE_ASM(const s32, "lib/os/libultra/os/setglobalintmask", __osSetGlobalIntMask);
+void __osSetGlobalIntMask(OSHWIntr mask) {
+	register u32 saveMask = __osDisableInt();
+
+	__OSGlobalIntMask |= mask;
+
+	__osRestoreInt(saveMask);
+}
