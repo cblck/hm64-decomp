@@ -1,146 +1,768 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <ClCompile Include="src\lib\os\libultra\io\sp.c">
+      <Filter>include\PR</Filter>
+    </ClCompile>
+    <ClCompile Include="src\animals.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\evaluation.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gameAudio.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gameStart.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gameStatus.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\initialize.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\initialize2.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\itemHandlers.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\level.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\levelInteractions.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\load.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\loadGameScreen.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mainLoop.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mainproc.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mapObjects.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\namingScreen.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\npc.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\overlayScreens.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\player.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\setCutscenes.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\shop.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\title.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tv.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\updateGame.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\weather.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\libc\bcopy.c">
+      <Filter>src\lib\libc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\libc\bzero.c">
+      <Filter>src\lib\libc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\libkmc\rand.c">
+      <Filter>src\lib\libkmc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\libkmc\syncPrintf.c">
+      <Filter>src\lib\libkmc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\libmus\libsrc\player.c">
+      <Filter>src\lib\libmus\libsrc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\libmus\libsrc\player_api.c">
+      <Filter>src\lib\libmus\libsrc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\libmus\libsrc\player_commands.c">
+      <Filter>src\lib\libmus\libsrc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nuaumgr.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nuauprenmifuncset.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nuauprenmiproc.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nuauseqplayerseqset.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nuaustlbankset.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nuaustlinit.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nuaustlplayerinit.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nuaustlseqplayerplay.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nuaustlsndplayerplay.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nuboot.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontdatagetex.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontdatagetexall.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontdatalock.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontdataread.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontdatareadstart.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontdatareadwait.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontinit.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontmgr.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontpakcodeset.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontpakfiledelete.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontpakfiledeletejis.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontpakfilenum.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontpakfileopenjis.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontpakfilereadwrite.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontpakfilestate.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontpakgetfree.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontpakjiston64.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontpakmgr.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontpakopen.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontqueryread.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nucontrmbmgr.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nugfxdisplayoff.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nugfxdisplayon.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nugfxfuncset.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nugfxprenmifuncset.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nugfxretracewait.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nugfxsetcfb.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nugfxswapcfb.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nugfxswapcfbfuncset.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nugfxtaskallendwait.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nugfxtaskmgr.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nugfxthread.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nupakmenu.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nupakmenuloadfont.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nupiinit.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nupireadrom.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nusched.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nusicallbackadd.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nusicallbackremove.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nusimgr.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\audio\auxbus.c">
+      <Filter>src\lib\os\libultra\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\audio\copy.c">
+      <Filter>src\lib\os\libultra\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\audio\drvrnew.c">
+      <Filter>src\lib\os\libultra\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\audio\env.c">
+      <Filter>src\lib\os\libultra\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\audio\filter.c">
+      <Filter>src\lib\os\libultra\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\audio\heapalloc.c">
+      <Filter>src\lib\os\libultra\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\audio\heapinit.c">
+      <Filter>src\lib\os\libultra\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\audio\load.c">
+      <Filter>src\lib\os\libultra\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\audio\mainbus.c">
+      <Filter>src\lib\os\libultra\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\audio\resample.c">
+      <Filter>src\lib\os\libultra\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\audio\reverb.c">
+      <Filter>src\lib\os\libultra\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\audio\save.c">
+      <Filter>src\lib\os\libultra\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\audio\sl.c">
+      <Filter>src\lib\os\libultra\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\audio\synallocfx.c">
+      <Filter>src\lib\os\libultra\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\audio\syndelete.c">
+      <Filter>src\lib\os\libultra\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\audio\synthesizer.c">
+      <Filter>src\lib\os\libultra\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\debug\assert.c">
+      <Filter>src\lib\os\libultra\debug</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\debug\kdebugserver.c">
+      <Filter>src\lib\os\libultra\debug</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\gu\lookat.c">
+      <Filter>src\lib\os\libultra\gu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\gu\mtxutil.c">
+      <Filter>src\lib\os\libultra\gu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\gu\ortho.c">
+      <Filter>src\lib\os\libultra\gu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\gu\perspective.c">
+      <Filter>src\lib\os\libultra\gu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\gu\rotate.c">
+      <Filter>src\lib\os\libultra\gu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\gu\scale.c">
+      <Filter>src\lib\os\libultra\gu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\gu\sins.c">
+      <Filter>src\lib\os\libultra\gu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\gu\translate.c">
+      <Filter>src\lib\os\libultra\gu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\host\readhost.c">
+      <Filter>src\lib\os\libultra\host</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\ai.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\aigetlen.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\aigetstat.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\aisetfreq.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\aisetnextbuf.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\cartrominit.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\contpfs.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\contquery.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\contramread.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\contramwrite.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\contreaddata.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\controller.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\crc.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\devmgr.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\epidma.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\epilinkhandle.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\epirawdma.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\epirawread.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\epirawwrite.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\motor.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\pfsallocatefile.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\pfschecker.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\pfsdeletefile.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\pfsfilestate.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\pfsfreeblocks.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\pfsgetstatus.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\pfsinitpak.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\pfsisplug.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\pfsnumfiles.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\pfsreadwritefile.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\pfsrepairid.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\pfssearchfile.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\pfsselectbank.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\piacs.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\pigetcmdq.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\pimgr.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\pirawdma.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\si.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\siacs.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\sirawdma.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\sirawread.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\sirawwrite.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\spgetstat.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\sprawdma.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\sprawread.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\sprawwrite.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\spsetpc.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\spsetstat.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\sptask.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\sptaskyield.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\sptaskyielded.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\vi.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\viblack.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\vigetcurrcontext.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\vigetcurrframebuf.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\vigetnextframebuf.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\vimgr.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\visetevent.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\visetmode.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\visetspecial.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\visetyscale.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\viswapbuf.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\viswapcontext.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libc\string.c">
+      <Filter>src\lib\os\libultra\libc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libc\xldtob.c">
+      <Filter>src\lib\os\libultra\libc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libc\xlitob.c">
+      <Filter>src\lib\os\libultra\libc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_adpcm.c">
+      <Filter>src\lib\os\libultra\libnaudio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_alMainBusPull.c">
+      <Filter>src\lib\os\libultra\libnaudio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_alSavePul.c">
+      <Filter>src\lib\os\libultra\libnaudio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_auxbus.c">
+      <Filter>src\lib\os\libultra\libnaudio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_drvrnew.c">
+      <Filter>src\lib\os\libultra\libnaudio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_env.c">
+      <Filter>src\lib\os\libultra\libnaudio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_resample.c">
+      <Filter>src\lib\os\libultra\libnaudio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_reverb.c">
+      <Filter>src\lib\os\libultra\libnaudio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_sl.c">
+      <Filter>src\lib\os\libultra\libnaudio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_synaddplayer.c">
+      <Filter>src\lib\os\libultra\libnaudio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_synallocfx.c">
+      <Filter>src\lib\os\libultra\libnaudio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_synallocvoice.c">
+      <Filter>src\lib\os\libultra\libnaudio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_syndelete.c">
+      <Filter>src\lib\os\libultra\libnaudio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_synsetfxmix.c">
+      <Filter>src\lib\os\libultra\libnaudio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_synsetpan.c">
+      <Filter>src\lib\os\libultra\libnaudio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_synsetpitch.c">
+      <Filter>src\lib\os\libultra\libnaudio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_synsetvol.c">
+      <Filter>src\lib\os\libultra\libnaudio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_synstartvoice.c">
+      <Filter>src\lib\os\libultra\libnaudio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_synstopvoice.c">
+      <Filter>src\lib\os\libultra\libnaudio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_synthesizer.c">
+      <Filter>src\lib\os\libultra\libnaudio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\rmon\rmonbreak.c">
+      <Filter>src\lib\os\libultra\rmon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\rmon\rmoncmd.c">
+      <Filter>src\lib\os\libultra\rmon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\rmon\rmonmain.c">
+      <Filter>src\lib\os\libultra\rmon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\rmon\rmonmem.c">
+      <Filter>src\lib\os\libultra\rmon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\rmon\rmonmisc.c">
+      <Filter>src\lib\os\libultra\rmon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\rmon\rmonrcp.c">
+      <Filter>src\lib\os\libultra\rmon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\rmon\rmonreg.c">
+      <Filter>src\lib\os\libultra\rmon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\rmon\rmonsio.c">
+      <Filter>src\lib\os\libultra\rmon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\rmon\rmontask.c">
+      <Filter>src\lib\os\libultra\rmon</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\createmesgqueue.c">
+      <Filter>src\lib\os\libultra\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\createthread.c">
+      <Filter>src\lib\os\libultra\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\destroythread.c">
+      <Filter>src\lib\os\libultra\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\getactivequeue.c">
+      <Filter>src\lib\os\libultra\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\getthreadpri.c">
+      <Filter>src\lib\os\libultra\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\gettime.c">
+      <Filter>src\lib\os\libultra\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\initialize.c">
+      <Filter>src\lib\os\libultra\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\initrdb.c">
+      <Filter>src\lib\os\libultra\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\jammesg.c">
+      <Filter>src\lib\os\libultra\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\rdbsend.c">
+      <Filter>src\lib\os\libultra\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\recvmesg.c">
+      <Filter>src\lib\os\libultra\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\resetglobalintmask.c">
+      <Filter>src\lib\os\libultra\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\sendmesg.c">
+      <Filter>src\lib\os\libultra\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\seteventmesg.c">
+      <Filter>src\lib\os\libultra\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\setglobalintmask.c">
+      <Filter>src\lib\os\libultra\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\setthreadpri.c">
+      <Filter>src\lib\os\libultra\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\settimer.c">
+      <Filter>src\lib\os\libultra\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\startthread.c">
+      <Filter>src\lib\os\libultra\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\stopthread.c">
+      <Filter>src\lib\os\libultra\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\timerintr.c">
+      <Filter>src\lib\os\libultra\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\virtualtophysical.c">
+      <Filter>src\lib\os\libultra\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\os\yieldthread.c">
+      <Filter>src\lib\os\libultra\os</Filter>
+    </ClCompile>
+    <ClCompile Include="src\overlays\gamePakBuffer.c">
+      <Filter>src\overlays</Filter>
+    </ClCompile>
+    <ClCompile Include="src\overlays\sramBuffer.c">
+      <Filter>src\overlays</Filter>
+    </ClCompile>
+    <ClCompile Include="src\system\animatedSprites.c">
+      <Filter>src\system</Filter>
+    </ClCompile>
+    <ClCompile Include="src\system\audio.c">
+      <Filter>src\system</Filter>
+    </ClCompile>
+    <ClCompile Include="src\system\controller.c">
+      <Filter>src\system</Filter>
+    </ClCompile>
+    <ClCompile Include="src\system\cutscene.c">
+      <Filter>src\system</Filter>
+    </ClCompile>
+    <ClCompile Include="src\system\dialogue.c">
+      <Filter>src\system</Filter>
+    </ClCompile>
+    <ClCompile Include="src\system\flags.c">
+      <Filter>src\system</Filter>
+    </ClCompile>
+    <ClCompile Include="src\system\globalSprites.c">
+      <Filter>src\system</Filter>
+    </ClCompile>
+    <ClCompile Include="src\system\graphic.c">
+      <Filter>src\system</Filter>
+    </ClCompile>
+    <ClCompile Include="src\system\map.c">
+      <Filter>src\system</Filter>
+    </ClCompile>
+    <ClCompile Include="src\system\mapContext.c">
+      <Filter>src\system</Filter>
+    </ClCompile>
+    <ClCompile Include="src\system\mathUtils.c">
+      <Filter>src\system</Filter>
+    </ClCompile>
+    <ClCompile Include="src\system\memory.c">
+      <Filter>src\system</Filter>
+    </ClCompile>
+    <ClCompile Include="src\system\message.c">
+      <Filter>src\system</Filter>
+    </ClCompile>
+    <ClCompile Include="src\system\pauseScreen.c">
+      <Filter>src\system</Filter>
+    </ClCompile>
+    <ClCompile Include="src\system\sprite.c">
+      <Filter>src\system</Filter>
+    </ClCompile>
+    <ClCompile Include="src\system\spriteAddresses.c">
+      <Filter>src\system</Filter>
+    </ClCompile>
+    <ClCompile Include="src\system\staticGfx.c">
+      <Filter>src\system</Filter>
+    </ClCompile>
+    <ClCompile Include="src\system\volume.c">
+      <Filter>src\system</Filter>
+    </ClCompile>
+    <ClCompile Include="src\system\worldGraphics.c">
+      <Filter>src\system</Filter>
+    </ClCompile>
     <ClCompile Include="tools\vs-wrapper.c">
       <Filter>tools</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Filter Include="include">
-      <UniqueIdentifier>{d94d806c-2d49-4c21-be84-81a29bd9ed6b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\gcc">
-      <UniqueIdentifier>{67f23a89-28bb-45d8-89c6-362182e10011}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\libkmc">
-      <UniqueIdentifier>{20df60a7-7f76-49ac-99eb-517fd9518d98}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\libmus">
-      <UniqueIdentifier>{76a68533-5a97-4ae0-b09e-e866a2c03c6b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\PR">
-      <UniqueIdentifier>{424c0fdb-711f-4602-abf3-d50bd796c62a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src">
-      <UniqueIdentifier>{70adccda-7b68-4ae4-b457-56dd5a16a4ac}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\lib">
-      <UniqueIdentifier>{78ac11f8-e61a-4281-9f90-a51f3b22b7e6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\lib\libc">
-      <UniqueIdentifier>{62d3bf2c-b83d-4bb5-ac36-4dc9f2051700}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\lib\libkmc">
-      <UniqueIdentifier>{75a842dd-2498-485f-ba29-6ca3cf3fe97a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\lib\libmus">
-      <UniqueIdentifier>{9562542e-9171-4314-a7ed-df7960f983ea}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\lib\libmus\libsrc">
-      <UniqueIdentifier>{35573aff-4caf-441b-b4ca-6d2eccc4cbb9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\lib\nusys-1">
-      <UniqueIdentifier>{5e128a6b-294b-48c9-b24e-8c4c5589813c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\lib\nusys-1\nualstl">
-      <UniqueIdentifier>{d3298bd9-7160-42d2-9592-833b01e1b992}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\lib\os">
-      <UniqueIdentifier>{156ef7ac-493c-40b0-a747-8b9f9fa76d5f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\lib\os\libultra">
-      <UniqueIdentifier>{ab40fa5a-9f68-4974-919e-20a83c6aa021}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\lib\os\libultra\audio">
-      <UniqueIdentifier>{de5c3836-d87e-4afa-98e9-cee2a1b168ad}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\lib\os\libultra\gu">
-      <UniqueIdentifier>{a48a23d7-793e-4bfa-9659-0a727f8e173d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\lib\os\libultra\io">
-      <UniqueIdentifier>{4317e70f-6e0c-4b7b-888f-1127c3cbc61d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\lib\os\libultra\libc">
-      <UniqueIdentifier>{a20db455-482c-4570-b75f-4c930da698e3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\lib\os\libultra\libnaudio">
-      <UniqueIdentifier>{abb683bd-9e83-4860-84d0-21d8b87c6d4c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\lib\os\libultra\rmon">
-      <UniqueIdentifier>{08849211-798d-4c8c-a979-0c714d5151f4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\overlays">
-      <UniqueIdentifier>{c2a7d5ee-762b-4402-b09f-e093cbb837d2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\system">
-      <UniqueIdentifier>{b3ac1dcf-d4b6-4613-a0b6-03f581382de1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="tools">
-      <UniqueIdentifier>{fea93094-b9d0-4df4-b39c-f26a03c47b4c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="tools\splat">
-      <UniqueIdentifier>{78055f60-23a6-4697-ab52-14520384bc45}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="tools\splat\src">
-      <UniqueIdentifier>{3c99cdee-da9c-4dec-8b28-fe3ac71573d8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="tools\splat\src\splat">
-      <UniqueIdentifier>{9b826299-20ea-4629-8011-2f32c3750275}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="tools\splat\src\splat\disassembler">
-      <UniqueIdentifier>{10cba912-9d47-4394-be21-5cc310fd32ac}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="tools\splat\src\splat\platforms">
-      <UniqueIdentifier>{bcfe4770-db48-48e0-94fe-30430730bad0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="tools\splat\src\splat\scripts">
-      <UniqueIdentifier>{c5bbeb02-b456-42df-a843-e728a77102a6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="tools\splat\src\splat\segtypes">
-      <UniqueIdentifier>{4c36d756-6583-40c9-b7a2-d5c03e9599fe}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="tools\splat\src\splat\segtypes\common">
-      <UniqueIdentifier>{7bf97243-fd12-4a14-a5df-99ec9483e165}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="tools\splat\src\splat\segtypes\n64">
-      <UniqueIdentifier>{3c51603c-05cb-4ed5-9089-b8ee4536ebbf}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="tools\splat\src\splat\segtypes\ps2">
-      <UniqueIdentifier>{1b557c8f-75a2-4c21-89d9-acffe98f354f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="tools\splat\src\splat\segtypes\psp">
-      <UniqueIdentifier>{348afa52-2881-4bb4-83f8-6ee4938ee912}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="tools\splat\src\splat\segtypes\psx">
-      <UniqueIdentifier>{3fb2e022-6207-4951-9647-6c7b1e7f823a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="tools\splat\src\splat\util">
-      <UniqueIdentifier>{24c647a9-e51f-4f68-b6b8-9e12d379c89e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="tools\splat\src\splat\util\n64">
-      <UniqueIdentifier>{70ebb5bb-2d93-4d5a-97a6-35b2e67fefbd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="tools\splat\src\splat\util\psx">
-      <UniqueIdentifier>{8c5048fc-f666-44fe-9bc4-6fb05b2f4743}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\PRinternal">
-      <UniqueIdentifier>{833d0ecd-f595-4f8a-9d5d-19502c58a3f6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\lib\os\libultra\debug">
-      <UniqueIdentifier>{7be06574-d799-4974-a0e0-3521e18490c4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\lib\os\libultra\os">
-      <UniqueIdentifier>{b81f1722-7b72-4db7-9f34-4eca69ad5e03}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\lib\os\libultra\host">
-      <UniqueIdentifier>{c30e1b7f-4261-452d-838f-8d928f1a6488}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\common.h">
       <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="include\include_asm.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\macros.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\nualstl.h">
       <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="include\nusys.h">
@@ -152,6 +774,18 @@
     <ClInclude Include="include\ultra64.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="include\gcc\stdlib.h">
+      <Filter>include\gcc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\libkmc\kmclib.h">
+      <Filter>include\libkmc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\libmus\libmus.h">
+      <Filter>include\libmus</Filter>
+    </ClInclude>
+    <ClInclude Include="include\libmus\libmus_data.h">
+      <Filter>include\libmus</Filter>
+    </ClInclude>
     <ClInclude Include="include\PR\abi.h">
       <Filter>include\PR</Filter>
     </ClInclude>
@@ -159,6 +793,9 @@
       <Filter>include\PR</Filter>
     </ClInclude>
     <ClInclude Include="include\PR\gs2dex.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\gt.h">
       <Filter>include\PR</Filter>
     </ClInclude>
     <ClInclude Include="include\PR\gu.h">
@@ -173,35 +810,188 @@
     <ClInclude Include="include\PR\os.h">
       <Filter>include\PR</Filter>
     </ClInclude>
+    <ClInclude Include="include\PR\os_ai.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_cache.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_cont.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_convert.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_debug.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_eeprom.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_error.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_exception.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_flash.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_gbpak.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_gio.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_host.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_internal.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_internal_debug.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_internal_error.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_internal_exception.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_internal_flash.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_internal_gio.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_internal_host.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_internal_reg.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_internal_rsp.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_internal_si.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_internal_thread.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_internal_tlb.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_libc.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_message.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_motor.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_pfs.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
     <ClInclude Include="include\PR\os_pi.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_rdp.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_reg.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_rsp.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_si.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_system.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_thread.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_time.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_tlb.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_version.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_vi.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\os_voice.h">
       <Filter>include\PR</Filter>
     </ClInclude>
     <ClInclude Include="include\PR\R4300.h">
       <Filter>include\PR</Filter>
     </ClInclude>
+    <ClInclude Include="include\PR\ramrom.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
     <ClInclude Include="include\PR\rcp.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\rdb.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\region.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\rmon.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\sched.h">
       <Filter>include\PR</Filter>
     </ClInclude>
     <ClInclude Include="include\PR\sptask.h">
       <Filter>include\PR</Filter>
     </ClInclude>
+    <ClInclude Include="include\PR\synthInternals.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
     <ClInclude Include="include\PR\ucode.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\ultraerror.h">
+      <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\ultralog.h">
       <Filter>include\PR</Filter>
     </ClInclude>
     <ClInclude Include="include\PR\ultratypes.h">
       <Filter>include\PR</Filter>
     </ClInclude>
-    <ClInclude Include="include\libmus\libmus.h">
-      <Filter>include\libmus</Filter>
+    <ClInclude Include="include\PRinternal\controller.h">
+      <Filter>include\PRinternal</Filter>
     </ClInclude>
-    <ClInclude Include="include\libmus\libmus_data.h">
-      <Filter>include\libmus</Filter>
+    <ClInclude Include="include\PRinternal\controller_gbpak.h">
+      <Filter>include\PRinternal</Filter>
     </ClInclude>
-    <ClInclude Include="include\libkmc\kmclib.h">
-      <Filter>include\libkmc</Filter>
+    <ClInclude Include="include\PRinternal\controller_voice.h">
+      <Filter>include\PRinternal</Filter>
     </ClInclude>
-    <ClInclude Include="include\gcc\stdlib.h">
-      <Filter>include\gcc</Filter>
+    <ClInclude Include="include\PRinternal\osint.h">
+      <Filter>include\PRinternal</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PRinternal\piint.h">
+      <Filter>include\PRinternal</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PRinternal\rmonint.h">
+      <Filter>include\PRinternal</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PRinternal\siint.h">
+      <Filter>include\PRinternal</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PRinternal\viint.h">
+      <Filter>include\PRinternal</Filter>
     </ClInclude>
     <ClInclude Include="src\animals.h">
       <Filter>src</Filter>
@@ -284,6 +1074,15 @@
     <ClInclude Include="src\weather.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="src\lib\libmus\libsrc\player.h">
+      <Filter>src\lib\libmus\libsrc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lib\os\libultra\gu\guint.h">
+      <Filter>src\lib\os\libultra\gu</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\sp.h">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClInclude>
     <ClInclude Include="src\system\audio.h">
       <Filter>src\system</Filter>
     </ClInclude>
@@ -329,191 +1128,20 @@
     <ClInclude Include="src\system\worldGraphics.h">
       <Filter>src\system</Filter>
     </ClInclude>
-    <ClInclude Include="src\lib\libmus\libsrc\player.h">
-      <Filter>src\lib\libmus\libsrc</Filter>
-    </ClInclude>
-    <ClInclude Include="src\lib\nusys-1\nualstl\nualstl.h">
-      <Filter>src\lib\nusys-1\nualstl</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\os_version.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\os_cont.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\os_convert.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\os_debug.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\os_eeprom.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\os_error.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\os_exception.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\os_flash.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\os_gbpak.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\os_gio.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\os_host.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\os_libc.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\os_message.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\os_motor.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\os_pfs.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\os_rdp.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\os_reg.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\os_rsp.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\os_si.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\os_system.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\os_thread.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\os_time.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\os_tlb.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\os_vi.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\os_voice.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\os_ai.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\os_cache.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\os_internal_flash.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\os_internal_gio.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\os_internal_host.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\os_internal_reg.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\os_internal_rsp.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\os_internal_si.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\os_internal_thread.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\os_internal_tlb.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\os_internal.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\os_internal_debug.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\os_internal_error.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\os_internal_exception.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\rmon.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\sp.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\ultraerror.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\ultralog.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\ramrom.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\region.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\gt.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\rdb.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PR\sched.h">
-      <Filter>include\PR</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PRinternal\osint.h">
-      <Filter>include\PRinternal</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PRinternal\controller.h">
-      <Filter>include\PRinternal</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PRinternal\controller_gbpak.h">
-      <Filter>include\PRinternal</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PRinternal\controller_voice.h">
-      <Filter>include\PRinternal</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PRinternal\piint.h">
-      <Filter>include\PRinternal</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PRinternal\rmonint.h">
-      <Filter>include\PRinternal</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PRinternal\siint.h">
-      <Filter>include\PRinternal</Filter>
-    </ClInclude>
-    <ClInclude Include="include\PRinternal\viint.h">
-      <Filter>include\PRinternal</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <None Include=".gitmodules" />
+    <None Include="Makefile" />
+    <None Include="permuter_settings.toml" />
     <None Include="include\macro.inc">
       <Filter>include</Filter>
     </None>
     <None Include="src\lib\os\libultra\gu\libm_vals.s">
       <Filter>src\lib\os\libultra\gu</Filter>
     </None>
-    <None Include=".gitmodules" />
-    <None Include="Makefile" />
-    <None Include="permuter_settings.toml" />
+    <None Include="src\lib\os\libultra\libc\bcmp.s">
+      <Filter>src\lib\os\libultra\libc</Filter>
+    </None>
     <None Include="tools\extract.py">
       <Filter>tools</Filter>
     </None>
@@ -535,10 +1163,10 @@
     <None Include="tools\splat\pyproject.toml">
       <Filter>tools\splat</Filter>
     </None>
-    <None Include="tools\splat\split.py">
+    <None Include="tools\splat\test.py">
       <Filter>tools\splat</Filter>
     </None>
-    <None Include="tools\splat\test.py">
+    <None Include="tools\splat\split.py">
       <Filter>tools\splat</Filter>
     </None>
     <None Include="tools\splat\src\splat\disassembler\__init__.py">
@@ -739,9 +1367,6 @@
     <None Include="tools\splat\src\splat\segtypes\n64\yay0.py">
       <Filter>tools\splat\src\splat\segtypes\n64</Filter>
     </None>
-    <None Include="tools\splat\src\splat\segtypes\psx\__init__.py">
-      <Filter>tools\splat\src\splat\segtypes\psx</Filter>
-    </None>
     <None Include="tools\splat\src\splat\segtypes\psx\asm.py">
       <Filter>tools\splat\src\splat\segtypes\psx</Filter>
     </None>
@@ -751,14 +1376,20 @@
     <None Include="tools\splat\src\splat\segtypes\psx\segment.py">
       <Filter>tools\splat\src\splat\segtypes\psx</Filter>
     </None>
-    <None Include="tools\splat\src\splat\segtypes\psp\__init__.py">
-      <Filter>tools\splat\src\splat\segtypes\psp</Filter>
+    <None Include="tools\splat\src\splat\segtypes\psx\__init__.py">
+      <Filter>tools\splat\src\splat\segtypes\psx</Filter>
     </None>
-    <None Include="tools\splat\src\splat\segtypes\psp\segment.py">
+    <None Include="tools\splat\src\splat\segtypes\psp\__init__.py">
       <Filter>tools\splat\src\splat\segtypes\psp</Filter>
     </None>
     <None Include="tools\splat\src\splat\segtypes\ps2\__init__.py">
       <Filter>tools\splat\src\splat\segtypes\ps2</Filter>
+    </None>
+    <None Include="tools\splat\src\splat\util\__init__.py">
+      <Filter>tools\splat\src\splat\util</Filter>
+    </None>
+    <None Include="tools\splat\src\splat\segtypes\psp\segment.py">
+      <Filter>tools\splat\src\splat\segtypes\psp</Filter>
     </None>
     <None Include="tools\splat\src\splat\segtypes\ps2\asm.py">
       <Filter>tools\splat\src\splat\segtypes\ps2</Filter>
@@ -775,8 +1406,11 @@
     <None Include="tools\splat\src\splat\segtypes\ps2\vtables.py">
       <Filter>tools\splat\src\splat\segtypes\ps2</Filter>
     </None>
-    <None Include="tools\splat\src\splat\util\__init__.py">
-      <Filter>tools\splat\src\splat\util</Filter>
+    <None Include="tools\splat\src\splat\util\n64\__init__.py">
+      <Filter>tools\splat\src\splat\util\n64</Filter>
+    </None>
+    <None Include="tools\splat\src\splat\util\psx\__init__.py">
+      <Filter>tools\splat\src\splat\util\psx</Filter>
     </None>
     <None Include="tools\splat\src\splat\util\cache_handler.py">
       <Filter>tools\splat\src\splat\util</Filter>
@@ -811,17 +1445,11 @@
     <None Include="tools\splat\src\splat\util\vram_classes.py">
       <Filter>tools\splat\src\splat\util</Filter>
     </None>
-    <None Include="tools\splat\src\splat\util\n64\__init__.py">
-      <Filter>tools\splat\src\splat\util\n64</Filter>
-    </None>
     <None Include="tools\splat\src\splat\util\n64\find_code_length.py">
       <Filter>tools\splat\src\splat\util\n64</Filter>
     </None>
     <None Include="tools\splat\src\splat\util\n64\rominfo.py">
       <Filter>tools\splat\src\splat\util\n64</Filter>
-    </None>
-    <None Include="tools\splat\src\splat\util\psx\__init__.py">
-      <Filter>tools\splat\src\splat\util\psx</Filter>
     </None>
     <None Include="tools\splat\src\splat\util\psx\psxexeinfo.py">
       <Filter>tools\splat\src\splat\util\psx</Filter>
@@ -837,5 +1465,133 @@
     <Text Include="tools\splat\requirements.txt">
       <Filter>tools\splat</Filter>
     </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{b3efbcd6-fc1b-4a8e-ae6c-95b36dfd3cac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{e910e7f4-7f94-4f72-a689-15baa7157d89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tools">
+      <UniqueIdentifier>{0acf199f-5841-42bf-95b0-c0b1ff78ade1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\gcc">
+      <UniqueIdentifier>{6e38ecf8-b47e-4089-b5f2-9e5dbffc758f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\libkmc">
+      <UniqueIdentifier>{d7af6562-8c68-4944-a971-5ba184315099}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\libmus">
+      <UniqueIdentifier>{e1f52f55-9073-404b-9ff8-dd77634baa49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\PR">
+      <UniqueIdentifier>{8e085833-c415-41b0-97ec-aff9e8937a02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\PRinternal">
+      <UniqueIdentifier>{3742b446-751c-47a1-a7c9-1b6c0c4ea4f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lib">
+      <UniqueIdentifier>{1860cf68-7b99-47e0-ac58-11609fb92ecf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lib\libc">
+      <UniqueIdentifier>{75c651c7-97a7-4e88-a75a-5a15cc3b03e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lib\libkmc">
+      <UniqueIdentifier>{3d71dd38-c04c-4b0b-8969-1d578d0e5dab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lib\libmus">
+      <UniqueIdentifier>{aa7dac06-e6e3-4b46-b307-c60e5a7bb55a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lib\libmus\libsrc">
+      <UniqueIdentifier>{c9cd32e2-e424-4bf6-a422-c761052f8f21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lib\nusys-1">
+      <UniqueIdentifier>{d32669a5-3fe9-4f87-879e-1c85f14dffb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lib\os">
+      <UniqueIdentifier>{e8c28fae-c4bc-4ff6-916b-a2b365c3fd28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lib\os\libultra">
+      <UniqueIdentifier>{6ac7ca7a-dc56-438a-8496-bcdb84762a7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lib\os\libultra\audio">
+      <UniqueIdentifier>{f94197f1-257d-4371-8c57-d279ed8325c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lib\os\libultra\debug">
+      <UniqueIdentifier>{edc62518-94fd-4e7a-9074-8ead02422b75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lib\os\libultra\gu">
+      <UniqueIdentifier>{c56e9fc0-bfdb-4f72-95d8-ab0bb1fbb1a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lib\os\libultra\host">
+      <UniqueIdentifier>{b87f2d23-cb6e-4711-b100-0d1bb16bea24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lib\os\libultra\io">
+      <UniqueIdentifier>{c8bb7a2b-2433-42f5-849b-3ac93d1d89e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lib\os\libultra\libc">
+      <UniqueIdentifier>{b06381c5-9868-4f30-b2e0-509719ae76b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lib\os\libultra\libnaudio">
+      <UniqueIdentifier>{06b54e87-2d62-48ed-8863-c5469fc9581f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lib\os\libultra\os">
+      <UniqueIdentifier>{f10ad45c-8eba-42b4-89ef-3ce472394a41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lib\os\libultra\rmon">
+      <UniqueIdentifier>{10db42c8-9aec-40d8-99d0-f9710c5b6d64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\overlays">
+      <UniqueIdentifier>{227491f5-7c09-427a-8b44-55a82dfe7056}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\system">
+      <UniqueIdentifier>{562a4281-4723-41bf-8d22-019a0fc4c788}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tools\splat">
+      <UniqueIdentifier>{4a8e15ce-55db-4665-9f95-f70dd5c549d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tools\splat\src">
+      <UniqueIdentifier>{4c02856f-f00b-44a4-8cfd-b4f19199a5df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tools\splat\src\splat">
+      <UniqueIdentifier>{32944e38-70ee-416a-a76e-322f23f9c19a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tools\splat\src\splat\disassembler">
+      <UniqueIdentifier>{178b5a97-9037-4dc5-91e4-b4ce49f24d4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tools\splat\src\splat\platforms">
+      <UniqueIdentifier>{6060b941-776c-4b3d-a2ba-533312290912}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tools\splat\src\splat\scripts">
+      <UniqueIdentifier>{7de50f7c-a23a-4f25-a39d-f6f5c30023da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tools\splat\src\splat\segtypes">
+      <UniqueIdentifier>{14790108-c899-4162-9618-f679ce7fc63f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tools\splat\src\splat\util">
+      <UniqueIdentifier>{b348729d-ab32-4905-bcb1-e3c224f5e485}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tools\splat\src\splat\segtypes\common">
+      <UniqueIdentifier>{f1b997f9-a8c6-4c1c-801a-cc6f49b0e407}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tools\splat\src\splat\segtypes\n64">
+      <UniqueIdentifier>{fd9e1668-2dd0-46d6-9739-2b12814f1cd9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tools\splat\src\splat\segtypes\ps2">
+      <UniqueIdentifier>{bc5a7d86-2f83-423c-be11-f3bbca1f70bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tools\splat\src\splat\segtypes\psp">
+      <UniqueIdentifier>{818ffd0f-6b68-4bf5-a999-2b3eccc75f37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tools\splat\src\splat\segtypes\psx">
+      <UniqueIdentifier>{c867105c-c30e-4d37-ba54-6c89706814ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tools\splat\src\splat\util\n64">
+      <UniqueIdentifier>{536e4164-09d0-490d-8211-41fa84c859a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tools\splat\src\splat\util\psx">
+      <UniqueIdentifier>{bc2ea5c9-ec0c-4d84-8bbd-066991ec1ae3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
