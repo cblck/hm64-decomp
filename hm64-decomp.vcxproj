@@ -1075,6 +1075,7 @@
     <ClInclude Include="src\level.h" />
     <ClInclude Include="src\levelInteractions.h" />
     <ClInclude Include="src\lib\libmus\libsrc\player.h" />
+    <ClInclude Include="src\lib\os\libultra\gu\guint.h" />
     <ClInclude Include="src\load.h" />
     <ClInclude Include="src\loadGameScreen.h" />
     <ClInclude Include="src\mainLoop.h" />
