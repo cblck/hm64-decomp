@@ -1056,6 +1056,7 @@
     <ClInclude Include="include\PR\sched.h" />
     <ClInclude Include="include\PR\sp.h" />
     <ClInclude Include="include\PR\sptask.h" />
+    <ClInclude Include="include\PR\synthInternals.h" />
     <ClInclude Include="include\PR\ucode.h" />
     <ClInclude Include="include\PR\ultraerror.h" />
     <ClInclude Include="include\PR\ultralog.h" />
@@ -1250,7 +1251,7 @@
       <CLanguageStandard>c99</CLanguageStandard>
       <CppLanguageStandard>gnu++98</CppLanguageStandard>
       <Optimization>MaxSpeed</Optimization>
-      <AdditionalIncludeDirectories>.;include;src;src/system;include/libmus;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;include;src;src/system;include/libmus;include/PR;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAs>CompileAsC</CompileAs>
     </ClCompile>
   </ItemDefinitionGroup>
