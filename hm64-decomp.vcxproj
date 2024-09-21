@@ -989,6 +989,7 @@
     <ClInclude Include="include\libkmc\kmclib.h" />
     <ClInclude Include="include\libmus\libmus.h" />
     <ClInclude Include="include\libmus\libmus_data.h" />
+    <ClInclude Include="include\macros.h" />
     <ClInclude Include="include\nualstl.h" />
     <ClInclude Include="include\nusys.h" />
     <ClInclude Include="include\PRinternal\controller.h" />

@@ -612,6 +612,7 @@ __osRdb_DbgRead_Buf = 0x8013D5E8;
 __osBaseCounter = 0x801584E8;
 __kmc_pt_mode = 0x8016F6E4;
 __osProfileOverflowBin = 0x8016FADC;
+__osContPifRam = 0x80170400;
 __osRdb_IP6_CurWrite = 0x80170440;
 __Dom2SpeedParam = 0x8017064F;
 __osProfileList = 0x801706BC;
