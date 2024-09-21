@@ -760,10 +760,6 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\os\seteventmsg.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
-      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
-    </ClCompile>
     <ClCompile Include="src\lib\os\libultra\os\setglobalintmask.c">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
