@@ -1497,9 +1497,6 @@
     <Filter Include="src\lib">
       <UniqueIdentifier>{1860cf68-7b99-47e0-ac58-11609fb92ecf}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\lib\libc">
-      <UniqueIdentifier>{75c651c7-97a7-4e88-a75a-5a15cc3b03e2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\lib\libkmc">
       <UniqueIdentifier>{3d71dd38-c04c-4b0b-8969-1d578d0e5dab}</UniqueIdentifier>
     </Filter>
