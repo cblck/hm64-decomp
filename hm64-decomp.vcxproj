@@ -72,12 +72,6 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\lib\libc\bcopy.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="src\lib\libc\bzero.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="src\lib\libkmc\rand.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
@@ -612,6 +606,14 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libc\bcopy.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libc\bzero.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
+    </ClCompile>
     <ClCompile Include="src\lib\os\libultra\libc\xldtob.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
@@ -975,6 +977,7 @@
     <ClCompile Include="tools\vs-wrapper.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\assert.h" />
     <ClInclude Include="include\common.h" />
     <ClInclude Include="include\gcc\stdlib.h" />
     <ClInclude Include="include\include_asm.h" />

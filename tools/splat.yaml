@@ -224,8 +224,8 @@ segments:
       - [ 0xDB8E0, c, lib/os/libultra/io/controller] 
       - [ 0xDBBF0, c, lib/os/libultra/io/epidma]
       - [ 0xDBC90, c, lib/os/libultra/io/epilinkhandle] 
-      - [ 0xDBCE0, c, lib/libc/bcopy]
-      - [ 0xDC000, c, lib/libc/bzero]
+      - [ 0xDBCE0, c, lib/os/libultra/libc/bcopy]
+      - [ 0xDC000, c, lib/os/libultra/libc/bzero]
         # TODO: contains osSyncPrintf; maybe change file or path
       - [ 0xDC0A0, c, lib/libkmc/syncPrintf]
       - [ 0xDC3F0, c, lib/os/libultra/audio/drvrnew]
