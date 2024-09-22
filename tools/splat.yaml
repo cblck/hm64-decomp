@@ -198,7 +198,7 @@ segments:
       - [ 0xDAE30, c, lib/os/libultra/os/startthread]
       - [ 0xDAF50, c, lib/os/libultra/os/stopthread]
       # FIXME: should be c, but rodata issue with exceptasm referencing __osFaultedThread
-      - [ 0xDB010, asm, lib/os/libultra/thread]
+      - [ 0xDB010, c, lib/os/libultra/os/thread]
       - [ 0xDB050, c, lib/os/libultra/os/virtualtophysical]
       - [ 0xDB0B0, c, lib/os/libultra/debug/assert]
       - [ 0xDB0E0, c, lib/os/libultra/audio/sl]
@@ -382,7 +382,7 @@ segments:
       - [ 0xF8090, data, lib/nusys-1/nucontpakjiston64]
       # library rodata
       - [ 0xF80D0, .data, lib/os/libultra/gu/rotaterpy]
-      - [ 0xF80E0, rodata]  # lib/os/libultra/thread
+      - [ 0xF80E0, .data, lib/os/libultra/os/thread]
       - [ 0xF8100, .rodata, lib/os/libultra/audio/sl]
       - [ 0xF8110, .rodata, lib/os/libultra/io/aisetnextbuf]
       - [ 0xF8120, .rodata, lib/os/libultra/io/controller]
