@@ -606,14 +606,6 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\libc\bcopy.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
-      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\libc\bzero.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
-      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
-    </ClCompile>
     <ClCompile Include="src\lib\os\libultra\libc\xldtob.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
@@ -1111,6 +1103,8 @@
     <None Include="permuter_settings.toml" />
     <None Include="src\lib\os\libultra\gu\libm_vals.s" />
     <None Include="src\lib\os\libultra\libc\bcmp.s" />
+    <None Include="src\lib\os\libultra\libc\bcopy.s" />
+    <None Include="src\lib\os\libultra\libc\bzero.s" />
     <None Include="tools\extract.py" />
     <None Include="tools\progress.py" />
     <None Include="tools\splat.yaml" />
