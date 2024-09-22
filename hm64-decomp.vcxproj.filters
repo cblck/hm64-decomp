@@ -745,6 +745,9 @@
     <ClCompile Include="src\lib\os\libultra\libc\syncPrintf.c">
       <Filter>src\lib\os\libultra\libc</Filter>
     </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\gu\cosf.c">
+      <Filter>src\lib\os\libultra\gu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\common.h">

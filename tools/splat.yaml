@@ -177,8 +177,8 @@ segments:
       - [ 0xD8D00, c, lib/nusys-1/nusicallbackremove]
       - [ 0xD8D80, c, lib/nusys-1/nucontpakjiston64]
       - [ 0xD9040, hasm, lib/os/libultra/gu/sqrtf]
-      - [ 0xD9050, hasm, lib/os/libultra/gu/cosf]
-      - [ 0xD9520, c, lib/os/libultra/gu/lookat]
+      - [ 0xD9050, c, lib/os/libultra/gu/cosf]
+      - [ 0xD91A0, c, lib/os/libultra/gu/lookat]
       - [ 0xD98B0, c, lib/os/libultra/gu/mtxutil]
       - [ 0xD9B30, c, lib/os/libultra/gu/ortho]
       - [ 0xD9DB0, c, lib/os/libultra/gu/perspective]
@@ -448,8 +448,8 @@ segments:
       - [ 0xFEEA0, rodata] # lib/os/libultra/libnaudio/n_resample
       - [ 0xFEEB0, .rodata, lib/os/libultra/libnaudio/n_reverb]
       - [ 0xFEEF0, .rodata, lib/nusys-1/nucontpakmgr]
-      - [ 0xFEF10, rodata, lib/os/libultra/gu/cosf]
-      - [ 0xFEF80, .rodata, lib/os/libultra/gu/lookat]
+      - [ 0xFEF10, .rodata, lib/os/libultra/gu/cosf]
+      - [ 0xFEF70, .rodata, lib/os/libultra/gu/lookat]
       - [ 0xFEF90, .rodata, lib/os/libultra/gu/perspective]
       - [ 0xFEFD8, rodata, lib/os/libultra/gu/sinf]
       - [ 0xFF030, rodata] # setintmask and exceptasm
