@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="src\lib\os\libultra\io\sp.c">
-      <Filter>include\PR</Filter>
-    </ClCompile>
     <ClCompile Include="src\animals.c">
       <Filter>src</Filter>
     </ClCompile>
@@ -751,6 +748,9 @@
     <ClCompile Include="src\lib\os\libultra\os\thread.c">
       <Filter>src\lib\os\libultra\os</Filter>
     </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\sp.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\common.h">
@@ -1080,9 +1080,6 @@
     <ClInclude Include="src\lib\os\libultra\gu\guint.h">
       <Filter>src\lib\os\libultra\gu</Filter>
     </ClInclude>
-    <ClInclude Include="include\PR\sp.h">
-      <Filter>src\lib\os\libultra\io</Filter>
-    </ClInclude>
     <ClInclude Include="src\system\audio.h">
       <Filter>src\system</Filter>
     </ClInclude>
@@ -1130,6 +1127,9 @@
     </ClInclude>
     <ClInclude Include="include\assert.h">
       <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PR\sp.h">
+      <Filter>include\PR</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
