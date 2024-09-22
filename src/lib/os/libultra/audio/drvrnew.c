@@ -16,14 +16,14 @@ INCLUDE_ASM(const s32, "lib/os/libultra/audio/drvrnew", alMainBusNew);
 
 INCLUDE_ASM(const s32, "lib/os/libultra/audio/drvrnew", alSaveNew);
 
-INCLUDE_RODATA(const s32, "lib/os/libultra/audio/drvrnew", drvrnew_data_0000);
+INCLUDE_RODATA(const s32, "lib/os/libultra/audio/drvrnew", SMALLROOM_PARAMS);
 
-INCLUDE_RODATA(const s32, "lib/os/libultra/audio/drvrnew", drvrnew_data_0068);
+INCLUDE_RODATA(const s32, "lib/os/libultra/audio/drvrnew", BIGROOM_PARAMS);
 
-INCLUDE_RODATA(const s32, "lib/os/libultra/audio/drvrnew", drvrnew_data_00F0);
+INCLUDE_RODATA(const s32, "lib/os/libultra/audio/drvrnew", ECHO_PARAMS);
 
-INCLUDE_RODATA(const s32, "lib/os/libultra/audio/drvrnew", drvrnew_data_0118);
+INCLUDE_RODATA(const s32, "lib/os/libultra/audio/drvrnew", CHORUS_PARAMS);
 
-INCLUDE_RODATA(const s32, "lib/os/libultra/audio/drvrnew", drvrnew_data_0140);
+INCLUDE_RODATA(const s32, "lib/os/libultra/audio/drvrnew", FLANGE_PARAMS);
 
-INCLUDE_RODATA(const s32, "lib/os/libultra/audio/drvrnew", drvrnew_data_0168);
+INCLUDE_RODATA(const s32, "lib/os/libultra/audio/drvrnew", NULL_PARAMS);
