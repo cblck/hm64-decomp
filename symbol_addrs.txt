@@ -1035,7 +1035,7 @@ auSynConfig = 0x8011C850;
 
 nuScPreNMIFunc = 0x8011CC20;
 
-osViModeTable = 0x8011D050;
+osViModeTable = 0x8011D050; // size:0x1080
 
 minSfxFrequency = 0x8011EE00;
 maxSfxFrequency = 0x8011EE08;

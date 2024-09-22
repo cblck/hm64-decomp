@@ -392,7 +392,7 @@ segments:
       - [ 0xF83F0, .rodata, lib/os/libultra/io/cartrominit]
       - [ 0xF8400, .rodata, lib/os/libultra/io/pimgr]
       - [ 0xF8430, .rodata, lib/os/libultra/io/vimgr]
-      - [ 0xF8450, rodata] # vimode table
+      - [ 0xF8450, rodata, lib/os/libultra/io/vitbl]
       - [ 0xF95D0, rodata, lib/os/libultra/exceptasm] 
       - [ 0xF9610, .rodata, lib/os/libultra/os/initialize]
       - [ 0xF9630, .rodata, lib/os/libultra/os/seteventmesg]
