@@ -12,7 +12,7 @@ void nuContDataGetExAll(NUContData *contdata) {
     for (cnt = 0; cnt < NU_CONT_MAXCONTROLLERS; cnt++) {
  
         button = contdata[cnt].button;
-        _bcopy(&nuContData[cnt], &contdata[cnt], sizeof(OSContPad));
+        bcopy(&nuContData[cnt], &contdata[cnt], sizeof(OSContPad));
         
         contdata[cnt].trigger = nuContData[cnt].button & (~button);
     
