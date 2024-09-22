@@ -421,7 +421,7 @@ __osShutdown = 0x8011E21C;
 __OSGlobalIntMask = 0x8011E220;
 seteventmesg_data_0000 = 0x8011E230;
 kdebugserver_data_0000 = 0x8011E240;
-timerintr_data_0000 = 0x8011E250;
+__osTimerList = 0x8011E250;
 rdbsend_data_0000 = 0x8011E260;
 readhost_data_0000 = 0x8011E270;
 vi_data_0000 = 0x8011E280;
@@ -1246,6 +1246,7 @@ mountainConstructionWorkDays = 0x801FB68C;
 gSfx = 0x801FB690; // size:0x60
 overlayScreenTable = 0x801FB6F0; /// size:0xB
 mariaHarrisNewlywedCounter = 0X801FB9A4;
+__osBaseTimer = 0x801FB9A8;
 npcInfoArray = 0x801FB9D0; // size:0x780
 
 spiritFestivalAssistant2 = 0x801FC150;

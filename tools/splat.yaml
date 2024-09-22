@@ -397,7 +397,7 @@ segments:
       - [ 0xF9610, .rodata, lib/os/libultra/os/initialize]
       - [ 0xF9630, .rodata, lib/os/libultra/os/seteventmesg]
       - [ 0xF9640, .rodata, lib/os/libultra/debug/kdebugserver]
-      - [ 0xF9650, .rodata, lib/os/libultra/os/settimer]
+      - [ 0xF9650, .rodata, lib/os/libultra/os/timerintr]
       - [ 0xF9660, rodata, lib/os/libultra/rdbssend] 
       - [ 0xF9670, .rodata, lib/os/libultra/host/readhost]
       - [ 0xF9680, .rodata, lib/os/libultra/io/vi]
