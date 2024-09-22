@@ -310,9 +310,6 @@
     <ClCompile Include="src\lib\os\libultra\gu\perspective.c">
       <Filter>src\lib\os\libultra\gu</Filter>
     </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\gu\rotate.c">
-      <Filter>src\lib\os\libultra\gu</Filter>
-    </ClCompile>
     <ClCompile Include="src\lib\os\libultra\gu\scale.c">
       <Filter>src\lib\os\libultra\gu</Filter>
     </ClCompile>
@@ -746,6 +743,9 @@
       <Filter>src\lib\os\libultra\libc</Filter>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\gu\cosf.c">
+      <Filter>src\lib\os\libultra\gu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\gu\rotaterpy.c">
       <Filter>src\lib\os\libultra\gu</Filter>
     </ClCompile>
   </ItemGroup>
