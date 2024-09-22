@@ -82,16 +82,7 @@
     <ClCompile Include="src\weather.c">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\lib\libc\bcopy.c">
-      <Filter>src\lib\libc</Filter>
-    </ClCompile>
-    <ClCompile Include="src\lib\libc\bzero.c">
-      <Filter>src\lib\libc</Filter>
-    </ClCompile>
     <ClCompile Include="src\lib\libkmc\rand.c">
-      <Filter>src\lib\libkmc</Filter>
-    </ClCompile>
-    <ClCompile Include="src\lib\libkmc\syncPrintf.c">
       <Filter>src\lib\libkmc</Filter>
     </ClCompile>
     <ClCompile Include="src\lib\libmus\libsrc\player.c">
@@ -751,6 +742,9 @@
     <ClCompile Include="tools\vs-wrapper.c">
       <Filter>tools</Filter>
     </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libc\syncPrintf.c">
+      <Filter>src\lib\os\libultra\libc</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\common.h">
@@ -1128,6 +1122,9 @@
     <ClInclude Include="src\system\worldGraphics.h">
       <Filter>src\system</Filter>
     </ClInclude>
+    <ClInclude Include="include\assert.h">
+      <Filter>include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitmodules" />
@@ -1453,6 +1450,12 @@
     </None>
     <None Include="tools\splat\src\splat\util\psx\psxexeinfo.py">
       <Filter>tools\splat\src\splat\util\psx</Filter>
+    </None>
+    <None Include="src\lib\os\libultra\libc\bcopy.s">
+      <Filter>src\lib\os\libultra\libc</Filter>
+    </None>
+    <None Include="src\lib\os\libultra\libc\bzero.s">
+      <Filter>src\lib\os\libultra\libc</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
