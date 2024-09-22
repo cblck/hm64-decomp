@@ -351,8 +351,16 @@ __rmonHitBreak = 0x8010FEB4;
 __rmonHitSpBreak = 0x8010FF90;
 __rmonHitCpuFault = 0x8011001C;
 rmonFindFaultedThreads = 0x80110048;
+
+// libkmc
+
 ldiv = 0x80110250;
 lldiv = 0x801102D4;
+
+rand = 0x80110410;
+sRand = 0x80110444;
+__muldi3 = 0x80110454;
+
 __divdi3 = 0x80110650;
 __udivdi3 = 0x801107C0;
 __umoddi3 = 0x801107E0;
@@ -1000,11 +1008,6 @@ MusHandleSetFreqOffset = 0x800F5664;
 MusBankInitialize = 0x800F595C;
 __MusIntMain = 0x800F5C00;
 
-// libkmc
-
-rand = 0x80110410;
-__muldi3 = 0x80110454;
-
 
 // data
 
@@ -1069,7 +1072,6 @@ freeRamromBuf = 0x80137378;
 piEventQueue = 0x80137380;
 
 sRandNext = 0x8013CDF0;
-sRand = 0x80110444;
 
 specialDialogueBitsPointer = 0x8013CE00;
 dialogueVariables = 0x8013CE08; // size:0x3C0
