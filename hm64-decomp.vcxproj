@@ -77,11 +77,6 @@
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
-    <ClCompile Include="src\lib\libkmc\syncPrintf.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
-      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
-    </ClCompile>
     <ClCompile Include="src\lib\libmus\libsrc\player.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
     </ClCompile>
@@ -603,6 +598,10 @@
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\viswapcontext.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libc\syncPrintf.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
