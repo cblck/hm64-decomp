@@ -377,7 +377,6 @@ viewportDL = 0x80112A60;
 // lib data
 
 n_alGlobals = 0x8011C970;
-alGlobals = 0x8011C974;
 n_drvrnew_data_0000 = 0x8011C980;
 n_drvrnew_data_0068 = 0x8011C9E8;
 n_drvrnew_data_00F0 = 0x8011CA70;
@@ -391,6 +390,7 @@ __osRunQueue = 0x8011CCE8;
 __osActiveQueue = 0x8011CCEC;
 __osRunningThread = 0x8011CCF0;
 __osFaultedThread = 0x8011CCF4;
+alGlobals = 0x8011CD00; // size:0x4
 aisetnextbuf_data_0000 = 0x8011CD10;
 controller_data_0000 = 0x8011CD20;
 syncprintf_data_0000 = 0x8011CD30;
