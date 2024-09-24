@@ -18,4 +18,4 @@ INCLUDE_RODATA(const s32, "lib/os/libultra/io/vimgr", vimgr_data_0014);
 
 INCLUDE_RODATA(const s32, "lib/os/libultra/io/vimgr", vimgr_data_0018);
 
-INCLUDE_RODATA(const s32, "lib/os/libultra/io/vimgr", vimgr_data_001C);
+INCLUDE_RODATA(const s32, "lib/os/libultra/io/vimgr", __additional_scanline);
