@@ -29,7 +29,7 @@ LD := $(CROSS)ld
 OBJCOPY := $(CROSS)objcopy
 STRIP := $(CROSS)strip
 
-MACROS := -D_LANGUAGE_C -D_MIPS_SZLONG=32 -D_MIPS_SZINT=32 -DSUPPORT_NAUDIO -DNU_SYSTEM -DF3DEX_GBI_2 -DBUILD_VERSION=7
+MACROS := -D_LANGUAGE_C -D_MIPS_SZLONG=32 -D_MIPS_SZINT=32 -DSUPPORT_NAUDIO -DNU_SYSTEM -DF3DEX_GBI_2
 CFLAGS_COMMON := -G0 -mips3 -mgp32 -mfp32 -Wa,-Iinclude
 
 CFLAGS := $(CFLAGS_COMMON) $(MACROS)
@@ -41,6 +41,8 @@ OPTFLAGS := -O2
 LIBULTRA_OPTFLAGS := -O3 -g0
 LIBKMC_OPTFLAGS := -O1
 NU_OPTFLAGS := -O2
+
+ULTRALIBVER := -DBUILD_VERSION=7
 
 LD_MAP := $(BASENAME).map
 
@@ -57,7 +59,7 @@ endif
 dir_guard = @mkdir -p $(@D)
 
 build/src/lib/nusys-1/nuboot.c.o: NU_OPTFLAGS := -O0
-
+build/src/lib/os/libultra/io/aisetnextbuf.c.o: ULTRALIBVER := -DBUILD_VERSION=6
 
 all: check
 
@@ -108,7 +110,7 @@ $(BUILD_DIR)/src/lib/nusys-1/%.c.o : src/lib/nusys-1/%.c build
 	
 $(BUILD_DIR)/src/lib/os/libultra/%.c.o : src/lib/os/libultra/%.c build
 	$(dir_guard)
-	$(V)export COMPILER_PATH=$(KMC_PATH) && $(CC) -B $(KMC_PATH) $(LIBULTRA_OPTFLAGS) $(CFLAGS) $(CPPFLAGS) -c -o $@ $< 
+	$(V)export COMPILER_PATH=$(KMC_PATH) && $(CC) -B $(KMC_PATH) $(LIBULTRA_OPTFLAGS) $(CFLAGS) $(ULTRALIBVER) $(CPPFLAGS) -c -o $@ $< 
 
 $(BUILD_DIR)/src/lib/libkmc/%.c.o : src/lib/libkmc/%.c build
 	$(dir_guard)
