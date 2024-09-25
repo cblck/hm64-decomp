@@ -328,7 +328,7 @@ segments:
       - [ 0xEAC00, c, lib/os/libultra/os/getactivequeue]
       - [ 0xEAC10, c, lib/os/libultra/rmon/rmonrcp]
       - [ 0xEACB0, c, lib/os/libultra/rmon/rmonbreak]
-      - [ 0xEB650, hasm, ldiv]
+      - [ 0xEB650, c, lib/os/libultra/libc/ldiv]
       - [ 0xEB810, c, lib/libkmc/rand] # unaligned file splits
       # FIXME:
       # - [ 0xEB854, hasm, lib/libkmc/_muldi3] 
