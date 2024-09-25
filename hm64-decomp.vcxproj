@@ -1127,6 +1127,7 @@
     <ClInclude Include="include\assert.h" />
     <ClInclude Include="include\common.h" />
     <ClInclude Include="include\gcc\stdlib.h" />
+    <ClInclude Include="include\gcc\string.h" />
     <ClInclude Include="include\include_asm.h" />
     <ClInclude Include="include\libkmc\kmclib.h" />
     <ClInclude Include="include\libmus\libmus.h" />
@@ -1398,7 +1399,7 @@
       <CLanguageStandard>c99</CLanguageStandard>
       <CppLanguageStandard>gnu++98</CppLanguageStandard>
       <Optimization>MaxSpeed</Optimization>
-      <AdditionalIncludeDirectories>.;include;src;src/system;include/libmus;include/PR;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;include;src;src/system;include/libmus;include/PR;include/gcc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAs>CompileAsC</CompileAs>
     </ClCompile>
   </ItemDefinitionGroup>

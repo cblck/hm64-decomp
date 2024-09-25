@@ -34,11 +34,11 @@ CFLAGS_COMMON := -G0 -mips3 -mgp32 -mfp32 -Wa,-Iinclude
 
 CFLAGS := $(CFLAGS_COMMON) $(MACROS)
 ASFLAGS := -G 0 -I include -mips3 -mabi=32
-CPPFLAGS := -I. -I include -I src -I src/system -I include/libmus -I include/PR
+CPPFLAGS := -I. -I include -I src -I src/system -I include/libmus -I include/PR -I include/gcc
 
 DEBUG_FLAGS := -g2
 OPTFLAGS := -O2
-LIBULTRA_OPTFLAGS := -O3 -g0
+LIBULTRA_OPTFLAGS := -O3 -g0 -funsigned-char
 LIBKMC_OPTFLAGS := -O1
 NU_OPTFLAGS := -O2
 
