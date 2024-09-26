@@ -1136,6 +1136,7 @@
     <ClInclude Include="include\include_asm.h" />
     <ClInclude Include="include\libkmc\kmclib.h" />
     <ClInclude Include="include\libmus\libmus.h" />
+    <ClInclude Include="include\libmus\libmus_config.h" />
     <ClInclude Include="include\libmus\libmus_data.h" />
     <ClInclude Include="include\macros.h" />
     <ClInclude Include="include\nualstl.h" />

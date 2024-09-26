@@ -1137,6 +1137,9 @@
     <ClInclude Include="include\gcc\string.h">
       <Filter>include\gcc</Filter>
     </ClInclude>
+    <ClInclude Include="include\libmus\libmus_config.h">
+      <Filter>include\libmus</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitmodules" />
