@@ -1065,7 +1065,7 @@ freeRamromQ = 0x80137360;
 freeRamromBuf = 0x80137378;
 piEventQueue = 0x80137380;
 
-sRandNext = 0x8013CDF0;
+sRandNext = 0x8013CDF0; // size:0x4
 
 specialDialogueBitsPointer = 0x8013CE00;
 dialogueVariables = 0x8013CE08; // size:0x3C0

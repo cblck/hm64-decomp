@@ -329,9 +329,8 @@ segments:
       - [ 0xEAC10, c, lib/os/libultra/rmon/rmonrcp]
       - [ 0xEACB0, c, lib/os/libultra/rmon/rmonbreak]
       - [ 0xEB650, c, lib/os/libultra/libc/ldiv]
-      - [ 0xEB810, c, lib/libkmc/rand] # unaligned file splits
-      # FIXME:
-      # - [ 0xEB854, hasm, lib/libkmc/_muldi3] 
+      - [ 0xEB810, c, lib/libkmc/rand]
+      - [ 0xEB850, hasm, lib/libkmc/_muldi3] 
       - [ 0xEBA50, hasm, lib/gcc/dividi3]
       - [ 0xEBBC0, hasm, lib/gcc/udivid3]
       - [ 0xEBBE0, hasm, lib/gcc/umoddi3]
@@ -469,7 +468,9 @@ segments:
       - [ 0xFF4D8, .rodata, lib/os/libultra/rmon/rmonmem]
       - [ 0xFF4F0, .rodata, lib/os/libultra/libc/xldtob]
       - [ 0xFF560, .rodata, lib/os/libultra/rmon/rmonbreak]
-      - { start: 0xFF5C0, type: bss, vram: 0x801241C0 }
+      - { start: 0xFF5C0, type: bss, vram: 0x801241C0, name: bss1 }
+      - { start: 0xFF5C0, type: .bss, vram: 0x8013CDF0, name: lib/libkmc/rand }
+      - { start: 0xFF5C0, type: bss, vram: 0x8013CE00, name: bss2 }
 
   - name: sramBuffer
     type: code
