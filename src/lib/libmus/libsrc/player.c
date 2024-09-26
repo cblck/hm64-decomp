@@ -4,63 +4,43 @@
 
 INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", __MusIntMain);
 
-// __MusIntGetNewNote
-INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", func_800F5F50);
+INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", __MusIntGetNewNote);
 
-// __MusIntFlushPending
-INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", func_800F6544);
+INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", __MusIntFlushPending);
 
-// __MusIntSetVolumeAndPan
-INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", func_800F65EC);
+INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", __MusIntSetVolumeAndPan);
 
-// __MusIntSetPitch
-INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", func_800F67DC);
+INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", __MusIntSetPitch);
 
-// __MusIntInitEnvelope
-INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", func_800F69C0);
+INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", __MusIntInitEnvelope);
 
-// __MusIntProcessEnvelope
-INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", func_800F6A8C);
+INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", __MusIntProcessEnvelope);
 
-// __MustIntInitSweep
-INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", func_800F6DD4);
+INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", __MustIntInitSweep);
 
-// __MusIntProcessSweep
-INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", func_800F6E20);
+INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", __MusIntProcessSweep);
 
-// __MusIntProcessWobble
-INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", func_800F6F84);
+INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", __MusIntProcessWobble);
 
-// __MusIntProcessVibrato
-INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", func_800F7038);
+INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", __MusIntProcessVibrato);
 
-// __MusIntProcessContinuousVolume
-INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", func_800F70F4);
+INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", __MusIntProcessContinuousVolume);
 
-// __MusIntProcessContinuousPitchBend
-INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", func_800F725C);
+INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", __MusIntProcessContinuousPitchBend);
 
-// __MusIntPowerOf2
-INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", func_800F7440);
+INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", __MusIntPowerOf2);
 
-// __MusIntRemapPtrBank
-INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", func_800F7690);
+INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", __MusIntRemapPtrBank);
 
-// __MusIntRandom
-INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", func_800F7A0C);
+INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", __MusIntRandom);
 
-// __MusIntInitialiseChannel
-INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", func_800F7B1C);
+INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", __MusIntInitialiseChannel);
 
-// __MusIntFindChannel
-INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", func_800F7D5C);
+INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", __MusIntFindChannel);
 
-// __MusIntMemSet
-INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", func_800F8000);
+INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", __MusIntMemSet);
 
 // not in version 1.0
-// __MusIntRemapPtrs
-INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", func_800F8070);
+INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", __MusIntRemapPtrs);
 
-// __MusIntStartEffect
-INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", func_800F8134);
+INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", __MusIntStartEffect);
