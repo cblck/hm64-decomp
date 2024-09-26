@@ -751,6 +751,9 @@
     <ClCompile Include="src\lib\os\libultra\io\sp.c">
       <Filter>src\lib\os\libultra\io</Filter>
     </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\libc\ldiv.c">
+      <Filter>src\lib\os\libultra\libc</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\common.h">
@@ -1130,6 +1133,9 @@
     </ClInclude>
     <ClInclude Include="include\PR\sp.h">
       <Filter>include\PR</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gcc\string.h">
+      <Filter>include\gcc</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
