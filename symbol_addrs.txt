@@ -624,7 +624,7 @@ __osCurrentTime = 0x8018A088;
 __CartRomHandle = 0x801C3B78;
 __osPiAccessQueue = 0x801C3F58;
 __Dom1SpeedParam = 0x801C41A7;
-player_bss_002C = 0x801F7008;
+mus_master_volume_effects = 0x801F7008; // size:0x2
 __rmonUtilityBuffer = 0x801F7010;
 rmonRdbReadBuf = 0x801FADC0;
 __osContLastCmd = 0x801FB5CC;
@@ -636,7 +636,7 @@ __osTimerCounter = 0x801FD614;
 __osProfileListEnd = 0x8020520C;
 __osProfTimerQ = 0x80205218;
 __osRdb_Read_Data_Buf = 0x80205628;
-player_bss_002E = 0x8020564E;
+mus_master_volume_songs = 0x8020564E; // size:0x2
 __osPfsInodeCache = 0x80205650;
 __osEventStateTab = 0x80215E00;
 __osRdb_IP6_Data = 0x8021E6D8;
@@ -1147,7 +1147,7 @@ controllers = 0x8013D440; // size:0x110
 
 overlayIcons = 0x8013D558; // size:0x70
 
-nuAuHeap = 0x8013D5C8;
+nuAuHeap = 0x8013D5C8; // size:0x10
 gSongVolume = 0x8013D5E4;
 
 mainMap = 0x8013DC40; // size:0x1A620
@@ -1191,6 +1191,7 @@ gCurrentSeasonName = 0x80170445; // size:0x6
 
 currentWorldRotationAngles = 0x8017044C;
 gBaseMapIndex = 0x80170458;
+mus_current_handle = 0x8017045C; // size:0x4
 
 tvContext = 0x80170270; // size:0xE
 
@@ -1212,6 +1213,7 @@ SramHandle = 0x80181B18;
 gSeason = 0x80182DB1;
 gHappiness = 0x80182FB8;
 gWifeConceptionCounter = 0x80182FB9;
+plr_player = 0x80182FC0; // size:0x14
 
 contData = 0x801831B8; // size:0x20
 
@@ -1235,6 +1237,7 @@ albumBits = 0x80189058;
 gPlayer = 0x80189060; // size:0x78
 gBabyAge = 0x80189134;
 dailyEventBits = 0x80189140; // size:0x80
+mus_priority = 0x801891C0; // size:0x4
 popuriGrayPregnancyCounter = 0x801891C4;
 gBabyName = 0x8018981E; // size:0x6
 toolUse = 0x80189828; // size:0x10
@@ -1246,6 +1249,7 @@ gLumber = 0x80189E50;
 dialogueInfo = 0x80183200; // size:0x124
 gameVariableStrings = 0x80189E58; // size:0x200
 
+mus_next_frame_time = 0x80189A4C; // size:0x4
 pauseScreenSprites = 0x80189A50; // size:0x400
 
 gControllers = 0x8018A738; // size:0x110
@@ -1255,6 +1259,7 @@ gAlcoholTolerance = 0x80189E52;
 annPregnancyCounter = 0x8018A059;
 babyBirthdaySeason = 0x8018A060;
 spriteCounter = 0x8018A05A;
+mus_effects = 0x8018A05C; // size:0x4
 
 gCutsceneIndex = 0x801C3B66;
 retraceCount = 0x801C3BEC;
@@ -1262,10 +1267,12 @@ gChickens = 0x801C3BF0; // size:0x1B0
 
 overlayScreenStrings = 0x801C3DA0; // size:0x72
 
+mus_channels = 0x801C3E38; // size:0x4
 currentGfxTaskPtr = 0x801C3E14;
 npcTalkingTo = 0x801C3E18;
-bitmapCounter = 0x801C3E2A;
 previousEntranceIndex = 0x801C3E20;
+mus_vsyncs_per_second = 0x801C3E24; // size:0x4
+bitmapCounter = 0x801C3E2A;
 dialogues = 0x801C3E40; // size:0xF4
 
 loopStepsPerCycle = 0x801C3F34;
@@ -1295,7 +1302,7 @@ nuYieldBuf = 0x801D62D0;
 
 contPattern = 0x801D6ED0;
 
-mus_init_bank = 0x801D6F28;
+mus_init_bank = 0x801D6F28; // size:0x4
 
 gYear = 0x801F6F30;
 
@@ -1323,12 +1330,14 @@ animatedSprites = 0x801FC160; // size:0x14AC
 gGold = 0x801FD60C;
 gMainMapIndex = 0x801FD610;
 karenKaiBabyAge = 0x801FD618;
+__muscontrol_flag = 0x801FD61C; // size:0x4
 gSeasonTomorrow = 0x801FD620;
 spiritFestivalAssistant1 = 0x801FD621;
 gCurrentSongIndex = 0x801FD622;
 nuIdleFunc  = 0x801FD628;
 globalSprites = 0x801FD630; // size:0x7500
-mus_default_bank = 0x80204B30;
+mus_random_seed = 0x801A8B58; // size:0x4
+mus_default_bank = 0x80204B30; // size:0x4
 nuAuSeqBank_ptr = 0x80204B34;
 
 gTotalEggsShipped = 0x80204B44;
@@ -1362,6 +1371,8 @@ mainLoopCallbackCurrentIndex = 0x8020564A;
 dialogueMapAddresses = 0x80205760; // size:0x690
 
 gSeconds = 0x80215DF2;
+mus_voices = 0x80215DF4; // size:0x4
+max_channels = 0x80215DF8; // size:0x4
 gTotalCropsShipped = 0x80215DFC;
 powerNutBits = 0x80215EB8;
 nuGfxCfb = 0x80215EBC;
