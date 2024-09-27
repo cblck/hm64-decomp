@@ -35,7 +35,7 @@ INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", __MusIntInitEnvelope);
 
 INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", __MusIntProcessEnvelope);
 
-INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", __MustIntInitSweep);
+INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", __MusIntInitSweep);
 
 INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", __MusIntProcessSweep);
 
