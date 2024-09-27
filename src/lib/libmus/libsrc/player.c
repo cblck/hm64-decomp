@@ -1,3 +1,22 @@
+#include <ultra64.h>
+
+/* include current configuration settings */
+#include "libmus_config.h"
+
+#ifdef	NU_SYSTEM
+#ifdef N_AUDIO
+#include <n_libaudio_sc.h>
+#include <n_libaudio_sn_sc.h>
+#else
+#include <libaudio.h>
+#endif
+#include <nusys.h>
+#else
+#include "audio.h"
+#endif
+#include "player.h"
+
+
 #include "common.h"
 
 // version 2.00

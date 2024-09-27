@@ -2,9 +2,9 @@
 /*********************************************************
 
   player.h : Nintendo 64 Music Tools Programmers Library
-  (c) Copyright 1997/1998, Software Creations (Holdings) Ltd.
+  (c) Copyright 1997, Software Creations (Holdings) Ltd.
 
-  Version 3.14
+  Version 2.00
 
   Music player header file.
 
@@ -19,156 +19,108 @@
 /* maximum depth of for-next loops */
 #define FORNEXT_DEPTH	4
 
-/* maximum extra channels allocated for song master tracks */
-#define MAX_SONGS		4 /* if one of these channels isn't available sound generating channel is used! */
-
-typedef struct
-{
-	unsigned short	wave;	/* wave number */
-	unsigned short	adsr;	/* envelope number */
-	unsigned char	pan;	/* pan position */
-	unsigned char	pitch;	/* semitone */
-} drum_t;
-
+/* standard Music Tools binary song header */
 typedef struct 
-{
-	unsigned long	version;		/* 16.16 version number */
-	long			num_channels;	/* number of channels in this song */
-	long			num_waves;		/* number of waves in table */
-
-	/* offsets converted to pointers go here - changing these requires
-	   MusStartSong() to be changed! */
-#define SONGHDR_COUNT	7					/* number of pointers to convert */
-#define SONGHDR_ADR(x)	(&(x)->data_list)	/* start address of pointer list */
-
-	/* channel pointers */
-	unsigned char 	**data_list;	/* channel data address list */
-	unsigned char	**volume_list;	/* channel volume address list */
-	unsigned char	**pbend_list;	/* pitchbend address list */
-	/* table pointers */
-	unsigned char	*env_table;		/* address of envelope table */
-	drum_t			*drum_table;	/* address of drum map table */
-	unsigned short	*wave_table;	/* address of waveform lookup table */
-	/* master track */
-	unsigned char	*master_track;	/* address of master track */
-
-	/* library workspace */
-	unsigned long	flags;
-	unsigned long 	reserved1;
-	unsigned long	reserved2;
-	unsigned long	reserved3;
+{ 
+  long		number_of_channels;
+#ifdef SUPPORT_SONGWAVELOOKUP
+  long 		number_of_waves;
+#endif
+  char 		**ChannelData;
+  char 		**VolumeData;
+  char 		**PitchBendData;
+  char 		*EnvelopeData;
+  unsigned long *DrumData;
+#ifdef SUPPORT_SONGWAVELOOKUP
+  short 	*WaveLookup;
+#endif
 } song_t;
+	
+#ifndef SUPPORT_SONGWAVELOOKUP
+#define SONGTPTRS	5
+#else
+#define SONGTPTRS	6
+#endif
 
-/* standard Music Tools binary sound effect entry */
-typedef struct
-{
-	unsigned char *fxdata;
-	int		priority;
-} fx_t;
-
-/* standard Music Tools binary sound effect header */
-typedef struct
-{
-	int			number_of_components;
-	int			number_of_effects;
-	int			num_waves;
-	unsigned long 	flags;
-	ptr_bank_t		*ptr_addr;
-	unsigned short	*wave_table;
-	fx_t     		effects[1];		/* "number_of_components" sized array */
-} fx_header_t;
-
-
-/* flags for sample banks */
+/* flags for sample pointer bank file */
 #define PTRFLAG_REMAPPED	(1<<31)
 
-/* flags for overall channel control */
-#define CHFLAG_PAUSE		(1<<0)
-#define CHFLAG_MASTERTRACK	(1<<1)
 
-/* flags for sound effect banks */
-#define FXFLAG_INITIALISED	(1<<0)
-
-/* flags for songs */
-#define SONGFLAG_INITIALISED	(1<<0)
-
-
+//#define SUPPORT_EFFECTS
 
 /* music player channel structure */
 typedef struct
 {
   /* 32bit values... */
-  unsigned long		channel_flag; /* new flag for overall channel control */
   unsigned char		*pdata;
   ALWaveTable		*pending;
   unsigned long		channel_frame;
+  int     		stopping;
 
-  int     			stopping;
   unsigned long		volume_frame;
   unsigned long		pitchbend_frame;
-  int    			stopping_speed;
+  int    		stopping_speed;
+  float			vib_amount;
 
-  float				vib_amount;
-  float				pitchbend_precalc;
+  float			pitchbend_precalc;
   float		        old_frequency;
-  float				base_note;
+  float			base_note;
+  float			freqoffset;
 
-  float				freqoffset;
   unsigned char		*ppitchbend;
   unsigned char		*pvolume;
   unsigned long		note_end_frame;
-
   unsigned long		note_start_frame;
-  unsigned long		handle;
-  int  				priority;
-  float				last_note;
 
-  float				port_base;
+  long			handle;
+  int  			priority;
+  float			last_note;
+  float			port_base;
+
   unsigned long		release_frame;
-  float				env_attack_calc;
-  float				env_decay_calc;
+  float			env_attack_calc;
+  float			env_decay_calc;
+  float			env_release_calc;
 
-  float				env_release_calc;
-  int				env_speed_calc;
-  float				vibrato;
-  float				bendrange;
+  int			env_speed_calc;
+  float			vibrato;
+  float			bendrange;
+  float			pitchbend;
 
-  float				pitchbend;
-  song_t			*song_addr;
-  fx_header_t		*fx_addr;
+  song_t		*song_addr;
   ptr_bank_t		*sample_bank;
-
   unsigned char		*pbase;
-  drum_t 			*pdrums;
+  unsigned char		*pdrums;
+
   unsigned char		*ppitchbendbase;
   unsigned char		*pvolumebase;
-
-  float				distort;
-  unsigned long		sweep_frame;  
+  float			distort;
+  unsigned long		sweep_frame;
+  
   // 16bit values...
-  short				temscale;
+  short			temscale;
   unsigned short	length;
   unsigned short	channel_tempo;
-  short				volscale;
-
+  short			volscale;
   unsigned short	old_volume;
   unsigned short	cont_vol_repeat_count;
   unsigned short	cont_pb_repeat_count;
-  unsigned short	fx_number;
+  unsigned short	IsFX;
+
   unsigned short	channel_tempo_save;
   unsigned short	count;
   unsigned short	fixed_length;
-  unsigned short	wave;
-
-  short				panscale;
+  unsigned short       	wave;
+  short			panscale;
   unsigned short	cutoff;
   unsigned short	endit;
+
   // 8bit values...
   unsigned char		vib_delay;
   unsigned char		ignore;
 
   unsigned char		port;
-  unsigned char		transpose;
+  signed char		transpose;
   unsigned char		ignore_transpose;
   unsigned char		velocity;
   unsigned char		volume;
@@ -206,8 +158,6 @@ typedef struct
   unsigned char		sweep_dir;
   unsigned char		for_stack_count;
 
-  float			vib_precalc;
-
   /* for-next stuff all together */
   unsigned char		*for_stack	[FORNEXT_DEPTH];
   unsigned char		*for_stackvol	[FORNEXT_DEPTH];
@@ -216,10 +166,10 @@ typedef struct
   unsigned short	for_pb_count	[FORNEXT_DEPTH];
   unsigned char		for_count	[FORNEXT_DEPTH];	
   unsigned char		for_volume	[FORNEXT_DEPTH];
-  float		        for_pitchbend	[FORNEXT_DEPTH];
+  unsigned char		for_pitchbend	[FORNEXT_DEPTH];
 
 #ifndef SUPPORT_EFFECTS
-  unsigned char padding[4]; /* pad for data cache */
+//  char padding[4]; /* pad for data cache */
 #else
   unsigned long		effect_type;
   float			specialvib_amount;
