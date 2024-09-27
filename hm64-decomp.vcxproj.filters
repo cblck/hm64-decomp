@@ -1140,6 +1140,18 @@
     <ClInclude Include="include\libmus\libmus_config.h">
       <Filter>include\libmus</Filter>
     </ClInclude>
+    <ClInclude Include="include\libmus\n_libaudio_sc.h">
+      <Filter>include\libmus</Filter>
+    </ClInclude>
+    <ClInclude Include="include\libmus\n_libaudio_sn_sc.h">
+      <Filter>include\libmus</Filter>
+    </ClInclude>
+    <ClInclude Include="include\libmus\audio.h">
+      <Filter>include\libmus</Filter>
+    </ClInclude>
+    <ClInclude Include="include\libmus\libn_mus_data.h">
+      <Filter>include\libmus</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitmodules" />
