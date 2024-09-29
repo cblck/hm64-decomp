@@ -4,13 +4,13 @@
 
 // player_commands.c
 
-INCLUDE_ASM(const s32, "lib/libmus/libsrc/player_commands", FStop);
+INCLUDE_ASM(const s32, "lib/libmus/libsrc/player_commands", Fstop);
 
-INCLUDE_ASM(const s32, "lib/libmus/libsrc/player_commands", FWave);
+INCLUDE_ASM(const s32, "lib/libmus/libsrc/player_commands", Fwave);
 
 INCLUDE_ASM(const s32, "lib/libmus/libsrc/player_commands", Fport);
 
-INCLUDE_ASM(const s32, "lib/libmus/libsrc/player_commands", FPortoff);
+INCLUDE_ASM(const s32, "lib/libmus/libsrc/player_commands", Fportoff);
 
 INCLUDE_ASM(const s32, "lib/libmus/libsrc/player_commands", Fdefa);
 
