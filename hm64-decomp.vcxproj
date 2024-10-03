@@ -82,12 +82,12 @@
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Disabled</Optimization>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\lib\libmus\libsrc\player_api.c">
+    <ClCompile Include="src\lib\libmus\libsrc\player_api.inc">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Disabled</Optimization>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\lib\libmus\libsrc\player_commands.c">
+    <ClCompile Include="src\lib\libmus\libsrc\player_commands.inc">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Disabled</Optimization>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>

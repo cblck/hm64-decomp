@@ -85,10 +85,10 @@
     <ClCompile Include="src\lib\libmus\libsrc\player.c">
       <Filter>src\lib\libmus\libsrc</Filter>
     </ClCompile>
-    <ClCompile Include="src\lib\libmus\libsrc\player_api.c">
+    <ClCompile Include="src\lib\libmus\libsrc\player_api.inc">
       <Filter>src\lib\libmus\libsrc</Filter>
     </ClCompile>
-    <ClCompile Include="src\lib\libmus\libsrc\player_commands.c">
+    <ClCompile Include="src\lib\libmus\libsrc\player_commands.inc">
       <Filter>src\lib\libmus\libsrc</Filter>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nuaumgr.c">
