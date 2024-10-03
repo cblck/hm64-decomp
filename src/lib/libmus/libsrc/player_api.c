@@ -8,15 +8,19 @@ INCLUDE_ASM(const s32, "lib/libmus/libsrc/player_commands", MusInitialize);
 
 INCLUDE_ASM(const s32, "lib/libmus/libsrc/player_commands", MusSetMasterVolume);
 
-INCLUDE_ASM(const s32, "lib/libmus/libsrc/player_commands", MusStartSong);
+// MusStartSong
+INCLUDE_ASM(const s32, "lib/libmus/libsrc/player_commands", func_800F4BC4);
 
-INCLUDE_ASM(const s32, "lib/libmus/libsrc/player_commands", MusStartEffect);
+// MusStartEffect
+INCLUDE_ASM(const s32, "lib/libmus/libsrc/player_commands", func_800F4DB8);
 
-INCLUDE_ASM(const s32, "lib/libmus/libsrc/player_commands", MusStartEffect2);
+// MusStartEffect2
+INCLUDE_ASM(const s32, "lib/libmus/libsrc/player_commands", func_800F4F18);
 
 INCLUDE_ASM(const s32, "lib/libmus/libsrc/player_commands", MusStop);
 
-INCLUDE_ASM(const s32, "lib/libmus/libsrc/player_commands", MusAsk);
+// MusAsk
+INCLUDE_ASM(const s32, "lib/libmus/libsrc/player_commands", func_800F5228);
 
 INCLUDE_ASM(const s32, "lib/libmus/libsrc/player_commands", MusHandleStop);
 
@@ -28,17 +32,23 @@ INCLUDE_ASM(const s32, "lib/libmus/libsrc/player_commands", MusHandlePan);
 
 INCLUDE_ASM(const s32, "lib/libmus/libsrc/player_commands", MusHandleSetFreqOffset);
 
-INCLUDE_ASM(const s32, "lib/libmus/libsrc/player_commands", MusHandleSetTempo);
+// MusHandleSetTempo
+INCLUDE_ASM(const s32, "lib/libmus/libsrc/player_commands", func_800F573C);
 
-INCLUDE_ASM(const s32, "lib/libmus/libsrc/player_commands", MusHandleSetReverb);
+// MusHandleSetReverb
+INCLUDE_ASM(const s32, "lib/libmus/libsrc/player_commands", func_800F5858);
 
 INCLUDE_ASM(const s32, "lib/libmus/libsrc/player_commands", MusBankInitialize);
 
-INCLUDE_ASM(const s32, "lib/libmus/libsrc/player_commands", MusBankStartSong);
+// MusBankStartSong
+INCLUDE_ASM(const s32, "lib/libmus/libsrc/player_commands", func_800F5994);
 
-INCLUDE_ASM(const s32, "lib/libmus/libsrc/player_commands", MusBankStartEffect);
+// MusBankStartEffect
+INCLUDE_ASM(const s32, "lib/libmus/libsrc/player_commands", func_800F5A1C);
 
-INCLUDE_ASM(const s32, "lib/libmus/libsrc/player_commands", MusBankStartEffect2);
+// MusBankStartEffect2
+INCLUDE_ASM(const s32, "lib/libmus/libsrc/player_commands", func_800F5AA4);
 
-INCLUDE_ASM(const s32, "lib/libmus/libsrc/player_commands", MusHandleGetPtrAddr);
+// MusHandleGetPtrAddr
+INCLUDE_ASM(const s32, "lib/libmus/libsrc/player_commands", func_800F5B48);
 */

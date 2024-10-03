@@ -18,7 +18,7 @@ typedef struct {
     u8 *currentSongRomAddrStart;
     u8 *currentSongRomAddrEnd;
     Volume volumes;
-    /*musHandle*/ unsigned long handle;
+    musHandle handle;
     s32 unk_1C;
     s32 unk_20;
     u32 speed;
@@ -28,7 +28,7 @@ typedef struct {
 
 typedef struct {
 	u32 sfxIndex;
-    /*musHandle*/ unsigned long handle;
+	musHandle handle;
     s32 frequency;
 	s32 pan;
 	s32 volume;

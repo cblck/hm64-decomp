@@ -1,35 +1,20 @@
-
-/*********************************************************
-
-  libmus.h : Nintendo 64 Music Tools Programmers Library
-  (c) Copyright 1997, Software Creations (Holdings) Ltd.
-
-  Version 2.00
-
-  Music library data definition header file.
-
-**********************************************************/
-
 #ifndef _LIBMUS_DATA_H_
 #define _LIBMUS_DATA_H_
 
-#include <libaudio.h>
+#include "PR/libaudio.h"
 
-/* sample pointer bank header structure */
 typedef struct
 {
-	unsigned char	header_name[16];  /* "Nu64 pointer bank" (or something like that)   */
-	unsigned long flags;		  /* 32 bit flags                                   */
-	unsigned long wbk_name[3];      /* 12 byte ASCII name (currently unused)          */
-	int 		count;            /* number of samples contained in sample bank     */
-	/* the three pointers below must be consecutive */
-	unsigned char* basenote;	  /* address of corse tune array                    */
-	float* detune;          /* address of fine tune array                     */
-	ALWaveTable** wave_list;      /* address of wave table pointer array            */
+  unsigned char	header_name[16];  
+  unsigned long flags;		  
+  unsigned long wbk_name[3];     
+  int 		count;           
+  unsigned char	*basenote;	  
+  float		*detune;        
+  ALWaveTable	**wave_list;     
 } ptr_bank_t;
 
 
-/* note lengths */
 #define   qv		24
 #define   sq		12
 #define   dcr		72
@@ -48,7 +33,6 @@ typedef struct
 #define   sb		192
 #define   dmn		144
 
-/* note values */
 #define   cs0		1
 #define   d0		2
 #define   ds0		3
@@ -145,7 +129,6 @@ typedef struct
 #define   as7		94
 #define   b7		95
 
-/* commands */
 #define   Cstop         0x80
 #define   Cwave	        0x81
 #define   Cport	        0x82	
@@ -191,6 +174,4 @@ typedef struct
 #define	  Clast		0xaa
 
 
-#endif /* _LIBMUS_DATA_H_ */
-
-
+#endif
