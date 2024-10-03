@@ -91,48 +91,6 @@ extern ptr_bank_t* mus_default_bank;	  /* sample bank default       */
 extern unsigned long __muscontrol_flag;
 
 // player_commands.c
-static unsigned char* Fstop(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fwave(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fport(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fportoff(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fdefa(channel_t* cp, unsigned char* ptr);
-static unsigned char* Ftempo(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fendit(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fcutoff(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fvibup(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fvibdown(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fviboff(channel_t* cp, unsigned char* ptr);
-static unsigned char* Flength(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fignore(channel_t* cp, unsigned char* ptr);
-static unsigned char* Ftrans(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fignore_trans(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fdistort(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fenvelope(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fenvoff(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fenvon(channel_t* cp, unsigned char* ptr);
-static unsigned char* Ftroff(channel_t* cp, unsigned char* ptr);
-static unsigned char* Ftron(channel_t* cp, unsigned char* ptr);
-static unsigned char* Ffor(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fnext(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fwobble(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fwobbleoff(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fvelon(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fveloff(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fvelocity(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fpan(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fstereo(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fdrums(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fdrumsoff(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fprint(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fgoto(channel_t* cp, unsigned char* ptr);
-static unsigned char* Freverb(channel_t* cp, unsigned char* ptr);
-static unsigned char* FrandNote(channel_t* cp, unsigned char* ptr);
-static unsigned char* FrandVolume(channel_t* cp, unsigned char* ptr);
-static unsigned char* FrandPan(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fvolume(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fstartfx(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fbendrange(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fsweep(channel_t* cp, unsigned char* ptr);
 
 INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", Fstop);
 
@@ -208,7 +166,7 @@ INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", FrandNote);
 
 INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", FrandVolume);
 
-INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", FrandPan);
+INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", FrandPand);
 
 INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", Fvolume);
 
@@ -218,51 +176,7 @@ INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", Fbendrange);
 
 INCLUDE_ASM(const s32, "lib/libmus/libsrc/player", Fsweep);
 
-command_func_t jumptable[] =
-{
-  Fstop,		//80
-  Fwave,		//81
-  Fport,		//82
-  Fportoff,		//83
-  Fdefa,		//84
-  Ftempo,		//85
-  Fcutoff,		//86
-  Fendit, 		//87
-  Fvibup,		//88
-  Fvibdown,		//89
-  Fviboff,		//8a
-  Flength, 		//8b
-  Fignore, 		//8c
-  Ftrans, 		//8d
-  Fignore_trans, 	//8e
-  Fdistort,		//8f
-  Fenvelope,		//90
-  Fenvoff,		//91
-  Fenvon, 		//92
-  Ftroff, 		//93
-  Ftron,  		//94
-  Ffor, 		//95
-  Fnext,		//96
-  Fwobble, 		//97
-  Fwobbleoff, 		//98
-  Fvelon, 		//99
-  Fveloff, 		//9a
-  Fvelocity, 		//9b
-  Fpan, 		//9c
-  Fstereo, 		//9d
-  Fdrums, 		//9e
-  Fdrumsoff, 		//9f
-  Fprint, 		//a0
-  Fgoto, 		//a1
-  Freverb, 		//a2
-  FrandNote, 		//a3
-  FrandVolume,		//a4
-  FrandPan,		//a5
-  Fvolume,		//a6
-  Fstartfx,		//a7
-  Fbendrange,		//a8
-  Fsweep,		//a8
-};
+extern command_func_t jumptable[];
 
 // player_api.c
 

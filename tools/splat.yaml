@@ -367,7 +367,7 @@ segments:
       - [ 0xF7C50, data, lib/nusys-1/nuaustlinit] # nuausynconfig
       - [ 0xF7CA0, data, lib/nusys-1/nuaumgr]
       - [ 0xF7CB0, data, lib/nusys-1/nuauprenmifuncset] 
-      - [ 0xF7CC0, .data, lib/libmus/libsrc/player]
+      - [ 0xF7CC0, data, lib/libmus/libsrc/player]
       - [ 0xF7D70, data, lib/libmus/n_sl]
       - [ 0xF7D80, data, lib/libmus/n_drvnew]
       - [ 0xF7F10, data, lib/libmus/n_env]
@@ -439,7 +439,7 @@ segments:
       - [ 0xFEBF0, .rodata, namingScreen]
       # library rodata continued
       - [ 0xFEC40, .rodata, lib/nusys-1/nupakmenu]
-      - [ 0xFED00, .rodata, lib/libmus/libsrc/player] # lib/libmus/libsrc/player_commands
+      - [ 0xFED00, rodata] # lib/libmus/libsrc/player_commands
       # - [ 0xFED40, rodata] # lib/libmus/libsrc/player
       - [ 0xFEDE0, .rodata, lib/os/libultra/libnaudio/n_synthesizer]
       - [ 0xFEE00, .rodata, lib/os/libultra/libnaudio/n_drvrnew]
