@@ -990,10 +990,10 @@ canvas_puts = 0x800F239C;
 
 // libmus
 
-Fstop = 0x800F3220;
-Fwave = 0x800F3274;
+FStop = 0x800F3220;
+FWave = 0x800F3274;
 Fport = 0x800F3308;
-Fportoff = 0x800F336C;
+FPortoff = 0x800F336C;
 Fdefa = 0x800F33A0;
 Ftempo = 0x800F35B8;
 Fendit = 0x800F3724;
