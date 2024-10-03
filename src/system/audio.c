@@ -96,7 +96,7 @@ void mainLoopAudioHandler(void) {
             }
             
             MusHandleSetFreqOffset(gSfx[j].handle, gSfx[j].frequency);
-            MusHandleSetPan(gSfx[j].handle, gSfx[j].pan);
+            MusHandlePan(gSfx[j].handle, gSfx[j].pan);
             MusHandleSetVolume(gSfx[j].handle, gSfx[j].volume);
             
             gSfx[j].numSfxPlaying = MusHandleAsk(gSfx[j].handle);
