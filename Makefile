@@ -40,7 +40,6 @@ DEBUG_FLAGS := -g2
 OPTFLAGS := -O2
 LIBULTRA_OPTFLAGS := -O3 -g0 -funsigned-char
 LIBKMC_OPTFLAGS := -O1
-LIBMUS_OPTFLAGS := -O0 -g0
 NU_OPTFLAGS := -O2
 
 ULTRALIBVER := -DBUILD_VERSION=7
@@ -116,10 +115,6 @@ $(BUILD_DIR)/src/lib/os/libultra/%.c.o : src/lib/os/libultra/%.c build
 $(BUILD_DIR)/src/lib/libkmc/%.c.o : src/lib/libkmc/%.c build
 	$(dir_guard)
 	$(V)export COMPILER_PATH=$(KMC_PATH) && $(CC) -B $(KMC_PATH) $(LIBKMC_OPTFLAGS) $(CFLAGS) $(CPPFLAGS) -c -o $@ $< 
-
-$(BUILD_DIR)/src/lib/libmus/%.c.o : src/lib/libmus/%.c build
-	$(dir_guard)
-	$(V)export COMPILER_PATH=$(KMC_PATH) && $(CC) -B $(KMC_PATH) $(LIBMUS_OPTFLAGS) $(CFLAGS) $(CPPFLAGS) -c -o $@ $< 
 
 # for hasm OS functions
 $(BUILD_DIR)/asm/lib/os/libultra/gu/%.s.o : src/lib/os/libultra/gu/%.s build

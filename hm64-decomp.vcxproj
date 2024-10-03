@@ -79,18 +79,12 @@
     </ClCompile>
     <ClCompile Include="src\lib\libmus\libsrc\player.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
-      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Disabled</Optimization>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
     </ClCompile>
     <ClCompile Include="src\lib\libmus\libsrc\player_api.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
-      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Disabled</Optimization>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
     </ClCompile>
     <ClCompile Include="src\lib\libmus\libsrc\player_commands.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
-      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Disabled</Optimization>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nuaumgr.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
@@ -247,1044 +241,746 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\audio\copy.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\audio\drvrnew.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\audio\env.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\audio\filter.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\audio\heapalloc.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\audio\heapinit.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\audio\load.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\audio\mainbus.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\audio\resample.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\audio\reverb.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\audio\save.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\audio\sl.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\audio\synallocfx.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\audio\syndelete.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\audio\synthesizer.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\debug\assert.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\debug\kdebugserver.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\gu\cosf.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\gu\lookat.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\gu\mtxutil.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\gu\ortho.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\gu\perspective.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\gu\rotaterpy.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\gu\scale.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\gu\sins.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\gu\translate.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\host\readhost.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\ai.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\aigetlen.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\aigetstat.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\aisetfreq.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\aisetnextbuf.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=6;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\cartrominit.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\contpfs.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\contquery.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\contramread.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\contramwrite.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\contreaddata.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\controller.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\crc.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\devmgr.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\epidma.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\epilinkhandle.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\epirawread.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\epirawdma.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\epirawwrite.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\motor.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\pfsallocatefile.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\pfschecker.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\pfsdeletefile.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\pfsfilestate.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\pfsfreeblocks.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\pfsgetstatus.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\pfsinitpak.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\pfsisplug.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\pfsnumfiles.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\pfsreadwritefile.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\pfsrepairid.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\pfssearchfile.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\pfsselectbank.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\piacs.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\pigetcmdq.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\pimgr.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\pirawdma.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\si.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\siacs.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\sirawdma.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\sirawread.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\sirawwrite.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\sp.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\spgetstat.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\sprawdma.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\sprawread.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\sprawwrite.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\spsetpc.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\spsetstat.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\sptask.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\sptaskyield.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\sptaskyielded.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\vi.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\viblack.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\vigetcurrcontext.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\vigetcurrframebuf.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\vigetnextframebuf.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\vimgr.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\visetevent.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\visetmode.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\visetspecial.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\visetyscale.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\viswapbuf.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\viswapcontext.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\libc\ldiv.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\libc\syncPrintf.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\libc\xldtob.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\libc\xlitob.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\libc\string.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\libnaudio\n_adpcm.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\libnaudio\n_alMainBusPull.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\libnaudio\n_alSavePul.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\libnaudio\n_auxbus.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\libnaudio\n_drvrnew.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\libnaudio\n_env.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\libnaudio\n_resample.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\libnaudio\n_reverb.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\libnaudio\n_sl.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\libnaudio\n_synaddplayer.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\libnaudio\n_synallocfx.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\libnaudio\n_synallocvoice.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\libnaudio\n_syndelete.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\libnaudio\n_synsetfxmix.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\libnaudio\n_synsetpan.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\libnaudio\n_synsetpitch.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\libnaudio\n_synsetvol.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\libnaudio\n_synstartvoice.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\libnaudio\n_synstopvoice.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\libnaudio\n_synthesizer.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\os\createmesgqueue.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\os\createthread.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\os\destroythread.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\os\getactivequeue.c">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\os\getthreadpri.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\os\gettime.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\os\initialize.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\os\initrdb.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\os\jammesg.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\os\rdbsend.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\os\recvmesg.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\os\resetglobalintmask.c">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\os\sendmesg.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\os\seteventmesg.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\os\setglobalintmask.c">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\os\setthreadpri.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\os\settimer.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\os\startthread.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\os\stopthread.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\os\thread.c">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\os\timerintr.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\os\virtualtophysical.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\os\yieldthread.c">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\rmon\rmonbreak.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\rmon\rmoncmd.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\rmon\rmonmain.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\rmon\rmonmem.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\rmon\rmonmisc.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\rmon\rmonrcp.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\rmon\rmonreg.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\rmon\rmonsio.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\rmon\rmontask.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">None</DebugInformationFormat>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClCompile Include="src\load.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
