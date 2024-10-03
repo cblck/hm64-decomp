@@ -88,7 +88,7 @@ extern ptr_bank_t* mus_init_bank;		  /* sample bank to initialise */
 extern ptr_bank_t* mus_default_bank;	  /* sample bank default       */
 
 /* music player control flag */
-unsigned long __muscontrol_flag;
+extern unsigned long __muscontrol_flag;
 
 // player_commands.c
 
