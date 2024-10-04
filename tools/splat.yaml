@@ -114,7 +114,7 @@ segments:
       - [ 0xCDC20, c, lib/nusys-1/nuaumgr]
       # player_commandsc + player_api.c; not 10 bytes aligned
       - [ 0xCE620, c, lib/libmus/libsrc/player_commands]
-      # - [ 0xCFC84, c, lib/libmus/libsrc/player_api]
+      # [ 0xCFC84, c, lib/libmus/libsrc/player_api]
       - [ 0xD1000, c, lib/libmus/libsrc/player]
       - [ 0xD3600, c, lib/os/libultra/libnaudio/n_sl]
       - [ 0xD3680, c, lib/os/libultra/libnaudio/n_synaddplayer]
@@ -139,8 +139,7 @@ segments:
       - [ 0xD6540, c, lib/nusys-1/nusched]
       - [ 0xD6D10, c, lib/nusys-1/nugfxthread]
       - [ 0xD6E60, c, lib/nusys-1/nugfxtaskmgr]
-      #  possible split, but doesn't seem like it
-      # - [0xD6420, c]
+      # [0xD6420, c] possible split, but doesn't seem like it
       - [ 0xD7250, c, lib/nusys-1/nugfxfuncset]
       - [ 0xD7290, c, lib/nusys-1/nugfxprenmifuncset]
       - [ 0xD72D0, c, lib/nusys-1/nugfxswapcfbfuncset]
@@ -197,7 +196,6 @@ segments:
       - [ 0xDAD60, c, lib/os/libultra/os/setthreadpri]
       - [ 0xDAE30, c, lib/os/libultra/os/startthread]
       - [ 0xDAF50, c, lib/os/libultra/os/stopthread]
-      # FIXME: should be c, but rodata issue with exceptasm referencing __osFaultedThread
       - [ 0xDB010, c, lib/os/libultra/os/thread]
       - [ 0xDB050, c, lib/os/libultra/os/virtualtophysical]
       - [ 0xDB0B0, c, lib/os/libultra/debug/assert]
@@ -334,7 +332,7 @@ segments:
       - [ 0xEBA50, hasm, lib/gcc/dividi3]
       - [ 0xEBBC0, hasm, lib/gcc/udivid3]
       - [ 0xEBBE0, hasm, lib/gcc/umoddi3]
-      # end of functions/text
+      # end of functions/text, start of data
       - [ 0xEBC20, bin, ucode/rspboot]
       - [ 0xEBCF0, bin, ucode/n_aspMain_text]
       - [ 0xEC950, bin, ucode/gspF3DEX2.fifo_text]
@@ -379,7 +377,6 @@ segments:
       - [ 0xF8070, data, lib/nusys-1/nucontpakmgr]
       - [ 0xF8080, data, lib/nusys-1/nucontrmbmgr]
       - [ 0xF8090, data, lib/nusys-1/nucontpakjiston64]
-      # library rodata
       - [ 0xF80D0, .data, lib/os/libultra/gu/rotaterpy]
       - [ 0xF80E0, .data, lib/os/libultra/os/thread]
       - [ 0xF8100, .data, lib/os/libultra/audio/sl]
@@ -437,7 +434,7 @@ segments:
       - [ 0xFEA58, .rodata, title]
       - [ 0xFEA90, .rodata, loadGameScreen]
       - [ 0xFEBF0, .rodata, namingScreen]
-      # library rodata continued
+      # library rodata
       - [ 0xFEC40, .rodata, lib/nusys-1/nupakmenu]
       - [ 0xFED00, rodata] # lib/libmus/libsrc/player_commands
       - [ 0xFED40, rodata] # lib/libmus/libsrc/player

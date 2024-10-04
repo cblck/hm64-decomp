@@ -880,6 +880,9 @@ xldtob_rodata_0050 							= 0x80124140;
 xldtob_rodata_0058 							= 0x80124148;
 xldtob_rodata_0060 							= 0x80124150;
 rmonbrk_rodata_0000 						= 0x80124160;
+
+// bss
+
 idleThread  								= 0x801241C0; // size:0x1B0
 mainThread  								= 0x80124370; // size:0x1B0
 IdleStack   								= 0x80124520; // size:0x2000
