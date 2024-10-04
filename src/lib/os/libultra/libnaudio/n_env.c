@@ -1,5 +1,3 @@
-#include "common.h"
-
 /*====================================================================
  *
  * Copyright 1993, Silicon Graphics, Inc.
@@ -385,8 +383,281 @@ s32
   return 0;
 }
 
-INCLUDE_ASM(const s32, "lib/os/libultra/libnaudio/n_env", _n_pullSubFrame);
+static
+  Acmd* _n_pullSubFrame(N_PVoice *filter, s16 *inp, s16 *outp, s32 outCount,
+		      Acmd *p) 
+{
+  Acmd        *ptr = p;
+  N_PVoice	*e = filter;
+#ifndef N_MICRO
+  s16 *inpp = AL_RESAMPLER_OUT;
+#else
+  s16 *inpp = N_AL_RESAMPLER_OUT;
+#endif
 
-INCLUDE_ASM(const s32, "lib/os/libultra/libnaudio/n_env", _n_getRate);
+  /* filter must be playing and request non-zero output samples to pull. */
+  if (e->em_motion != AL_PLAYING || !outCount)
+    return ptr;
+  
+  /*
+   * ask all filters upstream from us to build their command
+   * lists.
+   */
+  
+  ptr = n_alResamplePull(e,inp, p);
+  
+  /*
+   * construct our portion of the command list
+   */
+#ifndef N_MICRO
+  aSetBuffer(ptr++, A_MAIN, *inp, AL_MAIN_L_OUT, FIXED_SAMPLE<<1);
+  aSetBuffer(ptr++, A_AUX, AL_MAIN_R_OUT , AL_AUX_L_OUT ,
+	     AL_AUX_R_OUT );
+#endif
+  
+  if (e->em_first){
+    e->em_first = 0;
+    
+    /*
+     * Calculate derived parameters
+     */
+    e->em_ltgt = (e->em_volume * n_eqpower[e->em_pan]) >> 15;
+    e->em_lratm = _n_getRate((f64)e->em_cvolL, (f64)e->em_ltgt,
+			   e->em_segEnd, &(e->em_lratl));
+    e->em_rtgt = (e->em_volume *
+		  n_eqpower[N_EQPOWER_LENGTH - e->em_pan - 1]) >> 15;
+    e->em_rratm = _n_getRate((f64)e->em_cvolR, (f64)e->em_rtgt, e->em_segEnd,
+			   &(e->em_rratl));
+    
+#ifndef N_MICRO
+    aSetVolume(ptr++, A_LEFT | A_VOL, e->em_cvolL, 0, 0);
+    aSetVolume(ptr++, A_RIGHT | A_VOL, e->em_cvolR, 0, 0);
+    aSetVolume(ptr++, A_LEFT  | A_RATE, e->em_ltgt, e->em_lratm, e->em_lratl);
+    aSetVolume(ptr++, A_RIGHT | A_RATE, e->em_rtgt, e->em_rratm, e->em_rratl);
+    aSetVolume(ptr++, A_AUX, e->em_dryamt, 0, e->em_wetamt);
+    aEnvMixer (ptr++, A_INIT | A_AUX, osVirtualToPhysical(e->em_state));
+  }
+  else
+    aEnvMixer(ptr++, A_CONTINUE | A_AUX, osVirtualToPhysical(e->em_state));
+#else
+//Begin #include "n_env_add01.c"
+    n_aSetVolume(ptr++, A_RATE, e->em_ltgt, e->em_lratm, e->em_lratl);
+    n_aSetVolume(ptr++, A_LEFT  | A_VOL, e->em_cvolL, e->em_dryamt, e->em_wetamt);
+    n_aSetVolume(ptr++, A_RIGHT | A_VOL, e->em_rtgt, e->em_rratm,  e->em_rratl);
+    n_aEnvMixer (ptr++, A_INIT, e->em_cvolR, osVirtualToPhysical(e->em_state));
+  }
+  else
+    n_aEnvMixer(ptr++, A_CONTINUE, 0, osVirtualToPhysical(e->em_state));
+//End #include "n_env_add01.c"
+#endif  
+  /*
+   * bump the input buffer pointer
+   */
+  
+  *inp += (FIXED_SAMPLE<<1);
+  e->em_delta += FIXED_SAMPLE;
+  
+  return ptr;
+}
 
-INCLUDE_ASM(const s32, "lib/os/libultra/libnaudio/n_env", _n_getVol);
+#ifndef N_MICRO
+#define EXP_MASK  0x7f800000
+#define MANT_MASK 0x807fffff
+
+static
+  s16 _n_getRate(f64 vol, f64 tgt, s32 count, u16* ratel)
+{
+  s16         s;
+  
+  f64         invn = 1.0/count, eps, a, fs, mant;
+  s32         i_invn, ex, indx;
+  
+#ifdef AUD_PROFILE
+  lastCnt[++cnt_index] = osGetCount();
+#endif
+  
+  if (count == 0){
+    if (tgt >= vol){
+      *ratel = 0xffff;
+      return 0x7fff;
+    }
+    else{
+      *ratel = 0;
+      return 0;
+    }
+  }
+  
+  if (tgt < 1.0)
+    tgt = 1.0;
+  if (vol <= 0) vol = 1;	/* zero and neg values not allowed */
+  
+#define NBITS (3)
+#define NPOS  (1<<NBITS)
+#define NFRACBITS (30)
+#define M_LN2		0.69314718055994530942
+  /*
+   * rww's parametric pow()
+   Goal: compute a = (tgt/vol)^(1/count)
+   
+   Approach:
+   (tgt/vol)^(1/count) =
+   ((tgt/vol)^(1/2^30))^(2^30*1/count)
+   
+   (tgt/vol)^(1/2^30) ~= 1 + eps
+   
+   where
+   
+   eps ~= ln(tgt/vol)/2^30
+   
+   ln(tgt/vol) = ln2(tgt/vol) * ln(2)
+   
+   ln2(tgt/vol) = fp_exponent( tgt/vol ) +
+   ln2( fp_mantissa( tgt/vol ) )
+   
+   fp_mantissa() and fp_exponent() are
+   calculated via tricky bit manipulations of
+   the floating point number. ln2() is
+   approximated by a look up table.
+   
+   Note that this final (1+eps) value needs
+   to be raised to the 2^30/count power. This
+   is done by operating on the binary representaion
+   of this number in the final while loop.
+   
+   Enjoy!
+   */
+  {
+    f64 logtab[] = { -0.912537, -0.752072, -0.607683, -0.476438,
+		       -0.356144, -0.245112, -0.142019, -0.045804  };
+    
+    i_invn = (s32) _ldexpf( invn, NFRACBITS );
+    mant = _frexpf( tgt/vol, &ex );
+    indx = (s32) (_ldexpf( mant, NBITS+1 ) ); /* NPOS <= indx < 2*NPOS */
+    eps = (logtab[indx - NPOS] + ex) * M_LN2;
+    eps /= _ldexpf( 1, NFRACBITS ); /* eps / 2^NFRACBITS */
+    fs = (1.0 + eps);
+    a = 1.0;
+    while( i_invn ) {
+      if( i_invn & 1 )
+	a = a * fs;
+      fs *= fs;
+      i_invn >>= 1;
+    }
+  }
+  
+  a *= (a *= (a *= a));
+  s = (s16) a;
+  *ratel = (s16)(0xffff * (a - (f32) s));
+  
+#ifdef AUD_PROFILE
+  PROFILE_AUD(rate_num, rate_cnt, rate_max, rate_min);
+#endif
+  return (s16)a;
+  
+}
+#else
+static
+s16 _n_getRate(f64 vol, f64 tgt, s32 count, u16* ratel)
+{
+    s16         s, tmp;
+    f64         invn, a, f;
+
+#ifdef AUD_PROFILE
+    lastCnt[++cnt_index] = osGetCount();
+#endif
+    
+    if (count == 0){
+        if (tgt >= vol){
+            *ratel = 0xffff;
+            return 0x7fff;
+        }
+        else{
+ 	    *ratel = 0;
+            return 0x8000;
+        }
+    }
+
+    invn = 1.0 / count;
+
+    if (tgt < 1.0)
+        tgt = 1.0;
+    if (vol <= 0.0) vol = 1.0;	/* zero and neg values not allowed */
+
+    a = (tgt - vol) * invn * 8.0;
+    s = (s16)a;
+    f = a - (f64)s;
+    s -= 1;
+    f += 1.0;
+    tmp = (s16)f;
+    s += tmp;
+    f -= (f64)tmp;
+
+#ifdef AUD_PROFILE
+	PROFILE_AUD( rate_num, rate_cnt, rate_max, rate_min);
+#endif
+
+    *ratel = (u16)(0xffff * f);
+    return s;
+}
+#endif
+
+#ifndef N_MICRO
+static
+  f32 _n_getVol(f32 ivol, s32 samples, s16 ratem, u16 ratel)
+{
+  f32	        r, a;
+  s32	      	i;
+  
+#ifdef AUD_PROFILE
+  lastCnt[++cnt_index] = osGetCount();
+#endif
+  
+  /*
+   * Rate values are actually rate^8
+   */
+  samples >>=3;
+  if (samples == 0){
+    return ivol;
+  }
+  r = ((f32) (ratem<<16) + (f32) ratel)/65536;
+  
+  a = 1.0;
+  for (i=0; i<32; i++){
+    if( samples & 1 )
+      a *= r;
+    samples >>= 1;
+    if (samples == 0)
+      break;
+    r *= r;
+  }
+  ivol *= a;
+#ifdef AUD_PROFILE
+  PROFILE_AUD(vol_num, vol_cnt, vol_max, vol_min);
+#endif
+  return ivol;
+}
+#else
+static
+s16 _n_getVol(s16 ivol, s32 samples, s16 ratem, u16 ratel)
+{
+    s32 tmp1;
+#ifdef AUD_PROFILE
+    lastCnt[++cnt_index] = osGetCount();
+#endif
+    
+    samples >>= 3;
+    if (samples == 0){
+        return ivol;
+    }
+
+    tmp1 = ratel * samples;
+    tmp1 >>= 16;
+    tmp1 += ratem * samples;
+    ivol += tmp1;
+
+#ifdef AUD_PROFILE
+    PROFILE_AUD(vol_num, vol_cnt, vol_max, vol_min);
+#endif
+    return ivol;
+}
+#endif
