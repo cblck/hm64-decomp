@@ -1131,6 +1131,7 @@
   <ItemGroup>
     <ClInclude Include="include\assert.h" />
     <ClInclude Include="include\common.h" />
+    <ClInclude Include="include\gcc\math.h" />
     <ClInclude Include="include\gcc\stdio.h" />
     <ClInclude Include="include\gcc\stdlib.h" />
     <ClInclude Include="include\gcc\string.h" />
