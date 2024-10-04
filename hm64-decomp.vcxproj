@@ -1225,6 +1225,9 @@
     <ClInclude Include="src\levelInteractions.h" />
     <ClInclude Include="src\lib\libmus\libsrc\player.h" />
     <ClInclude Include="src\lib\os\libultra\gu\guint.h" />
+    <ClInclude Include="src\lib\os\libultra\libnaudio\n_abi.h" />
+    <ClInclude Include="src\lib\os\libultra\libnaudio\n_libaudio_sc.h" />
+    <ClInclude Include="src\lib\os\libultra\libnaudio\n_synthInternals.h" />
     <ClInclude Include="src\load.h" />
     <ClInclude Include="src\loadGameScreen.h" />
     <ClInclude Include="src\mainLoop.h" />

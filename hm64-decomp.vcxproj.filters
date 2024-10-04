@@ -1137,6 +1137,15 @@
     <ClInclude Include="include\gcc\string.h">
       <Filter>include\gcc</Filter>
     </ClInclude>
+    <ClInclude Include="src\lib\os\libultra\libnaudio\n_abi.h">
+      <Filter>src\lib\os\libultra\libnaudio</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lib\os\libultra\libnaudio\n_libaudio_sc.h">
+      <Filter>src\lib\os\libultra\libnaudio</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lib\os\libultra\libnaudio\n_synthInternals.h">
+      <Filter>src\lib\os\libultra\libnaudio</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitmodules" />
