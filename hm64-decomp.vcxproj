@@ -742,7 +742,7 @@
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\libnaudio\n_drvrnew.c">
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_drvrNew.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -1131,6 +1131,7 @@
   <ItemGroup>
     <ClInclude Include="include\assert.h" />
     <ClInclude Include="include\common.h" />
+    <ClInclude Include="include\gcc\stdio.h" />
     <ClInclude Include="include\gcc\stdlib.h" />
     <ClInclude Include="include\gcc\string.h" />
     <ClInclude Include="include\include_asm.h" />
@@ -1403,7 +1404,7 @@
     </RemotePostBuildEvent>
     <CustomBuildStep />
     <ClCompile>
-      <PreprocessorDefinitions>_LANGUAGE_C;_MIPS_SZLONG=32;_MIPS_SZINT=32;SUPPORT_NAUDIO;NU_SYSTEM;F3DEX_GBI_2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_LANGUAGE_C;_MIPS_SZLONG=32;_MIPS_SZINT=32;SUPPORT_NAUDIO;NU_SYSTEM;F3DEX_GBI_2;_OLD_AUDIO_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <CLanguageStandard>c99</CLanguageStandard>
       <CppLanguageStandard>gnu++98</CppLanguageStandard>
       <Optimization>MaxSpeed</Optimization>

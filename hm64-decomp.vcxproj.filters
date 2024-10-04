@@ -529,7 +529,7 @@
     <ClCompile Include="src\lib\os\libultra\libnaudio\n_auxbus.c">
       <Filter>src\lib\os\libultra\libnaudio</Filter>
     </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\libnaudio\n_drvrnew.c">
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_drvrNew.c">
       <Filter>src\lib\os\libultra\libnaudio</Filter>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\libnaudio\n_env.c">
@@ -1145,6 +1145,9 @@
     </ClInclude>
     <ClInclude Include="src\lib\os\libultra\libnaudio\n_synthInternals.h">
       <Filter>src\lib\os\libultra\libnaudio</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gcc\stdio.h">
+      <Filter>include\gcc</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

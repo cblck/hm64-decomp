@@ -128,7 +128,7 @@ segments:
       - [ 0xD3BC0, c, lib/os/libultra/libnaudio/n_synstopvoice]
       - [ 0xD3C40, c, lib/os/libultra/libnaudio/n_synthesizer]
       - [ 0xD41A0, c, lib/os/libultra/libnaudio/n_auxbus]
-      - [ 0xD4240, c, lib/os/libultra/libnaudio/n_drvrnew]
+      - [ 0xD4240, c, lib/os/libultra/libnaudio/n_drvrNew]
       - [ 0xD4760, c, lib/os/libultra/libnaudio/n_env]
       - [ 0xD5130, c, lib/os/libultra/libnaudio/n_adpcm]
       - [ 0xD5850, c, lib/os/libultra/libnaudio/n_resample]
@@ -367,7 +367,7 @@ segments:
       - [ 0xF7CB0, data, lib/nusys-1/nuauprenmifuncset] 
       - [ 0xF7CC0, data, lib/libmus/libsrc/player]
       - [ 0xF7D70, .data, lib/os/libultra/libnaudio/n_sl]
-      - [ 0xF7D80, data, lib/libmus/n_drvnew]
+      - [ 0xF7D80, .data, lib/os/libultra/libnaudio/n_drvrNew]
       - [ 0xF7F10, data, lib/libmus/n_env]
       - [ 0xF8020, data, lib/nusys-1/nusched]
       - [ 0xF8030, data, lib/nusys-1/nugfxfuncset]
@@ -439,7 +439,7 @@ segments:
       - [ 0xFED00, rodata] # lib/libmus/libsrc/player_commands
       - [ 0xFED40, rodata] # lib/libmus/libsrc/player
       - [ 0xFEDE0, .rodata, lib/os/libultra/libnaudio/n_synthesizer]
-      - [ 0xFEE00, .rodata, lib/os/libultra/libnaudio/n_drvrnew]
+      - [ 0xFEE00, .rodata, lib/os/libultra/libnaudio/n_drvrNew]
       - [ 0xFEE30, .rodata, lib/os/libultra/libnaudio/n_env]
       - [ 0xFEEA0, rodata] # lib/os/libultra/libnaudio/n_resample
       - [ 0xFEEB0, .rodata, lib/os/libultra/libnaudio/n_reverb]
