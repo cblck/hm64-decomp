@@ -441,7 +441,7 @@ segments:
       - [ 0xFEDE0, .rodata, lib/os/libultra/libnaudio/n_synthesizer]
       - [ 0xFEE00, .rodata, lib/os/libultra/libnaudio/n_drvrNew]
       - [ 0xFEE30, .rodata, lib/os/libultra/libnaudio/n_env]
-      - [ 0xFEEA0, rodata] # lib/os/libultra/libnaudio/n_resample
+      - [ 0xFEEA0, .rodata, lib/os/libultra/libnaudio/n_resample]
       - [ 0xFEEB0, .rodata, lib/os/libultra/libnaudio/n_reverb]
       - [ 0xFEEF0, .rodata, lib/nusys-1/nucontpakmgr]
       - [ 0xFEF10, .rodata, lib/os/libultra/gu/cosf]
@@ -459,7 +459,7 @@ segments:
       - [ 0xFF290, rodata] # lib/os/libultra/exceptasm
       - [ 0xFF300, hasm, lib/os/libultra/gu/libm_vals]
       - [ 0xFF300, .rodata, lib/os/libultra/gu/libm_vals]
-      - [ 0xFF310, rodata, lib/os/libultra/libnaudio/n_resample]
+      - [ 0xFF310, .rodata, lib/os/libultra/audio/resample]
       - [ 0xFF340, rodata, lib/os/libultra/printf] 
       - [ 0xFF4B8, .rodata, lib/os/libultra/io/devmgr]
       - [ 0xFF4D8, .rodata, lib/os/libultra/rmon/rmonmem]
