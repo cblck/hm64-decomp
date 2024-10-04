@@ -130,7 +130,7 @@ segments:
       - [ 0xD41A0, c, lib/os/libultra/libnaudio/n_auxbus]
       - [ 0xD4240, c, lib/os/libultra/libnaudio/n_drvrNew]
       - [ 0xD4760, c, lib/os/libultra/libnaudio/n_env]
-      - [ 0xD5130, c, lib/os/libultra/libnaudio/n_adpcm]
+      - [ 0xD5130, c, lib/os/libultra/libnaudio/n_load]
       - [ 0xD5850, c, lib/os/libultra/libnaudio/n_resample]
       - [ 0xD5A30, c, lib/os/libultra/libnaudio/n_reverb]
       - [ 0xD6420, c, lib/os/libultra/libnaudio/n_alSavePul]
