@@ -325,7 +325,7 @@ segments:
       - [ 0xEABB0, c, lib/os/libultra/io/sprawwrite]
       - [ 0xEAC00, c, lib/os/libultra/os/getactivequeue]
       - [ 0xEAC10, c, lib/os/libultra/rmon/rmonrcp]
-      - [ 0xEACB0, c, lib/os/libultra/rmon/rmonbreak]
+      - [ 0xEACB0, c, lib/os/libultra/rmon/rmonbrk]
       - [ 0xEB650, c, lib/os/libultra/libc/ldiv]
       - [ 0xEB810, c, lib/libkmc/rand]
       - [ 0xEB850, hasm, lib/libkmc/_muldi3] 
@@ -465,7 +465,7 @@ segments:
       - [ 0xFF4B8, .rodata, lib/os/libultra/io/devmgr]
       - [ 0xFF4D8, .rodata, lib/os/libultra/rmon/rmonmem]
       - [ 0xFF4F0, .rodata, lib/os/libultra/libc/xldtob]
-      - [ 0xFF560, .rodata, lib/os/libultra/rmon/rmonbreak]
+      - [ 0xFF560, .rodata, lib/os/libultra/rmon/rmonbrk]
       - { start: 0xFF5C0, type: bss, vram: 0x801241C0, name: bss1 }
       - { start: 0xFF5C0, type: .bss, vram: 0x8013CDF0, name: lib/libkmc/rand }
       - { start: 0xFF5C0, type: bss, vram: 0x8013CE00, name: bss2 }

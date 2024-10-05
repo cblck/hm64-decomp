@@ -577,7 +577,7 @@
     <ClCompile Include="src\lib\os\libultra\libnaudio\n_synthesizer.c">
       <Filter>src\lib\os\libultra\libnaudio</Filter>
     </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\rmon\rmonbreak.c">
+    <ClCompile Include="src\lib\os\libultra\rmon\rmonbrk.c">
       <Filter>src\lib\os\libultra\rmon</Filter>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\rmon\rmoncmd.c">
