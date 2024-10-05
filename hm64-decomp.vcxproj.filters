@@ -1152,6 +1152,12 @@
     <ClInclude Include="include\gcc\math.h">
       <Filter>include\gcc</Filter>
     </ClInclude>
+    <ClInclude Include="src\lib\nusys-1\nupakmenu.h">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lib\nusys-1\pakmenu.h">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitmodules" />

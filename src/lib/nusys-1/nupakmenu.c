@@ -1,5 +1,22 @@
 #include "common.h"
+/*======================================================================*/
+/*		NuSystem						*/
+/*		nupakmenu.c						*/
+/*									*/
+/*		Copyright (C) 1998, NINTENDO Co,Ltd.			*/
+/*									*/
+/*----------------------------------------------------------------------*/
+/* 		98/11/11	Created by Kensaku Ohki(SLANP)		*/
+/*======================================================================*/
 
+#include <nusys.h>
+#include "nupakmenu.h"
+#include "pakmenu.h"
+
+extern	void	canvas_putc(int, u16, u16);
+extern	void	canvas_puts(u8*, int, u16, u16);
+extern	u16*	__cursor;
+extern	void	canvas_u8_to_str(u16, u8*);
 
 INCLUDE_RODATA(const s32, "lib/nusys-1/nupakmenu", D_80123840);
 

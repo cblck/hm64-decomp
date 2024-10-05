@@ -1226,6 +1226,8 @@
     <ClInclude Include="src\level.h" />
     <ClInclude Include="src\levelInteractions.h" />
     <ClInclude Include="src\lib\libmus\libsrc\player.h" />
+    <ClInclude Include="src\lib\nusys-1\nupakmenu.h" />
+    <ClInclude Include="src\lib\nusys-1\pakmenu.h" />
     <ClInclude Include="src\lib\os\libultra\gu\guint.h" />
     <ClInclude Include="src\lib\os\libultra\libnaudio\n_abi.h" />
     <ClInclude Include="src\lib\os\libultra\libnaudio\n_libaudio_sc.h" />
