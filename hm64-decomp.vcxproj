@@ -88,30 +88,39 @@
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nuaumgr.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nuauprenmifuncset.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nuauprenmiproc.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nuauseqplayerseqset.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nuaustlbankset.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nuaustlinit.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nuaustlplayerinit.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nuaustlseqplayerplay.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nuaustlsndplayerplay.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nuboot.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
@@ -119,123 +128,163 @@
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nucontdatagetex.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nucontdatagetexall.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nucontdatalock.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nucontdataread.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nucontdatareadstart.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nucontdatareadwait.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nucontinit.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nucontmgr.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nucontpakcodeset.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nucontpakfiledelete.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nucontpakfiledeletejis.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nucontpakfilenum.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nucontpakfileopenjis.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nucontpakfilereadwrite.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nucontpakfilestate.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nucontpakgetfree.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nucontpakjiston64.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nucontpakmgr.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nucontpakopen.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nucontqueryread.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nucontrmbmgr.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nugfxdisplayoff.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nugfxdisplayon.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nugfxfuncset.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nugfxprenmifuncset.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nugfxretracewait.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nugfxsetcfb.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nugfxswapcfb.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nugfxswapcfbfuncset.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nugfxtaskallendwait.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nugfxtaskmgr.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nugfxthread.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nupakmenu.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nupakmenuloadfont.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nupiinit.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nupireadrom.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nusched.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nusicallbackadd.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nusicallbackremove.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nusimgr.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\audio\auxbus.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
@@ -1409,7 +1458,7 @@
     </RemotePostBuildEvent>
     <CustomBuildStep />
     <ClCompile>
-      <PreprocessorDefinitions>_LANGUAGE_C;_MIPS_SZLONG=32;_MIPS_SZINT=32;SUPPORT_NAUDIO;NU_SYSTEM;F3DEX_GBI_2;_OLD_AUDIO_LIBRARY;N_MICRO;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_LANGUAGE_C;_MIPS_SZLONG=32;_MIPS_SZINT=32;SUPPORT_NAUDIO;NU_SYSTEM;F3DEX_GBI_2;_OLD_AUDIO_LIBRARY;N_MICRO;LANG_JAPANESE=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <CLanguageStandard>c99</CLanguageStandard>
       <CppLanguageStandard>gnu++98</CppLanguageStandard>
       <Optimization>MaxSpeed</Optimization>

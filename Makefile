@@ -29,7 +29,7 @@ LD := $(CROSS)ld
 OBJCOPY := $(CROSS)objcopy
 STRIP := $(CROSS)strip
 
-MACROS := -D_LANGUAGE_C -D_MIPS_SZLONG=32 -D_MIPS_SZINT=32 -DSUPPORT_NAUDIO -DNU_SYSTEM -DF3DEX_GBI_2 -D_OLD_AUDIO_LIBRARY -DN_MICRO
+MACROS := -D_LANGUAGE_C -D_MIPS_SZLONG=32 -D_MIPS_SZINT=32 -DSUPPORT_NAUDIO -DNU_SYSTEM -DF3DEX_GBI_2 -D_OLD_AUDIO_LIBRARY -DN_MICRO -DLANG_JAPANESE=0
 CFLAGS_COMMON := -G0 -mips3 -mgp32 -mfp32 -Wa,-Iinclude
 
 CFLAGS := $(CFLAGS_COMMON) $(MACROS)
@@ -40,7 +40,7 @@ DEBUG_FLAGS := -g2
 OPTFLAGS := -O2
 LIBULTRA_OPTFLAGS := -O3 -g0 -funsigned-char
 LIBKMC_OPTFLAGS := -O1
-NU_OPTFLAGS := -O2
+NU_OPTFLAGS := -O3
 
 ULTRALIBVER := -DBUILD_VERSION=7
 
@@ -59,6 +59,7 @@ endif
 dir_guard = @mkdir -p $(@D)
 
 build/src/lib/nusys-1/nuboot.c.o: NU_OPTFLAGS := -O0
+build/src/lib/nusys-1/nupakmenuloadfont.c.o: NU_OPTFLAGS += -g2
 build/src/lib/os/libultra/io/aisetnextbuf.c.o: ULTRALIBVER := -DBUILD_VERSION=6
 
 all: check
