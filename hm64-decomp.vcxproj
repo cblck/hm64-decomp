@@ -1465,6 +1465,7 @@
       <Optimization>MaxSpeed</Optimization>
       <AdditionalIncludeDirectories>.;include;src;src/system;include/libmus;include/PR;include/gcc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAs>CompileAsC</CompileAs>
+      <AdditionalOptions>-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -30,7 +30,7 @@ OBJCOPY := $(CROSS)objcopy
 STRIP := $(CROSS)strip
 
 MACROS := -D_LANGUAGE_C -D_MIPS_SZLONG=32 -D_MIPS_SZINT=32 -DSUPPORT_NAUDIO -DNU_SYSTEM -DF3DEX_GBI_2 -D_OLD_AUDIO_LIBRARY -DN_MICRO -DLANG_JAPANESE=0
-CFLAGS_COMMON := -G0 -mips3 -mgp32 -mfp32 -Wa,-Iinclude
+CFLAGS_COMMON := -G0 -mips3 -mgp32 -mfp32 -Wa,-Iinclude -funsigned-char
 
 CFLAGS := $(CFLAGS_COMMON) $(MACROS)
 ASFLAGS := -G 0 -I include -mips3 -mabi=32
@@ -38,7 +38,7 @@ CPPFLAGS := -I. -I include -I src -I src/system -I include/libmus -I include/PR 
 
 DEBUG_FLAGS := -g2
 OPTFLAGS := -O2
-LIBULTRA_OPTFLAGS := -O3 -g0 -funsigned-char
+LIBULTRA_OPTFLAGS := -O3 -g0
 LIBKMC_OPTFLAGS := -O1
 NU_OPTFLAGS := -O3
 
