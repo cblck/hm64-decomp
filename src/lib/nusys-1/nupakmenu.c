@@ -24,7 +24,7 @@ INCLUDE_RODATA(const s32, "lib/nusys-1/nupakmenu", D_80123848);
 
 INCLUDE_RODATA(const s32, "lib/nusys-1/nupakmenu", D_80123854);
 
-INCLUDE_ASM(const s32, "lib/nusys-1/nupakmenu", __displayTerm);
+INCLUDE_ASM(const s32, "lib/nusys-1/nupakmenu", __display_term);
 
 INCLUDE_ASM(const s32, "lib/nusys-1/nupakmenu", __display_free_block);
 

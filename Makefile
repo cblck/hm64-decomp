@@ -59,6 +59,7 @@ endif
 dir_guard = @mkdir -p $(@D)
 
 build/src/lib/nusys-1/nuboot.c.o: NU_OPTFLAGS := -O0
+build/src/lib/nusys-1/nupakmenu.c.o: NU_OPTFLAGS += -g2
 build/src/lib/nusys-1/nupakmenuloadfont.c.o: NU_OPTFLAGS += -g2
 build/src/lib/os/libultra/io/aisetnextbuf.c.o: ULTRALIBVER := -DBUILD_VERSION=6
 
