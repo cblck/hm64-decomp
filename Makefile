@@ -34,7 +34,7 @@ CFLAGS_COMMON := -G0 -mips3 -mgp32 -mfp32 -Wa,-Iinclude -funsigned-char
 
 CFLAGS := $(CFLAGS_COMMON) $(MACROS)
 ASFLAGS := -G 0 -I include -mips3 -mabi=32
-CPPFLAGS := -I. -I include -I src -I src/system -I include/libmus -I include/PR -I include/gcc
+CPPFLAGS := -I. -I include -I src -I src/system -I include/libmus -I include/PR -I include/gcc -I include/nusys
 
 DEBUG_FLAGS := -g2
 OPTFLAGS := -O2

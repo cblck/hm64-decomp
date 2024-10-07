@@ -1191,8 +1191,8 @@
     <ClInclude Include="include\libmus\libmus.h" />
     <ClInclude Include="include\libmus\libmus_data.h" />
     <ClInclude Include="include\macros.h" />
-    <ClInclude Include="include\nualstl.h" />
-    <ClInclude Include="include\nusys.h" />
+    <ClInclude Include="include\nusys\nualstl.h" />
+    <ClInclude Include="include\nusys\nusys.h" />
     <ClInclude Include="include\PRinternal\controller.h" />
     <ClInclude Include="include\PRinternal\controller_gbpak.h" />
     <ClInclude Include="include\PRinternal\controller_voice.h" />
@@ -1463,7 +1463,7 @@
       <CLanguageStandard>c99</CLanguageStandard>
       <CppLanguageStandard>gnu++98</CppLanguageStandard>
       <Optimization>MaxSpeed</Optimization>
-      <AdditionalIncludeDirectories>.;include;src;src/system;include/libmus;include/PR;include/gcc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;include;src;src/system;include/libmus;include/PR;include/gcc;include/nusys;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAs>CompileAsC</CompileAs>
       <AdditionalOptions>-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
