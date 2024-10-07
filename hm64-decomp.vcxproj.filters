@@ -1164,6 +1164,9 @@
     <ClInclude Include="include\dbgdefs.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="src\lib\nusys-1\fontbmp.h">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitmodules" />
