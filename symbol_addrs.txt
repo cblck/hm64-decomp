@@ -685,6 +685,7 @@ font_kana_dot								= 0x8011C840; // size:0x10
 auSynConfig 								= 0x8011C850; // size:0x24
 auSeqpConfig								= 0x8011C874; // size:0x20
 anSndpConfig								= 0x8011C894; // size:0xC
+nuAuPreNMIFunc								= 0x8011C8B0; // size:0x4
 n_alGlobals 								= 0x8011C970; // size:0x4
 n_syn										= 0x8011C974; // size:0x4
 SMALLROOM_PARAMS_N 							= 0x8011C980; // size:0x68

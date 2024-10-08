@@ -1,3 +1,23 @@
-#include "common.h"
+/*======================================================================*/
+/*		NuSYS										*/
+/*		nuauprenmifuncset.c							*/
+/*												*/
+/*		Copyright (C) 1997, NINTENDO Co,Ltd.				*/
+/*												*/
+/*======================================================================*/
+#include <nusys.h>
+#include <nualstl.h>
 
-INCLUDE_ASM(const s32, "lib/nusys-1/nuauprenmifuncset", nuAuPreNMIFuncSet);
+/*----------------------------------------------------------------------*/
+/*	nuAuPreNMIFuncSet - Register PRE NMI processing callback function	*/
+/*	IN:	pointer of callback function						*/
+/*	RET:	None										*/
+/*----------------------------------------------------------------------*/
+void nuAuPreNMIFuncSet(NUAuPreNMIFunc func)
+{
+    OSIntMask	mask;
+    
+    mask = osSetIntMask(OS_IM_NONE);		/* Interruption not allowed */
+    nuAuPreNMIFunc = func;
+    osSetIntMask(mask);
+}
