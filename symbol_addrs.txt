@@ -311,6 +311,7 @@ n_alSynAllocFX 								= 0x800FB070;
 n_alMainBusPull 							= 0x800FB0C0;
 nuScCreateScheduler 						= 0x800FB140;
 nuScEventHandler 							= 0x800FB36C;
+nuScAddClient								= 0x800FB428;
 nuScExecuteAudio 							= 0x800FB584;
 nuScExecuteGraphics 						= 0x800FB6CC;
 nuGfxThreadStart 							= 0x800FB910;
@@ -689,7 +690,9 @@ font_kana_dot								= 0x8011C840; // size:0x10
 auSynConfig 								= 0x8011C850; // size:0x24
 auSeqpConfig								= 0x8011C874; // size:0x20
 anSndpConfig								= 0x8011C894; // size:0xC
+nuAuFrameCounter							= 0x8011C8A0; // size:0x4
 nuAuTaskStop								= 0x8011C8AC; // size:0x1
+nuAuPreNMI									= 0x8011C8AD; // size:0x1
 nuAuPreNMIFunc								= 0x8011C8B0; // size:0x4
 n_alGlobals 								= 0x8011C970; // size:0x4
 n_syn										= 0x8011C974; // size:0x4
@@ -910,8 +913,20 @@ levelInteractionsInfo 						= 0x80126560; // size:0x2
 titleScreenContext 							= 0x80126570; // size:0x10
 lookat_rodata_0008 							= 0x801276F4;
 lookat_rodata_0018 							= 0x80127714;
+
+
+// static OSThread		auMgrThread;
+// static u64			auMgrStack[NU_AU_STACK_SIZE];
 auCmdList_ptr 								= 0x80128730; // size:0x8
 auTask 										= 0x80128738; // size:0xB0
+auBuffer_ptr								= 0x801287E8; // size:0xC
+auDmaMesgQ									= 0x801287F8; // size:0x18
+auDmaMesgBuf								= 0x80128810; // size:0x100
+auDmaIOMesgBuf								= 0x80128910; // size:0x600
+auDmaState									= 0x80128F10; // size:0x9
+auDmaBuf									= 0x80128F20; // size:0x500
+auDmaNext									= 0x80129420; // size:0x4
+
 nuScStack 									= 0x8012A430;
 nuScAudioStack 								= 0x8012C430;
 nuScGraphicsStack 							= 0x8012E430;
@@ -1117,6 +1132,7 @@ loadGameScreenContext 						= 0x801D6238; // size:0x90
 nuContNum 									= 0x801D62C8;
 nuYieldBuf 									= 0x801D62D0;
 contPattern 								= 0x801D6ED0;
+auGlobal									= 0x801D6ED4; // size:0x4C
 mus_init_bank 								= 0x801D6F28;
 gYear 										= 0x801F6F30;
 gCamera 									= 0x801F6F38; // size:0xD0

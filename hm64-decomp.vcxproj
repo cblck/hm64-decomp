@@ -1459,7 +1459,7 @@
     </RemotePostBuildEvent>
     <CustomBuildStep />
     <ClCompile>
-      <PreprocessorDefinitions>_LANGUAGE_C;_MIPS_SZLONG=32;_MIPS_SZINT=32;SUPPORT_NAUDIO;NU_SYSTEM;F3DEX_GBI_2;_OLD_AUDIO_LIBRARY;N_MICRO;LANG_JAPANESE=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_LANGUAGE_C;_MIPS_SZLONG=32;_MIPS_SZINT=32;SUPPORT_NAUDIO;NU_SYSTEM;F3DEX_GBI_2;_OLD_AUDIO_LIBRARY;N_MICRO;LANG_JAPANESE=0;USE_EPI;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <CLanguageStandard>c99</CLanguageStandard>
       <CppLanguageStandard>gnu++98</CppLanguageStandard>
       <Optimization>MaxSpeed</Optimization>

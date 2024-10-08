@@ -91,7 +91,7 @@ INCLUDE_ASM(const s32, "lib/nusys-1/nusched", func_800FB360);
 INCLUDE_ASM(const s32, "lib/nusys-1/nusched", nuScEventHandler);
 
 // nuScAddClient
-INCLUDE_ASM(const s32, "lib/nusys-1/nusched", func_800FB428);
+INCLUDE_ASM(const s32, "lib/nusys-1/nusched", nuScAddClient);
 
 // nuScRemoveClient
 INCLUDE_ASM(const s32, "lib/nusys-1/nusched", func_800FB48C);
