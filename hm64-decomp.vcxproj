@@ -1356,10 +1356,13 @@
     <None Include="tools\splat\src\splat\segtypes\common\cpp.py" />
     <None Include="tools\splat\src\splat\segtypes\common\data.py" />
     <None Include="tools\splat\src\splat\segtypes\common\databin.py" />
+    <None Include="tools\splat\src\splat\segtypes\common\eh_frame.py" />
+    <None Include="tools\splat\src\splat\segtypes\common\gcc_except_table.py" />
     <None Include="tools\splat\src\splat\segtypes\common\group.py" />
     <None Include="tools\splat\src\splat\segtypes\common\hasm.py" />
     <None Include="tools\splat\src\splat\segtypes\common\header.py" />
     <None Include="tools\splat\src\splat\segtypes\common\lib.py" />
+    <None Include="tools\splat\src\splat\segtypes\common\linker_offset.py" />
     <None Include="tools\splat\src\splat\segtypes\common\pad.py" />
     <None Include="tools\splat\src\splat\segtypes\common\rdata.py" />
     <None Include="tools\splat\src\splat\segtypes\common\rodata.py" />
@@ -1386,13 +1389,11 @@
     <None Include="tools\splat\src\splat\segtypes\n64\ia8.py" />
     <None Include="tools\splat\src\splat\segtypes\n64\img.py" />
     <None Include="tools\splat\src\splat\segtypes\n64\ipl3.py" />
-    <None Include="tools\splat\src\splat\segtypes\n64\linker_offset.py" />
     <None Include="tools\splat\src\splat\segtypes\n64\mio0.py" />
     <None Include="tools\splat\src\splat\segtypes\n64\palette.py" />
     <None Include="tools\splat\src\splat\segtypes\n64\rgba16.py" />
     <None Include="tools\splat\src\splat\segtypes\n64\rgba32.py" />
     <None Include="tools\splat\src\splat\segtypes\n64\rsp.py" />
-    <None Include="tools\splat\src\splat\segtypes\n64\segment.py" />
     <None Include="tools\splat\src\splat\segtypes\n64\vtx.py" />
     <None Include="tools\splat\src\splat\segtypes\n64\yay0.py" />
     <None Include="tools\splat\src\splat\segtypes\n64\__init__.py" />
@@ -1402,11 +1403,9 @@
     <None Include="tools\splat\src\splat\segtypes\ps2\lit8.py" />
     <None Include="tools\splat\src\splat\segtypes\ps2\vtables.py" />
     <None Include="tools\splat\src\splat\segtypes\ps2\__init__.py" />
-    <None Include="tools\splat\src\splat\segtypes\psp\segment.py" />
     <None Include="tools\splat\src\splat\segtypes\psp\__init__.py" />
     <None Include="tools\splat\src\splat\segtypes\psx\asm.py" />
     <None Include="tools\splat\src\splat\segtypes\psx\header.py" />
-    <None Include="tools\splat\src\splat\segtypes\psx\segment.py" />
     <None Include="tools\splat\src\splat\segtypes\psx\__init__.py" />
     <None Include="tools\splat\src\splat\segtypes\segment.py" />
     <None Include="tools\splat\src\splat\segtypes\__init__.py" />
@@ -1425,8 +1424,11 @@
     <None Include="tools\splat\src\splat\util\relocs.py" />
     <None Include="tools\splat\src\splat\util\statistics.py" />
     <None Include="tools\splat\src\splat\util\symbols.py" />
+    <None Include="tools\splat\src\splat\util\utils.py" />
     <None Include="tools\splat\src\splat\util\vram_classes.py" />
     <None Include="tools\splat\src\splat\util\__init__.py" />
+    <None Include="tools\splat\src\splat\__init__.py" />
+    <None Include="tools\splat\src\splat\__main__.py" />
     <None Include="tools\splat\test.py" />
     <None Include="tools\sprite_addresses.csv" />
   </ItemGroup>

@@ -1379,9 +1379,6 @@
     <None Include="tools\splat\src\splat\segtypes\n64\ipl3.py">
       <Filter>tools\splat\src\splat\segtypes\n64</Filter>
     </None>
-    <None Include="tools\splat\src\splat\segtypes\n64\linker_offset.py">
-      <Filter>tools\splat\src\splat\segtypes\n64</Filter>
-    </None>
     <None Include="tools\splat\src\splat\segtypes\n64\mio0.py">
       <Filter>tools\splat\src\splat\segtypes\n64</Filter>
     </None>
@@ -1397,9 +1394,6 @@
     <None Include="tools\splat\src\splat\segtypes\n64\rsp.py">
       <Filter>tools\splat\src\splat\segtypes\n64</Filter>
     </None>
-    <None Include="tools\splat\src\splat\segtypes\n64\segment.py">
-      <Filter>tools\splat\src\splat\segtypes\n64</Filter>
-    </None>
     <None Include="tools\splat\src\splat\segtypes\n64\vtx.py">
       <Filter>tools\splat\src\splat\segtypes\n64</Filter>
     </None>
@@ -1410,9 +1404,6 @@
       <Filter>tools\splat\src\splat\segtypes\psx</Filter>
     </None>
     <None Include="tools\splat\src\splat\segtypes\psx\header.py">
-      <Filter>tools\splat\src\splat\segtypes\psx</Filter>
-    </None>
-    <None Include="tools\splat\src\splat\segtypes\psx\segment.py">
       <Filter>tools\splat\src\splat\segtypes\psx</Filter>
     </None>
     <None Include="tools\splat\src\splat\segtypes\psx\__init__.py">
@@ -1426,9 +1417,6 @@
     </None>
     <None Include="tools\splat\src\splat\util\__init__.py">
       <Filter>tools\splat\src\splat\util</Filter>
-    </None>
-    <None Include="tools\splat\src\splat\segtypes\psp\segment.py">
-      <Filter>tools\splat\src\splat\segtypes\psp</Filter>
     </None>
     <None Include="tools\splat\src\splat\segtypes\ps2\asm.py">
       <Filter>tools\splat\src\splat\segtypes\ps2</Filter>
@@ -1498,6 +1486,24 @@
     </None>
     <None Include="src\lib\os\libultra\libc\bzero.s">
       <Filter>src\lib\os\libultra\libc</Filter>
+    </None>
+    <None Include="tools\splat\src\splat\__init__.py">
+      <Filter>tools\splat\src\splat</Filter>
+    </None>
+    <None Include="tools\splat\src\splat\__main__.py">
+      <Filter>tools\splat\src\splat</Filter>
+    </None>
+    <None Include="tools\splat\src\splat\segtypes\common\eh_frame.py">
+      <Filter>tools\splat\src\splat\segtypes\common</Filter>
+    </None>
+    <None Include="tools\splat\src\splat\util\utils.py">
+      <Filter>tools\splat\src\splat\util</Filter>
+    </None>
+    <None Include="tools\splat\src\splat\segtypes\common\gcc_except_table.py">
+      <Filter>tools\splat\src\splat\segtypes\common</Filter>
+    </None>
+    <None Include="tools\splat\src\splat\segtypes\common\linker_offset.py">
+      <Filter>tools\splat\src\splat\segtypes\common</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
