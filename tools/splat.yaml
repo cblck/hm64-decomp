@@ -42,21 +42,14 @@ segments:
     - [ 0x0040, hasm, boot/ipl3_boot]
     - [ 0x0B70, bin, rspboot_font]
 
-  - name: entry
+  - name: main
     type: code
     start: 0x1000
     vram: 0x80025C00
-    subsegments:
-      - [ 0x1000, hasm, entry]
-
-  - name: main
-    type: code
-    start: 0x1050
-    vram: 0x80025C50
     bss_size: 0x113870
     subalign: 8
-    follows_vram: entry
     subsegments:
+      - [ 0x1000, hasm, entry]
       - [ 0x1050, c, lib/nusys-1/nuboot]
       - [ 0x1190, c, mainproc] 
       - [ 0x13F0, c, mainLoop]
