@@ -478,6 +478,7 @@ __osExceptionPreamble 						= 0x80105F80;
 __ptExceptionPreamble 						= 0x80105F90;
 __ptException 								= 0x80105FB0;
 __osException 								= 0x80106054;
+send_mesg									= 0x80106994;
 handle_CpU 									= 0x80106A50;
 __osEnqueueAndYield 						= 0x80106A84;
 __osEnqueueThread 							= 0x80106B8C;
