@@ -25,6 +25,7 @@ options:
   gfx_ucode: f3dex2
   # ld_symbol_header_path: include/ld_symbols.h
   # disassemble_all: true
+  # dump_symbols: True
   # extensions_path: tools/splat_ext
   use_legacy_include_asm: True
   
