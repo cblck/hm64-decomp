@@ -648,7 +648,7 @@ __divdi3 									= 0x80110650;
 __udivdi3 									= 0x801107C0;
 __umoddi3 									= 0x801107E0;
 rspbootTextStart 							= 0x80110820;
-n_aspMainTextStart 							= 0x801108F0;
+rspbootTextEnd								= 0x801108F0;
 vp 											= 0x80112900;
 nugfx_ucode 								= 0x80112910;
 FrameBuf 									= 0x80112918;
@@ -773,6 +773,7 @@ rmoncmds_data_0000 							= 0x8011E470;
 rmonmain_data_0000 							= 0x8011E550;
 ldigs 										= 0x8011E560;
 udigs 										= 0x8011E574;
+aspMainDataStart							= 0x8011E590;
 directionsToYValues 						= 0x8011EC90;
 D_8011ECC0 									= 0x8011ECC0; // size:0x8 
 D_8011ECC8 									= 0x8011ECC8; // size:0x8
@@ -912,12 +913,12 @@ mainThread  								= 0x80124370; // size:0x1B0
 IdleStack   								= 0x80124520; // size:0x2000
 levelInteractionsInfo 						= 0x80126560; // size:0x2
 titleScreenContext 							= 0x80126570; // size:0x10
+auMgrStack									= 0x80126730; // size:0x2000
 lookat_rodata_0008 							= 0x801276F4;
 lookat_rodata_0018 							= 0x80127714;
 
 
 // static OSThread		auMgrThread;
-// static u64			auMgrStack[NU_AU_STACK_SIZE];
 auCmdList_ptr 								= 0x80128730; // size:0x8
 auTask 										= 0x80128738; // size:0xB0
 auBuffer_ptr								= 0x801287E8; // size:0xC
