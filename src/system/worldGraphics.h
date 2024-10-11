@@ -50,6 +50,6 @@ extern Gfx* func_800293C0(Gfx* dl, WorldMatrices* arg1);
 extern Vec3f previousWorldRotationAngles;
 extern Vec3f currentWorldRotationAngles;
 
-WorldMatrices worldMatrices[2];
+extern WorldMatrices worldMatrices[2];
 
 #endif
