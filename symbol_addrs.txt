@@ -1211,6 +1211,7 @@ pendingGfxNum 								= 0x802226E8;
 nusched 									= 0x80222B40;
 gEntranceIndex 								= 0x802231C0; 
 __osEepromTimerQ 							= 0x802231C8;
+nuContPfs									= 0x802231E0; // size:0x1A0
 mapVertices 								= 0x80223380; // size:0x14000
 __font_buf									= 0x8023738C; // size:0x4
 dailyShippingBinValue 						= 0x80237388;
