@@ -1,8 +1,22 @@
-#include "common.h"
-#include "nusys.h"
+/*======================================================================*/
+/*		NuSYS										*/
+/*		nugfxswapwait.c								*/
+/*												*/
+/*		Copyright (C) 1997, NINTENDO Co,Ltd.				*/
+/*												*/
+/*----------------------------------------------------------------------*/    
+/* Ver 1.0	97/10/9		Created by Kensaku Ohki(SLANP)		*/
+/*======================================================================*/  
+#include <nusys.h>
 
-//INCLUDE_ASM(const s32, "lib/nusys-1/nugfxtaskallendwait", nuGfxTaskAllEndWait);
 
-void nuGfxTaskAllEndWait(void) {
-    while (nuGfxTaskSpool);
+/*----------------------------------------------------------------------*/
+/*	nuGfxSwapWait - Wait for all graphic tasks end 				*/
+/*	IN:	None 										*/
+/*	RET:	None 										*/
+/*----------------------------------------------------------------------*/
+void nuGfxTaskAllEndWait(void)
+{
+    /* Wait for all graphic tasks end  */
+    while(nuGfxTaskSpool);
 }
