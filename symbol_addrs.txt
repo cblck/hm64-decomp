@@ -1076,6 +1076,7 @@ gBabyAge 									= 0x80189134;
 D_80189135 									= 0x80189135; // size:0x9
 dailyEventBits 								= 0x80189140; // size:0x80
 popuriGrayPregnancyCounter 					= 0x801891C4;
+nuAuSeqPlayer								= 0x801891E0; // size:0x308
 __osRdb_IP6_Size 							= 0x80189818;
 gBabyName 									= 0x8018981E; // size:0x6
 toolUse 									= 0x80189828; // size:0x10
