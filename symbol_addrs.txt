@@ -315,6 +315,7 @@ n_alMainBusPull 							= 0x800FB0C0;
 nuScCreateScheduler 						= 0x800FB140;
 nuScEventHandler 							= 0x800FB36C;
 nuScAddClient								= 0x800FB428;
+nuScRemoveClient							= 0x800FB48C;
 nuScExecuteAudio 							= 0x800FB584;
 nuScExecuteGraphics 						= 0x800FB6CC;
 nuGfxThreadStart 							= 0x800FB910;
