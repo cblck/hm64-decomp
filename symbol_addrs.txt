@@ -1087,6 +1087,7 @@ __osRdb_Read_Data_Ct 						= 0x80188F64;
 mainLoopCallbacksTable 						= 0x80188F70;
 albumBits 									= 0x80189058;
 gPlayer 									= 0x80189060; // size:0x78
+nuGfxDisplay								= 0x80189130; // size:0x4
 gBabyAge 									= 0x80189134;
 D_80189135 									= 0x80189135; // size:0x9
 dailyEventBits 								= 0x80189140; // size:0x80
