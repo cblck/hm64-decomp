@@ -97,9 +97,6 @@
     <ClCompile Include="src\lib\nusys-1\nuauprenmiproc.c">
       <Filter>src\lib\nusys-1</Filter>
     </ClCompile>
-    <ClCompile Include="src\lib\nusys-1\nuauseqplayerseqset.c">
-      <Filter>src\lib\nusys-1</Filter>
-    </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nuaustlbankset.c">
       <Filter>src\lib\nusys-1</Filter>
     </ClCompile>
@@ -752,6 +749,9 @@
       <Filter>src\lib\os\libultra\libc</Filter>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nuaustlmgr.c">
+      <Filter>src\lib\nusys-1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\nusys-1\nuaustlseqplayersetdata.c">
       <Filter>src\lib\nusys-1</Filter>
     </ClCompile>
   </ItemGroup>

@@ -101,7 +101,7 @@ segments:
       - [ 0xCD870, c, lib/nusys-1/nuaustlinit] 
       - [ 0xCD900, c, lib/nusys-1/nuaustlbankset]
       - [ 0xCD9A0, c, lib/nusys-1/nuaustlplayerinit]
-      - [ 0xCDA60, c, lib/nusys-1/nuauseqplayerseqset] 
+      - [ 0xCDA60, c, lib/nusys-1/nuaustlseqplayersetdata] 
       - [ 0xCDAE0, c, lib/nusys-1/nuaustlseqplayerplay]
       - [ 0xCDB40, c, lib/nusys-1/nuaustlsndplayerplay]
       - [ 0xCDB80, c, lib/nusys-1/nuauprenmifuncset]
