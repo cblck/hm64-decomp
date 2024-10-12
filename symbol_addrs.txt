@@ -355,6 +355,7 @@ nuContPakFileNum 							= 0x800FCF30;
 nuContRmbMgrInit							= 0x800FCFD0;
 nuPiInit 									= 0x800FD5B0;
 nuPiReadRom 								= 0x800FD5E0;
+nuPiReadRom2								= 0x800FD690;
 nuSiMgrInit									= 0x800FD740;
 nuSiCallBackAdd								= 0x800FD880;
 nuSiCallBackRemove							= 0x800FD900;
