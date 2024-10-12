@@ -1,7 +1,6 @@
 #include "common.h"
 
-// nuContRmbMgrInit
-INCLUDE_ASM(const s32, "lib/nusys-1/nucontrmbmgr", func_800FCFD0);
+INCLUDE_ASM(const s32, "lib/nusys-1/nucontrmbmgr", nuContRmbMgrInit);
 
 // nuContRmbMgrRemove
 INCLUDE_ASM(const s32, "lib/nusys-1/nucontrmbmgr", func_800FD044);

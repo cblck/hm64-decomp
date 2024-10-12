@@ -1,3 +1,36 @@
-#include "common.h"
+/*======================================================================*/
+/*		NuSYS										*/
+/*		nucontinit.c								*/
+/*												*/
+/*		Copyright (C) 1997, NINTENDO Co,Ltd.				*/
+/*												*/
+/*----------------------------------------------------------------------*/    
+/* Ver 1.0	97/10/9		Created by Kensaku Ohki(SLANP)		*/
+/*======================================================================*/
+/* $Id: nucontinit.c,v 1.2 1997/12/01 13:20:27 ohki Exp ohki $		*/
+/*======================================================================*/
+#include <nusys.h>
 
-INCLUDE_ASM(const s32, "lib/nusys-1/nucontinit", nuContInit);
+/*----------------------------------------------------------------------*/
+/*	nuContInit - Initialize the controller manager 				*/
+/*	IN:	None 										*/
+/*	RET:	The bit pattern of the connected controller 			*/
+/*----------------------------------------------------------------------*/
+u8 nuContInit(void)
+{
+    u8 pattern;
+
+    /* Initialize and start SI manager */
+    pattern = nuSiMgrInit();
+
+    /* Initialize and register Controller manager */
+    nuContMgrInit();
+
+    /* Initialize and register the controller pack manager */
+    nuContPakMgrInit();
+    
+    /* Initialize and register the oscillating pack manager */
+    nuContRmbMgrInit();
+
+    return pattern;
+}
