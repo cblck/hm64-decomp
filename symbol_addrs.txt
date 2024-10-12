@@ -1024,6 +1024,7 @@ specialDialogueBits 						= 0x8016F8B0; // size:0x40
 gSickDays 									= 0x8016F8F4;
 mariaHarrisPregnancyCounter 				= 0x8016FAD8;
 __osProfileOverflowBin 						= 0x8016FADC;
+nuContWaitMesgQ								= 0x8016FAE0; // size:0x18
 recipesBits 								= 0x8016FAFC; // size:0x4
 drawnFrameCount 							= 0x8016FB04;
 gChickenEggs 								= 0x8016FB08; // size:0xC4
