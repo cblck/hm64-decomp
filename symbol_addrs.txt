@@ -720,6 +720,7 @@ CHORUS_PARAMS_N 							= 0x8011CA98; // size:0x28
 FLANGE_PARAMS_N 							= 0x8011CAC0; // size:0x28
 NULL_PARAMS_N 								= 0x8011CAE8; // size:0x28
 n_eqpower 									= 0x8011CB10; // size:0x100
+nuGfxFunc									= 0x8011CC30; // size:0x4
 nuContDataReadStart_mesg					= 0x8011CC60; // size:0x2
 nuContPakCompanyCode						= 0x8011CC70; // size:0x2
 nuContPakGameCode							= 0x8011CC74; // size:0x4
