@@ -349,6 +349,7 @@ nuContPakCodeSet 							= 0x800FCBF0;
 nuContPakFileReadWrite 						= 0x800FCC40;
 nuContPakFileDelete							= 0x800FCD00;
 nuContPakFileDeleteJis 						= 0x800FCDA0;
+nuContPakFileState							= 0x800FCEA0;
 nuContPakFileNum 							= 0x800FCF30;
 nuContRmbMgrInit							= 0x800FCFD0;
 nuPiInit 									= 0x800FD5B0;
