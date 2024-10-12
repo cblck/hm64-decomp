@@ -8,8 +8,7 @@ INCLUDE_ASM(const s32, "lib/libmus/libsrc/player_commands", MusInitialize);
 
 INCLUDE_ASM(const s32, "lib/libmus/libsrc/player_commands", MusSetMasterVolume);
 
-// MusStartSong
-INCLUDE_ASM(const s32, "lib/libmus/libsrc/player_commands", func_800F4BC4);
+INCLUDE_ASM(const s32, "lib/libmus/libsrc/player_commands", MusStartSong);
 
 INCLUDE_ASM(const s32, "lib/libmus/libsrc/player_commands", MusStartEffect);
 
