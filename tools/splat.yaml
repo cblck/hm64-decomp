@@ -155,7 +155,7 @@ segments:
       - [ 0xD7AC0, c, lib/nusys-1/nucontpakmgr]
       - [ 0xD7D10, c, lib/nusys-1/nucontpakopen]
       - [ 0xD7DC0, c, lib/nusys-1/nucontpakgetfree]
-      - [ 0xD7E50, c, lib/nusys-1/nucontdataread]
+      - [ 0xD7E50, c, lib/nusys-1/nuContPakRepairId]
       - [ 0xD7ED0, c, lib/nusys-1/nucontpakfileopenjis]
       - [ 0xD7FF0, c, lib/nusys-1/nucontpakcodeset]
       - [ 0xD8040, c, lib/nusys-1/nucontpakfilereadwrite]

@@ -298,7 +298,7 @@ bool func_8004D788(u8 contIndex) {
         result = FALSE;
         
         if (controllers[contIndex].pak.error == 10)  {
-            nuContDataRead(&controllers[contIndex].pak);
+            nuContPakRepairId(&controllers[contIndex].pak);
             if (controllers[contIndex].pak.error == error) {
                 temp = TRUE;
             }

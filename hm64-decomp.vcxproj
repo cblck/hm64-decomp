@@ -138,7 +138,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>
-    <ClCompile Include="src\lib\nusys-1\nucontdataread.c">
+    <ClCompile Include="src\lib\nusys-1\nucontpakrepairid.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
     </ClCompile>

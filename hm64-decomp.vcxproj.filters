@@ -124,7 +124,7 @@
     <ClCompile Include="src\lib\nusys-1\nucontdatalock.c">
       <Filter>src\lib\nusys-1</Filter>
     </ClCompile>
-    <ClCompile Include="src\lib\nusys-1\nucontdataread.c">
+    <ClCompile Include="src\lib\nusys-1\nucontpakrepairid.c">
       <Filter>src\lib\nusys-1</Filter>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nucontdatareadstart.c">
