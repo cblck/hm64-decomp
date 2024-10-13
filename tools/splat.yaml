@@ -369,7 +369,7 @@ segments:
       - [ 0xF8040, data, lib/nusys-1/nugfxtaskmgr]
       - [ 0xF8050, data, lib/nusys-1/nucontmgr]
       - [ 0xF8060, .data, lib/nusys-1/nucontdatareadstart]
-      - [ 0xF8070, data, lib/nusys-1/nucontpakmgr]
+      - [ 0xF8070, .data, lib/nusys-1/nucontpakmgr]
       - [ 0xF8080, .data, lib/nusys-1/nucontrmbmgr]
       - [ 0xF8090, .data, lib/nusys-1/nucontpakjiston64]
       - [ 0xF80D0, .data, lib/os/libultra/gu/rotaterpy]
