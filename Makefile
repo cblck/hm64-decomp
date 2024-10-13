@@ -108,7 +108,7 @@ $(BUILD_DIR)/src/%.c.o: src/%.c
 
 $(BUILD_DIR)/src/lib/nusys-1/%.c.o : src/lib/nusys-1/%.c build
 	$(dir_guard)
-	$(V)export COMPILER_PATH=$(KMC_PATH) && $(CC) -B $(KMC_PATH) $(NU_OPTFLAGS) $(CFLAGS) $(CPPFLAGS) -c -o $@ $< 
+	$(V)export COMPILER_PATH=$(KMC_PATH) && $(CC) -B $(KMC_PATH) $(NU_OPTFLAGS) $(CFLAGS) $(ULTRALIBVER) $(CPPFLAGS) -c -o $@ $< 
 	
 $(BUILD_DIR)/src/lib/os/libultra/%.c.o : src/lib/os/libultra/%.c build
 	$(dir_guard)
