@@ -462,7 +462,7 @@ segments:
       - [ 0xFF560, .rodata, lib/os/libultra/rmon/rmonbrk]
       - { start: 0xFF5C0, type: bss, vram: 0x801241C0, name: bss1 }
       - { start: 0xFF5C0, type: .bss, vram: 0x801337F0, name: lib/nusys-1/nupiinit }
-      - { start: 0xFF5C0, type: bss, vram: 0x801338D0, name: bss2 }
+      - { start: 0xFF5C0, type: .bss, vram: 0x801338D0, name: lib/nusys-1/nusimgr }
       
       - { start: 0xFF5C0, type: .bss, vram: 0x80135AA0, name: lib/os/libultra/io/sptask }
       
