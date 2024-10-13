@@ -952,17 +952,7 @@ nuScAudioStack 								= 0x8012C430;
 nuScGraphicsStack 							= 0x8012E430;
 PiMesgQ 									= 0x801337F0; // size:0x18
 PiMesgBuf 									= 0x80133808; // size:0xC8
-sptask_bss_0000 							= 0x80135AA0;
-sptask_bss_0004 							= 0x80135AA4;
-sptask_bss_0010 							= 0x80135AB0;
-sptask_bss_0018 							= 0x80135AB8;
-sptask_bss_001C 							= 0x80135ABC;
-sptask_bss_0020 							= 0x80135AC0;
-sptask_bss_0028 							= 0x80135AC8;
-sptask_bss_002C 							= 0x80135ACC;
-sptask_bss_0030 							= 0x80135AD0;
-sptask_bss_0038 							= 0x80135AD8;
-sptask_bss_003C 							= 0x80135ADC;
+tmp_task									= 0x80135AA0; // size:0x40
 motor_bss_0000 								= 0x80135AE0;
 motor_bss_003C 								= 0x80135B1C;
 pimgr_bss_0000 								= 0x80135BE0;
@@ -1265,3 +1255,6 @@ D_80237420 									= 0x80237420; // size:0x20
 __osSiAccessQueue 							= 0x80237440;
 worldMatrices 								= 0x80237460; // size:0x5A0
 nuContDataMutexQ 							= 0x80237A08;
+
+// Ignored Symbols
+D_A0000000									= 0xA0000000; // ignore:true
