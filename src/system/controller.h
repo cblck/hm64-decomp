@@ -82,7 +82,7 @@ extern u32 func_8004DAF4(u8 contIndex, u8 *noteName, u8 *extName);
 
 
 extern NUContDataPatch contData[NU_CONT_MAXCONTROLLERS];
-extern OSContStatus contStatus[NU_CONT_MAXCONTROLLERS];
+extern OSContStatus nuContStatus[NU_CONT_MAXCONTROLLERS];
 
 extern Controller controllers[NU_CONT_MAXCONTROLLERS];
 extern Controller gControllers[NU_CONT_MAXCONTROLLERS];

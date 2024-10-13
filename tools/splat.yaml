@@ -367,7 +367,7 @@ segments:
       - [ 0xF8020, data, lib/nusys-1/nusched]
       - [ 0xF8030, .data, lib/nusys-1/nugfxthread]
       - [ 0xF8040, data, lib/nusys-1/nugfxtaskmgr]
-      - [ 0xF8050, data, lib/nusys-1/nucontmgr]
+      - [ 0xF8050, .data, lib/nusys-1/nucontmgr]
       - [ 0xF8060, .data, lib/nusys-1/nucontdatareadstart]
       - [ 0xF8070, .data, lib/nusys-1/nucontpakmgr]
       - [ 0xF8080, .data, lib/nusys-1/nucontrmbmgr]
@@ -463,6 +463,7 @@ segments:
       - { start: 0xFF5C0, type: bss, vram: 0x801241C0, name: bss1 }
       - { start: 0xFF5C0, type: .bss, vram: 0x8012F430, name: lib/nusys-1/nugfxthread }
       - { start: 0xFF5C0, type: bss, vram: 0x80131600, name: bss2 }
+      - { start: 0xFF5C0, type: .bss, vram: 0x801337E0, name: lib/nusys-1/nucontmgr }
       - { start: 0xFF5C0, type: .bss, vram: 0x801337F0, name: lib/nusys-1/nupiinit }
       - { start: 0xFF5C0, type: .bss, vram: 0x801338D0, name: lib/nusys-1/nusimgr }
       - { start: 0xFF5C0, type: .bss, vram: 0x80135AA0, name: lib/os/libultra/io/sptask }

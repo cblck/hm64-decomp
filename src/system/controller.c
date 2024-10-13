@@ -75,7 +75,7 @@ void func_8004CF68(void) {
     
     for (i = 0; i < NU_CONT_MAXCONTROLLERS; i++) {
         
-        if (!contStatus[i].errno) {
+        if (!nuContStatus[i].errno) {
             
             if ((frameCount % D_802226E2) == 0) {
                 
