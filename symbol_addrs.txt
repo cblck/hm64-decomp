@@ -319,6 +319,7 @@ nuScRemoveClient							= 0x800FB48C;
 nuScExecuteAudio 							= 0x800FB584;
 nuScExecuteGraphics 						= 0x800FB6CC;
 nuGfxThreadStart 							= 0x800FB910;
+nuGfxThread									= 0x800FB968;
 nuGfxTaskMgrInit 							= 0x800FBB6C;
 nuGfxTaskStart 								= 0x800FBD24;
 nuGfxFuncSet 								= 0x800FBE50;
@@ -951,6 +952,11 @@ titleScreenContext 							= 0x80126570; // size:0x10
 nuScStack 									= 0x8012A430;
 nuScAudioStack 								= 0x8012C430;
 nuScGraphicsStack 							= 0x8012E430;
+nuGfxMesgBuf								= 0x8012F430; // size:0x20
+GfxThread									= 0x8012F450; // size:0x1B0
+GfxStack									= 0x8012F600; // ignore:true size:0x2000
+//D_80131600								= 0x80131600; // ignore:true 
+
 PiMesgQ 									= 0x801337F0; // size:0x18
 PiMesgBuf 									= 0x80133808; // size:0xC8
 
@@ -1115,6 +1121,7 @@ __osMaxControllers 							= 0x8018A058;
 annPregnancyCounter 						= 0x8018A059;
 spriteCounter 								= 0x8018A05A;
 babyBirthdaySeason 							= 0x8018A060;
+nuGfxMesgQ									= 0x8018A068; // size:0x18
 __osCurrentTime 							= 0x8018A088;
 D_8018A090 									= 0x8018A090; // size:0x694
 gControllers 								= 0x8018A738; // size:0x110
