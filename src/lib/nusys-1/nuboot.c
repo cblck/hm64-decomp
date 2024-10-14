@@ -1,42 +1,98 @@
-#include "nusys.h"
+/*======================================================================*/
+/*		NuSYS										*/
+/*		nuboot.c									*/
+/*												*/
+/*		Copyright (C) 1997, NINTENDO Co,Ltd.				*/
+/*												*/
+/*----------------------------------------------------------------------*/    
+/* Modified version 1.0.                                            	*/
+/*======================================================================*/
+#include <nusys.h>
 
-extern OSThread idleThread;
-extern OSThread mainThread;
-
-extern u64	nuMainStack[NU_MAIN_STACK_SIZE / sizeof(u64)];
-extern u64	IdleStack[NU_IDLE_STACK_SIZE / sizeof(u64)];
-
-void (*nuIdleFunc)(void);
-
-void idle(void* arg);
-
-extern void mainproc(void* arg);
+static OSThread	IdleThread;		/* Idle thread */
+static OSThread	MainThread;		/* main thread */
 
 
-//INCLUDE_ASM(const s32, "ramMain", nuBoot);
 
-static void nuBoot(void) {
-	osInitialize();
-	osCreateThread(&idleThread, NU_IDLE_THREAD_ID, &idle, (void*)NULL, (IdleStack + NU_IDLE_STACK_SIZE / 8), NU_MAIN_THREAD_PRI);
-	osStartThread(&idleThread);
+/*****************************************************************************/
+/* The stack for the boot becomes reuseable when the first thread activates. */
+/* Thus, it has been reused for the main thread. 				     */
+/*****************************************************************************/
+extern /*TODO: Fix extern.*/ u64		nuMainStack[NU_MAIN_STACK_SIZE/sizeof(u64)];/* boot/main thread stack */
+static u64	IdleStack[NU_IDLE_STACK_SIZE/sizeof(u64)];/* Idle thread stack */
+
+
+void (*nuIdleFunc)(void);		/* Idle loop callback function */
+					   
+/*--------------------------------------*/
+/* Static Function			    */
+/*--------------------------------------*/
+static void idle(void *arg);		/* idle function */
+
+/*--------------------------------------*/
+/* Extern Function			    */
+/*--------------------------------------*/
+extern void mainproc(void *arg);		/* game main function */
+
+
+/*----------------------------------------------------------------------*/
+/*	Initialize and activate NuSYS      						*/
+/*	IN:	The pointer for the main function 					*/
+/*	RET:	None 										*/
+/*----------------------------------------------------------------------*/
+void nuBoot(void)
+{
+
+    osInitialize();	/* Initialize N64OS   */
+    
+    /* Create and execute the Idle thread  */
+    osCreateThread(&IdleThread,NU_IDLE_THREAD_ID, idle, (void*)NULL,
+		   (IdleStack + NU_IDLE_STACK_SIZE/sizeof(u64)), NU_MAIN_THREAD_PRI);
+    osStartThread(&IdleThread);
+
 }
 
-//INCLUDE_ASM(const s32, "ramMain", idle);
 
-static void idle(void* arg) {
+/*----------------------------------------------------------------------*/
+/*	IDLE											*/
+/*	IN:	None 										*/
+/*	RET:	None 										*/
+/*----------------------------------------------------------------------*/
+static void idle(void *arg)
+{
+    /* Initialize the CALLBACK function  */
+    nuIdleFunc = NULL;
 
-	nuIdleFunc = NULL;
+    nuPiInit();
+    
+    /* Activate the scheduler 						*/
+    /* Setting of VI is NTSC/ANTIALIASING/NON-INTERLACE/16bitPixel*/
+    /* Possible to change by osViSetMode. 				*/
+    nuScCreateScheduler(OS_VI_NTSC_LAN1, 1);
 
-	nuPiInit();
-	nuScCreateScheduler(OS_VI_NTSC_LAN1, 1);
-	osViSetSpecialFeatures(OS_VI_GAMMA_OFF | OS_VI_GAMMA_DITHER_OFF | OS_VI_DIVOT_ON | OS_VI_DITHER_FILTER_ON);
-	osCreateThread(&mainThread, NU_MAIN_THREAD_ID, &mainproc, (void*)NULL, (nuMainStack + NU_MAIN_STACK_SIZE / sizeof(u64)), NU_MAIN_THREAD_PRI);
-	osStartThread(&mainThread);
-	osSetThreadPri(&idleThread, 0);
+    
+    /* Setting of the VI interface 					*/
+    /*    Specify OS_VI_DITHER_FILTER_ON and 			*/
+    /*    use the DITHER filter (Default is OFF).		*/
+    osViSetSpecialFeatures(OS_VI_DITHER_FILTER_ON
+			   | OS_VI_GAMMA_OFF
+			   | OS_VI_GAMMA_DITHER_OFF
+			   | OS_VI_DIVOT_ON);
 
-	while (1) {
-		if (nuIdleFunc != NULL) {
-			(*nuIdleFunc)();
-		}
+    /* Create th main thread for the application.  */
+    osCreateThread(&MainThread, NU_MAIN_THREAD_ID, mainproc, (void*)NULL,
+		   (nuMainStack + NU_MAIN_STACK_SIZE/sizeof(u64)), NU_MAIN_THREAD_PRI);
+    osStartThread(&MainThread);
+
+    /* Lower priority of the IDLE thread and give the process to the main thread  */
+    osSetThreadPri(&IdleThread, NU_IDLE_THREAD_PRI);
+
+    /* Idle loop */
+    while(1){
+	if(nuIdleFunc != NULL){
+	    /* Execute the idle function  */
+	    (*nuIdleFunc)();
 	}
+    }
 }
+
