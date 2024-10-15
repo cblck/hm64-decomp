@@ -22,7 +22,7 @@ void func_800E10E8();
 void loadDogTitleSprite(void);
 
 // bss
-TitleContext titleScreenContext;
+static TitleContext titleScreenContext;
 
 extern u32 _dogTitleTextureSegmentRomStart;
 extern u32 _dogTitleTextureSegmentRomEnd;
