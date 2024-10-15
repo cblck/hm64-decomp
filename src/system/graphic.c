@@ -22,8 +22,8 @@ void setCameraOrthographicValues(Camera*, f32, f32, f32, f32, f32, f32);
 void setCameraPerspectiveValues(Camera*, f32, f32, f32, f32);    
 
 // bss
-LookAt gSPLookAtBufferA;
-LookAt gSPLookAtBufferB;
+static LookAt gSPLookAtBufferA;
+static LookAt gSPLookAtBufferB;
 
 // non-contigous bss
 Camera gCamera;

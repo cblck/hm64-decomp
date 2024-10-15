@@ -461,16 +461,17 @@ segments:
       - [ 0xFF4F0, .rodata, lib/os/libultra/libc/xldtob]
       - [ 0xFF560, .rodata, lib/os/libultra/rmon/rmonbrk]
       - { start: 0xFF5C0, type: .bss, vram: 0x801241C0, name: lib/nusys-1/nuboot }
-      - { start: 0xFF5C0, type: bss, vram: 0x80126520, name: bss1 }
+      - { start: 0xFF5C0, type: .bss, vram: 0x80126520, name: system/graphic }
+      - { start: 0xFF5C0, type: bss, vram: 0x80126560, name: bss1 }
       - { start: 0xFF5C0, type: .bss, vram: 0x8012F430, name: lib/nusys-1/nugfxthread }
       - { start: 0xFF5C0, type: .bss, vram: 0x80131600, name: lib/nusys-1/nugfxtaskmgr }
       - { start: 0xFF5C0, type: .bss, vram: 0x801337E0, name: lib/nusys-1/nucontmgr }
       - { start: 0xFF5C0, type: .bss, vram: 0x801337F0, name: lib/nusys-1/nupiinit }
       - { start: 0xFF5C0, type: .bss, vram: 0x801338D0, name: lib/nusys-1/nusimgr }
       - { start: 0xFF5C0, type: .bss, vram: 0x80135AA0, name: lib/os/libultra/io/sptask }
-      - { start: 0xFF5C0, type: bss, vram: 0x80135AE0, name: bss3 }
+      - { start: 0xFF5C0, type: bss, vram: 0x80135AE0, name: bss2 }
       - { start: 0xFF5C0, type: .bss, vram: 0x8013CDF0, name: lib/libkmc/rand }
-      - { start: 0xFF5C0, type: bss, vram: 0x8013CE00, name: bss4 }
+      - { start: 0xFF5C0, type: bss, vram: 0x8013CE00, name: bss3 }
 
   - name: sramBuffer
     type: code
