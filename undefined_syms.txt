@@ -115,7 +115,6 @@ nuScCreateScheduler = 0x800FB140;
 nuScStack = 0x8012A430;
 nuScAudioStack = 0x8012C430;
 nuScGraphicsStack = 0x8012E430;
-nuBoot = 0x80025C50;
 
 nusched = 0x80222B40;
 
