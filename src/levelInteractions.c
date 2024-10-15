@@ -26,9 +26,9 @@
 #include "weather.h"
 
 // bss
-// struct
-extern LevelInteractionsInfo levelInteractionsInfo;
+static LevelInteractionsInfo levelInteractionsInfo;
 
+// non-contiguous bss
 u8 D_80189826; 
 u8 D_801C3E2C;
 
