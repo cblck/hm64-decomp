@@ -962,11 +962,12 @@ gSPLookAtBufferA							= 0x80126520; // size:0x20
 gSPLookAtBufferB							= 0x80126540; // size:0x20
 levelInteractionsInfo 						= 0x80126560; // size:0x2
 titleScreenContext 							= 0x80126570; // size:0x10
+												    
+nuScStack 									= 0x80129430; // size:0x2000
+nuScAudioStack 								= 0x8012B430; // size:0x2000
+nuScGraphicsStack 							= 0x8012D430; // size:0x2000
 
-nuScStack 									= 0x8012A430;
-nuScAudioStack 								= 0x8012C430;
-nuScGraphicsStack 							= 0x8012E430;
-nuGfxMesgBuf								= 0x8012F430; // size:0x20
+nuGfxMesgBuf								= 0x8012F430; // ignore:true size:0x20
 GfxThread									= 0x8012F450; // size:0x1B0
 GfxStack									= 0x8012F600; // size:0x2000
 D_80130014									= 0x80130014; // ignore:true size:0x4
@@ -1270,7 +1271,7 @@ bitmapVertices 								= 0x8021E6E0; // size:0x400
 playerIdleCounter 							= 0x802226E0;
 pendingGfxNum 								= 0x802226E8;
 nuDramStack									= 0x80222740; // size:0x400
-nusched 									= 0x80222B40;
+nusched 									= 0x80222B40; // size:0x680
 gEntranceIndex 								= 0x802231C0; 
 __osEepromTimerQ 							= 0x802231C8;
 nuContPfs									= 0x802231E0; // size:0x1A0
