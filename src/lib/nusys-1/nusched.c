@@ -1,4 +1,3 @@
-#include "common.h"
 /*======================================================================*/
 /*		NuSYS										*/
 /*		nusched.c									*/
@@ -80,77 +79,417 @@ static NUDebTaskPerf*	debTaskPerfPtr;
 /* 	numFields	The retrace cycle (1=60Frame/sec,2=30Frame/sec...)	*/
 /* RET:	None 										*/
 /*----------------------------------------------------------------------*/
-INCLUDE_ASM(const s32, "lib/nusys-1/nusched", nuScCreateScheduler);
+void nuScCreateScheduler(u8 videoMode, u8 numFields)
+{
 
-// void nuScCreateScheduler(u8 videoMode, u8 numFields) {
-// 
-//   nusched.curGraphicsTask = NULL;
-//   nusched.curAudioTask    = NULL;
-//   nusched.graphicsTaskSuspended = NULL;
-//   nusched.clientList      = NULL;
-//   nusched.retraceMsg      = NU_SC_RETRACE_MSG;
-//   nusched.prenmiMsg       = NU_SC_PRENMI_MSG;
-//   nusched.retraceCount	  = numFields;
-//     
-//   osCreateMesgQueue(&nusched.retraceMQ, nusched.retraceMsgBuf,
-// 		    NU_SC_MAX_MESGS);
-//   osCreateMesgQueue(&nusched.rspMQ, nusched.rspMsgBuf, NU_SC_MAX_MESGS);
-//   osCreateMesgQueue(&nusched.rdpMQ, nusched.rdpMsgBuf, NU_SC_MAX_MESGS);
-//   osCreateMesgQueue(&nusched.graphicsRequestMQ, nusched.graphicsRequestBuf,
-// 		    NU_SC_MAX_MESGS);
-// 
-//   osCreateMesgQueue(&nusched.audioRequestMQ, nusched.audioRequestBuf,
-// 		    NU_SC_MAX_MESGS);
-//   osCreateMesgQueue(&nusched.waitMQ, nusched.waitMsgBuf, NU_SC_MAX_MESGS);
-// 
-//   osCreateViManager(OS_PRIORITY_VIMGR);
-//   osViSetMode(&osViModeTable[videoMode]);
-//   osViBlack(TRUE);
-// 
-//   osViSetEvent(&nusched.retraceMQ, (OSMesg)VIDEO_MSG, numFields);    
-//   osSetEventMesg(OS_EVENT_SP    , &nusched.rspMQ,     (OSMesg)RSP_DONE_MSG);
-//   osSetEventMesg(OS_EVENT_DP    , &nusched.rdpMQ,     (OSMesg)RDP_DONE_MSG);
-//   osSetEventMesg(OS_EVENT_PRENMI, &nusched.retraceMQ, (OSMesg)PRE_NMI_MSG);   
-// 
-//   osCreateThread(&nusched.schedulerThread, 19,
-// 		 (void(*)(void*))nuScEventHandler,
-// 		 (void *)&nusched, &nuScStack+NU_SC_STACK_SIZE/sizeof(u64),
-// 		 NU_SC_HANDLER_PRI);
-//   osStartThread(&nusched.schedulerThread);
-// 
-//   osCreateThread(&nusched.audioThread, 18,
-// 		 (void(*)(void *))nuScExecuteAudio,
-// 		 (void *)&nusched, &nuScAudioStack+NU_SC_STACK_SIZE/sizeof(u64),
-// 		 NU_SC_AUDIO_PRI);
-//   osStartThread(&nusched.audioThread);
-// 
-//   osCreateThread(&nusched.graphicsThread, 17,
-// 		 (void(*)(void*))nuScExecuteGraphics,
-// 		 (void *)&nusched, &nuScGraphicsStack+NU_SC_STACK_SIZE/sizeof(u64),
-// 		 NU_SC_GRAPHICS_PRI);
-//   osStartThread(&nusched.graphicsThread);
-// 
-// }
+  /* Initialize the variable */
+  nusched.curGraphicsTask = NULL;
+  nusched.curAudioTask    = NULL;
+  nusched.graphicsTaskSuspended = NULL;
+  nusched.clientList      = NULL;
+  nusched.retraceMsg      = NU_SC_RETRACE_MSG;
+  nusched.prenmiMsg       = NU_SC_PRENMI_MSG;
+  nusched.retraceCount	  = numFields;
 
-// nuScGetAudioMQ
-INCLUDE_ASM(const s32, "lib/nusys-1/nusched", func_800FB354);
+#ifdef	NU_DEBUG
+  debTaskPerfPtr = &nuDebTaskPerf[0];
+  debTaskPerfPtr->retraceTime = 0;
+  debTaskPerfPtr->auTaskCnt = 0;
+  debTaskPerfPtr->gfxTaskCnt = 0;
+  nuDebTaskPerfPtr = debTaskPerfPtr;
+  osDpSetStatus(DPC_CLR_TMEM_CTR | DPC_CLR_PIPE_CTR | DPC_CLR_CMD_CTR | DPC_CLR_CLOCK_CTR);
+#endif /* NU_DEBUG */
 
-// nuScGetGfxMQ
-INCLUDE_ASM(const s32, "lib/nusys-1/nusched", func_800FB360);
+  /* Create the message queue */
+  osCreateMesgQueue(&nusched.retraceMQ, nusched.retraceMsgBuf,
+		    NU_SC_MAX_MESGS);
+  osCreateMesgQueue(&nusched.rspMQ, nusched.rspMsgBuf, NU_SC_MAX_MESGS);
+  osCreateMesgQueue(&nusched.rdpMQ, nusched.rdpMsgBuf, NU_SC_MAX_MESGS);
+  osCreateMesgQueue(&nusched.graphicsRequestMQ, nusched.graphicsRequestBuf,
+		    NU_SC_MAX_MESGS);
 
-INCLUDE_ASM(const s32, "lib/nusys-1/nusched", nuScEventHandler);
+  osCreateMesgQueue(&nusched.audioRequestMQ, nusched.audioRequestBuf,
+		    NU_SC_MAX_MESGS);
+  osCreateMesgQueue(&nusched.waitMQ, nusched.waitMsgBuf, NU_SC_MAX_MESGS);
 
-// nuScAddClient
-INCLUDE_ASM(const s32, "lib/nusys-1/nusched", nuScAddClient);
+  /* Set the video mode */
+  osCreateViManager(OS_PRIORITY_VIMGR);
+  osViSetMode(&osViModeTable[videoMode]);
+  osViBlack(TRUE);
 
-INCLUDE_ASM(const s32, "lib/nusys-1/nusched", nuScRemoveClient);
+  /* Register the event handler */
+  osViSetEvent(&nusched.retraceMQ, (OSMesg)VIDEO_MSG, numFields);    
+  osSetEventMesg(OS_EVENT_SP    , &nusched.rspMQ,     (OSMesg)RSP_DONE_MSG);
+  osSetEventMesg(OS_EVENT_DP    , &nusched.rdpMQ,     (OSMesg)RDP_DONE_MSG);
+  osSetEventMesg(OS_EVENT_PRENMI, &nusched.retraceMQ, (OSMesg)PRE_NMI_MSG);   
 
-// nuScEventBroadcast
-INCLUDE_ASM(const s32, "lib/nusys-1/nusched", func_800FB524);
 
-INCLUDE_ASM(const s32, "lib/nusys-1/nusched", nuScExecuteAudio);
+  /* Activate the scheduler thread */
+  osCreateThread(&nusched.schedulerThread, 19,
+		 (void(*)(void*))nuScEventHandler,
+		 (void *)&nusched, nuScStack+NU_SC_STACK_SIZE/sizeof(u64),
+		 NU_SC_HANDLER_PRI);
+  osStartThread(&nusched.schedulerThread);
 
-INCLUDE_ASM(const s32, "lib/nusys-1/nusched", nuScExecuteGraphics);
+  osCreateThread(&nusched.audioThread, 18,
+		 (void(*)(void *))nuScExecuteAudio,
+		 (void *)&nusched, nuScAudioStack+NU_SC_STACK_SIZE/sizeof(u64),
+		 NU_SC_AUDIO_PRI);
+  osStartThread(&nusched.audioThread);
 
-// nuScWaitTaskReady
-INCLUDE_ASM(const s32, "lib/nusys-1/nusched", func_800FB800);
+  osCreateThread(&nusched.graphicsThread, 17,
+		 (void(*)(void*))nuScExecuteGraphics,
+		 (void *)&nusched, nuScGraphicsStack+NU_SC_STACK_SIZE/sizeof(u64),
+		 NU_SC_GRAPHICS_PRI);
+  osStartThread(&nusched.graphicsThread);
+  
+}
+/*----------------------------------------------------------------------*/
+/* nuScGetAudioMQ() -- Get the audio message queue 				*/
+/*												*/
+/* IN:	None 										*/
+/* RET:	OSMesgQueue*	:The pointer of the message queue 		*/
+/*----------------------------------------------------------------------*/
+OSMesgQueue *nuScGetAudioMQ(void)
+{
+  return( &nusched.audioRequestMQ );
+}
+
+/*----------------------------------------------------------------------*/
+/* nuScGetGfxMQ() -- Get the graphic message queue 				*/
+/*												*/
+/* IN:	None 										*/
+/* RET:	OSMesgQueue*	:The pointer of the message queue 		*/
+/*----------------------------------------------------------------------*/
+OSMesgQueue *nuScGetGfxMQ(void)
+{
+  return( &nusched.graphicsRequestMQ );
+}
+
+/*----------------------------------------------------------------------*/
+/*  nuScEventHandler() -- The process of the system event 			*/
+/*												*/
+/* IN:	None 										*/
+/* RET:	None 										*/
+/*----------------------------------------------------------------------*/
+static void nuScEventHandler(void)
+{
+    OSMesg	msg;
+
+
+    nuScRetraceCounter = 0;
+    
+    while(1) {
+	/* Wait for RETRACE and PRENMI events */
+	osRecvMesg(&nusched.retraceMQ, &msg, OS_MESG_BLOCK);
+	
+	/* Broadcast the event message */
+	switch ( (int)msg ) {
+	case VIDEO_MSG:		/* The process of the retrace signal */
+	    nuScRetraceCounter++;
+#ifdef NU_DEBUG
+	    if(nuDebTaskPerfEnd){
+		debTaskPerfPtr->retraceTime = OS_CYCLES_TO_USEC(osGetTime());
+		nuDebTaskPerf[nuDebTaskPerfCnt].auTaskCnt = 0;
+		nuDebTaskPerfEnd = 0;
+	    }
+#endif /* NU_DEBUG */
+	    
+	    nuScEventBroadcast(&nusched.retraceMsg );
+	    break;
+	case PRE_NMI_MSG:		/* The process of the ,m,l,h signal */
+	    nuScEventBroadcast(&nusched.prenmiMsg );
+
+	    /* The PRE NMI event call-back function */
+	    if(nuScPreNMIFunc != NULL){
+		(*nuScPreNMIFunc)();
+	    }
+	    break;
+	}
+    }
+}
+
+/*----------------------------------------------------------------------*/
+/* nuScAddClient() -- Register the client 			 		*/
+/*												*/
+/* IN:  *client	The pointer of client structure of registered client 	*/
+/* 	  *msgQ	The queue which recieves the message		 	*/
+/*	  msgType	The type of the message RETRACE = NU_SC_RETRACE_MSG	*/
+/*				 			PRENMI  = NU_SC_PRENMI_MSG	*/
+/* RET:	None										*/
+/*----------------------------------------------------------------------*/
+void nuScAddClient(NUScClient *client, OSMesgQueue *msgQ, NUScMsg msgType)
+{
+    OSIntMask	mask;
+    
+
+    mask = osSetIntMask(OS_IM_NONE);
+
+    client->msgQ = msgQ;
+    client->next = nusched.clientList;
+    client->msgType = msgType;
+    nusched.clientList = client;
+    
+    osSetIntMask(mask);
+
+}
+/*----------------------------------------------------------------------*/
+/* nuScRemoveClient() -- Delete the client 					*/
+/*												*/
+/* IN:  c	The pointer of the client structure of the deleted client 	*/
+/* RET:	None 										*/
+/*----------------------------------------------------------------------*/
+void nuScRemoveClient(NUScClient *c)
+{
+    NUScClient*	client	= nusched.clientList; 
+    NUScClient*	prev	= 0;
+    OSIntMask	mask;
+
+    mask = osSetIntMask(OS_IM_NONE);
+    while(client != 0){
+	if(client == c){
+	    if(prev){
+		prev->next = c->next;
+	    } else {
+		nusched.clientList = c->next;
+	    }
+	    break;
+	}
+	prev   = client;
+	client = client->next;
+    }
+    osSetIntMask(mask);
+}
+
+/*----------------------------------------------------------------------*/
+/* nuScEventBroadcast() -- Transfer the message to the client 		*/
+/*												*/
+/* IN:	*msg	The message to transfer 					*/
+/*----------------------------------------------------------------------*/
+static void nuScEventBroadcast(NUScMsg *msg)
+{
+    NUScClient *client;
+  
+    /* Post the client which requires the retrace message */
+    for(client = nusched.clientList; client != 0; client = client->next){
+	
+	/* Post with seeing msgType of the registered client */
+	if(client->msgType & *msg){
+	    osSendMesg(client->msgQ, (OSMesg *)msg, OS_MESG_NOBLOCK);
+	}
+    }
+}
+
+/*----------------------------------------------------------------------*/
+/*  nuScExecuteAudio() -- Execute the audio task. 				*/
+/*												*/
+/*	IN:	None 										*/
+/*	RET:	None 										*/
+/*----------------------------------------------------------------------*/
+static void nuScExecuteAudio(void)
+{
+
+    NUScTask*	gfxTask;
+    NUScTask*	audioTask;
+    OSMesg 	msg;
+    u32		yieldFlag;
+#ifdef NU_DEBUG
+    OSIntMask	mask;
+#endif /* NU_DEBUG */
+    
+    while(1) {
+	/* Wait for the request of executing the audio task */
+	osRecvMesg(&nusched.audioRequestMQ, (OSMesg *)&audioTask, OS_MESG_BLOCK);
+	osWritebackDCacheAll();	/* Flush the cache */
+	
+	/* Check the current RSP status */
+	yieldFlag = 0;
+	gfxTask = nusched.curGraphicsTask;
+	
+	/* Yield the task if the graphic task is executing */
+	if( gfxTask ) {
+	    
+	    /* Wait for the end (yield) of the graphics task */
+	    osSpTaskYield();		/* Yield the task */
+	    osRecvMesg(&nusched.rspMQ, &msg, OS_MESG_BLOCK);
+	    
+	    /* Check if the task has been yielded actually */
+	    if (osSpTaskYielded(&gfxTask->list)){
+		
+		/* It has been yielded */
+		yieldFlag = TASK_YIELD;
+	    } else {
+		
+		/* The task ended at the same time as "Yield" */
+		yieldFlag = TASK_YIELDED;
+	    }
+	}
+#ifdef NU_DEBUG
+	mask = osSetIntMask(OS_IM_NONE);
+	if(debTaskPerfPtr->auTaskCnt < NU_DEB_PERF_AUTASK_CNT){
+	    debTaskPerfPtr->auTaskTime[debTaskPerfPtr->auTaskCnt].rspStart =
+		OS_CYCLES_TO_USEC(osGetTime());
+	}
+	osSetIntMask(mask);
+#endif /* NU_DEBUG */
+	
+	/* Execute the audio task*/
+	nusched.curAudioTask = audioTask;
+	osSpTaskStart(&audioTask->list);
+	
+	/* Wait for the end of the RSP task */
+	osRecvMesg(&nusched.rspMQ, &msg, OS_MESG_BLOCK);
+	nusched.curAudioTask = (NUScTask *)NULL;
+
+#ifdef NU_DEBUG
+	mask = osSetIntMask(OS_IM_NONE);
+	if(debTaskPerfPtr->auTaskCnt < NU_DEB_PERF_AUTASK_CNT){
+	   debTaskPerfPtr->auTaskTime[debTaskPerfPtr->auTaskCnt].rspEnd =
+	       OS_CYCLES_TO_USEC(osGetTime());
+	   debTaskPerfPtr->auTaskCnt++;
+	}
+	osSetIntMask(mask);
+#endif /* NU_DEBUG */
+
+	/* Check if the graphic task is waiting for executing the task, */
+	/* if it is waiting, send the message */
+	if( nusched.graphicsTaskSuspended )
+	    osSendMesg( &nusched.waitMQ, &msg, OS_MESG_BLOCK );
+	
+	/* Resume the yielded graphic task */
+	if( yieldFlag == TASK_YIELD ) {
+	    osSpTaskStart(&gfxTask->list);    
+	} else if ( yieldFlag == TASK_YIELDED ) {
+	    osSendMesg(&nusched.rspMQ, &msg, OS_MESG_BLOCK);
+	}
+
+	/* Post the end of the task to the thread which has activated the audio task */
+	osSendMesg(audioTask->msgQ, audioTask->msg, OS_MESG_BLOCK);
+    }
+}
+
+/*----------------------------------------------------------------------*/
+/*  nuScExecuteGrapchics() -- Execute the graphic task 			*/
+/*												*/
+/*	IN:	None 										*/
+/*	RET:	None 										*/
+/*----------------------------------------------------------------------*/
+static void nuScExecuteGraphics(void)
+{
+    OSMesg	msg;
+    NUScTask*	gfxTask;
+    OSIntMask	mask;
+    
+    while(1) {
+
+	/* Wait for the request of executing the graphic task */
+	osRecvMesg(&nusched.graphicsRequestMQ, (OSMesg *)&gfxTask, OS_MESG_BLOCK);
+
+	/* Wait for the frame buffer becomes available*/
+	nuScWaitTaskReady(gfxTask);
+
+	/* Check if the audio task is executing, */
+	/* if it is executing, wait for the end message */
+
+	mask = osSetIntMask(OS_IM_NONE);
+	if( nusched.curAudioTask ) {
+	    nusched.graphicsTaskSuspended = gfxTask;
+	    osSetIntMask(mask);
+	    osRecvMesg( &nusched.waitMQ, &msg, OS_MESG_BLOCK );
+	    mask = osSetIntMask(OS_IM_NONE);
+	    nusched.graphicsTaskSuspended = (NUScTask *)NULL;
+	}
+	osSetIntMask(mask);
+
+	
+#ifdef NU_DEBUG
+	mask = osSetIntMask(OS_IM_NONE);
+	if(debTaskPerfPtr->gfxTaskCnt < NU_DEB_PERF_GFXTASK_CNT){
+	    debTaskPerfPtr->gfxTaskTime[debTaskPerfPtr->gfxTaskCnt].rspStart =
+		OS_CYCLES_TO_USEC(osGetTime());
+	}
+	osSetIntMask(mask);
+#endif /* NU_DEBUG */
+	    
+	/* Execute the graphic task*/
+	mask = osSetIntMask(OS_IM_NONE);
+	nusched.curGraphicsTask = gfxTask;
+	osSetIntMask(mask);
+	
+	osSpTaskStart(&gfxTask->list);        /* Execute the task */
+
+	/* Wait for the RSP task ends */
+	osRecvMesg(&nusched.rspMQ, &msg, OS_MESG_BLOCK);
+
+	mask = osSetIntMask(OS_IM_NONE);
+	nusched.curGraphicsTask = (NUScTask *)NULL;
+	osSetIntMask(mask);
+
+#ifdef NU_DEBUG
+	mask = osSetIntMask(OS_IM_NONE);
+	if(debTaskPerfPtr->gfxTaskCnt < NU_DEB_PERF_GFXTASK_CNT){
+	    debTaskPerfPtr->gfxTaskTime[debTaskPerfPtr->gfxTaskCnt].rspEnd =
+		OS_CYCLES_TO_USEC(osGetTime());
+	}
+	osSetIntMask(mask);
+#endif /* NU_DEBUG */
+
+	/* Check NU_SC_NORDP flag, whether or not RDP end wanted */
+	if(!(gfxTask->flags & NU_SC_NORDP)){
+	    /* Wait for the RDP task ends */
+	    osRecvMesg(&nusched.rdpMQ, &msg, OS_MESG_BLOCK);
+	}
+
+#ifdef NU_DEBUG
+	mask = osSetIntMask(OS_IM_NONE);
+	if(debTaskPerfPtr->gfxTaskCnt < NU_DEB_PERF_GFXTASK_CNT){
+	    if(gfxTask->flags & NU_SC_NORDP){
+		
+		/* Set with start time so as not to display */
+		/* a bar that doesn't use RDP	*/
+		debTaskPerfPtr->gfxTaskTime[debTaskPerfPtr->gfxTaskCnt].rdpEnd
+		    = debTaskPerfPtr->gfxTaskTime[debTaskPerfPtr->gfxTaskCnt].rspStart;
+		debTaskPerfPtr->gfxTaskTime[debTaskPerfPtr->gfxTaskCnt].dpCnt[0] = 0;
+	    } else {
+		debTaskPerfPtr->gfxTaskTime[debTaskPerfPtr->gfxTaskCnt].rdpEnd
+		    = OS_CYCLES_TO_USEC(osGetTime());
+		osDpGetCounters(debTaskPerfPtr->gfxTaskTime[debTaskPerfPtr->gfxTaskCnt].dpCnt);
+		osDpSetStatus(DPC_CLR_TMEM_CTR | DPC_CLR_PIPE_CTR | DPC_CLR_CMD_CTR | DPC_CLR_CLOCK_CTR);
+	    }
+	    debTaskPerfPtr->gfxTaskCnt++;
+	}
+
+	if(gfxTask->flags & NU_SC_SWAPBUFFER){
+	    nuDebTaskPerfPtr = debTaskPerfPtr;
+	    nuDebTaskPerfCnt++;
+	    nuDebTaskPerfCnt %= 3;
+	    nuDebTaskPerf[nuDebTaskPerfCnt].gfxTaskCnt = 0;
+	    nuDebTaskPerf[nuDebTaskPerfCnt].retraceTime = 0;
+	    debTaskPerfPtr = &nuDebTaskPerf[nuDebTaskPerfCnt];
+	    nuDebTaskPerfEnd++;
+	}
+	osSetIntMask(mask);
+#endif /* NU_DEBUG */
+
+	/* Post end of the task to thread which has activated graphic task */
+	osSendMesg(gfxTask->msgQ, (OSMesg*)gfxTask, OS_MESG_BLOCK);
+    }
+}
+/*----------------------------------------------------------------------*/
+/*  nuScWaitTaskReady() -- Wait for the frame buffer becomes available. */
+/*												*/
+/*  IN:	*task	The pointer of the graphic task structure 		*/
+/*----------------------------------------------------------------------*/
+void nuScWaitTaskReady(NUScTask *task)
+{
+    NUScClient	client;
+    void*	fb	= task->framebuffer;
+    
+    nuScAddClient(&client, &nusched.waitMQ , NU_SC_RETRACE_MSG);  
+    /* Wait for next retrace if the frame buffer is not available */
+    while( osViGetCurrentFramebuffer() == fb
+	   || osViGetNextFramebuffer() == fb ){
+	osRecvMesg( &nusched.waitMQ, NULL, OS_MESG_BLOCK );
+    }
+    nuScRemoveClient(&client );
+}
