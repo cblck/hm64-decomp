@@ -22,10 +22,11 @@ void setCameraOrthographicValues(Camera*, f32, f32, f32, f32, f32, f32);
 void setCameraPerspectiveValues(Camera*, f32, f32, f32, f32);    
 
 // bss
+LookAt gSPLookAtBufferA;
+LookAt gSPLookAtBufferB;
+
+// non-contigous bss
 Camera gCamera;
-
-LookAt D_80126540;
-
 Gfx initGfxList[2][0x20];
 Gfx D_801836A0[2][0x500];
 Gfx D_80205000[2][0x20];
@@ -38,19 +39,14 @@ extern Gfx rdpstateinit_dl[];
 
 // data
 extern NUUcode nugfx_ucode[];
-// nugfxtaskinit data?
 extern u16*	FrameBuf[3];
 
-extern Vp viewport;
-
 // rodata
+static const char gfxExceptionStr1[] = "EX";
+static const char gfxExceptionStr2[] = "s:/system/graphic.c";
 extern f64 D_8011EC78;
 extern f64 D_8011EC80;
 extern f64 D_8011EC88;
-
-// assert strings                                                      
-extern const char D_8011EC60[];
-extern const char D_8011EC64[];
 
 // shared globals
 // also used by mapContext.c, map.c, and worldGraphics.c
@@ -58,22 +54,9 @@ extern Vec3f previousWorldRotationAngles;
 extern Vec3f currentWorldRotationAngles;
 extern f32 D_80170450;
 extern f32 D_80170454;
-// nu idle statck
-extern u64 *D_80126520;
-
-extern f32 cosf(f32);
-extern f32 sinf(f32);
 
 
 //INCLUDE_RODATA(const s32, "system/graphic", D_8011EC40);
-
-//INCLUDE_RODATA(const s32, "system/graphic", D_8011EC60);
-
-static const char D_8011EC60[] = "EX";
-
-//INCLUDE_RODATA(const s32, "system/graphic", D_8011EC64);
-
-static const char D_8011EC64[] = "s:/system/graphic.c";
 
 //INCLUDE_ASM(const s32, "system/graphic", graphicsInit);
 
@@ -134,7 +117,7 @@ volatile u8 startGfxTask(void) {
 
     if (dl - initGfxList[gDisplayContextIndex] > GFX_GLIST_LEN) {
         // FIXME: get string literals working
-        __assert(&D_8011EC60, &D_8011EC64, 288);
+        __assert(&gfxExceptionStr1, &gfxExceptionStr2, 288);
     }
     
     nuGfxTaskStart(initGfxList[gDisplayContextIndex], (s32)(dl - initGfxList[gDisplayContextIndex]) * sizeof(Gfx), NU_GFX_UCODE_F3DEX, NU_SC_NOSWAPBUFFER);
@@ -156,7 +139,7 @@ volatile u8 doViewportGfxTask(void) {
 
     if (dl - D_80205000[gDisplayContextIndex] >= 32) {
         // FIXME: get string literals working
-        __assert(&D_8011EC60, &D_8011EC64, 319);
+        __assert(&gfxExceptionStr1, &gfxExceptionStr2, 319);
     }
 
     nuGfxTaskStart(D_80205000[gDisplayContextIndex], (s32)(dl - D_80205000[gDisplayContextIndex]) * sizeof(Gfx), NU_GFX_UCODE_F3DEX, NU_SC_SWAPBUFFER);
@@ -183,7 +166,7 @@ volatile u8 func_80026CEC(s32 arg0, s32 arg1) {
     
     if (dl - D_801836A0[gDisplayContextIndex] >= 0x500) {
         // FIXME: get string literals working
-        __assert(&D_8011EC60, &D_8011EC64, 0x166);
+        __assert(&gfxExceptionStr1, &gfxExceptionStr2, 0x166);
     }
 
     nuGfxTaskStart(D_801836A0[gDisplayContextIndex], (s32)(dl - D_801836A0[gDisplayContextIndex]) * sizeof(Gfx), NU_GFX_UCODE_F3DEX, NU_SC_NOSWAPBUFFER);
@@ -954,7 +937,7 @@ Gfx* func_80028A64(Gfx* dl, Camera* camera, WorldMatrices* matrices) {
     }
 
     guLookAt(&matrices->viewing, camera->eye.x, camera->eye.y, camera->eye.z, camera->at.x, camera->at.y, camera->at.z, camera->up.x, camera->up.y, camera->up.z);
-    gSPLookAt(dl++, &D_80126520);
+    gSPLookAt(dl++, &gSPLookAtBufferA);
 
     gSPMatrix(dl++, &matrices->projection, G_MTX_NOPUSH | G_MTX_LOAD | G_MTX_PROJECTION);
     gSPMatrix(dl++, &matrices->viewing, G_MTX_NOPUSH | G_MTX_MUL | G_MTX_PROJECTION);
@@ -983,7 +966,7 @@ Gfx* func_80028C00(Gfx* dl, Camera* camera) {
     }
 
     guLookAt(&camera->viewing, camera->eye.x, camera->eye.y, camera->eye.z, camera->at.x, camera->at.y, camera->at.z, camera->up.x, camera->up.y, camera->up.z);
-    gSPLookAt(dl++, &D_80126540);
+    gSPLookAt(dl++, &gSPLookAtBufferB);
 
     gSPMatrix(dl++, &camera->projection, G_MTX_NOPUSH | G_MTX_LOAD | G_MTX_PROJECTION);
     gSPMatrix(dl++, &camera->viewing, G_MTX_NOPUSH | G_MTX_MUL | G_MTX_PROJECTION);
