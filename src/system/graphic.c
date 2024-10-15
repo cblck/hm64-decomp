@@ -44,9 +44,6 @@ extern u16*	FrameBuf[3];
 // rodata
 static const char gfxExceptionStr1[] = "EX";
 static const char gfxExceptionStr2[] = "s:/system/graphic.c";
-extern f64 D_8011EC78;
-extern f64 D_8011EC80;
-extern f64 D_8011EC88;
 
 // shared globals
 // also used by mapContext.c, map.c, and worldGraphics.c
