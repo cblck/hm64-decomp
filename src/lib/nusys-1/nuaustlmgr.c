@@ -31,8 +31,37 @@ typedef struct {
     NUDMABuffer*  firstFree;    /* head of free DMABuffer link list */
 } NUDMAState;
 
-static ALDMAproc auDmaNew(NUDMAState **state);
+
+/*static*/extern OSThread	auMgrThread;
+/*static*/extern u64		auMgrStack[NU_AU_STACK_SIZE];
+
+/*static*/extern Acmd*    auCmdList_ptr[2]; /* pointer of command list */
+/*static*/extern NUScTask	auTask[2];		/* audio task buffer */
+/*static*/extern s16*     auBuffer_ptr[3];	/* audio buffer */
+
+
+/*static*/extern OSMesgQueue	auDmaMesgQ;
+/*static*/extern OSMesg		auDmaMesgBuf[NU_AU_DMA_QUEUE_NUM];
+/*static*/extern OSIoMesg		auDmaIOMesgBuf[NU_AU_DMA_QUEUE_NUM];
+/*static*/extern NUDMAState	auDmaState;
+/*static*/extern NUDMABuffer	auDmaBuf[NU_AU_DMA_BUFFER_NUM];
+/*static*/extern s32			auDmaNext;
+
+static ALDMAproc auDmaNew(NUDMAState** state);
 static void nuAuMgr(void* arg);
+
+u32			    nuAuFrameCounter = 0;	/* flame counter */
+ALHeap		    nuAuHeap;			/* Heap structure */
+ALGlobals		auGlobal;
+NUAuSeqPlayer	nuAuSeqPlayer[2];
+ALBankFile*     nuAuSeqBank_ptr;
+extern ALSeqFile*      nuAuSeqFile_ptr;
+extern ALSndPlayer		nuAuSndPlayer;
+ALBankFile*     nuAuSndBank_ptr = NULL;
+ALSndId*        nuAuSndId = NULL;
+u8			    nuAuTaskStop = 1;
+u8			    nuAuPreNMI = 0;
+NUAuPreNMIFunc	nuAuPreNMIFunc = NULL;
 
 INCLUDE_ASM(const s32, "lib/nusys-1/nuaustlmgr", auDmaCallBack);
 
