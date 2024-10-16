@@ -961,7 +961,6 @@ rmonbrk_rodata_0000 						= 0x80124160;
 IdleThread  								= 0x801241C0; // ignore:true size:0x1B0
 mainThread  								= 0x80124370; // size:0x1B0
 IdleStack   								= 0x80124520; // size:0x2000
-
 gSPLookAtBufferA							= 0x80126520; // size:0x20
 gSPLookAtBufferB							= 0x80126540; // size:0x20
 levelInteractionsInfo 						= 0x80126560; // size:0x2
@@ -970,7 +969,6 @@ titleScreenContext 							= 0x80126570; // size:0x10
 nuScStack 									= 0x80129430; // size:0x2000
 nuScAudioStack 								= 0x8012B430; // size:0x2000
 nuScGraphicsStack 							= 0x8012D430; // size:0x2000
-
 nuGfxMesgBuf								= 0x8012F430; // ignore:true size:0x20
 GfxThread									= 0x8012F450; // size:0x1B0
 GfxStack									= 0x8012F600; // size:0x2000
@@ -1136,6 +1134,8 @@ dailyEventBits 								= 0x80189140; // size:0x80
 popuriGrayPregnancyCounter 					= 0x801891C4;
 nuContRmbCallBack							= 0x801891CC; // size:0x8
 nuAuSeqPlayer								= 0x801891E0; // size:0x308
+D_8018965C									= 0x8018965C;
+D_801897E0									= 0x801897E0;
 nuContRmbCtl								= 0x801897F0; // size:0x28
 __osRdb_IP6_Size 							= 0x80189818;
 gBabyName 									= 0x8018981E; // size:0x6
