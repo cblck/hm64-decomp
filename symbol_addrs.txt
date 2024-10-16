@@ -967,7 +967,21 @@ gSPLookAtBufferA							= 0x80126520; // size:0x20
 gSPLookAtBufferB							= 0x80126540; // size:0x20
 levelInteractionsInfo 						= 0x80126560; // size:0x2
 titleScreenContext 							= 0x80126570; // size:0x10
-												    
+
+auMgrThread									= 0x80126580; //size:0x1B0
+auMgrStack									= 0x80126730; //size:0x2000
+auCmdList_ptr								= 0x80128730; //size:0x8
+auTask										= 0x80128738; //size:0xB0
+auBuffer_ptr								= 0x801287E8; //size:0xC
+
+auDmaMesgQ									= 0x801287F8; //size:0x18
+auDmaMesgBuf								= 0x80128810; //size:0x100
+auDmaIOMesgBuf								= 0x80128910; //size:0x600
+auDmaState									= 0x80128F10; //size:0xC
+
+auDmaBuf									= 0x80128F20; //size:0x500
+auDmaNext									= 0x80129420; //size:0x4
+
 nuScStack 									= 0x80129430; // size:0x2000
 nuScAudioStack 								= 0x8012B430; // size:0x2000
 nuScGraphicsStack 							= 0x8012D430; // size:0x2000
@@ -1191,7 +1205,7 @@ loadGameScreenContext 						= 0x801D6238; // size:0x90
 nuContNum 									= 0x801D62C8;
 nuYieldBuf 									= 0x801D62D0;
 contPattern 								= 0x801D6ED0;
-auGlobal									= 0x801D6ED8; // size:0x4C
+auGlobal									= 0x801D6ED4; // size:0x4C
 mus_init_bank 								= 0x801D6F28;
 nuRDPOutputBuf								= 0x801D6F30; // size:0x20000
 gYear 										= 0x801F6F30;
