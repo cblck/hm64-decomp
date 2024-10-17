@@ -4,7 +4,7 @@ INCLUDE_ASM(const s32, "lib/os/libultra/libnaudio/n_synthesizer", n_alSynNew);
 
 INCLUDE_ASM(const s32, "lib/os/libultra/libnaudio/n_synthesizer", n_alAudioFrame);
 
-INCLUDE_ASM(const s32, "lib/os/libultra/libnaudio/n_synthesizer", _n_allocParam);
+INCLUDE_ASM(const s32, "lib/os/libultra/libnaudio/n_synthesizer", __n_allocParam);
 
 INCLUDE_ASM(const s32, "lib/os/libultra/libnaudio/n_synthesizer", _n_freeParam);
 
