@@ -3,6 +3,6 @@
 
 INCLUDE_ASM(const s32, "lib/os/libultra/rmon/rmoncmd", __rmonExecute);
 
-INCLUDE_ASM(const s32, "lib/os/libultra/rmon/rmoncmd", osBbUsbDevGetHandle);
+INCLUDE_ASM(const s32, "lib/os/libultra/rmon/rmoncmd", NotImplemented);
 
-INCLUDE_RODATA(const s32, "lib/os/libultra/rmon/rmoncmd", rmoncmds_data_0000);
+INCLUDE_RODATA(const s32, "lib/os/libultra/rmon/rmoncmd", dispatchTable);

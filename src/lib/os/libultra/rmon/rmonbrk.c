@@ -36,7 +36,7 @@ typedef struct {
 
 INCLUDE_ASM(const s32, "lib/os/libultra/rmon/rmonbrk", __rmonSetBreak);
 
-INCLUDE_ASM(const s32, "lib/os/libultra/rmon/rmonbrk", _rmonListBreak);
+INCLUDE_ASM(const s32, "lib/os/libultra/rmon/rmonbrk", __rmonListBreak);
 
 INCLUDE_ASM(const s32, "lib/os/libultra/rmon/rmonbrk", __rmonClearBreak);
 
