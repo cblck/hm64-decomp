@@ -1167,6 +1167,12 @@
     <ClInclude Include="include\nusys\nualstl.h">
       <Filter>include\nusys</Filter>
     </ClInclude>
+    <ClInclude Include="include\gcc\stdarg.h">
+      <Filter>include\gcc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lib\os\libultra\libc\xstdio.h">
+      <Filter>src\lib\os\libultra\libc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitmodules" />

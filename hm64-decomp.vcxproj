@@ -1183,6 +1183,7 @@
     <ClInclude Include="include\dbgdefs.h" />
     <ClInclude Include="include\dbgproto.h" />
     <ClInclude Include="include\gcc\math.h" />
+    <ClInclude Include="include\gcc\stdarg.h" />
     <ClInclude Include="include\gcc\stdio.h" />
     <ClInclude Include="include\gcc\stdlib.h" />
     <ClInclude Include="include\gcc\string.h" />
@@ -1281,6 +1282,7 @@
     <ClInclude Include="src\lib\nusys-1\nupakmenu.h" />
     <ClInclude Include="src\lib\nusys-1\pakmenu.h" />
     <ClInclude Include="src\lib\os\libultra\gu\guint.h" />
+    <ClInclude Include="src\lib\os\libultra\libc\xstdio.h" />
     <ClInclude Include="src\lib\os\libultra\libnaudio\n_abi.h" />
     <ClInclude Include="src\lib\os\libultra\libnaudio\n_libaudio_sc.h" />
     <ClInclude Include="src\lib\os\libultra\libnaudio\n_synthInternals.h" />
