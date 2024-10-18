@@ -376,7 +376,7 @@ segments:
       - [ 0xF80E0, .data, lib/os/libultra/os/thread]
       - [ 0xF8100, .data, lib/os/libultra/audio/sl]
       - [ 0xF8110, .data, lib/os/libultra/io/aisetnextbuf]
-      - [ 0xF8120, .rodata, lib/os/libultra/io/controller]
+      - [ 0xF8120, .data, lib/os/libultra/io/controller]
       - [ 0xF8130, .rodata, lib/os/libultra/libc/syncPrintf] 
       - [ 0xF8140, .rodata, lib/os/libultra/audio/drvrnew] 
       - [ 0xF82D0, .rodata, lib/os/libultra/audio/env]
