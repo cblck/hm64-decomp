@@ -1281,6 +1281,7 @@
     <ClInclude Include="src\lib\nusys-1\fontbmp.h" />
     <ClInclude Include="src\lib\nusys-1\nupakmenu.h" />
     <ClInclude Include="src\lib\nusys-1\pakmenu.h" />
+    <ClInclude Include="src\lib\os\libultra\audio\initfx.h" />
     <ClInclude Include="src\lib\os\libultra\gu\guint.h" />
     <ClInclude Include="src\lib\os\libultra\libc\xstdio.h" />
     <ClInclude Include="src\lib\os\libultra\libnaudio\n_abi.h" />
@@ -1463,7 +1464,7 @@
     </RemotePostBuildEvent>
     <CustomBuildStep />
     <ClCompile>
-      <PreprocessorDefinitions>_LANGUAGE_C;_MIPS_SZLONG=32;_MIPS_SZINT=32;SUPPORT_NAUDIO;NU_SYSTEM;F3DEX_GBI_2;_OLD_AUDIO_LIBRARY;N_MICRO;LANG_JAPANESE=0;USE_EPI;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_LANGUAGE_C;_MIPS_SZLONG=32;_MIPS_SZINT=32;SUPPORT_NAUDIO;NU_SYSTEM;F3DEX_GBI_2;N_MICRO;LANG_JAPANESE=0;USE_EPI;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <CLanguageStandard>c99</CLanguageStandard>
       <CppLanguageStandard>gnu++98</CppLanguageStandard>
       <Optimization>MaxSpeed</Optimization>
