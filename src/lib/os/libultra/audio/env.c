@@ -47,4 +47,4 @@ INCLUDE_ASM(const s32, "lib/os/libultra/audio/env", _getRate);
 
 INCLUDE_ASM(const s32, "lib/os/libultra/audio/env", _getVol);
 
-INCLUDE_RODATA(const s32, "lib/os/libultra/audio/env", env_data_0000);
+INCLUDE_RODATA(const s32, "lib/os/libultra/audio/env", eqpower);
