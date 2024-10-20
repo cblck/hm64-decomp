@@ -951,12 +951,12 @@ xprintf_rodata_0000 						= 0x80123F40;
 xprintf_rodata_0008 						= 0x80123F48;
 xprintf_rodata_0020 						= 0x80123F60;
 xprintf_rodata_0028 						= 0x80123F68;
-xldtob_rodata_0000 							= 0x801240F0;
-xldtob_rodata_0048 							= 0x80124138;
-xldtob_rodata_004C 							= 0x8012413C;
-xldtob_rodata_0050 							= 0x80124140;
-xldtob_rodata_0058 							= 0x80124148;
-xldtob_rodata_0060 							= 0x80124150;
+xldtob_pows									= 0x801240F0; // size:0x48
+_Ldtob_string_NaN 							= 0x80124138; // size:0x4
+_Ldtob_string_Inf 							= 0x8012413C; // size:0x4
+_Ldtob_double_one 							= 0x80124140; // size:0x8
+_Ldtob_double_100000000 					= 0x80124148; // size:0x8
+_Genld_point 								= 0x80124150; // size:0x1
 rmonbrk_rodata_0000 						= 0x80124160;
 
 // bss
