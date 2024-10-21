@@ -397,6 +397,7 @@ segments:
       - [ 0xF96E0, rodata] # osViInit, osViGetCurrentContext, osViGetCurrentFramebuffer, viSwapContext
       - [ 0xF96F0, .rodata, lib/os/libultra/io/siacs]
       - [ 0xF9700, rodata]
+      - [ 0xF97F0, rodata] # lib/os/libultra/io/piacs / __osPiAccessQueueEnabled
       - [ 0xF9800, rodata] # lib/os/libultra/printf
       - [ 0xF9850, .rodata, lib/os/libultra/io/contpfs]
       - [ 0xF9860, rodata] # contramread // __osPfsLastChannel  
