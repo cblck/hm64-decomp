@@ -128,7 +128,7 @@ segments:
       - [ 0xD5130, c, lib/os/libultra/libnaudio/n_load]
       - [ 0xD5850, c, lib/os/libultra/libnaudio/n_resample]
       - [ 0xD5A30, c, lib/os/libultra/libnaudio/n_reverb]
-      - [ 0xD6420, c, lib/os/libultra/libnaudio/n_alSavePul]
+      - [ 0xD6420, c, lib/os/libultra/libnaudio/n_save]
       - [ 0xD6470, c, lib/os/libultra/libnaudio/n_synallocfx]
       - [ 0xD64C0, c, lib/os/libultra/libnaudio/n_alMainBusPull]
       - [ 0xD6540, c, lib/nusys-1/nusched]

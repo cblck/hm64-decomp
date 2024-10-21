@@ -517,7 +517,7 @@
     <ClCompile Include="src\lib\os\libultra\libnaudio\n_alMainBusPull.c">
       <Filter>src\lib\os\libultra\libnaudio</Filter>
     </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\libnaudio\n_alSavePul.c">
+    <ClCompile Include="src\lib\os\libultra\libnaudio\n_save.c">
       <Filter>src\lib\os\libultra\libnaudio</Filter>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\libnaudio\n_auxbus.c">
