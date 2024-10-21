@@ -774,6 +774,7 @@ CHORUS_PARAMS 								= 0x8011CE58; // size:0x28
 FLANGE_PARAMS 								= 0x8011CE80; // size:0x28
 NULL_PARAMS 								= 0x8011CEA8; // size:0x28
 eqpower										= 0x8011CED0; // size:0x100
+L_INC										= 0x8011CFD0; // size:0xC
 cartrominit_data_0000 						= 0x8011CFF0;
 __osPiDevMgr 								= 0x8011D000; // size:0x1C
 __osPiTable 								= 0x8011D01C;
