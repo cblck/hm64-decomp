@@ -476,6 +476,7 @@ segments:
       - { start: 0xFF5C0, type: .bss, vram: 0x80135AA0, name: lib/os/libultra/io/sptask }
       - { start: 0xFF5C0, type: .bss, vram: 0x80135AE0, name: lib/os/libultra/io/motor }
       - { start: 0xFF5C0, type: bss, vram: 0x80135BE0, name: bss2 }
+      - { start: 0xFF5C0, type: .bss, vram: 0x80138600, name: lib/os/libultra/io/piacs }
       - { start: 0xFF5C0, type: .bss, vram: 0x80138610, name: lib/os/libultra/rmon/rmonsio }
       - { start: 0xFF5C0, type: bss, vram: 0x80138630, name: bss3 }
       - { start: 0xFF5C0, type: .bss, vram: 0x8013CDF0, name: lib/libkmc/rand }

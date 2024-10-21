@@ -3,8 +3,8 @@
 
 #define PI_Q_BUF_LEN 1
 extern /*TODO: Fix extern.*/ u32 __osPiAccessQueueEnabled;
-extern /*static: TODO: Fix extern.*/ OSMesg piAccessBuf[PI_Q_BUF_LEN];
-extern /*TODO: Fix extern.*/ OSMesgQueue __osPiAccessQueue ALIGNED(8);
+static OSMesg piAccessBuf[PI_Q_BUF_LEN];
+OSMesgQueue __osPiAccessQueue ALIGNED(8);
 
 void __osPiCreateAccessQueue(void) {
     __osPiAccessQueueEnabled = 1;
