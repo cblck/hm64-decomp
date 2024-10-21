@@ -1289,6 +1289,7 @@ __osRdb_IP6_Data 							= 0x8021E6D8;
 bitmapVertices 								= 0x8021E6E0; // size:0x400
 playerIdleCounter 							= 0x802226E0;
 pendingGfxNum 								= 0x802226E8;
+__osPfsPifRam								= 0x802226F0; // size:0x40
 nuDramStack									= 0x80222740; // size:0x400
 nusched 									= 0x80222B40; // size:0x680
 gEntranceIndex 								= 0x802231C0; 
