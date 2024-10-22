@@ -304,7 +304,7 @@
     <ClCompile Include="src\lib\os\libultra\gu\scale.c">
       <Filter>src\lib\os\libultra\gu</Filter>
     </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\gu\sins.c">
+    <ClCompile Include="src\lib\os\libultra\gu\sinf.c">
       <Filter>src\lib\os\libultra\gu</Filter>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\gu\translate.c">
