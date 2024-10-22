@@ -1037,12 +1037,15 @@ rmonMsgs									= 0x801387E0; // size:0x20
 rmonIOStack									= 0x80138800; // size:0x4000
 rmonPiMsgs									= 0x8013C800; // size:0x20
 rmonPiMQ									= 0x8013C820; // size:0x18
+
 rmonregs_bss_0000 							= 0x8013C840;
 rmonregs_bss_0004 							= 0x8013C844;
 rmonregs_bss_0008 							= 0x8013C848;
 rmonregs_bss_000C 							= 0x8013C84C;
 rmonregs_bss_0010 							= 0x8013C850;
 rmonregs_bss_0014 							= 0x8013C854;
+
+
 rmonmain_bss_0000 							= 0x8013C860;
 rmonmain_bss_0010 							= 0x8013C870;
 rmonmain_bss_0470 							= 0x8013CCD0;

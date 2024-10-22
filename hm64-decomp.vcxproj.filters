@@ -589,7 +589,7 @@
     <ClCompile Include="src\lib\os\libultra\rmon\rmonrcp.c">
       <Filter>src\lib\os\libultra\rmon</Filter>
     </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\rmon\rmonreg.c">
+    <ClCompile Include="src\lib\os\libultra\rmon\rmonregs.c">
       <Filter>src\lib\os\libultra\rmon</Filter>
     </ClCompile>
     <ClCompile Include="src\lib\os\libultra\rmon\rmonsio.c">
