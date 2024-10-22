@@ -14,6 +14,6 @@ INCLUDE_ASM(const s32, "lib/os/libultra/io/contpfs", __osCheckId);
 
 INCLUDE_ASM(const s32, "lib/os/libultra/io/contpfs", __osPfsRWInode);
 
-INCLUDE_RODATA(const s32, "lib/os/libultra/io/contpfs", contpfs_data_0000);
+INCLUDE_RODATA(const s32, "lib/os/libultra/io/contpfs", __osPfsInodeCacheChannel);
 
 INCLUDE_RODATA(const s32, "lib/os/libultra/io/contpfs", __osPfsInodeCacheBank);
