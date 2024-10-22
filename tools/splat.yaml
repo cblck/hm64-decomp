@@ -445,7 +445,7 @@ segments:
       - [ 0xFEF10, .rodata, lib/os/libultra/gu/cosf]
       - [ 0xFEF70, .rodata, lib/os/libultra/gu/lookat]
       - [ 0xFEF90, .rodata, lib/os/libultra/gu/perspective]
-      - [ 0xFEFD8, .rodata, lib/os/libultra/gu/sinf]
+      - [ 0xFEFD0, .rodata, lib/os/libultra/gu/sinf]
       - [ 0xFF030, rodata] # setintmask and exceptasm
       - [ 0xFF0B0, .rodata, lib/os/libultra/debug/assert]
       - [ 0xFF0D0, .rodata, lib/os/libultra/audio/drvrnew]
