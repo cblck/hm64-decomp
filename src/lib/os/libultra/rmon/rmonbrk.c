@@ -34,6 +34,15 @@ typedef struct {
 	u32 oldInstruction;
 } BREAKINFO;
 
+/* first breakpoint is reserved for implementing single-stepping */
+static BREAKINFO breakpoints[NUM_BREAKPOINTS] ALIGNED(8);
+/* breakpoint for alternate branch target */
+static BREAKINFO altBreak;
+
+static BREAKINFO RCPbreakpoints[NUM_BREAKPOINTS] ALIGNED(8);
+
+u8 __rmonRcpAtBreak;
+
 INCLUDE_ASM(const s32, "lib/os/libultra/rmon/rmonbrk", __rmonSetBreak);
 
 INCLUDE_ASM(const s32, "lib/os/libultra/rmon/rmonbrk", __rmonListBreak);

@@ -480,9 +480,10 @@ segments:
       - { start: 0xFF5C0, type: .bss, vram: 0x80138600, name: lib/os/libultra/io/piacs }
       - { start: 0xFF5C0, type: .bss, vram: 0x80138610, name: lib/os/libultra/rmon/rmonsio }
       - { start: 0xFF5C0, type: bss, vram: 0x80138630, name: bss3 }
+      - { start: 0xFF5C0, type: .bss, vram: 0x8013CCE0, name: lib/os/libultra/rmon/rmonbrk }
       - { start: 0xFF5C0, type: .bss, vram: 0x8013CDF0, name: lib/libkmc/rand }
       - { start: 0xFF5C0, type: bss, vram: 0x8013CE00, name: bss4 }
-
+      
   - name: sramBuffer
     type: code
     start: 0xFF5C0

@@ -947,7 +947,7 @@ _Ldtob_string_Inf 							= 0x8012413C; // size:0x4
 _Ldtob_double_one 							= 0x80124140; // size:0x8
 _Ldtob_double_100000000 					= 0x80124148; // size:0x8
 _Genld_point 								= 0x80124150; // size:0x1
-rmonbrk_rodata_0000 						= 0x80124160;
+jtbl__rmonGetBranchTarget 					= 0x80124160; // size:0x60
 
 // bss
 
@@ -1048,11 +1048,9 @@ rmonmain_bss_0470 							= 0x8013CCD0;
 rmonmain_bss_0471 							= 0x8013CCD1;
 rmonmain_bss_0474 							= 0x8013CCD4;
 rmonmain_bss_0478 							= 0x8013CCD8;
-rmonbrk_bss_0000 							= 0x8013CCE0;
-rmonbrk_bss_0004 							= 0x8013CCE4;
-rmonbrk_bss_0080 							= 0x8013CD60;
-rmonbrk_bss_0084 							= 0x8013CD64;
-rmonbrk_bss_0088 							= 0x8013CD68;
+breakpoints 								= 0x8013CCE0; // size:0x80
+altBreak 									= 0x8013CD60; // size:0x8
+RCPbreakpoints 								= 0x8013CD68; // size:0x80
 sRandNext 									= 0x8013CDF0; // size:0x4
 specialDialogueBitsPointer 					= 0x8013CE00;
 dialogueVariables 							= 0x8013CE08; // size:0x3C0
@@ -1295,7 +1293,7 @@ dailyShippingBinValue 						= 0x80237388;
 __font_buf									= 0x8023738C; // size:0x4
 nuSiMesgQ									= 0x80237390; // size:0x18
 gWeather 									= 0x802373A9;
-__rmonRcpAtBreak 							= 0x802373AA;
+__rmonRcpAtBreak 							= 0x802373AA; // size:0x1
 __rmonMQ 									= 0x802373B0; // size:0x18
 gItemBeingHeld 								= 0x802373C8;
 nuGfxTaskMgrMesgQ							= 0x802373D0; // size:0x18
