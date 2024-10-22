@@ -442,7 +442,7 @@ segments:
       - [ 0xFEEA0, .rodata, lib/os/libultra/libnaudio/n_resample]
       - [ 0xFEEB0, .rodata, lib/os/libultra/libnaudio/n_reverb]
       - [ 0xFEEF0, .rodata, lib/nusys-1/nucontpakmgr]
-      - [ 0xFEF10, .data, lib/os/libultra/gu/cosf]
+      - [ 0xFEF10, .rodata, lib/os/libultra/gu/cosf]
       - [ 0xFEF70, .rodata, lib/os/libultra/gu/lookat]
       - [ 0xFEF90, .rodata, lib/os/libultra/gu/perspective]
       - [ 0xFEFD8, .rodata, lib/os/libultra/gu/sinf]
