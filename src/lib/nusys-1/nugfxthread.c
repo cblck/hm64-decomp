@@ -12,7 +12,7 @@
 
 NUGfxFunc	nuGfxFunc = NULL;
 NUGfxPreNMIFunc	nuGfxPreNMIFunc = NULL;
-extern /*TODO: Fix extern.*/ OSMesgQueue	nuGfxMesgQ;
+OSMesgQueue	nuGfxMesgQ;
 
 static OSMesg	nuGfxMesgBuf[NU_GFX_MESGS];
 static OSThread	GfxThread;			/* graphic thread */
