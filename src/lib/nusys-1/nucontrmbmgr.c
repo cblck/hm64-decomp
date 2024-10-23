@@ -11,10 +11,10 @@
 /*======================================================================*/
 #include <nusys.h>
 
-extern /*TODO: Fix extern.*/ NUContRmbCtl	nuContRmbCtl[4];
+NUContRmbCtl	nuContRmbCtl[4];
 u32		nuContRmbSearchTime = NU_CONT_RMB_AUTO_SEARCHTIME;
 
-extern /*TODO: Fix extern.*/ NUCallBackList	nuContRmbCallBack;
+NUCallBackList	nuContRmbCallBack;
 
 /*----------------------------------------------------------------------*/
 /*	nuContRmbMgrInit - Initialize the oscillating pack manager 		*/

@@ -18,7 +18,7 @@ static OSThread	MainThread;		/* main thread */
 /* The stack for the boot becomes reuseable when the first thread activates. */
 /* Thus, it has been reused for the main thread. 				     */
 /*****************************************************************************/
-extern /*TODO: Fix extern.*/ u64		nuMainStack[NU_MAIN_STACK_SIZE/sizeof(u64)];/* boot/main thread stack */
+u64		    nuMainStack[NU_MAIN_STACK_SIZE/sizeof(u64)];/* boot/main thread stack */
 static u64	IdleStack[NU_IDLE_STACK_SIZE/sizeof(u64)];/* Idle thread stack */
 
 

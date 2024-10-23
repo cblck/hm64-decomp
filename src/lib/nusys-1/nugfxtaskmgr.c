@@ -1,4 +1,3 @@
-#include "common.h"
 /*======================================================================*/
 /*		NuSYS										*/
 /*		nugfxtaskmgr.c								*/
@@ -23,19 +22,19 @@ static u64	GfxTaskMgrStack[NU_GFX_TASKMGR_STACK_SIZE/8];
 static OSMesg	nuGfxTaskMgrMesgBuf[NU_GFX_TASKMGR_MESGS];
 
 
-extern /*TODO: Fix extern.*/ NUUcode*	nuGfxUcode;
-extern /*TODO: Fix extern.*/ NUScTask	nuGfxTask[NU_GFX_TASK_NUM];	/* The graphic task structure   */
-extern /*TODO: Fix extern.*/ volatile u32	nuGfxTaskSpool;		/* The spool number of the task */
-extern /*TODO: Fix extern.*/ OSMesgQueue	nuGfxTaskMgrMesgQ;
+NUUcode*	nuGfxUcode;
+NUScTask	nuGfxTask[NU_GFX_TASK_NUM];	/* The graphic task structure   */
+volatile u32	nuGfxTaskSpool;		/* The spool number of the task */
+OSMesgQueue	nuGfxTaskMgrMesgQ;
 
 
 
-extern /*TODO: Fix extern.*/ u16**		nuGfxCfb;		/* The pointer of the frame buffer */
+u16**		nuGfxCfb;		/* The pointer of the frame buffer */
 u32		nuGfxCfbNum = 1;	/* The number of frame buffers     */
-extern /*TODO: Fix extern.*/ u16*		nuGfxCfb_ptr;	/* The frame buffer for drawing    */
-extern /*TODO: Fix extern.*/ u16*		nuGfxZBuffer;	/* The pointer of the Z-buffer     */
-extern /*TODO: Fix extern.*/ u32		nuGfxDisplay;	/* Display-ON/OFF */
-extern /*TODO: Fix extern.*/ u32		nuGfxCfbCounter;
+u16*		nuGfxCfb_ptr;	/* The frame buffer for drawing    */
+u16*		nuGfxZBuffer;	/* The pointer of the Z-buffer     */
+u32		nuGfxDisplay;	/* Display-ON/OFF */
+u32		nuGfxCfbCounter;
 
 NUGfxSwapCfbFunc nuGfxSwapCfbFunc = NULL; /* swapbuf callback function ptr */
 NUGfxTaskEndFunc nuGfxTaskEndFunc = NULL; /* task end callback  ptr */

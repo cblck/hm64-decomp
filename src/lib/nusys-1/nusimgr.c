@@ -11,12 +11,12 @@
 /*======================================================================*/
 #include <nusys.h>
 
-extern /*TODO: Fix extern.*/ OSMesgQueue	nuSiMesgQ;			/* SI event message queue */
+OSMesgQueue	nuSiMesgQ;			/* SI event message queue */
 static OSMesg	nuSiMesgBuf[8];	/* SI event message buffer*/
 static OSThread siMgrThread;
 static u64	siMgrStack[NU_SI_STACK_SIZE/sizeof(u64)];
-extern /*TODO: Fix extern.*/ OSMesgQueue	nuSiMgrMesgQ;		/* SI manager queue */
-extern /*TODO: Fix extern.*/ NUCallBackList	nuSiCallBackList;	/* call back function list*/
+OSMesgQueue	nuSiMgrMesgQ;		/* SI manager queue */
+NUCallBackList	nuSiCallBackList;	/* call back function list*/
 
 static void nuSiMgrThread(void* arg);
 

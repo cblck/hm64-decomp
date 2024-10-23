@@ -1,4 +1,3 @@
-#include "common.h"
 /*======================================================================*/
 /*		NuSYS										*/
 /*		nucontmgr.c									*/
@@ -13,19 +12,19 @@
 #include <nusys.h>
 
 
-extern /*TODO: Fix extern*/ OSMesgQueue		nuContWaitMesgQ;	 		/* The wait queue of the controller read  */
+OSMesgQueue		nuContWaitMesgQ;	 		/* The wait queue of the controller read  */
 static OSMesg	nuContWaitMesgBuf;
-extern /*TODO: Fix extern*/ OSMesgQueue		nuContDataMutexQ;
+OSMesgQueue		nuContDataMutexQ;
 static OSMesg	nuContDataMutexBuf;		/* Semaphore for data access */
-extern /*TODO: Fix extern*/ OSContStatus	nuContStatus[NU_CONT_MAXCONTROLLERS];
-extern /*TODO: Fix extern*/ OSContPad		nuContData[NU_CONT_MAXCONTROLLERS];
-extern /*TODO: Fix extern*/ u32			nuContNum;
-extern /*TODO: Fix extern*/ u32			nuContDataLockKey;
+OSContStatus	nuContStatus[NU_CONT_MAXCONTROLLERS];
+OSContPad		nuContData[NU_CONT_MAXCONTROLLERS];
+u32			nuContNum;
+u32			nuContDataLockKey;
 
 NUContReadFunc	nuContReadFunc = NULL;	/* The call-back function at the */
 										/* end of the controller read */
-extern /*TODO: Fix extern*/ OSPfs		nuContPfs[4];		/* The pfs structure for the controller manager */
-extern /*TODO: Fix extern*/ NUCallBackList	nuContCallBack;
+OSPfs		nuContPfs[4];		/* The pfs structure for the controller manager */
+NUCallBackList	nuContCallBack;
 
 
 /*----------------------------------------------------------------------*/

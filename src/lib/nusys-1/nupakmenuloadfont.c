@@ -1,4 +1,3 @@
-#include "common.h"
 /*======================================================================*/
 /*		NuSystem						*/
 /*		nupakfontload.c						*/
@@ -52,7 +51,7 @@ s8 font_kana_dot[] = {	/* font pattern of DAKUTEN,HANDAKUTEN	*/
 };
 #endif /* LANG_JAPANESE */
 
-extern u16	*__font_buf;	// TODO: Fix extern
+u16	*__font_buf;
 
 /*----------------------------------------------------------------------*/
 /*	nuPakMenuLoadFont - Loads and deploys fonts			*/
@@ -187,7 +186,7 @@ void	canvas_u8_to_str(u16 n, u8 *str)
 #endif
 }  
 
-extern u16	*__cursor;	// TODO: Fix extern
+u16	*__cursor;
 
 void	canvas_putc(int c, u16 color_fg, u16 color_bg)
 {

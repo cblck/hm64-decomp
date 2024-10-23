@@ -26,8 +26,8 @@ static	u16	cursor_color[] = {
     MENU_COLOR_TARGET_6,
 };
 
-extern /*TODO: Fix extern.*/ OSPfsState	pfs_stat[16];
-extern /*TODO: Fix extern.*/ s32		pfs_stat_ret[16];
+OSPfsState	pfs_stat[16];
+s32		pfs_stat_ret[16];
 
 void __display_term(int sel, int n, u16 fg1, u16 fg2, u16 bg)
 {

@@ -2,7 +2,7 @@
 #include "PR/os_internal.h"
 
 #define PI_Q_BUF_LEN 1
-extern /*TODO: Fix extern.*/ u32 __osPiAccessQueueEnabled;
+u32 __osPiAccessQueueEnabled;
 static OSMesg piAccessBuf[PI_Q_BUF_LEN];
 OSMesgQueue __osPiAccessQueue ALIGNED(8);
 
