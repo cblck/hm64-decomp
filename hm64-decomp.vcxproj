@@ -77,13 +77,13 @@
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Custom</Optimization>
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">-O1 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
-    <ClCompile Include="src\lib\libmus\libsrc\player.c">
+    <ClCompile Include="src\lib\libmus\player.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="src\lib\libmus\libsrc\player_api.c">
+    <ClCompile Include="src\lib\libmus\player_api.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="src\lib\libmus\libsrc\player_commands.c">
+    <ClCompile Include="src\lib\libmus\player_commands.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nuaustlmgr.c">
@@ -1277,7 +1277,7 @@
     <ClInclude Include="src\itemHandlers.h" />
     <ClInclude Include="src\level.h" />
     <ClInclude Include="src\levelInteractions.h" />
-    <ClInclude Include="src\lib\libmus\libsrc\player.h" />
+    <ClInclude Include="src\lib\libmus\player.h" />
     <ClInclude Include="src\lib\nusys-1\fontbmp.h" />
     <ClInclude Include="src\lib\nusys-1\nupakmenu.h" />
     <ClInclude Include="src\lib\nusys-1\pakmenu.h" />

@@ -82,15 +82,6 @@
     <ClCompile Include="src\lib\libkmc\rand.c">
       <Filter>src\lib\libkmc</Filter>
     </ClCompile>
-    <ClCompile Include="src\lib\libmus\libsrc\player.c">
-      <Filter>src\lib\libmus\libsrc</Filter>
-    </ClCompile>
-    <ClCompile Include="src\lib\libmus\libsrc\player_api.c">
-      <Filter>src\lib\libmus\libsrc</Filter>
-    </ClCompile>
-    <ClCompile Include="src\lib\libmus\libsrc\player_commands.c">
-      <Filter>src\lib\libmus\libsrc</Filter>
-    </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nuauprenmifuncset.c">
       <Filter>src\lib\nusys-1</Filter>
     </ClCompile>
@@ -754,6 +745,15 @@
     <ClCompile Include="src\lib\nusys-1\nuaustlseqplayersetdata.c">
       <Filter>src\lib\nusys-1</Filter>
     </ClCompile>
+    <ClCompile Include="src\lib\libmus\player.c">
+      <Filter>src\lib\libmus</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\libmus\player_api.c">
+      <Filter>src\lib\libmus</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\libmus\player_commands.c">
+      <Filter>src\lib\libmus</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\common.h">
@@ -1071,9 +1071,6 @@
     <ClInclude Include="src\weather.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\lib\libmus\libsrc\player.h">
-      <Filter>src\lib\libmus\libsrc</Filter>
-    </ClInclude>
     <ClInclude Include="src\lib\os\libultra\gu\guint.h">
       <Filter>src\lib\os\libultra\gu</Filter>
     </ClInclude>
@@ -1175,6 +1172,9 @@
     </ClInclude>
     <ClInclude Include="src\lib\os\libultra\audio\initfx.h">
       <Filter>src\lib\os\libultra\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lib\libmus\player.h">
+      <Filter>src\lib\libmus</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1559,9 +1559,6 @@
     </Filter>
     <Filter Include="src\lib\libmus">
       <UniqueIdentifier>{aa7dac06-e6e3-4b46-b307-c60e5a7bb55a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\lib\libmus\libsrc">
-      <UniqueIdentifier>{c9cd32e2-e424-4bf6-a422-c761052f8f21}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\lib\nusys-1">
       <UniqueIdentifier>{d32669a5-3fe9-4f87-879e-1c85f14dffb8}</UniqueIdentifier>
