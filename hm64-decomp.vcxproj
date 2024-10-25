@@ -1277,6 +1277,7 @@
     <ClInclude Include="src\game\itemHandlers.h" />
     <ClInclude Include="src\game\level.h" />
     <ClInclude Include="src\game\levelInteractions.h" />
+    <ClInclude Include="src\lib\libmus\libmus_config.h" />
     <ClInclude Include="src\lib\libmus\player.h" />
     <ClInclude Include="src\lib\nusys-1\fontbmp.h" />
     <ClInclude Include="src\lib\nusys-1\nupakmenu.h" />

@@ -1176,6 +1176,9 @@
     <ClInclude Include="src\game\spriteIndices.h">
       <Filter>src\game</Filter>
     </ClInclude>
+    <ClInclude Include="src\lib\libmus\libmus_config.h">
+      <Filter>src\lib\libmus</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitmodules" />
