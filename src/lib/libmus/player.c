@@ -93,12 +93,12 @@ STATIC int             max_channels;              /* number of channels        *
 //STATIC ALVoice         *mus_voices;               /* audio library voices      */
 STATIC channel_t       *mus_channels;             /* music player channels     */
 //STATIC unsigned char   **mus_effects;             /* address of sound effects  */
-//STATIC int             *mus_priority;             /* address of sfx prioritys  */
+STATIC int             *mus_priority;             /* address of sfx prioritys  */
 STATIC int             mus_vsyncs_per_second;     /* video refresh rate        */
 //STATIC ALMicroTime     mus_next_frame_time;	  /* time until next frame     */
-//STATIC unsigned short  mus_master_volume_effects; /* sound effect master value */
-//STATIC unsigned short  mus_master_volume_songs;   /* song master volume        */
-//STATIC unsigned long   mus_current_handle;        /* current handle number     */
+STATIC unsigned short  mus_master_volume_effects; /* sound effect master value */
+STATIC unsigned short  mus_master_volume_songs;   /* song master volume        */
+STATIC unsigned long   mus_current_handle;        /* current handle number     */
 //STATIC long            mus_random_seed;           /* random number seed value  */
 STATIC ptr_bank_t      *mus_init_bank;		  /* sample bank to initialise */
 STATIC ptr_bank_t      *mus_default_bank;	  /* sample bank default       */
@@ -644,13 +644,111 @@ command_func_t jumptable[]=
 //#include "player_api.c"
 INCLUDE_ASM(const s32, "lib/libmus/player", MusInitialize);
 
-INCLUDE_ASM(const s32, "lib/libmus/player", MusSetMasterVolume);
+void MusSetMasterVolume(unsigned long flags, int volume)
+{
+  if (flags&MUSFLAG_EFFECTS)
+    mus_master_volume_effects = volume;
+  if (flags&MUSFLAG_SONGS)
+    mus_master_volume_songs = volume;
+}
 
-INCLUDE_ASM(const s32, "lib/libmus/player", MusStartSong);
+unsigned long MusStartSong(void *addr)
+{
+  song_t *song_addr;
+  unsigned long handle, *work_addr;
+  int i, count;
+  channel_t *cp;
 
-INCLUDE_ASM(const s32, "lib/libmus/player", MusStartEffect);
 
-INCLUDE_ASM(const s32, "lib/libmus/player", MusStartEffect2);
+  song_addr = addr;
+  work_addr = addr;
+  count = *work_addr++;
+#ifdef SUPPORT_SONGWAVELOOKUP
+  work_addr++;
+#endif
+  /* remap song if necessary */
+  if (*work_addr<0x400)
+  {
+    /* convert main offsets to pointers */
+    __MusIntRemapPtrs(work_addr, addr, SONGTPTRS);
+    /* convert channel, volume and pitch bend offsets to pointers */
+    __MusIntRemapPtrs(song_addr->ChannelData,    addr, count);
+    __MusIntRemapPtrs(song_addr->VolumeData,     addr, count);
+    __MusIntRemapPtrs(song_addr->PitchBendData,  addr, count);
+  }
+
+  /* get next handle */
+  handle = mus_current_handle++;
+
+  for(i=0; i<count; i++)
+  {
+    if(song_addr->ChannelData[i] != NULL)
+    {
+      cp=mus_channels+__MusIntFindChannel(song_addr,i);
+      __MusIntInitialiseChannel(cp);
+      cp->song_addr = song_addr;
+      cp->pvolume = cp->pvolumebase = song_addr->VolumeData[i];
+      cp->ppitchbend = cp->ppitchbendbase = song_addr->PitchBendData[i];
+      /* pdata must be set last to avoid processing clash */
+      cp->pdata = cp->pbase = song_addr->ChannelData[i];
+      cp->handle = handle;
+
+    }
+  }
+  return (handle);
+}
+
+unsigned long MusStartEffect(int number)
+{
+  channel_t *cp, *current_cp;
+  int i, priority, current_priority;
+	
+  priority = mus_priority[number];
+  current_priority = priority+1;
+  for(i=0, cp=mus_channels; i<max_channels; i++, cp++)
+  {
+    if (cp->pdata==NULL)
+      return (__MusIntStartEffect(cp, number, 0x80, 0x80, priority));
+    if (cp->IsFX && cp->priority<current_priority)
+    {
+      current_priority = cp->priority;
+      current_cp = cp;
+    }
+  }
+  if (current_priority<priority)
+      return (__MusIntStartEffect(current_cp, number, 0x80, 0x80, priority));
+  return (0);
+}
+
+unsigned long MusStartEffect2(int number, int volume, int pan , int restartflag, int priority)
+{
+  channel_t *cp, *current_cp;
+  int i, current_priority;
+	
+  if (priority==-1)
+    priority = mus_priority[number];
+
+  if (restartflag)
+  {
+    for(i=0, cp=mus_channels; i<max_channels; i++, cp++)
+      if (cp->IsFX == number)
+	return (__MusIntStartEffect(cp, number, volume, pan, priority));
+  }
+  current_priority = priority+1;
+  for(i=0, cp=mus_channels; i<max_channels; i++, cp++)
+  {
+    if (cp->pdata==NULL)
+      return (__MusIntStartEffect(cp, number, volume, pan, priority));
+    if (cp->IsFX && cp->priority<current_priority)
+    {
+      current_priority = cp->priority;
+      current_cp = cp;
+    }
+  }
+  if (current_priority<priority)
+      return (__MusIntStartEffect(current_cp, number, volume, pan, priority));
+  return (0);
+}
 
 void MusStop(unsigned long flags, int speed)
 {
