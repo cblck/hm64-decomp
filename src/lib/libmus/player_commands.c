@@ -9,7 +9,7 @@ INCLUDE_ASM(const s32, "lib/libmus/player", Fwave);
 
 INCLUDE_ASM(const s32, "lib/libmus/player", Fport);
 
-INCLUDE_ASM(const s32, "lib/libmus/player", FPortoff);
+INCLUDE_ASM(const s32, "lib/libmus/player", Fportoff);
  
 INCLUDE_ASM(const s32, "lib/libmus/player", Fdefa);
 
