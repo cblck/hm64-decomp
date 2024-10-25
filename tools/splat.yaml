@@ -107,10 +107,10 @@ segments:
       - [ 0xCDB80, c, lib/nusys-1/nuauprenmifuncset]
       - [ 0xCDBC0, c, lib/nusys-1/nuauprenmiproc]
       - [ 0xCDC20, c, lib/nusys-1/nuaustlmgr]
-      # player_commandsc + player_api.c; not 10 bytes aligned
-      - [ 0xCE620, c, lib/libmus/player_commands]
+      - [ 0xCE620, c, lib/libmus/player]
+      # [ 0xCE620, c, lib/libmus/player_commands]
       # [ 0xCFC84, c, lib/libmus/player_api]
-      - [ 0xD1000, c, lib/libmus/player]
+      # [ 0xD1000, c, lib/libmus/player]
       - [ 0xD3600, c, lib/os/libultra/libnaudio/n_sl]
       - [ 0xD3680, c, lib/os/libultra/libnaudio/n_synaddplayer]
       - [ 0xD36D0, c, lib/os/libultra/libnaudio/n_synallocvoice]
@@ -434,8 +434,9 @@ segments:
       - [ 0xFEBF0, .rodata, game/namingScreen]
       # library rodata
       - [ 0xFEC40, .rodata, lib/nusys-1/nupakmenu]
-      - [ 0xFED00, rodata] # lib/libmus/player_commands
-      - [ 0xFED40, rodata] # lib/libmus/player
+      - [ 0xFED00, rodata] # lib/libmus/player
+      # [ 0xFED00, rodata, lib/libmus/player_commands]
+      # [ 0xFED40, rodata, lib/libmus/player] 
       - [ 0xFEDE0, .rodata, lib/os/libultra/libnaudio/n_synthesizer]
       - [ 0xFEE00, .rodata, lib/os/libultra/libnaudio/n_drvrNew]
       - [ 0xFEE30, .rodata, lib/os/libultra/libnaudio/n_env]

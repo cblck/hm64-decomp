@@ -110,7 +110,7 @@ $(BUILD_DIR)/src/overlays/%.c.o : src/overlays/%.c build
 	$(dir_guard)
 	$(V)export COMPILER_PATH=$(KMC_PATH) && $(CC) -B $(KMC_PATH) $(NU_OPTFLAGS) $(CFLAGS) $(ULTRALIBVER) $(CPPFLAGS) -c -o $@ $< 
 	
-$(BUILD_DIR)/src/lib/libmus/%.c.o : src/lib/libmus/%.c build
+$(BUILD_DIR)/src/lib/libmus/player.c.o : src/lib/libmus/player.c build
 	$(dir_guard)
 	$(V)export COMPILER_PATH=$(KMC_PATH) && $(CC) -B $(KMC_PATH) $(NU_OPTFLAGS) $(CFLAGS) $(ULTRALIBVER) $(CPPFLAGS) -c -o $@ $< 
 

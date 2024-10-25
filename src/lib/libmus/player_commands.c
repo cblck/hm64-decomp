@@ -2,132 +2,88 @@
 
 // version 2.00
 
-// player_commands.c
+/*
+INCLUDE_ASM(const s32, "lib/libmus/player", Fstop);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", Fstop);
+INCLUDE_ASM(const s32, "lib/libmus/player", Fwave);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", Fwave);
+INCLUDE_ASM(const s32, "lib/libmus/player", Fport);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", Fport);
-
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", FPortoff);
+INCLUDE_ASM(const s32, "lib/libmus/player", FPortoff);
  
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", Fdefa);
+INCLUDE_ASM(const s32, "lib/libmus/player", Fdefa);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", Ftempo);
+INCLUDE_ASM(const s32, "lib/libmus/player", Ftempo);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", Fendit);
+INCLUDE_ASM(const s32, "lib/libmus/player", Fendit);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", Fcutoff);
+INCLUDE_ASM(const s32, "lib/libmus/player", Fcutoff);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", Fvibup);
+INCLUDE_ASM(const s32, "lib/libmus/player", Fvibup);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", Fvibdown);
+INCLUDE_ASM(const s32, "lib/libmus/player", Fvibdown);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", Fviboff);
+INCLUDE_ASM(const s32, "lib/libmus/player", Fviboff);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", Flength);
+INCLUDE_ASM(const s32, "lib/libmus/player", Flength);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", Fignore);
+INCLUDE_ASM(const s32, "lib/libmus/player", Fignore);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", Ftrans);
+INCLUDE_ASM(const s32, "lib/libmus/player", Ftrans);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", Fignore_trans);
+INCLUDE_ASM(const s32, "lib/libmus/player", Fignore_trans);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", Fdistort);
+INCLUDE_ASM(const s32, "lib/libmus/player", Fdistort);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", Fenvelope);
+INCLUDE_ASM(const s32, "lib/libmus/player", Fenvelope);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", Fenvoff);
+INCLUDE_ASM(const s32, "lib/libmus/player", Fenvoff);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", Fenvon);
+INCLUDE_ASM(const s32, "lib/libmus/player", Fenvon);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", Ftroff);
+INCLUDE_ASM(const s32, "lib/libmus/player", Ftroff);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", Ftron);
+INCLUDE_ASM(const s32, "lib/libmus/player", Ftron);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", Ffor);
+INCLUDE_ASM(const s32, "lib/libmus/player", Ffor);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", Fnext);
+INCLUDE_ASM(const s32, "lib/libmus/player", Fnext);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", Fwobble);
+INCLUDE_ASM(const s32, "lib/libmus/player", Fwobble);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", Fwobbleoff);
+INCLUDE_ASM(const s32, "lib/libmus/player", Fwobbleoff);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", Fvelon);
+INCLUDE_ASM(const s32, "lib/libmus/player", Fvelon);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", Fveloff);
+INCLUDE_ASM(const s32, "lib/libmus/player", Fveloff);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", Fvelocity);
+INCLUDE_ASM(const s32, "lib/libmus/player", Fvelocity);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", Fpan);
+INCLUDE_ASM(const s32, "lib/libmus/player", Fpan);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", Fstereo);
+INCLUDE_ASM(const s32, "lib/libmus/player", Fstereo);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", Fdrums);
+INCLUDE_ASM(const s32, "lib/libmus/player", Fdrums);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", Fdrumsoff);
+INCLUDE_ASM(const s32, "lib/libmus/player", Fdrumsoff);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", Fprint);
+INCLUDE_ASM(const s32, "lib/libmus/player", Fprint);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", Fgoto);
+INCLUDE_ASM(const s32, "lib/libmus/player", Fgoto);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", Freverb);
+INCLUDE_ASM(const s32, "lib/libmus/player", Freverb);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", FrandNote);
+INCLUDE_ASM(const s32, "lib/libmus/player", FrandNote);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", FrandVolume);
+INCLUDE_ASM(const s32, "lib/libmus/player", FrandVolume);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", FrandPan);
+INCLUDE_ASM(const s32, "lib/libmus/player", FrandPan);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", Fvolume);
+INCLUDE_ASM(const s32, "lib/libmus/player", Fvolume);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", Fstartfx);
+INCLUDE_ASM(const s32, "lib/libmus/player", Fstartfx);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", Fbendrange);
+INCLUDE_ASM(const s32, "lib/libmus/player", Fbendrange);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", Fsweep);
-
-
-// version 2.00
-
-// FIXME: split this somehow
-// player_api.c
-
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", MusInitialize);
-
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", MusSetMasterVolume);
-
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", MusStartSong);
-
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", MusStartEffect);
-
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", MusStartEffect2);
-
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", MusStop);
-
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", MusAsk);
-
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", MusHandleStop);
-
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", MusHandleAsk);
-
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", MusHandleSetVolume);
-
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", MusHandlePan);
-
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", MusHandleSetFreqOffset);
-
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", MusHandleSetTempo);
-
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", MusHandleSetReverb);
-
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", MusBankInitialize);
-
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", MusBankStartSong);
-
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", MusBankStartEffect);
-
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", MusBankStartEffect2);
-
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", MusHandleGetPtrAddr);
+INCLUDE_ASM(const s32, "lib/libmus/player", Fsweep);
+*/

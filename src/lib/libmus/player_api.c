@@ -1,44 +1,43 @@
 #include "common.h"
 
-// TODO: use this file
-// file unused for now until can figure out aligning this file along 8 bytes
+// version 2.00
 
 /*
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", MusInitialize);
+INCLUDE_ASM(const s32, "lib/libmus/player", MusInitialize);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", MusSetMasterVolume);
+INCLUDE_ASM(const s32, "lib/libmus/player", MusSetMasterVolume);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", MusStartSong);
+INCLUDE_ASM(const s32, "lib/libmus/player", MusStartSong);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", MusStartEffect);
+INCLUDE_ASM(const s32, "lib/libmus/player", MusStartEffect);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", MusStartEffect2);
+INCLUDE_ASM(const s32, "lib/libmus/player", MusStartEffect2);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", MusStop);
+INCLUDE_ASM(const s32, "lib/libmus/player", MusStop);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", MusAsk);
+INCLUDE_ASM(const s32, "lib/libmus/player", MusAsk);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", MusHandleStop);
+INCLUDE_ASM(const s32, "lib/libmus/player", MusHandleStop);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", MusHandleAsk);
+INCLUDE_ASM(const s32, "lib/libmus/player", MusHandleAsk);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", MusHandleSetVolume);
+INCLUDE_ASM(const s32, "lib/libmus/player", MusHandleSetVolume);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", MusHandlePan);
+INCLUDE_ASM(const s32, "lib/libmus/player", MusHandlePan);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", MusHandleSetFreqOffset);
+INCLUDE_ASM(const s32, "lib/libmus/player", MusHandleSetFreqOffset);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", MusHandleSetTempo);
+INCLUDE_ASM(const s32, "lib/libmus/player", MusHandleSetTempo);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", MusHandleSetReverb);
+INCLUDE_ASM(const s32, "lib/libmus/player", MusHandleSetReverb);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", MusBankInitialize);
+INCLUDE_ASM(const s32, "lib/libmus/player", MusBankInitialize);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", MusBankStartSong);
+INCLUDE_ASM(const s32, "lib/libmus/player", MusBankStartSong);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", MusBankStartEffect);
+INCLUDE_ASM(const s32, "lib/libmus/player", MusBankStartEffect);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", MusBankStartEffect2);
+INCLUDE_ASM(const s32, "lib/libmus/player", MusBankStartEffect2);
 
-INCLUDE_ASM(const s32, "lib/libmus/player_commands", MusHandleGetPtrAddr);
+INCLUDE_ASM(const s32, "lib/libmus/player", MusHandleGetPtrAddr);
 */
