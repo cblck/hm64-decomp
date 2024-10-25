@@ -79,12 +79,15 @@
     </ClCompile>
     <ClCompile Include="src\lib\libmus\player.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Disabled</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\libmus\player_api.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Disabled</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\libmus\player_commands.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Disabled</Optimization>
     </ClCompile>
     <ClCompile Include="src\lib\nusys-1\nuaustlmgr.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>

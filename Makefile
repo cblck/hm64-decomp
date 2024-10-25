@@ -40,6 +40,7 @@ DEBUG_FLAGS := -g2
 OPTFLAGS := -O2
 LIBULTRA_OPTFLAGS := -O3 -g0
 LIBKMC_OPTFLAGS := -O1
+LIBMUS_OPTFLAGS := -O0 -g0
 NU_OPTFLAGS := -O3
 
 ULTRALIBVER := -DBUILD_VERSION=7
@@ -112,7 +113,7 @@ $(BUILD_DIR)/src/overlays/%.c.o : src/overlays/%.c build
 	
 $(BUILD_DIR)/src/lib/libmus/player.c.o : src/lib/libmus/player.c build
 	$(dir_guard)
-	$(V)export COMPILER_PATH=$(KMC_PATH) && $(CC) -B $(KMC_PATH) $(NU_OPTFLAGS) $(CFLAGS) $(ULTRALIBVER) $(CPPFLAGS) -c -o $@ $< 
+	$(V)export COMPILER_PATH=$(KMC_PATH) && $(CC) -B $(KMC_PATH) $(LIBMUS_OPTFLAGS) $(CFLAGS) $(ULTRALIBVER) $(CPPFLAGS) -c -o $@ $< 
 
 $(BUILD_DIR)/src/lib/nusys-1/%.c.o : src/lib/nusys-1/%.c build
 	$(dir_guard)
