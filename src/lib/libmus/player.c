@@ -94,7 +94,7 @@ STATIC ALHeap	       heap;                      /* audio heap                */
 //STATIC channel_t       *mus_channels;             /* music player channels     */
 //STATIC unsigned char   **mus_effects;             /* address of sound effects  */
 //STATIC int             *mus_priority;             /* address of sfx prioritys  */
-//STATIC int             mus_vsyncs_per_second;     /* video refresh rate        */
+STATIC int             mus_vsyncs_per_second;     /* video refresh rate        */
 //STATIC ALMicroTime     mus_next_frame_time;	  /* time until next frame     */
 //STATIC unsigned short  mus_master_volume_effects; /* sound effect master value */
 //STATIC unsigned short  mus_master_volume_songs;   /* song master volume        */
