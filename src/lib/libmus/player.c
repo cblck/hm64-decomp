@@ -100,8 +100,8 @@ STATIC int             mus_vsyncs_per_second;     /* video refresh rate        *
 //STATIC unsigned short  mus_master_volume_songs;   /* song master volume        */
 //STATIC unsigned long   mus_current_handle;        /* current handle number     */
 //STATIC long            mus_random_seed;           /* random number seed value  */
-//STATIC ptr_bank_t      *mus_init_bank;		  /* sample bank to initialise */
-//STATIC ptr_bank_t      *mus_default_bank;	  /* sample bank default       */
+STATIC ptr_bank_t      *mus_init_bank;		  /* sample bank to initialise */
+STATIC ptr_bank_t      *mus_default_bank;	  /* sample bank default       */
 
 /* music player control flag */
 //unsigned long __muscontrol_flag;
@@ -652,33 +652,263 @@ INCLUDE_ASM(const s32, "lib/libmus/player", MusStartEffect);
 
 INCLUDE_ASM(const s32, "lib/libmus/player", MusStartEffect2);
 
-INCLUDE_ASM(const s32, "lib/libmus/player", MusStop);
+void MusStop(unsigned long flags, int speed)
+{
+  int i, speed2;
+  channel_t *cp;
 
-INCLUDE_ASM(const s32, "lib/libmus/player", MusAsk);
+#ifdef _AUDIODEBUG
+  if (speed<0)
+    osSyncPrintf("PLAYER.C: Stop all function called with invalid speed setting.\n");
+  speed = 0;
+#endif
+  speed2 = speed ? speed : 1;
+  for (i=0, cp=mus_channels; i<max_channels; i++, cp++)
+  {
+    if ((cp->IsFX && flags&MUSFLAG_EFFECTS) || (!cp->IsFX && flags&MUSFLAG_SONGS))
+    {
+      cp->stopping = speed;
+      cp->stopping_speed = speed2;
+    }
+  }
+}
 
-INCLUDE_ASM(const s32, "lib/libmus/player", MusHandleStop);
+int MusAsk(unsigned long flags)
+{
+  int i, count;
+  channel_t *cp;
 
-INCLUDE_ASM(const s32, "lib/libmus/player", MusHandleAsk);
+  for (i=0, cp=mus_channels, count=0; i<max_channels; i++, cp++)
+  {
+    if (cp->pdata)
+    {
+      if ((cp->IsFX && flags&MUSFLAG_EFFECTS) || (!cp->IsFX && flags&MUSFLAG_SONGS))
+	count++;
+    }
+  }
+  return (count);
+}
 
-INCLUDE_ASM(const s32, "lib/libmus/player", MusHandleSetVolume);
+int MusHandleStop(unsigned long handle, int speed)
+{
+  int i,speed2, count;
+  channel_t *cp;
 
-INCLUDE_ASM(const s32, "lib/libmus/player", MusHandlePan);
+  if (!handle)
+    return(0);
 
-INCLUDE_ASM(const s32, "lib/libmus/player", MusHandleSetFreqOffset);
+#ifdef _AUDIODEBUG
+  if (speed<0)
+    osSyncPrintf("PLAYER.C: MusHandleStop called with invalid speed setting.\n");
+  speed = 0;
+#endif
+  speed2 = speed ? speed : 1;
+  for (i=0, cp=mus_channels, count=0; i<max_channels; i++, cp++)
+  {
+    if (cp->handle==handle)
+    {
+      cp->stopping = speed;
+      cp->stopping_speed = speed2;
+      count++;
+    }
+  }
+  return (count);
+}
 
-INCLUDE_ASM(const s32, "lib/libmus/player", MusHandleSetTempo);
+int MusHandleAsk(unsigned long handle)
+{
+  channel_t *cp;
+  int i, count;
 
-INCLUDE_ASM(const s32, "lib/libmus/player", MusHandleSetReverb);
+  if (!handle)
+    return (0);
+  
+  for(i=0, cp=mus_channels, count=0; i<max_channels; i++, cp++)
+    if (cp->handle==handle)
+      count++;
+  return(count);
+}
 
-INCLUDE_ASM(const s32, "lib/libmus/player", MusBankInitialize);
+int MusHandleSetVolume(unsigned long handle, int volume)
+{
+  channel_t *cp;
+  int i, count;
 
-INCLUDE_ASM(const s32, "lib/libmus/player", MusBankStartSong);
+  if (!handle)
+    return (0);
 
-INCLUDE_ASM(const s32, "lib/libmus/player", MusBankStartEffect);
+  for(i=0, cp=mus_channels, count=0; i<max_channels; i++, cp++)
+  {
+    if (cp->handle==handle)
+    {
+      cp->volscale = volume;
+      count++;
+    }
+  }
+  return (count);
+}
 
-INCLUDE_ASM(const s32, "lib/libmus/player", MusBankStartEffect2);
+int MusHandleSetPan (unsigned long handle, int pan)
+{
+  channel_t *cp;
+  int i, count;
 
-INCLUDE_ASM(const s32, "lib/libmus/player", MusHandleGetPtrAddr);
+  if (!handle)
+    return (0);
+
+  for(i=0, cp=mus_channels, count=0; i<max_channels; i++, cp++)
+  {
+    if (cp->handle==handle)
+    {
+      cp->panscale = pan;
+      cp->old_pan = 0xff;
+      count++;
+    }
+  }
+  return (count);
+}
+
+int MusHandleSetFreqOffset(unsigned long handle, float offset)
+{
+  channel_t *cp;
+  int i, count;
+
+  if (!handle)
+    return (0);
+
+  for(i=0, cp=mus_channels, count=0; i<max_channels; i++, cp++)
+  {
+    if (cp->handle==handle)
+    {
+      cp->freqoffset = offset+cp->distort;
+      count++;
+    }
+  }
+  return (count);
+}
+
+int MusHandleSetTempo(unsigned long handle, int tempo)
+{
+  channel_t *cp;
+  int i, count;
+
+  if (!handle)
+    return (0);
+
+  if (tempo<1)
+    tempo=1;
+  else if (tempo>256)
+    tempo=256;
+
+  for(i=0, cp=mus_channels, count=0; i<max_channels; i++, cp++)
+  {
+    if (cp->handle==handle)
+    {
+      cp->temscale = tempo;
+      cp->channel_tempo = (cp->channel_tempo_save*tempo)>>7;
+      count++;
+    }
+  }
+  return (count);
+}
+
+int MusHandleSetReverb(unsigned long handle, int reverb)
+{
+  channel_t *cp;
+  int i, count;
+
+  if (!handle)
+    return (0);
+
+  if (reverb<0)
+    reverb=0;
+  else if (reverb>127)
+    reverb=127;
+
+  for(i=0, cp=mus_channels, count=0; i<max_channels; i++, cp++)
+  {
+    if (cp->handle==handle)
+    {
+      cp->reverb_base = reverb;
+      cp->old_reverb = 0xff;
+      count++;
+    }
+  }
+  return (count);
+}
+
+void MusBankInitialize(void *pbank, void *wbank)
+{
+  __MusIntRemapPtrBank(pbank, wbank);
+}
+
+unsigned long MusBankStartSong(void *ipbank, void *addr)
+{
+  unsigned long handle;
+  ptr_bank_t *pptr;
+
+  if (ipbank)
+  {
+    pptr = (ptr_bank_t *)ipbank;
+    if (pptr->flags&PTRFLAG_REMAPPED)
+      mus_init_bank = pptr;    
+#ifdef _AUDIODEBUG
+    else
+      osSyncPrintf("PLAYER_API.C: Calling MusBankStartSong with invalid pointer bank.\n");
+#endif
+  }
+  handle = MusStartSong(addr);
+  mus_init_bank = mus_default_bank;
+  return (handle);
+}
+
+unsigned long MusBankStartEffect(void *ipbank, int number)
+{
+  unsigned long handle;
+  ptr_bank_t *pptr;
+
+  if (ipbank)
+  {
+    pptr = (ptr_bank_t *)ipbank;
+    if (pptr->flags&PTRFLAG_REMAPPED)
+      mus_init_bank = pptr;    
+  }
+  
+  handle = MusStartEffect(number);
+  mus_init_bank = mus_default_bank;
+  return (handle);
+}
+
+unsigned long MusBankStartEffect2(void *ipbank, int number, int volume, int pan , int restartflag, int priority)
+{
+  unsigned long handle;
+  ptr_bank_t *pptr;
+
+  if (ipbank)
+  {
+    pptr = (ptr_bank_t *)ipbank;
+    if (pptr->flags&PTRFLAG_REMAPPED)
+      mus_init_bank = pptr;    
+  }
+  
+  handle = MusStartEffect2(number, volume, pan, restartflag, priority);
+  mus_init_bank = mus_default_bank;
+  return (handle);
+}
+
+void *MusHandleGetPtrAddr(int handle)
+{
+  channel_t *cp;
+  int i, count;
+
+  if (!handle)
+    return (0);
+
+  for(i=0, cp=mus_channels, count=0; i<max_channels; i++, cp++)
+    if (cp->handle==handle)
+      return (cp->sample_bank);
+  return (0);
+}
 
 /* C files for SC effect extensions */
 #ifdef SUPPORT_EFFECTS

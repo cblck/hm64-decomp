@@ -23,7 +23,7 @@ INCLUDE_ASM(const s32, "lib/libmus/player", MusHandleAsk);
 
 INCLUDE_ASM(const s32, "lib/libmus/player", MusHandleSetVolume);
 
-INCLUDE_ASM(const s32, "lib/libmus/player", MusHandlePan);
+INCLUDE_ASM(const s32, "lib/libmus/player", MusHandleSetPan);
 
 INCLUDE_ASM(const s32, "lib/libmus/player", MusHandleSetFreqOffset);
 
