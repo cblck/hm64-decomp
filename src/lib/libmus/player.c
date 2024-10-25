@@ -197,45 +197,180 @@ INCLUDE_ASM(const s32, "lib/libmus/player", Ftron);
 
 INCLUDE_ASM(const s32, "lib/libmus/player", Ffor);
 
-INCLUDE_ASM(const s32, "lib/libmus/player", Fnext);
+static unsigned char *Fnext (channel_t *cp, unsigned char *ptr)
+{
+  int index;
 
-INCLUDE_ASM(const s32, "lib/libmus/player", Fwobble);
+  index = cp->for_stack_count-1;
+  /* infinite loop? */
+  if (cp->for_count[index]!=0xff)
+  { /* still looping? */
+    if (--(cp->for_count[index])==0)
+    {
+      cp->for_stack_count = index;
+      index = -1;
+    }
+  }
+  /* unstack pointers if necessary */
+  if (index>-1)
+  {
+    ptr = cp->for_stack[index];
+    cp->pvolume = cp->for_stackvol[index];
+    cp->ppitchbend = cp->for_stackpb[index];
+    cp->volume = cp->for_volume[index];
+    cp->pitchbend = cp->for_pitchbend[index];
+    cp->cont_vol_repeat_count = cp->for_vol_count[index];
+    cp->cont_pb_repeat_count = cp->for_pb_count[index];
+    cp->pitchbend_precalc = cp->pitchbend*cp->bendrange;
+  }
+  return (ptr);
+}
 
-INCLUDE_ASM(const s32, "lib/libmus/player", Fwobbleoff);
+static unsigned char *Fwobble(channel_t *cp, unsigned char *ptr)
+{
+  cp->wobble_amount = *ptr++;
+  cp->wobble_on_speed = *ptr++;
+  cp->wobble_off_speed = *ptr++;
+  return(ptr);
+}
 
-INCLUDE_ASM(const s32, "lib/libmus/player", Fvelon);
+static unsigned char *Fwobbleoff(channel_t *cp, unsigned char *ptr)
+{
+  cp->wobble_on_speed = 0;
+  return (ptr);
+}
 
-INCLUDE_ASM(const s32, "lib/libmus/player", Fveloff);
+static unsigned char *Fvelon(channel_t *cp, unsigned char *ptr)
+{  
+  cp->velocity_on = 1;
+  return (ptr);
+}
 
-INCLUDE_ASM(const s32, "lib/libmus/player", Fvelocity);
+static unsigned char *Fveloff(channel_t *cp, unsigned char *ptr)
+{
+  cp->velocity_on = 0;
+  return (ptr);
+}
 
-INCLUDE_ASM(const s32, "lib/libmus/player", Fpan);
+static unsigned char *Fvelocity(channel_t *cp, unsigned char *ptr)
+{
+  cp->default_velocity 	= /*velocity_map[*/*ptr++/*]*/;
+  cp->velocity_on = 0;
+  return (ptr);
+}
 
-INCLUDE_ASM(const s32, "lib/libmus/player", Fstereo);
+static unsigned char *Fpan(channel_t *cp, unsigned char *ptr)
+{
+  cp->pan = (*ptr++)/2;
+  return (ptr);
+}
 
-INCLUDE_ASM(const s32, "lib/libmus/player", Fdrums);
+static unsigned char *Fstereo(channel_t *cp, unsigned char *ptr)
+{
+  return (ptr+2);
+}
 
-INCLUDE_ASM(const s32, "lib/libmus/player", Fdrumsoff);
+static unsigned char *Fdrums(channel_t *cp, unsigned char *ptr)
+{
+  unsigned long addr;
 
-INCLUDE_ASM(const s32, "lib/libmus/player", Fprint);
+  addr = (unsigned long)cp->song_addr+(cp->song_addr->DrumData[*ptr++]);
+  cp->pdrums = (unsigned char *)addr;
+  return (ptr);
+}
 
-INCLUDE_ASM(const s32, "lib/libmus/player", Fgoto);
+static unsigned char *Fdrumsoff(channel_t *cp, unsigned char *ptr)
+{
+  cp->pdrums = NULL;
+  return (ptr);
+}
 
-INCLUDE_ASM(const s32, "lib/libmus/player", Freverb);
+static unsigned char *Fprint(channel_t *cp, unsigned char *ptr)
+{
+#ifdef _AUDIODEBUG
+  osSyncPrintf("PLAYER_COMMANDS.C: Fprint -  %d (channel frame=%d)\n", *ptr++,  cp->channel_frame);
+  return (ptr);
+#else
+  ptr++;
+  return (ptr);
+#endif
+}
 
-INCLUDE_ASM(const s32, "lib/libmus/player", FrandNote);
+static unsigned char *Fgoto(channel_t *cp, unsigned char *ptr)
+{
+  int off, off1;
 
-INCLUDE_ASM(const s32, "lib/libmus/player", FrandVolume);
+  /* 2 bytes for song offset */
+  off1 = *ptr++<<8;
+  off1 += *ptr++;
 
-INCLUDE_ASM(const s32, "lib/libmus/player", FrandPan);
+  /* get volume offset BEFORE updating pointer */
+  /* 2 bytes for volume offset (never inside a run length bit) */
+  off = *ptr++<<8;
+  off += *ptr++;
+  cp->pvolume = cp->pvolumebase+off;
+  cp->cont_vol_repeat_count = 1;
+  
+  /* get pitchbend offset BEFORE updating pointer */
+  /* 2 bytes for pitchbend offset (never inside a run length bit) */
+  off = *ptr++<<8;
+  off += *ptr++;
+  cp->ppitchbend = cp->ppitchbendbase+off;
+  cp->cont_pb_repeat_count = 1;
+  
+  return (cp->pbase+off1);
+}
 
-INCLUDE_ASM(const s32, "lib/libmus/player", Fvolume);
+static unsigned char *Freverb(channel_t *cp, unsigned char *ptr)
+{
+  cp->reverb = *ptr++;
+  return (ptr);
+}
+
+static unsigned char *FrandNote(channel_t *cp, unsigned char *ptr)
+{	
+  // rand_amount,rand_base  -- 20,-3 would give -3 to 16 as the value
+  cp->transpose = __MusIntRandom(*ptr++);
+  cp->transpose += *ptr++;
+  return (ptr);
+}
+
+static unsigned char *FrandVolume(channel_t *cp, unsigned char *ptr)
+{
+  // rand_amount,base
+  cp->volume = __MusIntRandom(*ptr++);
+  cp->volume += *ptr++;
+  return (ptr);
+}
+
+static unsigned char *FrandPan(channel_t *cp, unsigned char *ptr)
+{
+  // rand_amount,base
+  cp->pan = __MusIntRandom(*ptr++);
+  cp->pan += *ptr++;
+  return (ptr);
+}
+
+static unsigned char *Fvolume(channel_t *cp, unsigned char *ptr)
+{
+  cp->volume = *ptr++;
+  return (ptr);
+}
 
 INCLUDE_ASM(const s32, "lib/libmus/player", Fstartfx);
 
-INCLUDE_ASM(const s32, "lib/libmus/player", Fbendrange);
+static unsigned char *Fbendrange(channel_t *cp, unsigned char *ptr)
+{
+  cp->bendrange = (float)(*ptr++)*(1.0/64.0);
+  cp->pitchbend_precalc = cp->pitchbend*cp->pitchbend;
+  return (ptr);
+}
 
-INCLUDE_ASM(const s32, "lib/libmus/player", Fsweep);
+static unsigned char *Fsweep(channel_t *cp, unsigned char *ptr)
+{
+  cp->sweep_speed = *ptr++;
+  return (ptr);
+}
 
 command_func_t jumptable[]=
 {
