@@ -1,5 +1,6 @@
 #include "common.h"
 
+static u8 buffer[12];
 
 INCLUDE_ASM(const s32, "lib/os/libultra/debug/kdebugserver", send);
 

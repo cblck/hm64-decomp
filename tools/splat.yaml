@@ -478,14 +478,16 @@ segments:
       - { start: 0xFF5C0, type: .bss, vram: 0x80135AA0, name: lib/os/libultra/io/sptask }
       - { start: 0xFF5C0, type: .bss, vram: 0x80135AE0, name: lib/os/libultra/io/motor }
       - { start: 0xFF5C0, type: bss, vram: 0x80135BE0, name: bss2 }
+      - { start: 0xFF5C0, type: .bss, vram: 0x801385C0, name: lib/os/libultra/debug/kdebugserver }
+      - { start: 0xFF5C0, type: bss, vram: 0x801385D0, name: bss3 }
       - { start: 0xFF5C0, type: .bss, vram: 0x80138600, name: lib/os/libultra/io/piacs }
       - { start: 0xFF5C0, type: .bss, vram: 0x80138610, name: lib/os/libultra/rmon/rmonsio }
       - { start: 0xFF5C0, type: .bss, vram: 0x80138630, name: lib/os/libultra/rmon/rmonmisc }
       - { start: 0xFF5C0, type: .bss, vram: 0x8013C840, name: lib/os/libultra/rmon/rmonregs }
-      - { start: 0xFF5C0, type: bss, vram: 0x8013C860, name: bss3 }
+      - { start: 0xFF5C0, type: bss, vram: 0x8013C860, name: bss4 }
       - { start: 0xFF5C0, type: .bss, vram: 0x8013CCE0, name: lib/os/libultra/rmon/rmonbrk }
       - { start: 0xFF5C0, type: .bss, vram: 0x8013CDF0, name: lib/libkmc/rand }
-      - { start: 0xFF5C0, type: bss, vram: 0x8013CE00, name: bss4 }
+      - { start: 0xFF5C0, type: bss, vram: 0x8013CE00, name: bss5 }
       
   - name: sramBuffer
     type: code
