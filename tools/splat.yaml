@@ -434,7 +434,7 @@ segments:
       - [ 0xFEBF0, .rodata, game/namingScreen]
       # library rodata
       - [ 0xFEC40, .rodata, lib/nusys-1/nupakmenu]
-      - [ 0xFED00, rodata] # lib/libmus/player
+      - [ 0xFED00, .rodata, lib/libmus/player]
       # [ 0xFED00, rodata, lib/libmus/player_commands]
       # [ 0xFED40, rodata, lib/libmus/player] 
       - [ 0xFEDE0, .rodata, lib/os/libultra/libnaudio/n_synthesizer]
