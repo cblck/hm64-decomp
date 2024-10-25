@@ -28,47 +28,47 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'" />
   <ItemGroup>
-    <ClCompile Include="src\animals.c">
+    <ClCompile Include="src\game\animals.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\evaluation.c">
+    <ClCompile Include="src\game\evaluation.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\game.c">
+    <ClCompile Include="src\game\game.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\gameAudio.c">
+    <ClCompile Include="src\game\gameAudio.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\gameStart.c">
+    <ClCompile Include="src\game\gameStart.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\gameStatus.c">
+    <ClCompile Include="src\game\gameStatus.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\initialize.c">
+    <ClCompile Include="src\game\initialize.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\initialize2.c">
+    <ClCompile Include="src\game\initialize2.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\itemHandlers.c">
+    <ClCompile Include="src\game\itemHandlers.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\level.c">
+    <ClCompile Include="src\game\level.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\levelInteractions.c">
+    <ClCompile Include="src\game\levelInteractions.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
@@ -1031,35 +1031,35 @@
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
-    <ClCompile Include="src\load.c">
+    <ClCompile Include="src\game\load.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\loadGameScreen.c">
+    <ClCompile Include="src\game\loadGameScreen.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\mainLoop.c">
+    <ClCompile Include="src\game\mainLoop.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\mainproc.c">
+    <ClCompile Include="src\game\mainproc.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\mapObjects.c">
+    <ClCompile Include="src\game\mapObjects.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\namingScreen.c">
+    <ClCompile Include="src\game\namingScreen.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\npc.c">
+    <ClCompile Include="src\game\npc.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\overlayScreens.c">
+    <ClCompile Include="src\game\overlayScreens.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
@@ -1071,107 +1071,107 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\player.c">
+    <ClCompile Include="src\game\player.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\setCutscenes.c">
+    <ClCompile Include="src\game\setCutscenes.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\shop.c">
+    <ClCompile Include="src\game\shop.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\system\animatedSprites.c">
+    <ClCompile Include="src\game\system\animatedSprites.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\system\audio.c">
+    <ClCompile Include="src\game\system\audio.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\system\controller.c">
+    <ClCompile Include="src\game\system\controller.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\system\cutscene.c">
+    <ClCompile Include="src\game\system\cutscene.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\system\dialogue.c">
+    <ClCompile Include="src\game\system\dialogue.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\system\flags.c">
+    <ClCompile Include="src\game\system\flags.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\system\globalSprites.c">
+    <ClCompile Include="src\game\system\globalSprites.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\system\graphic.c">
+    <ClCompile Include="src\game\system\graphic.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\system\map.c">
+    <ClCompile Include="src\game\system\map.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\system\mapContext.c">
+    <ClCompile Include="src\game\system\mapContext.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\system\mathUtils.c">
+    <ClCompile Include="src\game\system\mathUtils.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\system\memory.c">
+    <ClCompile Include="src\game\system\memory.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\system\message.c">
+    <ClCompile Include="src\game\system\message.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\system\pauseScreen.c">
+    <ClCompile Include="src\game\system\pauseScreen.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\system\sprite.c">
+    <ClCompile Include="src\game\system\sprite.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\system\spriteAddresses.c">
+    <ClCompile Include="src\game\system\spriteAddresses.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\system\staticGfx.c">
+    <ClCompile Include="src\game\system\staticGfx.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\system\volume.c">
+    <ClCompile Include="src\game\system\volume.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\system\worldGraphics.c">
+    <ClCompile Include="src\game\system\worldGraphics.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\title.c">
+    <ClCompile Include="src\game\title.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\tv.c">
+    <ClCompile Include="src\game\tv.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\updateGame.c">
+    <ClCompile Include="src\game\updateGame.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
-    <ClCompile Include="src\weather.c">
+    <ClCompile Include="src\game\weather.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
     </ClCompile>
@@ -1266,17 +1266,17 @@
     <ClInclude Include="include\PR\ultratypes.h" />
     <ClInclude Include="include\structs.h" />
     <ClInclude Include="include\ultra64.h" />
-    <ClInclude Include="src\animals.h" />
-    <ClInclude Include="src\evaluation.h" />
-    <ClInclude Include="src\game.h" />
-    <ClInclude Include="src\gameAudio.h" />
-    <ClInclude Include="src\gameStart.h" />
-    <ClInclude Include="src\gameStatus.h" />
-    <ClInclude Include="src\initialize.h" />
-    <ClInclude Include="src\initialize2.h" />
-    <ClInclude Include="src\itemHandlers.h" />
-    <ClInclude Include="src\level.h" />
-    <ClInclude Include="src\levelInteractions.h" />
+    <ClInclude Include="src\game\animals.h" />
+    <ClInclude Include="src\game\evaluation.h" />
+    <ClInclude Include="src\game\game.h" />
+    <ClInclude Include="src\game\gameAudio.h" />
+    <ClInclude Include="src\game\gameStart.h" />
+    <ClInclude Include="src\game\gameStatus.h" />
+    <ClInclude Include="src\game\initialize.h" />
+    <ClInclude Include="src\game\initialize2.h" />
+    <ClInclude Include="src\game\itemHandlers.h" />
+    <ClInclude Include="src\game\level.h" />
+    <ClInclude Include="src\game\levelInteractions.h" />
     <ClInclude Include="src\lib\libmus\player.h" />
     <ClInclude Include="src\lib\nusys-1\fontbmp.h" />
     <ClInclude Include="src\lib\nusys-1\nupakmenu.h" />
@@ -1287,37 +1287,37 @@
     <ClInclude Include="src\lib\os\libultra\libnaudio\n_abi.h" />
     <ClInclude Include="src\lib\os\libultra\libnaudio\n_libaudio_sc.h" />
     <ClInclude Include="src\lib\os\libultra\libnaudio\n_synthInternals.h" />
-    <ClInclude Include="src\load.h" />
-    <ClInclude Include="src\loadGameScreen.h" />
-    <ClInclude Include="src\mainLoop.h" />
-    <ClInclude Include="src\mainproc.h" />
-    <ClInclude Include="src\mapObjects.h" />
-    <ClInclude Include="src\namingScreen.h" />
-    <ClInclude Include="src\npc.h" />
-    <ClInclude Include="src\overlayScreens.h" />
-    <ClInclude Include="src\player.h" />
-    <ClInclude Include="src\setCutscenes.h" />
-    <ClInclude Include="src\shop.h" />
-    <ClInclude Include="src\spriteIndices.h" />
-    <ClInclude Include="src\system\audio.h" />
-    <ClInclude Include="src\system\controller.h" />
-    <ClInclude Include="src\system\cutscene.h" />
-    <ClInclude Include="src\system\dialogue.h" />
-    <ClInclude Include="src\system\flags.h" />
-    <ClInclude Include="src\system\graphic.h" />
-    <ClInclude Include="src\system\map.h" />
-    <ClInclude Include="src\system\mapContext.h" />
-    <ClInclude Include="src\system\mathUtils.h" />
-    <ClInclude Include="src\system\memory.h" />
-    <ClInclude Include="src\system\message.h" />
-    <ClInclude Include="src\system\pauseScreen.h" />
-    <ClInclude Include="src\system\sprite.h" />
-    <ClInclude Include="src\system\volume.h" />
-    <ClInclude Include="src\system\worldGraphics.h" />
-    <ClInclude Include="src\title.h" />
-    <ClInclude Include="src\tv.h" />
-    <ClInclude Include="src\updateGame.h" />
-    <ClInclude Include="src\weather.h" />
+    <ClInclude Include="src\game\load.h" />
+    <ClInclude Include="src\game\loadGameScreen.h" />
+    <ClInclude Include="src\game\mainLoop.h" />
+    <ClInclude Include="src\game\mainproc.h" />
+    <ClInclude Include="src\game\mapObjects.h" />
+    <ClInclude Include="src\game\namingScreen.h" />
+    <ClInclude Include="src\game\npc.h" />
+    <ClInclude Include="src\game\overlayScreens.h" />
+    <ClInclude Include="src\game\player.h" />
+    <ClInclude Include="src\game\setCutscenes.h" />
+    <ClInclude Include="src\game\shop.h" />
+    <ClInclude Include="src\game\spriteIndices.h" />
+    <ClInclude Include="src\game\system\audio.h" />
+    <ClInclude Include="src\game\system\controller.h" />
+    <ClInclude Include="src\game\system\cutscene.h" />
+    <ClInclude Include="src\game\system\dialogue.h" />
+    <ClInclude Include="src\game\system\flags.h" />
+    <ClInclude Include="src\game\system\graphic.h" />
+    <ClInclude Include="src\game\system\map.h" />
+    <ClInclude Include="src\game\system\mapContext.h" />
+    <ClInclude Include="src\game\system\mathUtils.h" />
+    <ClInclude Include="src\game\system\memory.h" />
+    <ClInclude Include="src\game\system\message.h" />
+    <ClInclude Include="src\game\system\pauseScreen.h" />
+    <ClInclude Include="src\game\system\sprite.h" />
+    <ClInclude Include="src\game\system\volume.h" />
+    <ClInclude Include="src\game\system\worldGraphics.h" />
+    <ClInclude Include="src\game\title.h" />
+    <ClInclude Include="src\game\tv.h" />
+    <ClInclude Include="src\game\updateGame.h" />
+    <ClInclude Include="src\game\weather.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitmodules" />
@@ -1468,7 +1468,7 @@
       <CLanguageStandard>c99</CLanguageStandard>
       <CppLanguageStandard>gnu++98</CppLanguageStandard>
       <Optimization>MaxSpeed</Optimization>
-      <AdditionalIncludeDirectories>.;include;src;src/system;include/libmus;include/PR;include/gcc;include/nusys;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;include;src/game;src/game/system;include/libmus;include/PR;include/gcc;include/nusys;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAs>CompileAsC</CompileAs>
       <AdditionalOptions>-funsigned-char %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>

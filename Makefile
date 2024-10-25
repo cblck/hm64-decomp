@@ -34,7 +34,7 @@ CFLAGS_COMMON := -G0 -mips3 -mgp32 -mfp32 -Wa,-Iinclude -funsigned-char
 
 CFLAGS := $(CFLAGS_COMMON) $(MACROS)
 ASFLAGS := -G 0 -I include -mips3 -mabi=32
-CPPFLAGS := -I. -I include -I src -I src/system -I include/libmus -I include/PR -I include/gcc -I include/nusys
+CPPFLAGS := -I. -I include -I src/game -I src/game/system -I include/libmus -I include/PR -I include/gcc -I include/nusys
 
 DEBUG_FLAGS := -g2
 OPTFLAGS := -O2
@@ -102,9 +102,17 @@ build:
 	@mkdir $@
 
 # need to pass -B <dir> to gcc to prevent it from fetching system default cc1
-$(BUILD_DIR)/src/%.c.o: src/%.c
+$(BUILD_DIR)/src/game/%.c.o: src/game/%.c
 	$(dir_guard) 
 	$(V)export COMPILER_PATH=$(KMC_PATH) && $(CC) -B $(KMC_PATH) $(OPTFLAGS) $(CFLAGS) $(DEBUG_FLAGS) $(CPPFLAGS) -c -o $@ $<
+	
+$(BUILD_DIR)/src/overlays/%.c.o : src/overlays/%.c build
+	$(dir_guard)
+	$(V)export COMPILER_PATH=$(KMC_PATH) && $(CC) -B $(KMC_PATH) $(NU_OPTFLAGS) $(CFLAGS) $(ULTRALIBVER) $(CPPFLAGS) -c -o $@ $< 
+	
+$(BUILD_DIR)/src/lib/libmus/%.c.o : src/lib/libmus/%.c build
+	$(dir_guard)
+	$(V)export COMPILER_PATH=$(KMC_PATH) && $(CC) -B $(KMC_PATH) $(NU_OPTFLAGS) $(CFLAGS) $(ULTRALIBVER) $(CPPFLAGS) -c -o $@ $< 
 
 $(BUILD_DIR)/src/lib/nusys-1/%.c.o : src/lib/nusys-1/%.c build
 	$(dir_guard)

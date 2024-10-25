@@ -1,84 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="src\animals.c">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\evaluation.c">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\game.c">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gameAudio.c">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gameStart.c">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gameStatus.c">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\initialize.c">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\initialize2.c">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\itemHandlers.c">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\level.c">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\levelInteractions.c">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\load.c">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\loadGameScreen.c">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\mainLoop.c">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\mainproc.c">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\mapObjects.c">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\namingScreen.c">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\npc.c">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\overlayScreens.c">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\player.c">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\setCutscenes.c">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\shop.c">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\title.c">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\tv.c">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\updateGame.c">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\weather.c">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="src\lib\libkmc\rand.c">
       <Filter>src\lib\libkmc</Filter>
     </ClCompile>
@@ -661,62 +583,62 @@
     <ClCompile Include="src\overlays\sramBuffer.c">
       <Filter>src\overlays</Filter>
     </ClCompile>
-    <ClCompile Include="src\system\animatedSprites.c">
-      <Filter>src\system</Filter>
+    <ClCompile Include="src\game\system\animatedSprites.c">
+      <Filter>src\game\system</Filter>
     </ClCompile>
-    <ClCompile Include="src\system\audio.c">
-      <Filter>src\system</Filter>
+    <ClCompile Include="src\game\system\audio.c">
+      <Filter>src\game\system</Filter>
     </ClCompile>
-    <ClCompile Include="src\system\controller.c">
-      <Filter>src\system</Filter>
+    <ClCompile Include="src\game\system\controller.c">
+      <Filter>src\game\system</Filter>
     </ClCompile>
-    <ClCompile Include="src\system\cutscene.c">
-      <Filter>src\system</Filter>
+    <ClCompile Include="src\game\system\cutscene.c">
+      <Filter>src\game\system</Filter>
     </ClCompile>
-    <ClCompile Include="src\system\dialogue.c">
-      <Filter>src\system</Filter>
+    <ClCompile Include="src\game\system\dialogue.c">
+      <Filter>src\game\system</Filter>
     </ClCompile>
-    <ClCompile Include="src\system\flags.c">
-      <Filter>src\system</Filter>
+    <ClCompile Include="src\game\system\flags.c">
+      <Filter>src\game\system</Filter>
     </ClCompile>
-    <ClCompile Include="src\system\globalSprites.c">
-      <Filter>src\system</Filter>
+    <ClCompile Include="src\game\system\globalSprites.c">
+      <Filter>src\game\system</Filter>
     </ClCompile>
-    <ClCompile Include="src\system\graphic.c">
-      <Filter>src\system</Filter>
+    <ClCompile Include="src\game\system\graphic.c">
+      <Filter>src\game\system</Filter>
     </ClCompile>
-    <ClCompile Include="src\system\map.c">
-      <Filter>src\system</Filter>
+    <ClCompile Include="src\game\system\map.c">
+      <Filter>src\game\system</Filter>
     </ClCompile>
-    <ClCompile Include="src\system\mapContext.c">
-      <Filter>src\system</Filter>
+    <ClCompile Include="src\game\system\mapContext.c">
+      <Filter>src\game\system</Filter>
     </ClCompile>
-    <ClCompile Include="src\system\mathUtils.c">
-      <Filter>src\system</Filter>
+    <ClCompile Include="src\game\system\mathUtils.c">
+      <Filter>src\game\system</Filter>
     </ClCompile>
-    <ClCompile Include="src\system\memory.c">
-      <Filter>src\system</Filter>
+    <ClCompile Include="src\game\system\memory.c">
+      <Filter>src\game\system</Filter>
     </ClCompile>
-    <ClCompile Include="src\system\message.c">
-      <Filter>src\system</Filter>
+    <ClCompile Include="src\game\system\message.c">
+      <Filter>src\game\system</Filter>
     </ClCompile>
-    <ClCompile Include="src\system\pauseScreen.c">
-      <Filter>src\system</Filter>
+    <ClCompile Include="src\game\system\pauseScreen.c">
+      <Filter>src\game\system</Filter>
     </ClCompile>
-    <ClCompile Include="src\system\sprite.c">
-      <Filter>src\system</Filter>
+    <ClCompile Include="src\game\system\sprite.c">
+      <Filter>src\game\system</Filter>
     </ClCompile>
-    <ClCompile Include="src\system\spriteAddresses.c">
-      <Filter>src\system</Filter>
+    <ClCompile Include="src\game\system\spriteAddresses.c">
+      <Filter>src\game\system</Filter>
     </ClCompile>
-    <ClCompile Include="src\system\staticGfx.c">
-      <Filter>src\system</Filter>
+    <ClCompile Include="src\game\system\staticGfx.c">
+      <Filter>src\game\system</Filter>
     </ClCompile>
-    <ClCompile Include="src\system\volume.c">
-      <Filter>src\system</Filter>
+    <ClCompile Include="src\game\system\volume.c">
+      <Filter>src\game\system</Filter>
     </ClCompile>
-    <ClCompile Include="src\system\worldGraphics.c">
-      <Filter>src\system</Filter>
+    <ClCompile Include="src\game\system\worldGraphics.c">
+      <Filter>src\game\system</Filter>
     </ClCompile>
     <ClCompile Include="tools\vs-wrapper.c">
       <Filter>tools</Filter>
@@ -753,6 +675,84 @@
     </ClCompile>
     <ClCompile Include="src\lib\libmus\player_commands.c">
       <Filter>src\lib\libmus</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\animals.c">
+      <Filter>src\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\evaluation.c">
+      <Filter>src\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\game.c">
+      <Filter>src\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\gameAudio.c">
+      <Filter>src\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\gameStart.c">
+      <Filter>src\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\gameStatus.c">
+      <Filter>src\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\initialize.c">
+      <Filter>src\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\initialize2.c">
+      <Filter>src\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\itemHandlers.c">
+      <Filter>src\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\level.c">
+      <Filter>src\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\levelInteractions.c">
+      <Filter>src\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\load.c">
+      <Filter>src\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\loadGameScreen.c">
+      <Filter>src\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\mainLoop.c">
+      <Filter>src\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\mainproc.c">
+      <Filter>src\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\mapObjects.c">
+      <Filter>src\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\namingScreen.c">
+      <Filter>src\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\npc.c">
+      <Filter>src\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\overlayScreens.c">
+      <Filter>src\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\player.c">
+      <Filter>src\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\setCutscenes.c">
+      <Filter>src\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\shop.c">
+      <Filter>src\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\title.c">
+      <Filter>src\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\tv.c">
+      <Filter>src\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\updateGame.c">
+      <Filter>src\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\weather.c">
+      <Filter>src\game</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -990,134 +990,53 @@
     <ClInclude Include="include\PRinternal\viint.h">
       <Filter>include\PRinternal</Filter>
     </ClInclude>
-    <ClInclude Include="src\animals.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\evaluation.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\game.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gameAudio.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gameStart.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gameStatus.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\initialize.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\initialize2.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\itemHandlers.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\level.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\levelInteractions.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\load.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\loadGameScreen.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\mainLoop.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\mainproc.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\mapObjects.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\namingScreen.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\npc.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\overlayScreens.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\player.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\setCutscenes.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\shop.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\spriteIndices.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\title.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\tv.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\updateGame.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\weather.h">
-      <Filter>src</Filter>
-    </ClInclude>
     <ClInclude Include="src\lib\os\libultra\gu\guint.h">
       <Filter>src\lib\os\libultra\gu</Filter>
     </ClInclude>
-    <ClInclude Include="src\system\audio.h">
-      <Filter>src\system</Filter>
+    <ClInclude Include="src\game\system\audio.h">
+      <Filter>src\game\system</Filter>
     </ClInclude>
-    <ClInclude Include="src\system\controller.h">
-      <Filter>src\system</Filter>
+    <ClInclude Include="src\game\system\controller.h">
+      <Filter>src\game\system</Filter>
     </ClInclude>
-    <ClInclude Include="src\system\cutscene.h">
-      <Filter>src\system</Filter>
+    <ClInclude Include="src\game\system\cutscene.h">
+      <Filter>src\game\system</Filter>
     </ClInclude>
-    <ClInclude Include="src\system\dialogue.h">
-      <Filter>src\system</Filter>
+    <ClInclude Include="src\game\system\dialogue.h">
+      <Filter>src\game\system</Filter>
     </ClInclude>
-    <ClInclude Include="src\system\flags.h">
-      <Filter>src\system</Filter>
+    <ClInclude Include="src\game\system\flags.h">
+      <Filter>src\game\system</Filter>
     </ClInclude>
-    <ClInclude Include="src\system\graphic.h">
-      <Filter>src\system</Filter>
+    <ClInclude Include="src\game\system\graphic.h">
+      <Filter>src\game\system</Filter>
     </ClInclude>
-    <ClInclude Include="src\system\map.h">
-      <Filter>src\system</Filter>
+    <ClInclude Include="src\game\system\map.h">
+      <Filter>src\game\system</Filter>
     </ClInclude>
-    <ClInclude Include="src\system\mapContext.h">
-      <Filter>src\system</Filter>
+    <ClInclude Include="src\game\system\mapContext.h">
+      <Filter>src\game\system</Filter>
     </ClInclude>
-    <ClInclude Include="src\system\mathUtils.h">
-      <Filter>src\system</Filter>
+    <ClInclude Include="src\game\system\mathUtils.h">
+      <Filter>src\game\system</Filter>
     </ClInclude>
-    <ClInclude Include="src\system\memory.h">
-      <Filter>src\system</Filter>
+    <ClInclude Include="src\game\system\memory.h">
+      <Filter>src\game\system</Filter>
     </ClInclude>
-    <ClInclude Include="src\system\message.h">
-      <Filter>src\system</Filter>
+    <ClInclude Include="src\game\system\message.h">
+      <Filter>src\game\system</Filter>
     </ClInclude>
-    <ClInclude Include="src\system\pauseScreen.h">
-      <Filter>src\system</Filter>
+    <ClInclude Include="src\game\system\pauseScreen.h">
+      <Filter>src\game\system</Filter>
     </ClInclude>
-    <ClInclude Include="src\system\sprite.h">
-      <Filter>src\system</Filter>
+    <ClInclude Include="src\game\system\sprite.h">
+      <Filter>src\game\system</Filter>
     </ClInclude>
-    <ClInclude Include="src\system\volume.h">
-      <Filter>src\system</Filter>
+    <ClInclude Include="src\game\system\volume.h">
+      <Filter>src\game\system</Filter>
     </ClInclude>
-    <ClInclude Include="src\system\worldGraphics.h">
-      <Filter>src\system</Filter>
+    <ClInclude Include="src\game\system\worldGraphics.h">
+      <Filter>src\game\system</Filter>
     </ClInclude>
     <ClInclude Include="include\assert.h">
       <Filter>include</Filter>
@@ -1175,6 +1094,87 @@
     </ClInclude>
     <ClInclude Include="src\lib\libmus\player.h">
       <Filter>src\lib\libmus</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\animals.h">
+      <Filter>src\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\evaluation.h">
+      <Filter>src\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\game.h">
+      <Filter>src\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\gameAudio.h">
+      <Filter>src\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\gameStart.h">
+      <Filter>src\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\gameStatus.h">
+      <Filter>src\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\initialize.h">
+      <Filter>src\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\initialize2.h">
+      <Filter>src\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\itemHandlers.h">
+      <Filter>src\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\level.h">
+      <Filter>src\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\levelInteractions.h">
+      <Filter>src\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\load.h">
+      <Filter>src\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\loadGameScreen.h">
+      <Filter>src\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\mainLoop.h">
+      <Filter>src\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\mainproc.h">
+      <Filter>src\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\mapObjects.h">
+      <Filter>src\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\namingScreen.h">
+      <Filter>src\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\npc.h">
+      <Filter>src\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\overlayScreens.h">
+      <Filter>src\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\player.h">
+      <Filter>src\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\setCutscenes.h">
+      <Filter>src\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\shop.h">
+      <Filter>src\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\title.h">
+      <Filter>src\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\tv.h">
+      <Filter>src\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\updateGame.h">
+      <Filter>src\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\weather.h">
+      <Filter>src\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\spriteIndices.h">
+      <Filter>src\game</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1599,9 +1599,6 @@
     <Filter Include="src\overlays">
       <UniqueIdentifier>{227491f5-7c09-427a-8b44-55a82dfe7056}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\system">
-      <UniqueIdentifier>{562a4281-4723-41bf-8d22-019a0fc4c788}</UniqueIdentifier>
-    </Filter>
     <Filter Include="tools\splat">
       <UniqueIdentifier>{4a8e15ce-55db-4665-9f95-f70dd5c549d1}</UniqueIdentifier>
     </Filter>
@@ -1649,6 +1646,12 @@
     </Filter>
     <Filter Include="include\nusys">
       <UniqueIdentifier>{1b65c30e-1f9a-4749-8a80-e0ef2e1c5528}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\game">
+      <UniqueIdentifier>{a1e0600c-d279-48ad-a020-20ccc7a3f04f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\game\system">
+      <UniqueIdentifier>{562a4281-4723-41bf-8d22-019a0fc4c788}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
