@@ -1368,6 +1368,7 @@ __osPfsInodeCache 							= 0x80205650;
 nuGfxCfb_ptr 								= 0x80205750;
 dialogueMapAddresses 						= 0x80205760; // size:0x690
 gSeconds 									= 0x80215DF2;
+max_channels								= 0x80215DF8; // size:0x4
 gTotalCropsShipped 							= 0x80215DFC;
 __osEventStateTab 							= 0x80215E00;
 powerNutBits 								= 0x80215EB8;

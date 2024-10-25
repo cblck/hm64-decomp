@@ -89,9 +89,9 @@ extern ALHeap	       nuAuHeap;                  /* audio heap                */
 #else
 STATIC ALHeap	       heap;                      /* audio heap                */
 #endif
-//STATIC int             max_channels;              /* number of channels        */
+STATIC int             max_channels;              /* number of channels        */
 //STATIC ALVoice         *mus_voices;               /* audio library voices      */
-//STATIC channel_t       *mus_channels;             /* music player channels     */
+STATIC channel_t       *mus_channels;             /* music player channels     */
 //STATIC unsigned char   **mus_effects;             /* address of sound effects  */
 //STATIC int             *mus_priority;             /* address of sfx prioritys  */
 STATIC int             mus_vsyncs_per_second;     /* video refresh rate        */
@@ -110,9 +110,6 @@ STATIC int             mus_vsyncs_per_second;     /* video refresh rate        *
 /* C files included directly (to avoid lots of global variables in the library)*/
 /* these files are separated just for readability                              */
 //#include "player_commands.c"
-static unsigned char* Ftempo(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fstartfx(channel_t* cp, unsigned char* ptr);
-
 static unsigned char *Fstop(channel_t *cp, unsigned char *ptr)
 {
   cp->pvolume = NULL;
@@ -216,7 +213,36 @@ static unsigned char *Fdefa(channel_t *cp, unsigned char *ptr)
   return (ptr);
 }
 
-INCLUDE_ASM(const s32, "lib/libmus/player", Ftempo);
+static unsigned char *Ftempo(channel_t *cp, unsigned char *ptr)
+{
+// tempo   = bpm
+// fps     = mus_vsyncs_per_second
+// 120 bpm = 96 fps
+// therefore tempo = bmp(required)/120*96/mus_vsyncs_per_second
+
+  channel_t *sp;
+  int	i;
+  int	temp, temp2;  
+
+  temp	= (*ptr++)*256*96/120/mus_vsyncs_per_second;	
+  temp2  = (temp*cp->temscale)>>7;
+  if (cp->IsFX)
+  {
+    cp->channel_tempo=temp;
+  }
+  else
+  {
+    for	(i=0, sp=mus_channels;i<max_channels;i++,sp++)
+    {
+      if (sp->song_addr==cp->song_addr)
+      {
+	sp->channel_tempo_save=temp;
+	sp->channel_tempo=temp2;
+      }
+    }
+  }
+  return (ptr);
+}
 
 static unsigned char *Fendit(channel_t *cp, unsigned char *ptr)
 {
@@ -528,7 +554,33 @@ static unsigned char *Fvolume(channel_t *cp, unsigned char *ptr)
   return (ptr);
 }
 
-INCLUDE_ASM(const s32, "lib/libmus/player", Fstartfx);
+static unsigned char *Fstartfx(channel_t *cp, unsigned char *ptr)
+{
+  int	i;
+  int	num;
+  channel_t *sp;
+  long	search_handle;
+  long	old_handle;
+
+  num = *ptr++;
+  if (num>=0x80)
+    num = ((num&0x7f)<<8)+*ptr++;
+  old_handle=cp->handle;
+  /* change priority so child fx can never overwrite parent */
+  search_handle = MusStartEffect2(num,cp->volume,cp->pan,0,cp->priority++);
+  cp->priority--; /* change priority back! */
+  if (!search_handle)
+    return(ptr);
+  for(i=0, sp=mus_channels; i<max_channels; i++, sp++)
+  {
+    if (sp->handle == search_handle)
+    {
+      sp->handle=cp->handle;
+      sp->sample_bank = cp->sample_bank;
+    }
+  }
+  return (ptr);
+}
 
 static unsigned char *Fbendrange(channel_t *cp, unsigned char *ptr)
 {
