@@ -83,28 +83,28 @@ extern AMAudioMgr      __am;
 
 
 /* internal vars */
-//STATIC ALPlayer        plr_player;                /* synthesizer player        */
+STATIC ALPlayer        plr_player;                /* synthesizer player        */
 #ifdef	NU_SYSTEM
 extern ALHeap	       nuAuHeap;                  /* audio heap                */
 #else
 STATIC ALHeap	       heap;                      /* audio heap                */
 #endif
 STATIC int             max_channels;              /* number of channels        */
-//STATIC ALVoice         *mus_voices;               /* audio library voices      */
+STATIC ALVoice         *mus_voices;               /* audio library voices      */
 STATIC channel_t       *mus_channels;             /* music player channels     */
-//STATIC unsigned char   **mus_effects;             /* address of sound effects  */
+STATIC unsigned char   **mus_effects;             /* address of sound effects  */
 STATIC int             *mus_priority;             /* address of sfx prioritys  */
 STATIC int             mus_vsyncs_per_second;     /* video refresh rate        */
-//STATIC ALMicroTime     mus_next_frame_time;	  /* time until next frame     */
+STATIC ALMicroTime     mus_next_frame_time;	  /* time until next frame     */
 STATIC unsigned short  mus_master_volume_effects; /* sound effect master value */
 STATIC unsigned short  mus_master_volume_songs;   /* song master volume        */
 STATIC unsigned long   mus_current_handle;        /* current handle number     */
-//STATIC long            mus_random_seed;           /* random number seed value  */
+STATIC long            mus_random_seed;           /* random number seed value  */
 STATIC ptr_bank_t      *mus_init_bank;		  /* sample bank to initialise */
 STATIC ptr_bank_t      *mus_default_bank;	  /* sample bank default       */
 
 /* music player control flag */
-//unsigned long __muscontrol_flag;
+unsigned long __muscontrol_flag;
 
 
 /* C files included directly (to avoid lots of global variables in the library)*/
@@ -642,7 +642,151 @@ command_func_t jumptable[]=
 };
 
 //#include "player_api.c"
-INCLUDE_ASM(const s32, "lib/libmus/player", MusInitialize);
+int MusInitialize(musConfig *config)
+{
+#ifdef	NU_SYSTEM
+  ALVoiceConfig vc;  
+  int i;
+
+  /* main control flag */
+  __muscontrol_flag = config->control_flag;
+
+  /* copy player settings first */
+  max_channels = config->channels;
+  mus_effects  = config->fxs;
+  mus_priority = config->priority;
+
+  /* get video refresh rate */
+  if (osTvType==0)
+    mus_vsyncs_per_second = 50;
+  else
+    mus_vsyncs_per_second = 60;
+  mus_next_frame_time = 1000000/mus_vsyncs_per_second;
+
+  /* claim and clear memory for syn voices and mus channels */
+  mus_voices = alHeapAlloc(&nuAuHeap, 1, max_channels*sizeof(ALVoice));
+  mus_channels = alHeapAlloc(&nuAuHeap, 1, max_channels*sizeof(channel_t));
+  __MusIntMemSet(mus_voices,0,max_channels*sizeof(ALVoice));
+  __MusIntMemSet(mus_channels,0,max_channels*sizeof(channel_t));
+
+  /* set volumes to maxiumum level */
+  MusSetMasterVolume(MUSFLAG_EFFECTS|MUSFLAG_SONGS, 0x7fff);
+  /* initialise player vars */
+  mus_current_handle = 1;
+  mus_random_seed = 0x12345678;
+
+  /*
+   * Sign into the synthesis driver so that the next time
+   * alAudioFrame is called, the __MusIntMain function will be
+   * called.
+   */
+
+  plr_player.next       = NULL;
+  plr_player.handler    = __MusIntMain;
+  plr_player.clientData = &plr_player;
+  alSynAddPlayer(&auGlobal.drvr, &plr_player);
+  
+  for(i=0; i<max_channels; i++)
+  {    
+    mus_channels[i].playing = 0;
+    __MusIntInitialiseChannel(&mus_channels[i]);
+    
+    vc.unityPitch = 0;
+    vc.priority = config->thread_priority;
+    vc.fxBus = 0;
+    
+    alSynAllocVoice(&auGlobal.drvr, &mus_voices[i], &vc);
+  }
+  return (nuAuHeap.cur-nuAuHeap.base);
+
+#else
+
+  ALVoiceConfig vc;  
+  ALSynConfig c;
+  amConfig amc;
+  int i;
+
+  /* main control flag */
+  __muscontrol_flag = config->control_flag;
+
+  /* copy player settings first */
+  max_channels = config->channels;
+  mus_effects  = config->fxs;
+  mus_priority = config->priority;
+
+  /* get video refresh rate */
+  if (osTvType==0)
+    mus_vsyncs_per_second = 50;
+  else
+    mus_vsyncs_per_second = 60;
+  mus_next_frame_time = 1000000/mus_vsyncs_per_second;
+
+  /* initialise heap */
+  __MusIntMemSet(config->heap, 0, config->heap_length);
+  alHeapInit(&heap, config->heap, config->heap_length);
+
+  /* claim and clear memory for syn voices and mus channels */
+  mus_voices = alHeapAlloc(&heap, 1, max_channels*sizeof(ALVoice));
+  mus_channels = alHeapAlloc(&heap, 1, max_channels*sizeof(channel_t));
+  __MusIntMemSet(mus_voices,0,max_channels*sizeof(ALVoice));
+  __MusIntMemSet(mus_channels,0,max_channels*sizeof(channel_t));
+
+  /* initialse samples */
+  __MusIntRemapPtrBank(config->ptr, config->wbk);
+  mus_default_bank = mus_init_bank = (ptr_bank_t *)config->ptr;
+
+  /*
+   * Create the Audio Manager
+   */
+
+  c.maxVVoices = max_channels;
+  c.maxPVoices = max_channels;
+  c.maxUpdates = config->syn_updates;
+  c.dmaproc    = 0;                  /* audio mgr will fill this in */
+  c.fxType     = AL_FX_BIGROOM;
+  c.outputRate = 0;                  /* audio mgr will fill this in */
+  c.heap       = &heap;
+
+  amc.outputRate = config->syn_output_rate;
+  amc.framesPerField = config->syn_retraceCount;
+  amc.maxACMDSize = config->syn_rsp_cmds;
+
+  amCreateAudioMgr(config->sched, &c, config->thread_priority, &amc, 
+		   config->syn_num_dma_bufs, config->syn_dma_buf_size, 
+		   mus_vsyncs_per_second);
+
+  /* set volumes to maxiumum level */
+  MusSetMasterVolume(MUSFLAG_EFFECTS|MUSFLAG_SONGS, 0x7fff);
+  /* initialise player vars */
+  mus_current_handle = 1;
+  mus_random_seed = 0x12345678;
+
+  /*
+   * Sign into the synthesis driver so that the next time
+   * alAudioFrame is called, the __MusIntMain function will be
+   * called.
+   */
+
+  plr_player.next       = NULL;
+  plr_player.handler    = __MusIntMain;
+  plr_player.clientData = &plr_player;
+  alSynAddPlayer(&__am.g.drvr, &plr_player);
+  
+  for(i=0; i<max_channels; i++)
+  {    
+    mus_channels[i].playing = 0;
+    __MusIntInitialiseChannel(&mus_channels[i]);
+    
+    vc.unityPitch = 0;
+    vc.priority = config->thread_priority;
+    vc.fxBus = 0;
+    
+    alSynAllocVoice(&__am.g.drvr, &mus_voices[i], &vc);
+  }
+  return (heap.cur-heap.base);
+
+#endif	/* NU_SYSTEM */
+}
 
 void MusSetMasterVolume(unsigned long flags, int volume)
 {
