@@ -110,92 +110,263 @@ STATIC ALHeap	       heap;                      /* audio heap                */
 /* C files included directly (to avoid lots of global variables in the library)*/
 /* these files are separated just for readability                              */
 //#include "player_commands.c"
-static unsigned char* Fstop(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fwave(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fport(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fportoff(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fdefa(channel_t* cp, unsigned char* ptr);
 static unsigned char* Ftempo(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fendit(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fcutoff(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fvibup(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fvibdown(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fviboff(channel_t* cp, unsigned char* ptr);
-static unsigned char* Flength(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fignore(channel_t* cp, unsigned char* ptr);
-static unsigned char* Ftrans(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fignore_trans(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fdistort(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fenvelope(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fenvoff(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fenvon(channel_t* cp, unsigned char* ptr);
-static unsigned char* Ftroff(channel_t* cp, unsigned char* ptr);
-static unsigned char* Ftron(channel_t* cp, unsigned char* ptr);
-static unsigned char* Ffor(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fnext(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fwobble(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fwobbleoff(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fvelon(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fveloff(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fvelocity(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fpan(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fstereo(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fdrums(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fdrumsoff(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fprint(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fgoto(channel_t* cp, unsigned char* ptr);
-static unsigned char* Freverb(channel_t* cp, unsigned char* ptr);
-static unsigned char* FrandNote(channel_t* cp, unsigned char* ptr);
-static unsigned char* FrandVolume(channel_t* cp, unsigned char* ptr);
-static unsigned char* FrandPan(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fvolume(channel_t* cp, unsigned char* ptr);
 static unsigned char* Fstartfx(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fbendrange(channel_t* cp, unsigned char* ptr);
-static unsigned char* Fsweep(channel_t* cp, unsigned char* ptr);
 
-INCLUDE_ASM(const s32, "lib/libmus/player", Fstop);
+static unsigned char *Fstop(channel_t *cp, unsigned char *ptr)
+{
+  cp->pvolume = NULL;
+  cp->ppitchbend = NULL;
+  cp->song_addr = NULL;
+  cp->IsFX = 0;
+  cp->handle = 0;
+  return (NULL);
+}
 
-INCLUDE_ASM(const s32, "lib/libmus/player", Fwave);
+static unsigned char *Fwave(channel_t *cp, unsigned char *ptr)
+{
+  unsigned short wave;
 
-INCLUDE_ASM(const s32, "lib/libmus/player", Fport);
+  wave = *ptr++;
+  if(wave&0x80)
+  {
+    wave &= 0x7f;
+    wave <<= 8;
+    wave |= *ptr++;
+  }
+  cp->wave = wave;
+  return (ptr);
+}
 
-INCLUDE_ASM(const s32, "lib/libmus/player", Fportoff);
+static unsigned char *Fport(channel_t *cp, unsigned char *ptr)
+{
+  cp->port = *ptr++;
+  if (cp->port)
+    cp->port_base = cp->base_note;
+  return (ptr);
+}
 
-INCLUDE_ASM(const s32, "lib/libmus/player", Fdefa);
+static unsigned char *Fportoff(channel_t *cp, unsigned char *ptr)
+{
+  cp->port = 0;
+  return (ptr);
+}
+
+static unsigned char *Fdefa(channel_t *cp, unsigned char *ptr)
+{
+  unsigned char value;
+
+  // get envelope speed...
+  value = *ptr++;
+  if (value==0)	// cannot be zero!!!
+    value=1;
+  cp->env_speed = value;
+  cp->env_speed_calc = 1024/value;
+  
+  // get envelope initial volume level...
+  cp->env_init_vol = *ptr++;
+  
+  // get attack speed...
+  value = *ptr++;
+#ifdef _AUDIODEBUG
+  if (value==0)
+  {
+    osSyncPrintf("PLAYER_COMMANDS.C: Fdefa attempting to set speed of zero.\n");
+    value=1;      
+  }
+#endif
+  cp->env_attack_speed = value;
+
+  // get peak volume...
+  cp->env_max_vol = *ptr++;
+
+  // get attack precalc value...
+  cp->env_attack_calc  = (1.0 / ((float)value)) * ((float)(cp->env_max_vol-cp->env_init_vol));
+
+  // get decay speed...
+  value = *ptr++;  
+#ifdef _AUDIODEBUG
+  if (value==0)
+  {
+    osSyncPrintf("PLAYER_COMMANDS.C: Fdefa attempting to set decay speed of zero.\n");
+    value=1;      
+  }
+#endif
+  cp->env_decay_speed = value;
+
+  // get sustain volume level...
+  cp->env_sustain_vol = *ptr++;
+
+  // get sustain precalc value...
+  cp->env_decay_calc = (1.0 / ((float)value)) * ((float)(cp->env_sustain_vol-cp->env_max_vol));
+
+  // get release speed...
+  value = *ptr++;
+#ifdef _AUDIODEBUG
+  if (value==0)
+  {
+    osSyncPrintf("PLAYER_COMMANDS.C: Fdefa attempting to set release speed of zero.\n");
+    value=1;      
+  }
+#endif
+  cp->env_release_speed = value;
+  cp->env_release_calc = 1.0 / ((float)value);
+
+     
+  return (ptr);
+}
 
 INCLUDE_ASM(const s32, "lib/libmus/player", Ftempo);
 
-INCLUDE_ASM(const s32, "lib/libmus/player", Fendit);
+static unsigned char *Fendit(channel_t *cp, unsigned char *ptr)
+{
+  cp->endit=*ptr++;
+  cp->cutoff=0;
+  return (ptr);
+}
 
-INCLUDE_ASM(const s32, "lib/libmus/player", Fcutoff);
+static unsigned char *Fcutoff(channel_t *cp, unsigned char *ptr)
+{
+  short tmp;
 
-INCLUDE_ASM(const s32, "lib/libmus/player", Fvibup);
+  tmp = (*ptr++)<<8;
+  tmp |= *ptr++;
 
-INCLUDE_ASM(const s32, "lib/libmus/player", Fvibdown);
+  cp->cutoff = tmp;
+  cp->endit = 0;
+  return (ptr);
+}
 
-INCLUDE_ASM(const s32, "lib/libmus/player", Fviboff);
+static unsigned char *Fvibup(channel_t *cp, unsigned char *ptr)
+{
 
-INCLUDE_ASM(const s32, "lib/libmus/player", Flength);
+  cp->vib_delay = *ptr++;
+  cp->vib_speed = *ptr++;
+  cp->vib_amount = ((float)*ptr++)/50.0;
+  return (ptr);
+}
 
-INCLUDE_ASM(const s32, "lib/libmus/player", Fignore);
+static unsigned char *Fvibdown(channel_t *cp, unsigned char *ptr)
+{
+  cp->vib_delay = *ptr++;
+  cp->vib_speed = *ptr++;
+  cp->vib_amount = (-((float)*ptr++))/50.0;
+  return (ptr);
+}
 
-INCLUDE_ASM(const s32, "lib/libmus/player", Ftrans);
+static unsigned char *Fviboff(channel_t *cp, unsigned char *ptr)
+{
+  cp->vib_speed=0;
+  cp->vibrato=0;        // if its been switched off you want it back to a normal note
+  return (ptr);
+}
 
-INCLUDE_ASM(const s32, "lib/libmus/player", Fignore_trans);
+static unsigned char *Flength(channel_t *cp, unsigned char *ptr)
+{
+  unsigned char value;
 
-INCLUDE_ASM(const s32, "lib/libmus/player", Fdistort);
+  value = *ptr++;
+  if(value<128)
+  {
+    cp->fixed_length = value;
+  }
+  else
+  {
+    cp->fixed_length = ((int)(value&0x7f)*256);
+    cp->fixed_length += (int)*ptr++;
+  }
+  return (ptr);
+}
 
-INCLUDE_ASM(const s32, "lib/libmus/player", Fenvelope);
+static unsigned char *Fignore(channel_t *cp, unsigned char *ptr)
+{
+  cp->ignore = 1;
+  return (ptr);
+}
 
-INCLUDE_ASM(const s32, "lib/libmus/player", Fenvoff);
+static unsigned char *Ftrans(channel_t *cp, unsigned char *ptr)
+{
+  cp->transpose = *ptr++;
+  return (ptr);
+}
 
-INCLUDE_ASM(const s32, "lib/libmus/player", Fenvon);
+static unsigned char *Fignore_trans(channel_t *cp, unsigned char *ptr)
+{
+  cp->ignore_transpose = 1;
+  return (ptr);
+}
 
-INCLUDE_ASM(const s32, "lib/libmus/player", Ftroff);
+static unsigned char *Fdistort(channel_t *cp, unsigned char *ptr)
+{
+  int c;
+  float f;
+  
+  c = (int)(*ptr++);
+  if(c&0x80)
+    c |= 0xffffff00;	// signed chars don't work
+  f = (float)(c)/100.0;
 
-INCLUDE_ASM(const s32, "lib/libmus/player", Ftron);
+  cp->freqoffset -= cp->distort;
+  cp->freqoffset += f;
+  cp->distort = f;
+  return (ptr);
+}
 
-INCLUDE_ASM(const s32, "lib/libmus/player", Ffor);
+static unsigned char *Fenvelope(channel_t *cp, unsigned char *ptr)
+{
+  int tmp;
+
+  tmp = *ptr++;
+  if(tmp&0x80)
+  {
+    tmp &= 0x7f;
+    tmp <<= 8;
+    tmp |= *ptr++;
+  }
+  (void)Fdefa(cp, &cp->song_addr->EnvelopeData[tmp*7]);
+  return (ptr);
+}
+
+static unsigned char *Fenvoff(channel_t *cp, unsigned char *ptr)
+{
+  cp->env_trigger_off = 1;
+  return (ptr);
+}
+
+static unsigned char *Fenvon(channel_t *cp, unsigned char *ptr)
+{
+  cp->env_trigger_off = 0;
+  return (ptr);
+}
+
+static unsigned char *Ftroff(channel_t *cp, unsigned char *ptr)
+{
+  cp->trigger_off = 1;
+  return (ptr);
+}
+
+static unsigned char *Ftron(channel_t *cp, unsigned char *ptr)
+{
+  cp->trigger_off = 0;
+  return (ptr);
+}
+
+static unsigned char *Ffor(channel_t *cp, unsigned char *ptr)
+{
+  int index;
+
+  index = cp->for_stack_count;
+  cp->for_count[index] = *ptr++;
+  cp->for_stack[index] = ptr;
+  cp->for_stackvol[index] = cp->pvolume;
+  cp->for_stackpb[index] = cp->ppitchbend;
+  cp->for_volume[index] = cp->volume;
+  cp->for_pitchbend[index] = cp->pitchbend;
+  cp->for_vol_count[index] = cp->cont_vol_repeat_count;
+  cp->for_pb_count[index] = cp->cont_pb_repeat_count;
+  cp->for_stack_count++;
+  return (ptr);
+}
 
 static unsigned char *Fnext (channel_t *cp, unsigned char *ptr)
 {
