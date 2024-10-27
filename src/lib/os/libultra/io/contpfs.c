@@ -1,5 +1,3 @@
-#include "common.h"
-//
 #include "macros.h"
 #include "PR/os_internal.h"
 #include "PR/os_version.h"
@@ -8,8 +6,8 @@
 
 #if BUILD_VERSION >= VERSION_J
 __OSInode __osPfsInodeCache ALIGNED(8);
-extern /*TODO: Fix extern.*/ s32 __osPfsInodeCacheChannel; //= -1;
-extern /*TODO: Fix extern.*/ u8 __osPfsInodeCacheBank; //= 250;
+s32 __osPfsInodeCacheChannel = -1;
+u8 __osPfsInodeCacheBank = 250;
 #endif
 
 u16 __osSumcalc(u8* ptr, int length) {
@@ -393,7 +391,3 @@ s32 __osDumpId(OSPfs* pfs) {
     return 0;
 }
 #endif
-
-INCLUDE_RODATA(const s32, "lib/os/libultra/io/contpfs", __osPfsInodeCacheChannel);
-
-INCLUDE_RODATA(const s32, "lib/os/libultra/io/contpfs", __osPfsInodeCacheBank);
