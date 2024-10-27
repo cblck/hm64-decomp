@@ -380,8 +380,7 @@ segments:
       - [ 0xF8130, .data, lib/os/libultra/libc/syncPrintf] 
       - [ 0xF8140, .data, lib/os/libultra/audio/drvrnew] 
       - [ 0xF82D0, .data, lib/os/libultra/audio/env]
-      - [ 0xF83D0, rodata] # reverb data
-      - [ 0xF83E0, rodata]
+      - [ 0xF83D0, .data, lib/os/libultra/audio/reverb]
       - [ 0xF83F0, .rodata, lib/os/libultra/io/cartrominit]
       - [ 0xF8400, .rodata, lib/os/libultra/io/pimgr]
       - [ 0xF8430, .rodata, lib/os/libultra/io/vimgr]
