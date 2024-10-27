@@ -392,7 +392,7 @@ segments:
       - [ 0xF9650, .data, lib/os/libultra/os/timerintr]
       - [ 0xF9660, .data, lib/os/libultra/os/rdbsend] 
       - [ 0xF9670, .data, lib/os/libultra/host/readhost]
-      - [ 0xF9680, .rodata, lib/os/libultra/io/vi]
+      - [ 0xF9680, .data, lib/os/libultra/io/vi]
       - [ 0xF96F0, rodata] # osViInit, osViGetCurrentContext, osViGetCurrentFramebuffer, viSwapContext
       - [ 0xF96F0, .rodata, lib/os/libultra/io/siacs]
       - [ 0xF9700, rodata]
