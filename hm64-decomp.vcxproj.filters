@@ -757,6 +757,9 @@
     <ClCompile Include="src\lib\os\libultra\libc\xprintf.c">
       <Filter>src\lib\os\libultra\libc</Filter>
     </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\vitbl.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\common.h">
