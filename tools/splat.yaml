@@ -400,7 +400,7 @@ segments:
       - [ 0xF9700, .data, lib/os/libultra/vimodes/vimodentsclan1]
       - [ 0xF9750, .data, lib/os/libultra/vimodes/vimodepallan1]
       - [ 0xF97A0, .data, lib/os/libultra/vimodes/vimodempallan1]
-      - [ 0xF97F0, rodata] # lib/os/libultra/io/piacs / __osPiAccessQueueEnabled
+      - [ 0xF97F0, .data, lib/os/libultra/io/piacs]
       - [ 0xF9800, rodata] # lib/os/libultra/libc/xprintf
       - [ 0xF9850, .rodata, lib/os/libultra/io/contpfs]
       - [ 0xF9860, rodata] # contramread // __osPfsLastChannel  
