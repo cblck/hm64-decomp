@@ -476,7 +476,8 @@ segments:
       - { start: 0xFF5C0, type: .bss, vram: 0x801338D0, name: lib/nusys-1/nusimgr }
       - { start: 0xFF5C0, type: .bss, vram: 0x80135AA0, name: lib/os/libultra/io/sptask }
       - { start: 0xFF5C0, type: .bss, vram: 0x80135AE0, name: lib/os/libultra/io/motor }
-      - { start: 0xFF5C0, type: bss, vram: 0x80135BE0, name: bss2 }
+      - { start: 0xFF5C0, type: .bss, vram: 0x80135BE0, name: lib/os/libultra/io/pimgr }
+      - { start: 0xFF5C0, type: bss, vram: 0x801373A0, name: bss2 }
       - { start: 0xFF5C0, type: .bss, vram: 0x801385C0, name: lib/os/libultra/debug/kdebugserver }
       - { start: 0xFF5C0, type: bss, vram: 0x801385D0, name: bss3 }
       - { start: 0xFF5C0, type: .bss, vram: 0x80138600, name: lib/os/libultra/io/piacs }
