@@ -760,6 +760,15 @@
     <ClCompile Include="src\lib\os\libultra\io\vitbl.c">
       <Filter>src\lib\os\libultra\io</Filter>
     </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\vimodempallan1.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\vimodentsclan1.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\io\vimodepallan1.c">
+      <Filter>src\lib\os\libultra\io</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\common.h">
