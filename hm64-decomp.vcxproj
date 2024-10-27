@@ -719,21 +719,6 @@
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\io\vimodempallan1.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
-      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\io\vimodentsclan1.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
-      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-    </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\io\vimodepallan1.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
-      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-    </ClCompile>
     <ClCompile Include="src\lib\os\libultra\io\visetevent.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
@@ -1090,6 +1075,21 @@
     <ClCompile Include="src\game\overlayScreens.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|x86'">FullDebug</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\vimodes\vimodempallan1.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\vimodes\vimodentsclan1.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include="src\lib\os\libultra\vimodes\vimodepallan1.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <ClCompile Include="src\overlays\gamePakBuffer.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>

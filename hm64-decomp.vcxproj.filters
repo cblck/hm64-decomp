@@ -760,14 +760,14 @@
     <ClCompile Include="src\lib\os\libultra\io\vitbl.c">
       <Filter>src\lib\os\libultra\io</Filter>
     </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\io\vimodempallan1.c">
-      <Filter>src\lib\os\libultra\io</Filter>
+    <ClCompile Include="src\lib\os\libultra\vimodes\vimodempallan1.c">
+      <Filter>src\lib\os\libultra\vimodes</Filter>
     </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\io\vimodentsclan1.c">
-      <Filter>src\lib\os\libultra\io</Filter>
+    <ClCompile Include="src\lib\os\libultra\vimodes\vimodentsclan1.c">
+      <Filter>src\lib\os\libultra\vimodes</Filter>
     </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\io\vimodepallan1.c">
-      <Filter>src\lib\os\libultra\io</Filter>
+    <ClCompile Include="src\lib\os\libultra\vimodes\vimodepallan1.c">
+      <Filter>src\lib\os\libultra\vimodes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1673,6 +1673,9 @@
     </Filter>
     <Filter Include="src\game\system">
       <UniqueIdentifier>{562a4281-4723-41bf-8d22-019a0fc4c788}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lib\os\libultra\vimodes">
+      <UniqueIdentifier>{7f88ba29-c892-419d-ad46-6ac2117fb191}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
