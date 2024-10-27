@@ -391,7 +391,7 @@ segments:
       - [ 0xF9640, .data, lib/os/libultra/debug/kdebugserver]
       - [ 0xF9650, .data, lib/os/libultra/os/timerintr]
       - [ 0xF9660, .data, lib/os/libultra/os/rdbsend] 
-      - [ 0xF9670, .rodata, lib/os/libultra/host/readhost]
+      - [ 0xF9670, .data, lib/os/libultra/host/readhost]
       - [ 0xF9680, .rodata, lib/os/libultra/io/vi]
       - [ 0xF96F0, rodata] # osViInit, osViGetCurrentContext, osViGetCurrentFramebuffer, viSwapContext
       - [ 0xF96F0, .rodata, lib/os/libultra/io/siacs]
@@ -479,7 +479,8 @@ segments:
       - { start: 0xFF5C0, type: .bss, vram: 0x80135BE0, name: lib/os/libultra/io/pimgr }
       - { start: 0xFF5C0, type: .bss, vram: 0x801373A0, name: lib/os/libultra/io/vimgr }
       - { start: 0xFF5C0, type: .bss, vram: 0x801385C0, name: lib/os/libultra/debug/kdebugserver }
-      - { start: 0xFF5C0, type: bss, vram: 0x801385D0, name: bss3 }
+      - { start: 0xFF5C0, type: .bss, vram: 0x801385D0, name: lib/os/libultra/host/readhost }
+      - { start: 0xFF5C0, type: bss, vram: 0x801385F0, name: bss3 }
       - { start: 0xFF5C0, type: .bss, vram: 0x80138600, name: lib/os/libultra/io/piacs }
       - { start: 0xFF5C0, type: .bss, vram: 0x80138610, name: lib/os/libultra/rmon/rmonsio }
       - { start: 0xFF5C0, type: .bss, vram: 0x80138630, name: lib/os/libultra/rmon/rmonmisc }
