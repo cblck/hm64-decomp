@@ -484,7 +484,7 @@ segments:
       - { start: 0xFF5C0, type: .bss, vram: 0x80138610, name: lib/os/libultra/rmon/rmonsio }
       - { start: 0xFF5C0, type: .bss, vram: 0x80138630, name: lib/os/libultra/rmon/rmonmisc }
       - { start: 0xFF5C0, type: .bss, vram: 0x8013C840, name: lib/os/libultra/rmon/rmonregs }
-      - { start: 0xFF5C0, type: bss, vram: 0x8013C860, name: bss4 }
+      - { start: 0xFF5C0, type: .bss, vram: 0x8013C860, name: lib/os/libultra/rmon/rmonmain }
       - { start: 0xFF5C0, type: .bss, vram: 0x8013CCE0, name: lib/os/libultra/rmon/rmonbrk }
       - { start: 0xFF5C0, type: .bss, vram: 0x8013CDF0, name: lib/libkmc/rand }
       - { start: 0xFF5C0, type: bss, vram: 0x8013CE00, name: bss5 }
