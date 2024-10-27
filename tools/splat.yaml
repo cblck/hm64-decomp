@@ -379,7 +379,7 @@ segments:
       - [ 0xF8120, .data, lib/os/libultra/io/controller]
       - [ 0xF8130, .data, lib/os/libultra/libc/syncPrintf] 
       - [ 0xF8140, .data, lib/os/libultra/audio/drvrnew] 
-      - [ 0xF82D0, .rodata, lib/os/libultra/audio/env]
+      - [ 0xF82D0, .data, lib/os/libultra/audio/env]
       - [ 0xF83D0, rodata] # reverb data
       - [ 0xF83E0, rodata]
       - [ 0xF83F0, .rodata, lib/os/libultra/io/cartrominit]
@@ -450,7 +450,7 @@ segments:
       - [ 0xFF030, rodata] # setintmask and exceptasm
       - [ 0xFF0B0, .rodata, lib/os/libultra/debug/assert]
       - [ 0xFF0D0, .rodata, lib/os/libultra/audio/drvrnew]
-      - [ 0xFF110, rodata] # lib/os/libultra/audio/env  
+      - [ 0xFF110, .rodata, lib/os/libultra/audio/env]  
       - [ 0xFF200, .rodata, lib/os/libultra/audio/reverb]
       - [ 0xFF250, .rodata, lib/os/libultra/audio/synthesizer]
       - [ 0xFF270, .rodata, lib/os/libultra/io/aisetfreq] # lib/os/libultra/io/aisetfreq
