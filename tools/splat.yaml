@@ -401,7 +401,7 @@ segments:
       - [ 0xF9750, .data, lib/os/libultra/vimodes/vimodepallan1]
       - [ 0xF97A0, .data, lib/os/libultra/vimodes/vimodempallan1]
       - [ 0xF97F0, .data, lib/os/libultra/io/piacs]
-      - [ 0xF9800, rodata] # lib/os/libultra/libc/xprintf
+      - [ 0xF9800, .data, lib/os/libultra/libc/xprintf]
       - [ 0xF9850, .rodata, lib/os/libultra/io/contpfs]
       - [ 0xF9860, rodata] # contramread // __osPfsLastChannel  
       - [ 0xF9870, .rodata, lib/os/libultra/rmon/rmoncmd] 
@@ -462,7 +462,7 @@ segments:
       - [ 0xFF300, hasm, lib/os/libultra/gu/libm_vals]
       - [ 0xFF300, .rodata, lib/os/libultra/gu/libm_vals]
       - [ 0xFF310, .rodata, lib/os/libultra/audio/resample]
-      - [ 0xFF340, rodata] # lib/os/libultra/libc/xprintf
+      - [ 0xFF340, .rodata, lib/os/libultra/libc/xprintf]
       - [ 0xFF4B8, .rodata, lib/os/libultra/io/devmgr]
       - [ 0xFF4D8, .rodata, lib/os/libultra/rmon/rmonmem]
       - [ 0xFF4F0, .rodata, lib/os/libultra/libc/xldtob]
