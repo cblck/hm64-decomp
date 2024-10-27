@@ -287,8 +287,7 @@ segments:
       - [ 0xE49B0, c, lib/os/libultra/io/piacs]
       - [ 0xE4AA0, c, lib/os/libultra/rmon/rmonsio]
       - [ 0xE4C50, hasm, lib/os/libultra/libc/bcmp]
-      # FIXME: should be c, but rodata issue
-      - [ 0xE4D60, asm, lib/os/libultra/printf]
+      - [ 0xE4D60, c, lib/os/libultra/libc/xprintf]
       - [ 0xE5790, c, lib/os/libultra/io/contpfs]
       - [ 0xE6220, c, lib/os/libultra/io/contramread]
       - [ 0xE6420, c, lib/os/libultra/io/contramwrite]
@@ -397,7 +396,7 @@ segments:
       - [ 0xF96F0, .rodata, lib/os/libultra/io/siacs]
       - [ 0xF9700, rodata]
       - [ 0xF97F0, rodata] # lib/os/libultra/io/piacs / __osPiAccessQueueEnabled
-      - [ 0xF9800, rodata] # lib/os/libultra/printf
+      - [ 0xF9800, rodata] # lib/os/libultra/libc/xprintf
       - [ 0xF9850, .rodata, lib/os/libultra/io/contpfs]
       - [ 0xF9860, rodata] # contramread // __osPfsLastChannel  
       - [ 0xF9870, .rodata, lib/os/libultra/rmon/rmoncmd] 
@@ -458,7 +457,7 @@ segments:
       - [ 0xFF300, hasm, lib/os/libultra/gu/libm_vals]
       - [ 0xFF300, .rodata, lib/os/libultra/gu/libm_vals]
       - [ 0xFF310, .rodata, lib/os/libultra/audio/resample]
-      - [ 0xFF340, rodata, lib/os/libultra/printf] 
+      - [ 0xFF340, rodata] # lib/os/libultra/libc/xprintf
       - [ 0xFF4B8, .rodata, lib/os/libultra/io/devmgr]
       - [ 0xFF4D8, .rodata, lib/os/libultra/rmon/rmonmem]
       - [ 0xFF4F0, .rodata, lib/os/libultra/libc/xldtob]
