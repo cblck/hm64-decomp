@@ -130,7 +130,7 @@ segments:
       - [ 0xD5A30, c, lib/os/libultra/libnaudio/n_reverb]
       - [ 0xD6420, c, lib/os/libultra/libnaudio/n_save]
       - [ 0xD6470, c, lib/os/libultra/libnaudio/n_synallocfx]
-      - [ 0xD64C0, c, lib/os/libultra/libnaudio/n_alMainBusPull]
+      - [ 0xD64C0, c, lib/os/libultra/libnaudio/n_mainbus]
       - [ 0xD6540, c, lib/nusys-1/nusched]
       - [ 0xD6D10, c, lib/nusys-1/nugfxthread]
       - [ 0xD6E60, c, lib/nusys-1/nugfxtaskmgr]
