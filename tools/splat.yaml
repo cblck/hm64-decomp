@@ -403,7 +403,7 @@ segments:
       - [ 0xF97F0, .data, lib/os/libultra/io/piacs]
       - [ 0xF9800, .data, lib/os/libultra/libc/xprintf]
       - [ 0xF9850, .data, lib/os/libultra/io/contpfs]
-      - [ 0xF9860, rodata] # contramread // __osPfsLastChannel  
+      - [ 0xF9860, .data, lib/os/libultra/io/contramread]
       - [ 0xF9870, .rodata, lib/os/libultra/rmon/rmoncmd] 
       - [ 0xF9950, .rodata, lib/os/libultra/rmon/rmonmain]
       - [ 0xF9960, rodata] # _litob
