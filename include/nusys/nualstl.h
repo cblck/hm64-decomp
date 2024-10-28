@@ -5,6 +5,7 @@
 /*		Copyright (C) 1997, NINTENDO Co,Ltd.				*/
 /*												*/
 /*======================================================================*/
+/* Reverts NU_AU_CLIST_SIZE change from Tue Oct 28 10:43:34 1997.		*/
 #ifndef _NUALSTL_H_
 #define _NUALSTL_H_
 
@@ -89,7 +90,8 @@ extern "C" {
 #define	NU_AU_MGR_THREAD_PRI	70
 #define	NU_AU_MGR_THREAD_ID	6
 #define 	NU_AU_STACK_SIZE	0x2000
-#define	NU_AU_CLIST_SIZE	0x800   	/* The buffer size of the command list  */
+//#define	NU_AU_CLIST_SIZE	0x800	// HM64: Changed this.
+#define	NU_AU_CLIST_SIZE	0x400   	/* The buffer size of the command list  */
 #define	NU_AU_BUFFER_MAX	0x2000  	/* The buffer size for the synthesizer  */
 #define	NU_AU_OUTPUT_RATE	32000   	/* Setting the frequency  */
 #define	NU_AU_MESG_MAX		8
