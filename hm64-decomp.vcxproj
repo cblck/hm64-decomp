@@ -1004,7 +1004,7 @@
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
-    <ClCompile Include="src\lib\os\libultra\rmon\rmoncmd.c">
+    <ClCompile Include="src\lib\os\libultra\rmon\rmoncmds.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x86'">true</ExcludedFromBuild>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x86'">Full</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x86'">BUILD_VERSION=7;%(PreprocessorDefinitions)</PreprocessorDefinitions>

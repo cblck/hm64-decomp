@@ -310,7 +310,7 @@ segments:
       - [ 0xE7A30, c, lib/os/libultra/os/yieldthread]
       - [ 0xE7A80, c, lib/os/libultra/io/si]
       - [ 0xE7AA0, c, lib/os/libultra/io/pfsisplug]
-      - [ 0xE7D80, c, lib/os/libultra/rmon/rmoncmd]
+      - [ 0xE7D80, c, lib/os/libultra/rmon/rmoncmds]
       - [ 0xE7E10, c, lib/os/libultra/rmon/rmonmem]
       - [ 0xE8580, c, lib/os/libultra/rmon/rmonmisc]
       - [ 0xE86D0, c, lib/os/libultra/rmon/rmonregs]
@@ -404,7 +404,7 @@ segments:
       - [ 0xF9800, .data, lib/os/libultra/libc/xprintf]
       - [ 0xF9850, .data, lib/os/libultra/io/contpfs]
       - [ 0xF9860, .data, lib/os/libultra/io/contramread]
-      - [ 0xF9870, .rodata, lib/os/libultra/rmon/rmoncmd] 
+      - [ 0xF9870, .data, lib/os/libultra/rmon/rmoncmds] 
       - [ 0xF9950, .rodata, lib/os/libultra/rmon/rmonmain]
       - [ 0xF9960, rodata] # _litob
       # should be bin
