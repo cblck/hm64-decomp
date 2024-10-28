@@ -405,7 +405,7 @@ segments:
       - [ 0xF9850, .data, lib/os/libultra/io/contpfs]
       - [ 0xF9860, .data, lib/os/libultra/io/contramread]
       - [ 0xF9870, .data, lib/os/libultra/rmon/rmoncmds] 
-      - [ 0xF9950, .rodata, lib/os/libultra/rmon/rmonmain]
+      - [ 0xF9950, .data, lib/os/libultra/rmon/rmonmain]
       - [ 0xF9960, rodata] # _litob
       # should be bin
       - [ 0xF9990, rodata, lib/ucode/n_aspMain_data]
