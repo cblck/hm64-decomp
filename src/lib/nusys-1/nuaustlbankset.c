@@ -6,7 +6,7 @@
 /*												*/
 /*======================================================================*/
 #include <nusys.h>
-#include <nualstl.h>
+#include <nualstl_n.h>
 
 extern ptr_bank_t	*mus_init_bank;
 extern ptr_bank_t	*mus_default_bank;

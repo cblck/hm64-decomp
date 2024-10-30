@@ -7,7 +7,7 @@
 /*												*/
 /*======================================================================*/
 #include <nusys.h>
-#include <nualstl.h>
+#include <nualstl_n.h>
 
 /*----------------------------------------------------------------------------*/
 /*	nuAuStlSeqPlayerPlay -Sequence reproduction of sequence data player	*/

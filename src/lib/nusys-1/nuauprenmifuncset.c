@@ -6,7 +6,7 @@
 /*												*/
 /*======================================================================*/
 #include <nusys.h>
-#include <nualstl.h>
+#include <nualstl_n.h>
 
 /*----------------------------------------------------------------------*/
 /*	nuAuPreNMIFuncSet - Register PRE NMI processing callback function	*/

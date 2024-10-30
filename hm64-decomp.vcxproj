@@ -1220,7 +1220,7 @@
     <ClInclude Include="include\libmus\libmus.h" />
     <ClInclude Include="include\libmus\libmus_data.h" />
     <ClInclude Include="include\macros.h" />
-    <ClInclude Include="include\nusys\nualstl.h" />
+    <ClInclude Include="include\nusys\nualstl_n.h" />
     <ClInclude Include="include\nusys\nusys.h" />
     <ClInclude Include="include\nusys\n_libaudio_sc.h" />
     <ClInclude Include="include\nusys\n_libaudio_sn_sc.h" />

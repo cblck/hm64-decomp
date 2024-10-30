@@ -1092,9 +1092,6 @@
     <ClInclude Include="include\nusys\nusys.h">
       <Filter>include\nusys</Filter>
     </ClInclude>
-    <ClInclude Include="include\nusys\nualstl.h">
-      <Filter>include\nusys</Filter>
-    </ClInclude>
     <ClInclude Include="include\gcc\stdarg.h">
       <Filter>include\gcc</Filter>
     </ClInclude>
@@ -1195,6 +1192,9 @@
       <Filter>include\nusys</Filter>
     </ClInclude>
     <ClInclude Include="include\nusys\n_libaudio_sn_sc.h">
+      <Filter>include\nusys</Filter>
+    </ClInclude>
+    <ClInclude Include="include\nusys\nualstl_n.h">
       <Filter>include\nusys</Filter>
     </ClInclude>
   </ItemGroup>

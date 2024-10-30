@@ -9,7 +9,7 @@
 /* $Id: nuaustlmgr.c,v *Modified version 1.2.* $	            		*/
 /*======================================================================*/
 #include <nusys.h>
-#include <nualstl.h>
+#include <nualstl_n.h>
 
 /*--------------------------------------*/
 /* DMA BUFFER STRUCT		  	    */

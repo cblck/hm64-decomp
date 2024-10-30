@@ -6,7 +6,7 @@
 /*												*/
 /*======================================================================*/
 #include <nusys.h>
-#include <nualstl.h>
+#include <nualstl_n.h>
 
 ALSynConfig	auSynConfig = {
     NU_AU_SYN_VVOICE_MAX,	/* number of virtual voices (not used)	*/

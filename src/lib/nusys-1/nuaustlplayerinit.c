@@ -7,7 +7,7 @@
 /*======================================================================*/
 /* Modified version to match HM64.                                      */
 #include <nusys.h>
-#include <nualstl.h>
+#include <nualstl_n.h>
 
 extern void* D_8018965C; // TODO: Find real name.
 extern void* D_801897E0; // TODO: Find real name.
