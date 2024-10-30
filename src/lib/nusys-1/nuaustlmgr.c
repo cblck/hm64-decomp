@@ -9,6 +9,8 @@
 /* $Id: nuaustlmgr.c,v *Modified version 1.2.* $	            		*/
 /*======================================================================*/
 #include <nusys.h>
+#include <n_libaudio_sc.h>
+#include <n_libaudio_sn_sc.h>
 #include <nualstl_n.h>
 
 /*--------------------------------------*/
@@ -52,7 +54,7 @@ static void nuAuMgr(void* arg);
 
 u32			    nuAuFrameCounter = 0;	/* flame counter */
 ALHeap		    nuAuHeap;			/* Heap structure */
-ALGlobals		auGlobal;
+N_ALGlobals		auGlobal;
 NUAuSeqPlayer	nuAuSeqPlayer[2];
 ALBankFile*     nuAuSeqBank_ptr;
 extern ALSeqFile*      nuAuSeqFile_ptr;
